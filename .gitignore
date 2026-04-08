@@ -1,0 +1,22 @@
+.DS_Store
+*.log
+
+# dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# local env files
+.env
+.env.*.local
+.env.local
+
+# misc
+.vercel/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
