@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Post = {
   id: string;
@@ -12,6 +12,8 @@ type Post = {
 };
 
 export default function AdminPage() {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loadingPosts, setLoadingPosts] = useState(true);
   const [title, setTitle] = useState("");
   const [caption, setCaption] = useState("");
   const [file, setFile] = useState<File | null>(null);
@@ -20,8 +22,32 @@ export default function AdminPage() {
   const [success, setSuccess] = useState<string | null>(null);
   const [posted, setPosted] = useState<Post | null>(null);
   const [signingOut, setSigningOut] = useState(false);
+  const [editing, setEditing] = useState<Post | null>(null);
+  const [editTitle, setEditTitle] = useState("");
+  const [editCaption, setEditCaption] = useState("");
+  const [savingEdit, setSavingEdit] = useState(false);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   const canSubmit = useMemo(() => Boolean(title.trim() && caption.trim() && file), [title, caption, file]);
+  const canSaveEdit = useMemo(() => Boolean(editTitle.trim() && editCaption.trim()), [editTitle, editCaption]);
+
+  async function refreshPosts() {
+    try {
+      setLoadingPosts(true);
+      const res = await fetch("/api/posts", { cache: "no-store" });
+      const json = (await res.json()) as { posts?: Post[] };
+      if (!res.ok) throw new Error((json as any)?.error || `Failed to load posts (${res.status})`);
+      setPosts(Array.isArray(json.posts) ? json.posts : []);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to load posts.");
+    } finally {
+      setLoadingPosts(false);
+    }
+  }
+
+  useEffect(() => {
+    void refreshPosts();
+  }, []);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -52,10 +78,66 @@ export default function AdminPage() {
       setSuccess("Posted successfully. It’s now visible on the homepage and Latest stories page.");
       const input = document.getElementById("media") as HTMLInputElement | null;
       if (input) input.value = "";
+      await refreshPosts();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to post.");
     } finally {
       setSubmitting(false);
+    }
+  }
+
+  function startEdit(p: Post) {
+    setEditing(p);
+    setEditTitle(p.title);
+    setEditCaption(p.caption);
+    setError(null);
+    setSuccess(null);
+  }
+
+  function cancelEdit() {
+    setEditing(null);
+    setEditTitle("");
+    setEditCaption("");
+  }
+
+  async function saveEdit() {
+    if (!editing) return;
+    try {
+      setSavingEdit(true);
+      setError(null);
+      const res = await fetch(`/api/posts/${editing.id}`, {
+        method: "PATCH",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ title: editTitle.trim(), caption: editCaption.trim() }),
+      });
+      const json = (await res.json()) as { post?: Post; error?: string };
+      if (!res.ok) throw new Error(json.error || `Failed to save (${res.status})`);
+      setSuccess("Post updated.");
+      cancelEdit();
+      await refreshPosts();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to update post.");
+    } finally {
+      setSavingEdit(false);
+    }
+  }
+
+  async function deletePost(p: Post) {
+    const ok = window.confirm(`Delete this post?\n\n"${p.title}"`);
+    if (!ok) return;
+
+    try {
+      setDeletingId(p.id);
+      setError(null);
+      const res = await fetch(`/api/posts/${p.id}`, { method: "DELETE" });
+      const json = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (!res.ok) throw new Error(json.error || `Failed to delete (${res.status})`);
+      setSuccess("Post deleted.");
+      await refreshPosts();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to delete post.");
+    } finally {
+      setDeletingId(null);
     }
   }
 
@@ -172,7 +254,145 @@ export default function AdminPage() {
             </div>
           </div>
         )}
+
+        <div className="mt-10 rounded-[2rem] border border-slate-200 bg-white shadow-sm overflow-hidden">
+          <div className="p-6 sm:p-8 border-b border-slate-200 flex items-center justify-between gap-6">
+            <div>
+              <h2 className="text-xl sm:text-2xl font-heading font-semibold text-brand-dark">Manage posts</h2>
+              <p className="text-brand-dark/70 mt-1 text-sm">Edit headings/captions or delete posts.</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => refreshPosts()}
+              className="shrink-0 inline-flex items-center justify-center rounded-full border-2 border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-brand-green/30 hover:shadow-sm transition-all"
+            >
+              Refresh
+            </button>
+          </div>
+
+          <div className="p-6 sm:p-8">
+            {loadingPosts ? (
+              <p className="text-brand-dark/70">Loading posts…</p>
+            ) : posts.length ? (
+              <div className="space-y-4">
+                {posts.map((p) => (
+                  <div
+                    key={p.id}
+                    className="rounded-3xl border border-slate-200 bg-slate-50 p-4 sm:p-5 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="w-24 h-16 rounded-2xl overflow-hidden border border-slate-200 bg-white flex items-center justify-center">
+                        {p.mediaType === "image" ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={p.mediaUrl} alt={p.title} className="w-full h-full object-cover" />
+                        ) : (
+                          <span className="text-xs font-semibold text-slate-600">Video</span>
+                        )}
+                      </div>
+                      <div>
+                        <div className="text-xs font-semibold uppercase tracking-widest text-brand-green">
+                          {new Date(p.createdAt).toLocaleString()}
+                        </div>
+                        <div className="mt-1 font-heading font-semibold text-brand-dark">{p.title}</div>
+                        <div className="mt-1 text-sm text-brand-dark/70 line-clamp-2">{p.caption}</div>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-3 sm:justify-end">
+                      <button
+                        type="button"
+                        onClick={() => startEdit(p)}
+                        className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-white border-2 border-brand-green text-brand-dark text-sm font-semibold hover:bg-brand-green/10 transition-colors"
+                      >
+                        Edit
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => deletePost(p)}
+                        disabled={deletingId === p.id}
+                        className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-white border-2 border-red-200 text-red-700 text-sm font-semibold hover:bg-red-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {deletingId === p.id ? "Deleting…" : "Delete"}
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-brand-dark/70">No posts yet.</p>
+            )}
+          </div>
+        </div>
       </div>
+
+      {editing && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 px-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Edit post"
+        >
+          <div className="w-full max-w-2xl rounded-[2rem] border border-slate-200 bg-white shadow-xl overflow-hidden">
+            <div className="p-6 sm:p-8 border-b border-slate-200 flex items-start justify-between gap-6">
+              <div>
+                <h3 className="text-xl sm:text-2xl font-heading font-semibold text-brand-dark">Edit post</h3>
+                <p className="text-sm text-brand-dark/70 mt-1">Update the heading and caption.</p>
+              </div>
+              <button
+                type="button"
+                onClick={cancelEdit}
+                className="inline-flex items-center justify-center rounded-full border-2 border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-brand-green/30 hover:shadow-sm transition-all"
+              >
+                Close
+              </button>
+            </div>
+
+            <div className="p-6 sm:p-8 space-y-5">
+              <div className="grid gap-2">
+                <label htmlFor="editTitle" className="text-sm font-semibold text-brand-dark">
+                  Heading
+                </label>
+                <input
+                  id="editTitle"
+                  value={editTitle}
+                  onChange={(e) => setEditTitle(e.target.value)}
+                  className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-brand-dark outline-none focus:ring-4 focus:ring-brand-sunlight/25"
+                />
+              </div>
+              <div className="grid gap-2">
+                <label htmlFor="editCaption" className="text-sm font-semibold text-brand-dark">
+                  Caption
+                </label>
+                <textarea
+                  id="editCaption"
+                  value={editCaption}
+                  onChange={(e) => setEditCaption(e.target.value)}
+                  rows={4}
+                  className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-brand-dark outline-none focus:ring-4 focus:ring-brand-sunlight/25"
+                />
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 sm:justify-end">
+                <button
+                  type="button"
+                  onClick={cancelEdit}
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-white border-2 border-slate-200 text-slate-700 font-semibold hover:shadow-sm transition-all"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  onClick={saveEdit}
+                  disabled={!canSaveEdit || savingEdit}
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-brand-green text-white font-semibold shadow-sm hover:bg-brand-green/90 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {savingEdit ? "Saving…" : "Save changes"}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
