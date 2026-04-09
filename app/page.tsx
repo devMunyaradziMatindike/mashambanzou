@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Hero } from "@/components/Hero";
 import { IntroVideo } from "@/components/IntroVideo";
 import { FacebookFeed } from "@/components/FacebookFeed";
+import { LatestStories } from "@/components/LatestStories";
 
 const marqueeItems = [
   "Clinical Healthcare",
@@ -429,36 +430,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stories teaser */}
+      {/* Latest stories */}
       <section className="py-16 sm:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="rounded-2xl overflow-hidden border-2 border-brand-green/20 bg-slate-100 aspect-[16/10] sm:aspect-[4/3] relative">
-              <Image
-                src="/website/visiting-hour.jpg"
-                alt="A moment during visiting hour at Mashambanzou Care Trust"
-                fill
-                sizes="(max-width: 768px) 100vw, 560px"
-                className="object-cover"
-              />
-            </div>
-            <div className="text-center md:text-left">
-              <h2 className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900 mb-4">
-                Stories
+          <div className="flex items-end justify-between gap-6 flex-wrap mb-10">
+            <div className="max-w-2xl">
+              <span className="text-brand-green font-semibold tracking-widest uppercase text-xs mb-3 block">
+                Latest stories
+              </span>
+              <h2 className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-brand-dark">
+                Photos, videos and updates from the field
               </h2>
-              <p className="text-slate-600 max-w-xl mb-4">
-                Hear from the people we have helped and the supporters who make it possible. Stories like Fortune, the
-                stone sculptor whose life was stabilised through MCT&apos;s TB/HIV treatment and feeding programmes—and
-                others whose journeys we walk alongside.
+              <p className="text-brand-dark/70 mt-3">
+                The newest posts appear here automatically once they’re published from the admin portal.
               </p>
-              <Link
-                href="/stories"
-                className="inline-flex items-center px-8 py-4 bg-white border-2 border-brand-sunlight text-brand-dark rounded-full text-base font-medium hover:bg-brand-sunlight hover:text-brand-dark transition-all"
-              >
-                Explore stories
-              </Link>
             </div>
+            <Link
+              href="/latest-stories"
+              className="inline-flex items-center px-6 py-3 bg-white border-2 border-brand-sunlight text-brand-dark rounded-full text-sm font-semibold hover:bg-brand-sunlight hover:text-brand-dark transition-all"
+            >
+              View all
+            </Link>
           </div>
+
+          <LatestStories limit={3} />
         </div>
       </section>
 

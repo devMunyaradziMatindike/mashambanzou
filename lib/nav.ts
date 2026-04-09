@@ -20,6 +20,7 @@ export const mainNav = [
       { label: "Where We Work", href: "/where-we-work" },
     ],
   },
+  { label: "Latest stories", href: "/latest-stories" },
   {
     label: "Get Involved",
     href: "/get-involved",
