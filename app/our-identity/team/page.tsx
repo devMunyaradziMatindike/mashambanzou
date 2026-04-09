@@ -68,24 +68,23 @@ export default function TeamPage() {
                 key={person.name}
                 className="group rounded-[2rem] border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-lg hover:shadow-slate-200/40 transition-shadow"
               >
-                <div className="relative aspect-[4/5] bg-slate-100">
-                  <Image
-                    src={person.photoSrc}
-                    alt={person.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
-                    priority={person.role === "Executive Director"}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent opacity-80" />
-                  <div className="absolute bottom-5 left-5 right-5">
-                    <div className="inline-flex items-center rounded-full bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-slate-800 border border-white/50">
-                      {person.role}
-                    </div>
-                    <h3 className="mt-3 font-heading text-xl sm:text-2xl font-semibold text-white leading-tight">
-                      {person.name}
-                    </h3>
+                <div className="p-6 sm:p-7 text-center border-b border-slate-100 bg-gradient-to-b from-slate-50 via-white to-white">
+                  <div className="mx-auto w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border border-slate-200 bg-slate-100 relative shadow-sm">
+                    <Image
+                      src={person.photoSrc}
+                      alt={person.name}
+                      fill
+                      sizes="112px"
+                      className="object-cover"
+                      priority={person.role === "Executive Director"}
+                    />
                   </div>
+                  <div className="mt-4 inline-flex items-center rounded-full bg-brand-green/10 text-brand-green px-3 py-1 text-xs font-semibold border border-brand-green/15">
+                    {person.role}
+                  </div>
+                  <h3 className="mt-3 font-heading text-xl sm:text-2xl font-semibold text-brand-dark leading-tight">
+                    {person.name}
+                  </h3>
                 </div>
 
                 <div className="p-6 sm:p-7">
@@ -109,38 +108,6 @@ export default function TeamPage() {
                 </div>
               </article>
             ))}
-          </div>
-        </div>
-      </PageSection>
-
-      <PageSection className="section-padding bg-brand-cream/50">
-        <div className="container-wide">
-          <div className="rounded-[2.5rem] border border-slate-200 bg-white p-8 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-            <div>
-              <span className="text-brand-green font-semibold tracking-widest uppercase text-xs mb-3 block">
-                Partners & donors
-              </span>
-              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-brand-dark mb-3">
-                Need organisational documents for due diligence?
-              </h2>
-              <p className="text-brand-dark/80 text-lg leading-relaxed max-w-2xl">
-                Visit our Transparency page or contact us for the documents you need.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-              <Link
-                href="/transparency"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-brand-dark text-white font-medium hover:bg-brand-sunlight hover:text-brand-dark transition-colors w-full sm:w-auto"
-              >
-                Transparency
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-brand-green text-brand-dark font-medium hover:bg-brand-green/10 transition-colors w-full sm:w-auto"
-              >
-                Contact us
-              </Link>
-            </div>
           </div>
         </div>
       </PageSection>
