@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { promises as fs } from "fs";
-import path from "path";
 import { randomUUID } from "crypto";
+import { put } from "@vercel/blob";
+import { kv } from "@vercel/kv";
 
 export const runtime = "nodejs";
 
@@ -17,22 +17,15 @@ type Post = {
   createdAt: string;
 };
 
-const POSTS_PATH = path.join(process.cwd(), "data", "posts.json");
-const UPLOADS_DIR = path.join(process.cwd(), "public", "uploads");
+const POSTS_KEY = "mct:posts:v1";
 
 async function readPosts(): Promise<Post[]> {
-  try {
-    const raw = await fs.readFile(POSTS_PATH, "utf8");
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? (parsed as Post[]) : [];
-  } catch {
-    return [];
-  }
+  const posts = (await kv.get(POSTS_KEY)) as unknown;
+  return Array.isArray(posts) ? (posts as Post[]) : [];
 }
 
 async function writePosts(posts: Post[]) {
-  await fs.mkdir(path.dirname(POSTS_PATH), { recursive: true });
-  await fs.writeFile(POSTS_PATH, JSON.stringify(posts, null, 2) + "\n", "utf8");
+  await kv.set(POSTS_KEY, posts);
 }
 
 function getMediaType(mime: string): MediaType | null {
@@ -73,21 +66,16 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Unsupported media type." }, { status: 400 });
   }
 
-  const extFromName = path.extname(file.name || "").slice(0, 12);
-  const safeExt = extFromName && /^[.\w]+$/.test(extFromName) ? extFromName : "";
   const id = randomUUID();
-  const filename = `${id}${safeExt}`;
-
-  await fs.mkdir(UPLOADS_DIR, { recursive: true });
-  const bytes = Buffer.from(await file.arrayBuffer());
-  await fs.writeFile(path.join(UPLOADS_DIR, filename), bytes);
+  const safeName = (file.name || "upload").replace(/[^\w.\-]/g, "_").slice(0, 80);
+  const blob = await put(`latest-stories/${id}-${safeName}`, file, { access: "public" });
 
   const newPost: Post = {
     id,
     title,
     caption,
     mediaType,
-    mediaUrl: `/uploads/${filename}`,
+    mediaUrl: blob.url,
     createdAt: new Date().toISOString(),
   };
 

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { promises as fs } from "fs";
-import path from "path";
+import { kv } from "@vercel/kv";
+import { del } from "@vercel/blob";
 
 export const runtime = "nodejs";
 
@@ -16,21 +16,15 @@ type Post = {
   createdAt: string;
 };
 
-const POSTS_PATH = path.join(process.cwd(), "data", "posts.json");
+const POSTS_KEY = "mct:posts:v1";
 
 async function readPosts(): Promise<Post[]> {
-  try {
-    const raw = await fs.readFile(POSTS_PATH, "utf8");
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? (parsed as Post[]) : [];
-  } catch {
-    return [];
-  }
+  const posts = (await kv.get(POSTS_KEY)) as unknown;
+  return Array.isArray(posts) ? (posts as Post[]) : [];
 }
 
 async function writePosts(posts: Post[]) {
-  await fs.mkdir(path.dirname(POSTS_PATH), { recursive: true });
-  await fs.writeFile(POSTS_PATH, JSON.stringify(posts, null, 2) + "\n", "utf8");
+  await kv.set(POSTS_KEY, posts);
 }
 
 function getIdFromUrl(req: Request) {
@@ -78,13 +72,9 @@ export async function DELETE(req: Request) {
   const [removed] = posts.splice(idx, 1);
   await writePosts(posts);
 
-  // Best-effort delete uploaded file if it lives under /public/uploads
+  // Best-effort delete uploaded blob
   try {
-    if (removed?.mediaUrl?.startsWith("/uploads/")) {
-      const filename = removed.mediaUrl.replace("/uploads/", "");
-      const filePath = path.join(process.cwd(), "public", "uploads", filename);
-      await fs.unlink(filePath);
-    }
+    if (removed?.mediaUrl) await del(removed.mediaUrl);
   } catch {
     // ignore
   }

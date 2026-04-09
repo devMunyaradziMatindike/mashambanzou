@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 
 type Post = {
@@ -68,13 +67,8 @@ export function LatestStories({ limit }: { limit?: number }) {
         >
           <div className="relative aspect-[16/10] bg-slate-100">
             {post.mediaType === "image" ? (
-              <Image
-                src={post.mediaUrl}
-                alt={post.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover"
-              />
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={post.mediaUrl} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
             ) : (
               <video controls preload="metadata" className="w-full h-full object-cover">
                 <source src={post.mediaUrl} />
