@@ -38,37 +38,34 @@ export default function ChildProtectionEducationPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
               {
                 title: "Education for Life",
                 desc: "Support that helps children remain in school and thrive.",
-                icon: "🎓",
               },
               {
                 title: "OVC support",
                 desc: "Support for orphans and vulnerable children to reach their potential.",
-                icon: "🧒",
+              },
+              {
+                title: "NDCC / NECDS",
+                desc: "Early childhood care, meals and basic education for vulnerable children.",
               },
               {
                 title: "Houses of Safety",
                 desc: "Temporary safe homes for children at risk while plans are made.",
-                icon: "🏡",
               },
               {
                 title: "Child protection",
                 desc: "Community safeguarding, awareness and accountability mechanisms.",
-                icon: "🛡️",
               },
             ].map((item) => (
               <div
                 key={item.title}
                 className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-6 sm:p-7 shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow"
               >
-                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-2xl" aria-hidden>
-                  {item.icon}
-                </div>
-                <h3 className="mt-4 font-heading text-xl font-semibold text-white">{item.title}</h3>
+                <h3 className="font-heading text-xl font-semibold text-white">{item.title}</h3>
                 <p className="mt-2 text-white/75 leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -107,6 +104,72 @@ export default function ChildProtectionEducationPage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 {["School fees", "Uniforms", "Learning materials", "Civil registration"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/15 text-sm text-white/80"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </PageSection>
+
+      {/* Nenyere Day Care Centre */}
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+            <div className="rounded-[2.5rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-3 shadow-sm shadow-brand-dark/15">
+              <div className="grid gap-3">
+                <div className="relative overflow-hidden rounded-[2rem] aspect-[16/10] bg-white/10">
+                  <Image
+                    src="/review-pics/putting children first.jpg"
+                    alt="Children supported through Mashambanzou Care Trust programmes"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="relative overflow-hidden rounded-[1.5rem] aspect-[4/3] bg-white/10">
+                    <Image
+                      src="/review-pics/ovc support.jpg"
+                      alt="Orphans and vulnerable children support"
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 25vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative overflow-hidden rounded-[1.5rem] aspect-[4/3] bg-white/10">
+                    <Image
+                      src="/review-pics/child protection.jpg"
+                      alt="Child protection and learning support"
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 25vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-[2.5rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-7 sm:p-10 shadow-sm shadow-brand-dark/15">
+              <span className="text-brand-sunlight font-semibold tracking-widest uppercase text-xs mb-3 block">
+                Nenyere Day Care Centre (NDCC)
+              </span>
+              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white">
+                Early childhood care for vulnerable children
+              </h2>
+              <p className="mt-4 text-white/85 leading-relaxed">
+                Established as the Nenyere Day Care Centre (NDCC), now known as the Nenyere Early Childhood Development
+                Centre (NECDS), the centre is registered under the Ministry of Primary and Secondary Education. It offers
+                orphans and vulnerable children at least two hot meals a day and basic education while their parents or
+                guardians work for livelihoods.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {["Two hot meals a day", "Basic education", "OVC support", "Registered ECD centre"].map((tag) => (
                   <span
                     key={tag}
                     className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/15 text-sm text-white/80"

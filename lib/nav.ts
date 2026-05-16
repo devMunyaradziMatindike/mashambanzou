@@ -11,6 +11,7 @@ export const mainNav = [
     label: "Our Impact",
     href: "/our-impact",
     children: [
+      { label: "Overview", href: "/our-impact" },
       { label: "Integrated Health Service Delivery", href: "/our-impact/clinical-healthcare" },
       { label: "Orphans and Vulnerable Children (OVC) Support", href: "/our-impact/child-protection-education" },
       { label: "Promotion of Human Rights", href: "/our-impact/empowerment-advocacy" },
@@ -39,6 +40,12 @@ export const mainNav = [
         href: "/our-impact/child-protection-education",
         imageSrc: "/review-pics/putting children first.jpg",
         imageAlt: "Putting Children First programme support",
+      },
+      {
+        label: "Nenyere Day Care Centre (NDCC)",
+        href: "/our-impact/child-protection-education",
+        imageSrc: "/review-pics/ovc support.jpg",
+        imageAlt: "Children supported through Nenyere Day Care Centre",
       },
       {
         label: "Income generating activities",

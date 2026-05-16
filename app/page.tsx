@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Hero } from "@/components/Hero";
 import { IntroVideo } from "@/components/IntroVideo";
-import { FacebookFeed } from "@/components/FacebookFeed";
 import { LatestStories } from "@/components/LatestStories";
 
 const marqueeItems = [
@@ -538,8 +537,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <FacebookFeed />
 
       {/* Governance / Donors teaser */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-brand-cream/50">
