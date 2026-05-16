@@ -36,19 +36,25 @@ export function AdminLoginForm({ nextPath }: { nextPath: string }) {
   }
 
   return (
-    <div className="min-h-[calc(100vh-120px)] bg-slate-50 pb-24 pt-28 sm:pt-32">
+    <div className="min-h-[calc(100vh-120px)] bg-brand-dark/10 backdrop-blur pb-24 pt-28 sm:pt-32">
       <div className="max-w-md w-full mx-auto px-4 sm:px-6 py-12">
-        <div className="rounded-[2rem] border border-slate-200 bg-white shadow-sm overflow-hidden">
-          <div className="p-8 sm:p-10 border-b border-slate-200">
-            <h1 className="text-3xl font-heading font-semibold text-brand-dark">Admin login</h1>
-            <p className="text-brand-dark/70 mt-2">Enter your admin email and password to continue.</p>
+        <div className="rounded-[2rem] border border-white/10 bg-brand-dark/20 backdrop-blur shadow-sm shadow-brand-dark/20 overflow-hidden">
+          <div className="p-8 sm:p-10 border-b border-white/10">
+            <h1 className="text-3xl font-heading font-semibold text-white">Seller sign in</h1>
+            <p className="text-white/80 mt-2">
+              Registration and sign-in are for sellers (authorized publishers) only. Buyers and visitors do not create
+              accounts—browse and donate without signing up.
+            </p>
+            <p className="text-white/80 mt-3 text-sm">Enter your seller email and password to continue.</p>
           </div>
 
           <form onSubmit={onSubmit} className="p-8 sm:p-10 space-y-5">
-            {error && <div className="rounded-2xl border border-red-200 bg-red-50 px-5 py-4 text-red-700">{error}</div>}
+            {error && (
+              <div className="rounded-2xl border border-red-200/30 bg-red-500/15 px-5 py-4 text-red-50">{error}</div>
+            )}
 
             <div className="grid gap-2">
-              <label htmlFor="email" className="text-sm font-semibold text-brand-dark">
+              <label htmlFor="email" className="text-sm font-semibold text-white">
                 Email
               </label>
               <input
@@ -57,14 +63,14 @@ export function AdminLoginForm({ nextPath }: { nextPath: string }) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="admin@mashambanzou.co.zw"
-                className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-brand-dark outline-none focus:ring-4 focus:ring-brand-sunlight/25"
+                className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/60 outline-none focus:ring-4 focus:ring-brand-sunlight/25"
                 autoFocus
                 autoComplete="username"
               />
             </div>
 
             <div className="grid gap-2">
-              <label htmlFor="password" className="text-sm font-semibold text-brand-dark">
+              <label htmlFor="password" className="text-sm font-semibold text-white">
                 Password
               </label>
               <input
@@ -73,7 +79,7 @@ export function AdminLoginForm({ nextPath }: { nextPath: string }) {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
-                className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-brand-dark outline-none focus:ring-4 focus:ring-brand-sunlight/25"
+                className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/60 outline-none focus:ring-4 focus:ring-brand-sunlight/25"
                 autoComplete="current-password"
               />
             </div>
@@ -86,8 +92,8 @@ export function AdminLoginForm({ nextPath }: { nextPath: string }) {
               {loading ? "Signing in…" : "Sign in"}
             </button>
 
-            <p className="text-xs text-brand-dark/60">
-              This portal is restricted. If you don’t have access, please contact the site administrator.
+            <p className="text-xs text-white/70">
+              Seller accounts only. If you need publisher access, contact the site administrator.
             </p>
           </form>
         </div>

@@ -5,7 +5,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Empowerment & Advocacy | Mashambanzou Care Trust",
+  title: "Promotion of Human Rights | Mashambanzou Care Trust",
   description:
     "Care to Share vocational training, livelihoods and advocacy for human rights and stigma reduction.",
 };
@@ -14,7 +14,7 @@ export default function EmpowermentAdvocacyPage() {
   return (
     <>
       <Hero
-        title="Empowerment, Advocacy & Livelihoods"
+        title="Promotion of Human Rights"
         subtitle="Care to Share vocational training, income-generating activities and advocacy—building resilience and opportunity."
         badge="Livelihoods & rights"
         primaryCta="Donate"
@@ -26,13 +26,13 @@ export default function EmpowermentAdvocacyPage() {
       />
 
       {/* Intro + at a glance */}
-      <PageSection className="section-padding bg-white">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-brand-dark mb-4">
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">
               Skills, income and a stronger voice
             </h2>
-            <p className="text-brand-dark/80 text-lg leading-relaxed">
+            <p className="text-white/80 text-lg leading-relaxed">
               We invest in vocational skills, livelihoods and advocacy—so individuals and families can build stability,
               dignity and opportunity while communities strengthen their protection and rights systems.
             </p>
@@ -63,13 +63,13 @@ export default function EmpowermentAdvocacyPage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-[2rem] border border-slate-200 bg-slate-50 p-6 sm:p-7 shadow-sm hover:shadow-lg hover:shadow-slate-200/40 transition-shadow"
+                className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-6 sm:p-7 shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow"
               >
-                <div className="w-12 h-12 rounded-2xl bg-brand-cream flex items-center justify-center text-2xl" aria-hidden>
+                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-2xl" aria-hidden>
                   {item.icon}
                 </div>
-                <h3 className="mt-4 font-heading text-xl font-semibold text-brand-dark">{item.title}</h3>
-                <p className="mt-2 text-brand-dark/75 leading-relaxed">{item.desc}</p>
+                <h3 className="mt-4 font-heading text-xl font-semibold text-white">{item.title}</h3>
+                <p className="mt-2 text-white/75 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -77,10 +77,10 @@ export default function EmpowermentAdvocacyPage() {
       </PageSection>
 
       {/* Care to Share */}
-      <PageSection className="section-padding bg-slate-50">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
-            <div className="rounded-[2.5rem] border border-slate-200 bg-slate-100 overflow-hidden shadow-sm relative aspect-[16/10] sm:aspect-[4/3]">
+            <div className="rounded-[2.5rem] border border-white/10 bg-white/10 overflow-hidden shadow-sm shadow-brand-dark/15 relative aspect-[16/10] sm:aspect-[4/3]">
               <Image
                 src="/website/teaching-girls.jpg"
                 alt="Vocational and life-skills learning"
@@ -91,17 +91,17 @@ export default function EmpowermentAdvocacyPage() {
               />
             </div>
             <div>
-              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-brand-dark">
+              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white">
                 Care to Share (youth empowerment)
               </h2>
-              <p className="mt-4 text-brand-dark/85 leading-relaxed">
+              <p className="mt-4 text-white/85 leading-relaxed">
                 In partnership with Young Africa International in Caledonia, we deliver 6-month TVET-based vocational
                 training and community mastercrafter internships. Graduates receive Certificates of Competency in trades
                 such as carpentry, tailoring and agriculture, supporting sustainable livelihoods.
               </p>
-              <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6">
-                <h3 className="font-heading text-lg font-semibold text-brand-dark">Programme highlights</h3>
-                <ul className="mt-3 space-y-2 text-brand-dark/80">
+              <div className="mt-6 rounded-2xl border border-white/10 bg-brand-dark/15 backdrop-blur p-6">
+                <h3 className="font-heading text-lg font-semibold text-white">Programme highlights</h3>
+                <ul className="mt-3 space-y-2 text-white/80">
                   <li>Six-month market-driven vocational training</li>
                   <li>Hands-on placements with community mastercraft persons</li>
                   <li>Certificate of Competency upon completion</li>
@@ -114,14 +114,14 @@ export default function EmpowermentAdvocacyPage() {
       </PageSection>
 
       {/* Income generating activities */}
-      <PageSection className="section-padding bg-white">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
             <div className="order-2 lg:order-1">
-              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-brand-dark">
+              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white">
                 Institutional income-generating activities
               </h2>
-              <p className="mt-4 text-brand-dark/85 leading-relaxed">
+              <p className="mt-4 text-white/85 leading-relaxed">
                 In addition to MCT vital healthcare and social services, Mashambanzou Care Trust has successfully
                 implemented a range of income-generating activities that empower the communities we serve. These
                 activities generate income and foster skills development, entrepreneurship and self-reliance among
@@ -133,15 +133,15 @@ export default function EmpowermentAdvocacyPage() {
                   "Catering and food services",
                   "Skills training and entrepreneurship",
                 ].map((item) => (
-                  <div key={item} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                    <div className="text-sm font-semibold text-brand-dark">{item}</div>
-                    <div className="text-xs text-brand-dark/70 mt-1">Building stability through practical income pathways.</div>
+                  <div key={item} className="rounded-2xl border border-white/10 bg-brand-dark/15 backdrop-blur p-5">
+                    <div className="text-sm font-semibold text-white">{item}</div>
+                    <div className="text-xs text-white/75 mt-1">Building stability through practical income pathways.</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="order-1 lg:order-2 rounded-[2.5rem] border border-slate-200 bg-slate-100 overflow-hidden shadow-sm relative aspect-[16/10] sm:aspect-[4/3]">
+            <div className="order-1 lg:order-2 rounded-[2.5rem] border border-white/10 bg-white/10 overflow-hidden shadow-sm shadow-brand-dark/15 relative aspect-[16/10] sm:aspect-[4/3]">
               <Image
                 src="/website/poultry-project.jpg"
                 alt="Income-generating project supporting livelihoods"
@@ -155,11 +155,11 @@ export default function EmpowermentAdvocacyPage() {
       </PageSection>
 
       {/* Advocacy + gallery */}
-      <PageSection className="section-padding bg-slate-50">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-brand-dark mb-4">Advocacy & SRHR</h2>
-            <p className="text-brand-dark/80 text-lg leading-relaxed">
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">Advocacy & SRHR</h2>
+            <p className="text-white/80 text-lg leading-relaxed">
               We advocate for human rights, challenge stigma and promote SRHR through community outreach, media and
               policy engagement—ensuring the voices of those we serve inform our work.
             </p>
@@ -185,9 +185,9 @@ export default function EmpowermentAdvocacyPage() {
             ].map((item) => (
               <figure
                 key={item.src}
-                className="rounded-[2rem] border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-lg hover:shadow-slate-200/40 transition-shadow"
+                className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur overflow-hidden shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow"
               >
-                <div className="relative aspect-[16/10] sm:aspect-[4/3] bg-slate-100">
+                <div className="relative aspect-[16/10] sm:aspect-[4/3] bg-white/10">
                   <Image
                     src={item.src}
                     alt={item.alt}
@@ -196,20 +196,20 @@ export default function EmpowermentAdvocacyPage() {
                     className="object-cover"
                   />
                 </div>
-                <figcaption className="p-5 text-sm text-brand-dark/75 leading-relaxed">{item.caption}</figcaption>
+                <figcaption className="p-5 text-sm text-white/75 leading-relaxed">{item.caption}</figcaption>
               </figure>
             ))}
           </div>
 
-          <div className="mt-12 rounded-[2.5rem] border border-slate-200 bg-white p-6 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div className="mt-12 rounded-[2.5rem] border border-white/10 bg-brand-dark/20 backdrop-blur p-6 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div>
-              <span className="text-brand-green font-semibold tracking-widest uppercase text-xs mb-3 block">
+              <span className="text-brand-sunlight font-semibold tracking-widest uppercase text-xs mb-3 block">
                 Get involved
               </span>
-              <h3 className="font-heading text-2xl sm:text-3xl font-semibold text-brand-dark mb-3">
+              <h3 className="font-heading text-2xl sm:text-3xl font-semibold text-white mb-3">
                 Support empowerment and rights
               </h3>
-              <p className="text-brand-dark/80 text-lg leading-relaxed max-w-2xl">
+              <p className="text-white/80 text-lg leading-relaxed max-w-2xl">
                 Your support helps expand skills training, livelihoods and community advocacy—so people can build stable
                 futures and live with dignity.
               </p>
@@ -223,13 +223,13 @@ export default function EmpowermentAdvocacyPage() {
               </Link>
               <Link
                 href="/our-identity/board-and-governance"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-brand-green text-brand-dark font-medium hover:bg-brand-green/10 transition-colors w-full sm:w-auto"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white/20 text-white font-medium hover:bg-white/10 transition-colors w-full sm:w-auto"
               >
                 Governance
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-brand-green text-brand-dark font-medium hover:bg-brand-green/10 transition-colors w-full sm:w-auto"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white/20 text-white font-medium hover:bg-white/10 transition-colors w-full sm:w-auto"
               >
                 Contact
               </Link>

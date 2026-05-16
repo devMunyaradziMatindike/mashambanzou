@@ -16,10 +16,12 @@ const config: Config = {
       colors: {
         brand: {
           sunlight: "#F5B700",
-          green: "#2D6A4F",
+          // Primary brand accent (turquoise blue) per website review.
+          green: "#0EA5A6",
           dark: "#1a1a1a",
           cream: "#FDF8E8",
           warm: "#F5B700",
+          // Keep original green available where needed.
           earth: "#2D6A4F",
         },
       },

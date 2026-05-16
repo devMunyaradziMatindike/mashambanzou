@@ -22,8 +22,8 @@ export default function LatestStoriesPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-end justify-between gap-6 flex-wrap mb-8">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-heading font-semibold text-brand-dark">Latest posts</h2>
-              <p className="text-brand-dark/70 mt-2">
+              <h2 className="text-3xl sm:text-4xl font-heading font-semibold text-white">Latest posts</h2>
+              <p className="text-white/80 mt-2">
                 New posts appear here as soon as they’re published from the admin portal.
               </p>
             </div>

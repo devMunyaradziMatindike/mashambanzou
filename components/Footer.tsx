@@ -6,7 +6,7 @@ import { footerNav } from "@/lib/nav";
 
 export function Footer() {
   return (
-    <footer className="bg-brand-dark text-white py-20 sm:py-24 px-4 sm:px-6 rounded-[3rem] mt-12 relative overflow-hidden">
+    <footer className="bg-brand-green text-white py-20 sm:py-24 px-4 sm:px-6 rounded-[3rem] mt-12 relative overflow-hidden">
       {/* Footer blob - sunlight & renewal */}
       <div className="absolute bottom-0 right-0 w-[40rem] h-[40rem] bg-brand-sunlight/15 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-0 left-0 w-[30rem] h-[30rem] bg-brand-green/20 rounded-full blur-[80px] pointer-events-none" />
@@ -17,13 +17,13 @@ export function Footer() {
             <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-none mb-6">
               Ready to <br /> <span className="text-brand-sunlight">make a difference?</span>
             </h2>
-            <p className="text-lg sm:text-xl text-slate-400 max-w-md mb-8">
+            <p className="text-lg sm:text-xl text-white/85 max-w-md mb-8">
               Donate, volunteer, or partner with us. Together we build AIDS-free, resilient and empowered communities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
               <Link
                 href="/donate"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-dark rounded-full text-base font-semibold hover:bg-brand-sunlight transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white border border-white/20 rounded-full text-base font-semibold hover:bg-white/15 hover:border-white/30 transition-colors"
               >
                 Donate
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -151,36 +151,39 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-[calc(100vh-120px)] bg-slate-50 pb-24 pt-28 sm:pt-32">
+    <div className="min-h-[calc(100vh-120px)] bg-brand-dark/10 backdrop-blur pb-24 pt-28 sm:pt-32">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-        <div className="rounded-[2rem] border border-slate-200 bg-white shadow-sm overflow-hidden">
-          <div className="p-8 sm:p-10 border-b border-slate-200 flex items-start justify-between gap-6">
+        <div className="rounded-[2rem] border border-white/10 bg-brand-dark/20 backdrop-blur shadow-sm shadow-brand-dark/20 overflow-hidden">
+          <div className="p-8 sm:p-10 border-b border-white/10 flex items-start justify-between gap-6">
             <div>
-              <h1 className="text-3xl sm:text-4xl font-heading font-semibold text-brand-dark">Admin — Post a story</h1>
-            <p className="text-brand-dark/70 mt-2">
+              <h1 className="text-3xl sm:text-4xl font-heading font-semibold text-white">Seller — Post a story</h1>
+            <p className="text-white/80 mt-2">
               Upload a photo or video with a heading and caption. It will show on “Latest stories” and on the homepage.
+              This area is for sellers only; supporters and visitors do not register.
             </p>
             </div>
             <button
               type="button"
               onClick={onSignOut}
               disabled={signingOut}
-              className="shrink-0 inline-flex items-center justify-center rounded-full border-2 border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-brand-green/30 hover:shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="shrink-0 inline-flex items-center justify-center rounded-full border-2 border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/15 hover:border-white/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {signingOut ? "Signing out…" : "Sign out"}
             </button>
           </div>
 
           <form onSubmit={onSubmit} className="p-8 sm:p-10 space-y-6">
-            {error && <div className="rounded-2xl border border-red-200 bg-red-50 px-5 py-4 text-red-700">{error}</div>}
+            {error && (
+              <div className="rounded-2xl border border-red-200/30 bg-red-500/15 px-5 py-4 text-red-50">{error}</div>
+            )}
             {success && (
-              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-5 py-4 text-emerald-800">
+              <div className="rounded-2xl border border-emerald-200/30 bg-emerald-500/15 px-5 py-4 text-emerald-50">
                 {success}
               </div>
             )}
 
             <div className="grid gap-2">
-              <label htmlFor="title" className="text-sm font-semibold text-brand-dark">
+              <label htmlFor="title" className="text-sm font-semibold text-white">
                 Heading
               </label>
               <input
@@ -188,12 +191,12 @@ export default function AdminPage() {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="e.g. Community outreach in Nyabira"
-                className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-brand-dark outline-none focus:ring-4 focus:ring-brand-sunlight/25"
+                className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/60 outline-none focus:ring-4 focus:ring-brand-sunlight/25"
               />
             </div>
 
             <div className="grid gap-2">
-              <label htmlFor="caption" className="text-sm font-semibold text-brand-dark">
+              <label htmlFor="caption" className="text-sm font-semibold text-white">
                 Caption
               </label>
               <textarea
@@ -202,12 +205,12 @@ export default function AdminPage() {
                 onChange={(e) => setCaption(e.target.value)}
                 placeholder="Write a short caption (1–3 sentences)."
                 rows={4}
-                className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-brand-dark outline-none focus:ring-4 focus:ring-brand-sunlight/25"
+                className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/60 outline-none focus:ring-4 focus:ring-brand-sunlight/25"
               />
             </div>
 
             <div className="grid gap-2">
-              <label htmlFor="media" className="text-sm font-semibold text-brand-dark">
+              <label htmlFor="media" className="text-sm font-semibold text-white">
                 Photo or video
               </label>
               <input
@@ -215,9 +218,9 @@ export default function AdminPage() {
                 type="file"
                 accept="image/*,video/*"
                 onChange={(e) => setFile(e.target.files?.[0] ?? null)}
-                className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3"
+                className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white file:text-white file:bg-white/10 file:border-0 file:rounded-lg file:px-3 file:py-1.5"
               />
-              <p className="text-xs text-brand-dark/60">Accepted: images and videos. Bigger videos may take longer to upload.</p>
+              <p className="text-xs text-white/70">Accepted: images and videos. Bigger videos may take longer to upload.</p>
             </div>
 
             <button
@@ -231,16 +234,16 @@ export default function AdminPage() {
         </div>
 
         {posted && (
-          <div className="mt-8 rounded-[2rem] border border-slate-200 bg-white shadow-sm overflow-hidden">
-            <div className="p-6 border-b border-slate-200">
-              <h2 className="text-xl font-heading font-semibold text-brand-dark">Preview</h2>
-              <p className="text-brand-dark/70 mt-1">This is how it will appear to visitors.</p>
+          <div className="mt-8 rounded-[2rem] border border-white/10 bg-brand-dark/20 backdrop-blur shadow-sm shadow-brand-dark/20 overflow-hidden">
+            <div className="p-6 border-b border-white/10">
+              <h2 className="text-xl font-heading font-semibold text-white">Preview</h2>
+              <p className="text-white/80 mt-1">This is how it will appear to visitors.</p>
             </div>
             <div className="p-6">
-              <div className="text-sm font-semibold text-brand-green">{new Date(posted.createdAt).toLocaleString()}</div>
-              <div className="mt-2 text-2xl font-heading font-semibold text-brand-dark">{posted.title}</div>
-              <div className="mt-2 text-brand-dark/80">{posted.caption}</div>
-              <div className="mt-5 rounded-3xl overflow-hidden border border-slate-200 bg-slate-100">
+              <div className="text-sm font-semibold text-brand-sunlight">{new Date(posted.createdAt).toLocaleString()}</div>
+              <div className="mt-2 text-2xl font-heading font-semibold text-white">{posted.title}</div>
+              <div className="mt-2 text-white/80">{posted.caption}</div>
+              <div className="mt-5 rounded-3xl overflow-hidden border border-white/10 bg-white/10">
                 {posted.mediaType === "video" ? (
                   <video controls preload="metadata" className="w-full">
                     <source src={posted.mediaUrl} />
@@ -255,16 +258,16 @@ export default function AdminPage() {
           </div>
         )}
 
-        <div className="mt-10 rounded-[2rem] border border-slate-200 bg-white shadow-sm overflow-hidden">
-          <div className="p-6 sm:p-8 border-b border-slate-200 flex items-center justify-between gap-6">
+        <div className="mt-10 rounded-[2rem] border border-white/10 bg-brand-dark/20 backdrop-blur shadow-sm shadow-brand-dark/20 overflow-hidden">
+          <div className="p-6 sm:p-8 border-b border-white/10 flex items-center justify-between gap-6">
             <div>
-              <h2 className="text-xl sm:text-2xl font-heading font-semibold text-brand-dark">Manage posts</h2>
-              <p className="text-brand-dark/70 mt-1 text-sm">Edit headings/captions or delete posts.</p>
+              <h2 className="text-xl sm:text-2xl font-heading font-semibold text-white">Manage posts</h2>
+              <p className="text-white/80 mt-1 text-sm">Edit headings/captions or delete posts.</p>
             </div>
             <button
               type="button"
               onClick={() => refreshPosts()}
-              className="shrink-0 inline-flex items-center justify-center rounded-full border-2 border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-brand-green/30 hover:shadow-sm transition-all"
+              className="shrink-0 inline-flex items-center justify-center rounded-full border-2 border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/15 hover:border-white/30 transition-all"
             >
               Refresh
             </button>
@@ -272,29 +275,29 @@ export default function AdminPage() {
 
           <div className="p-6 sm:p-8">
             {loadingPosts ? (
-              <p className="text-brand-dark/70">Loading posts…</p>
+              <p className="text-white/80">Loading posts…</p>
             ) : posts.length ? (
               <div className="space-y-4">
                 {posts.map((p) => (
                   <div
                     key={p.id}
-                    className="rounded-3xl border border-slate-200 bg-slate-50 p-4 sm:p-5 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between"
+                    className="rounded-3xl border border-white/10 bg-white/10 p-4 sm:p-5 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-24 h-16 rounded-2xl overflow-hidden border border-slate-200 bg-white flex items-center justify-center">
+                      <div className="w-24 h-16 rounded-2xl overflow-hidden border border-white/10 bg-brand-dark/15 flex items-center justify-center">
                         {p.mediaType === "image" ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img src={p.mediaUrl} alt={p.title} className="w-full h-full object-cover" />
                         ) : (
-                          <span className="text-xs font-semibold text-slate-600">Video</span>
+                          <span className="text-xs font-semibold text-white/80">Video</span>
                         )}
                       </div>
                       <div>
-                        <div className="text-xs font-semibold uppercase tracking-widest text-brand-green">
+                        <div className="text-xs font-semibold uppercase tracking-widest text-brand-sunlight">
                           {new Date(p.createdAt).toLocaleString()}
                         </div>
-                        <div className="mt-1 font-heading font-semibold text-brand-dark">{p.title}</div>
-                        <div className="mt-1 text-sm text-brand-dark/70 line-clamp-2">{p.caption}</div>
+                        <div className="mt-1 font-heading font-semibold text-white">{p.title}</div>
+                        <div className="mt-1 text-sm text-white/80 line-clamp-2">{p.caption}</div>
                       </div>
                     </div>
 
@@ -302,7 +305,7 @@ export default function AdminPage() {
                       <button
                         type="button"
                         onClick={() => startEdit(p)}
-                        className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-white border-2 border-brand-green text-brand-dark text-sm font-semibold hover:bg-brand-green/10 transition-colors"
+                        className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-white/10 border-2 border-white/20 text-white text-sm font-semibold hover:bg-white/15 hover:border-white/30 transition-colors"
                       >
                         Edit
                       </button>
@@ -310,7 +313,7 @@ export default function AdminPage() {
                         type="button"
                         onClick={() => deletePost(p)}
                         disabled={deletingId === p.id}
-                        className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-white border-2 border-red-200 text-red-700 text-sm font-semibold hover:bg-red-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-white/10 border-2 border-red-200/40 text-red-50 text-sm font-semibold hover:bg-red-500/15 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         {deletingId === p.id ? "Deleting…" : "Delete"}
                       </button>
@@ -319,7 +322,7 @@ export default function AdminPage() {
                 ))}
               </div>
             ) : (
-              <p className="text-brand-dark/70">No posts yet.</p>
+              <p className="text-white/80">No posts yet.</p>
             )}
           </div>
         </div>
@@ -332,16 +335,16 @@ export default function AdminPage() {
           aria-modal="true"
           aria-label="Edit post"
         >
-          <div className="w-full max-w-2xl rounded-[2rem] border border-slate-200 bg-white shadow-xl overflow-hidden">
-            <div className="p-6 sm:p-8 border-b border-slate-200 flex items-start justify-between gap-6">
+          <div className="w-full max-w-2xl rounded-[2rem] border border-white/10 bg-brand-dark/25 backdrop-blur shadow-xl shadow-brand-dark/25 overflow-hidden">
+            <div className="p-6 sm:p-8 border-b border-white/10 flex items-start justify-between gap-6">
               <div>
-                <h3 className="text-xl sm:text-2xl font-heading font-semibold text-brand-dark">Edit post</h3>
-                <p className="text-sm text-brand-dark/70 mt-1">Update the heading and caption.</p>
+                <h3 className="text-xl sm:text-2xl font-heading font-semibold text-white">Edit post</h3>
+                <p className="text-sm text-white/80 mt-1">Update the heading and caption.</p>
               </div>
               <button
                 type="button"
                 onClick={cancelEdit}
-                className="inline-flex items-center justify-center rounded-full border-2 border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-brand-green/30 hover:shadow-sm transition-all"
+                className="inline-flex items-center justify-center rounded-full border-2 border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/15 hover:border-white/30 transition-all"
               >
                 Close
               </button>
@@ -349,18 +352,18 @@ export default function AdminPage() {
 
             <div className="p-6 sm:p-8 space-y-5">
               <div className="grid gap-2">
-                <label htmlFor="editTitle" className="text-sm font-semibold text-brand-dark">
+                <label htmlFor="editTitle" className="text-sm font-semibold text-white">
                   Heading
                 </label>
                 <input
                   id="editTitle"
                   value={editTitle}
                   onChange={(e) => setEditTitle(e.target.value)}
-                  className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-brand-dark outline-none focus:ring-4 focus:ring-brand-sunlight/25"
+                  className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none focus:ring-4 focus:ring-brand-sunlight/25"
                 />
               </div>
               <div className="grid gap-2">
-                <label htmlFor="editCaption" className="text-sm font-semibold text-brand-dark">
+                <label htmlFor="editCaption" className="text-sm font-semibold text-white">
                   Caption
                 </label>
                 <textarea
@@ -368,7 +371,7 @@ export default function AdminPage() {
                   value={editCaption}
                   onChange={(e) => setEditCaption(e.target.value)}
                   rows={4}
-                  className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-brand-dark outline-none focus:ring-4 focus:ring-brand-sunlight/25"
+                  className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none focus:ring-4 focus:ring-brand-sunlight/25"
                 />
               </div>
 
@@ -376,7 +379,7 @@ export default function AdminPage() {
                 <button
                   type="button"
                   onClick={cancelEdit}
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-white border-2 border-slate-200 text-slate-700 font-semibold hover:shadow-sm transition-all"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-white/10 border-2 border-white/20 text-white font-semibold hover:bg-white/15 transition-all"
                 >
                   Cancel
                 </button>

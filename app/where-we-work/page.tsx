@@ -46,17 +46,17 @@ export default function WhereWeWorkPage() {
         backgroundImageAlt="Community outreach programme"
       />
 
-      <PageSection className="section-padding bg-white">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             <div>
-              <span className="text-brand-green font-semibold tracking-widest uppercase text-xs mb-4 block">
+              <span className="text-white/85 font-semibold tracking-widest uppercase text-xs mb-4 block">
                 Geographic footprint
               </span>
-              <h2 className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-brand-dark mb-4">
+              <h2 className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-4">
                 Services that meet people where they are
               </h2>
-              <p className="text-brand-dark/80 text-lg leading-relaxed mb-8">
+              <p className="text-white/80 text-lg leading-relaxed mb-8">
                 We operate across Harare Metropolitan, Zvimba and Goromonzi—delivering clinical services, family support,
                 child protection and livelihoods programmes through a mix of facility-based care and outreach.
               </p>
@@ -65,7 +65,7 @@ export default function WhereWeWorkPage() {
                 {regions.map((r) => (
                   <span
                     key={r.name}
-                    className="inline-flex items-center px-4 py-2 rounded-full bg-brand-cream/60 border border-slate-200 text-sm font-medium text-brand-dark"
+                    className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm font-medium text-white"
                   >
                     {r.name}
                   </span>
@@ -78,15 +78,15 @@ export default function WhereWeWorkPage() {
                   { value: "Multi-ward", label: "Hard-to-reach outreach" },
                   { value: "Integrated", label: "Health + social support" },
                 ].map((s) => (
-                  <div key={s.label} className="rounded-2xl border border-slate-200 bg-white p-5">
-                    <div className="font-heading text-2xl font-semibold text-brand-dark">{s.value}</div>
-                    <div className="text-sm text-brand-dark/70 mt-1">{s.label}</div>
+                  <div key={s.label} className="rounded-2xl border border-white/10 bg-brand-dark/15 backdrop-blur p-5">
+                    <div className="font-heading text-2xl font-semibold text-white">{s.value}</div>
+                    <div className="text-sm text-white/75 mt-1">{s.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-slate-100 aspect-[16/10] sm:aspect-[4/3]">
+            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/10 aspect-[16/10] sm:aspect-[4/3]">
               <Image
                 src="/website/outreach-programme-feature.jpg"
                 alt="Community outreach programme"
@@ -109,14 +109,14 @@ export default function WhereWeWorkPage() {
         </div>
       </PageSection>
 
-      <PageSection className="section-padding bg-slate-50">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="flex items-end justify-between gap-6 mb-10">
             <div>
               <h2 className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-brand-dark">
                 Operational areas
               </h2>
-              <p className="text-brand-dark/70 mt-2 max-w-2xl">
+              <p className="text-white/80 mt-2 max-w-2xl">
                 Our programmes are tailored to each district’s needs while staying connected through an integrated model of care.
               </p>
             </div>
@@ -124,8 +124,8 @@ export default function WhereWeWorkPage() {
 
           <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {regions.map((region) => (
-              <div key={region.name} className="rounded-[2rem] border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                <div className="relative aspect-[16/10] bg-slate-100">
+              <div key={region.name} className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur overflow-hidden shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow">
+                <div className="relative aspect-[16/10] bg-white/10">
                   <Image
                     src={region.imageSrc}
                     alt={region.imageAlt}
@@ -141,16 +141,16 @@ export default function WhereWeWorkPage() {
                 </div>
 
                 <div className="p-6">
-                  <div className="text-xs font-semibold uppercase tracking-widest text-brand-green mb-3">Areas</div>
+                  <div className="text-xs font-semibold uppercase tracking-widest text-brand-sunlight mb-3">Areas</div>
                   <div className="flex flex-wrap gap-2 mb-5">
                     {region.areas.map((a) => (
-                      <span key={a} className="text-sm px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-brand-dark/80">
+                      <span key={a} className="text-sm px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white/85">
                         {a}
                       </span>
                     ))}
                   </div>
                   <div className="text-xs font-semibold uppercase tracking-widest text-brand-sunlight mb-3">Focus</div>
-                  <ul className="space-y-2 text-sm text-brand-dark/80">
+                  <ul className="space-y-2 text-sm text-white/80">
                     {region.highlights.map((h) => (
                       <li key={h} className="flex items-start gap-2">
                         <span className="mt-2 w-2 h-2 rounded-full bg-brand-sunlight flex-shrink-0" />
@@ -165,10 +165,10 @@ export default function WhereWeWorkPage() {
         </div>
       </PageSection>
 
-      <PageSection className="section-padding bg-white">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="grid lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-12 items-start">
-            <div className="rounded-[2.5rem] overflow-hidden border border-slate-200 bg-black">
+            <div className="rounded-[2.5rem] overflow-hidden border border-white/10 bg-black">
               <video
                 controls
                 preload="metadata"
@@ -178,20 +178,20 @@ export default function WhereWeWorkPage() {
                 <source src="/website/hiv-video.mp4" type="video/mp4" />
               </video>
             </div>
-            <div className="rounded-[2.5rem] border border-slate-200 bg-slate-50 p-6 sm:p-10">
-              <span className="text-brand-green font-semibold tracking-widest uppercase text-xs mb-4 block">
+            <div className="rounded-[2.5rem] border border-white/10 bg-brand-dark/20 backdrop-blur p-6 sm:p-10">
+              <span className="text-brand-sunlight font-semibold tracking-widest uppercase text-xs mb-4 block">
                 In the field
               </span>
-              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-brand-dark mb-4">
+              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white mb-4">
                 What outreach looks like
               </h2>
-              <p className="text-brand-dark/80 leading-relaxed mb-6">
+              <p className="text-white/80 leading-relaxed mb-6">
                 Outreach is where care becomes accessible—bringing HIV services, counselling, referrals and follow-up closer to
                 families and individuals in the communities we serve.
               </p>
-              <div className="rounded-2xl border border-slate-200 bg-white p-5">
-                <div className="text-sm font-semibold text-brand-dark mb-2">Why this matters</div>
-                <p className="text-sm text-brand-dark/70 leading-relaxed">
+              <div className="rounded-2xl border border-white/10 bg-white/10 p-5">
+                <div className="text-sm font-semibold text-white mb-2">Why this matters</div>
+                <p className="text-sm text-white/75 leading-relaxed">
                   It reduces barriers to treatment, strengthens trust, and helps ensure continuity of care—especially for people who
                   face cost, distance or stigma challenges.
                 </p>

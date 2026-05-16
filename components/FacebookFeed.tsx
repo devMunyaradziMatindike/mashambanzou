@@ -53,9 +53,9 @@ export function FacebookFeed() {
 
   if (loading) {
     return (
-      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-slate-50">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-brand-dark/10 backdrop-blur">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-brand-dark text-center mb-10">
+          <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white text-center mb-10">
             Latest from Facebook
           </h2>
           <div className="flex justify-center py-16">
@@ -68,12 +68,10 @@ export function FacebookFeed() {
 
   if (!data?.configured || data.posts.length === 0) {
     return (
-      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-slate-50">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-brand-dark/10 backdrop-blur">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-brand-dark mb-4">
-            Latest from Facebook
-          </h2>
-          <p className="text-brand-dark/80 mb-6">
+          <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">Latest from Facebook</h2>
+          <p className="text-white/80 mb-6">
             Follow Mashambanzou Care Trust on Facebook for updates, stories and news.
           </p>
           <a
@@ -89,8 +87,8 @@ export function FacebookFeed() {
             Follow us on Facebook
           </a>
           {!data?.configured && (
-            <p className="text-slate-500 text-sm mt-6">
-              Set <code className="bg-slate-200 px-1 rounded">FACEBOOK_ACCESS_TOKEN</code> in .env.local to show the latest posts here.
+            <p className="text-white/70 text-sm mt-6">
+              Set <code className="bg-white/10 px-1 rounded">FACEBOOK_ACCESS_TOKEN</code> in .env.local to show the latest posts here.
             </p>
           )}
         </div>
@@ -99,17 +97,15 @@ export function FacebookFeed() {
   }
 
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-6 bg-slate-50">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 bg-brand-dark/10 backdrop-blur">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-12">
-          <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-brand-dark">
-            Latest from Facebook
-          </h2>
+          <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white">Latest from Facebook</h2>
           <a
             href={FACEBOOK_PAGE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-brand-green font-medium hover:text-brand-sunlight transition-colors"
+            className="inline-flex items-center gap-2 text-white font-medium hover:text-brand-sunlight transition-colors"
           >
             View all on Facebook
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,9 +120,9 @@ export function FacebookFeed() {
               href={post.permalink_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-lg hover:border-brand-green/30 transition-all"
+              className="group block rounded-2xl overflow-hidden border border-white/10 bg-brand-dark/15 backdrop-blur shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 hover:border-white/20 transition-all"
             >
-              <div className="aspect-[16/10] sm:aspect-[4/3] bg-slate-100 relative overflow-hidden">
+              <div className="aspect-[16/10] sm:aspect-[4/3] bg-white/10 relative overflow-hidden">
                 {post.full_picture ? (
                   <img
                     src={post.full_picture}
@@ -134,7 +130,7 @@ export function FacebookFeed() {
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 ) : (
-                  <div className="absolute inset-0 flex items-center justify-center text-slate-400 text-4xl">
+                  <div className="absolute inset-0 flex items-center justify-center text-white/60 text-4xl">
                     📘
                   </div>
                 )}
@@ -142,12 +138,12 @@ export function FacebookFeed() {
               <div className="p-4">
                 <time
                   dateTime={post.created_time}
-                  className="text-xs font-medium text-slate-500 uppercase tracking-wide"
+                  className="text-xs font-medium text-white/70 uppercase tracking-wide"
                 >
                   {formatDate(post.created_time)}
                 </time>
                 {post.message && (
-                  <p className="mt-2 text-brand-dark/90 text-sm line-clamp-3">
+                  <p className="mt-2 text-white/85 text-sm line-clamp-3">
                     {truncate(post.message, 120)}
                   </p>
                 )}

@@ -19,22 +19,22 @@ export default function ContactPage() {
     <>
       <Hero title="Contact Us" subtitle="Get in touch for enquiries, support or partnership." />
 
-      <section className="py-10 sm:py-12 px-4 sm:px-6 bg-white border-b border-slate-100">
+      <section className="py-10 sm:py-12 px-4 sm:px-6 bg-brand-dark/10 backdrop-blur border-b border-white/10">
         <div className="max-w-7xl mx-auto">
-          <div className="rounded-2xl border-2 border-brand-green/20 bg-brand-cream/30 p-6 sm:p-8">
+          <div className="rounded-2xl border border-white/15 bg-brand-dark/15 backdrop-blur p-6 sm:p-8">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
               <div>
-                <h2 className="font-heading text-xl sm:text-2xl font-semibold text-brand-dark mb-2">
+                <h2 className="font-heading text-xl sm:text-2xl font-semibold text-white mb-2">
                   Get help fast
                 </h2>
-                <p className="text-brand-dark/80">
+                <p className="text-white/80">
                   Projects: 8am – 5pm (weekdays only) • Mashambanzou Care Unit: Opens everyday
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
                 <a
                   href="tel:+263711492343"
-                  className="inline-flex items-center px-5 py-3 rounded-full bg-white border-2 border-brand-green text-brand-dark font-medium hover:bg-brand-sunlight hover:border-brand-sunlight transition-colors"
+                  className="inline-flex items-center px-5 py-3 rounded-full bg-white/10 border-2 border-white/20 text-white font-medium hover:bg-white/15 hover:border-white/30 transition-colors"
                 >
                   Call Projects: +263 711 492 343
                 </a>
@@ -48,7 +48,7 @@ export default function ContactPage() {
                   href={MAPS_LINK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-5 py-3 rounded-full border-2 border-brand-sunlight text-brand-dark font-medium hover:bg-brand-sunlight transition-colors"
+                  className="inline-flex items-center px-5 py-3 rounded-full border-2 border-white/20 text-white font-medium hover:bg-white/15 hover:border-white/30 transition-colors"
                 >
                   Open in Google Maps
                 </Link>
@@ -58,29 +58,29 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <PageSection className="section-padding bg-white">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide max-w-5xl">
-          <p className="text-brand-dark/80 text-lg mb-12 text-center">
+          <p className="text-white/80 text-lg mb-12 text-center">
             For general enquiries, donation details, volunteer opportunities, partnership discussions or media
             requests, please use the contact details below.
           </p>
 
           <div className="grid md:grid-cols-2 gap-10 lg:gap-16 mb-16">
-            <div className="rounded-2xl border-2 border-brand-green/20 bg-brand-cream/30 p-8 sm:p-10">
-              <h2 className="font-heading text-xl font-semibold text-brand-dark mb-6">Contact information</h2>
+            <div className="rounded-2xl border border-white/15 bg-brand-dark/15 backdrop-blur p-8 sm:p-10">
+              <h2 className="font-heading text-xl font-semibold text-white mb-6">Contact information</h2>
               <dl className="space-y-5">
                 <div>
-                  <dt className="text-sm font-medium text-brand-dark/70 uppercase tracking-wide mb-1">Phone</dt>
-                  <dd className="text-brand-dark">
+                  <dt className="text-sm font-medium text-white/70 uppercase tracking-wide mb-1">Phone</dt>
+                  <dd className="text-white">
                     <div className="space-y-1">
                       <div>
-                        <span className="text-brand-dark/70 text-sm">Projects:</span>{" "}
+                        <span className="text-white/70 text-sm">Projects:</span>{" "}
                         <a href="tel:+263711492343" className="hover:text-brand-sunlight transition-colors">
                           +263 711 492 343
                         </a>
                       </div>
                       <div>
-                        <span className="text-brand-dark/70 text-sm">Care Unit:</span>{" "}
+                        <span className="text-white/70 text-sm">Care Unit:</span>{" "}
                         <a href="tel:+263777681186" className="hover:text-brand-sunlight transition-colors">
                           +263 777 681 186
                         </a>
@@ -89,31 +89,31 @@ export default function ContactPage() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-sm font-medium text-brand-dark/70 uppercase tracking-wide mb-1">Email</dt>
+                  <dt className="text-sm font-medium text-white/70 uppercase tracking-wide mb-1">Email</dt>
                   <dd>
                     <a
                       href="mailto:info@mashambanzou.co.zw"
-                      className="text-brand-dark hover:text-brand-sunlight transition-colors"
+                      className="text-white hover:text-brand-sunlight transition-colors"
                     >
                       info@mashambanzou.co.zw
                     </a>
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-sm font-medium text-brand-dark/70 uppercase tracking-wide mb-1">Address</dt>
-                  <dd className="text-brand-dark">{ADDRESS}</dd>
+                  <dt className="text-sm font-medium text-white/70 uppercase tracking-wide mb-1">Address</dt>
+                  <dd className="text-white">{ADDRESS}</dd>
                 </div>
                 <div>
-                  <dt className="text-sm font-medium text-brand-dark/70 uppercase tracking-wide mb-1">
+                  <dt className="text-sm font-medium text-white/70 uppercase tracking-wide mb-1">
                     Working hours
                   </dt>
-                  <dd className="text-brand-dark">
+                  <dd className="text-white">
                     <div className="space-y-1">
                       <div>
-                        <span className="text-brand-dark/70 text-sm">Projects:</span> 8am – 5pm (weekdays only)
+                        <span className="text-white/70 text-sm">Projects:</span> 8am – 5pm (weekdays only)
                       </div>
                       <div>
-                        <span className="text-brand-dark/70 text-sm">Mashambanzou Care Unit:</span> Opens everyday
+                        <span className="text-white/70 text-sm">Mashambanzou Care Unit:</span> Opens everyday
                       </div>
                     </div>
                   </dd>
@@ -121,7 +121,7 @@ export default function ContactPage() {
               </dl>
             </div>
 
-            <div className="rounded-2xl border-2 border-brand-green/20 overflow-hidden bg-slate-100 min-h-[280px] sm:min-h-[320px]">
+            <div className="rounded-2xl border border-white/15 overflow-hidden bg-white/10 min-h-[280px] sm:min-h-[320px]">
               <iframe
                 title="Mashambanzou Care Trust location map"
                 src={MAPS_EMBED_URL}
@@ -140,7 +140,7 @@ export default function ContactPage() {
               href={MAPS_LINK_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-brand-green font-medium hover:text-brand-sunlight transition-colors"
+              className="inline-flex items-center gap-2 text-white font-medium hover:text-brand-sunlight transition-colors"
             >
               Open in Google Maps
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { PageSection } from "@/components/PageSection";
 import type { Metadata } from "next";
+import type { LucideIcon } from "lucide-react";
+import { HandHeart, HeartHandshake, ShieldCheck, Users, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Our Story | Mashambanzou Care Trust",
@@ -10,12 +12,17 @@ export const metadata: Metadata = {
     "The story of Sister Noreen's founding in 1989 and the Kushamba Nzou narrative—washing the elephant—symbolising renewal and strength for AIDS-free, resilient communities.",
 };
 
-const values = [
-  { name: "Participation", description: "Communities at the centre of what we do", color: "brand-sunlight" },
-  { name: "Compassion", description: "Dignity and care in every interaction", color: "brand-green" },
-  { name: "Transparency and Accountability", description: "To beneficiaries, donors and partners", color: "brand-sunlight" },
-  { name: "Human Dignity", description: "Every person valued and respected", color: "brand-green" },
-  { name: "Empowerment", description: "Enabling people and communities to thrive", color: "brand-sunlight" },
+const values: { name: string; description: string; color: "brand-sunlight" | "brand-green"; icon: LucideIcon }[] = [
+  { name: "Participation", description: "Communities at the centre of what we do", color: "brand-sunlight", icon: Users },
+  { name: "Compassion", description: "Dignity and care in every interaction", color: "brand-green", icon: HeartHandshake },
+  {
+    name: "Transparency and Accountability",
+    description: "To beneficiaries, donors and partners",
+    color: "brand-sunlight",
+    icon: ShieldCheck,
+  },
+  { name: "Human Dignity", description: "Every person valued and respected", color: "brand-green", icon: HandHeart },
+  { name: "Empowerment", description: "Enabling people and communities to thrive", color: "brand-sunlight", icon: Zap },
 ];
 
 const highlights = [
@@ -44,21 +51,33 @@ const highlights = [
 const timeline = [
   {
     year: "1989",
-    title: "Founded in Harare",
+    title: "Founded Mashambanzou Care Unit in Waterfalls, Harare",
     description:
-      "Mashambanzou Care Trust was established through the vision of Sr. Noreen and dedicated volunteers.",
+      "Established in 1989 to respond to the HIV pandemic and provide compassionate care to marginalised communities.",
   },
   {
-    year: "1990s–2000s",
-    title: "Expanded from outreach to integrated support",
+    year: "Community Growth",
+    title: "Expanded from the Care Unit to outreach clinics for integrated support",
     description:
-      "From direct care and counselling to broader family-centred models supporting communities.",
+      "Extended services beyond the Care Unit to reach communities with comprehensive, integrated care and support.",
   },
   {
-    year: "Today",
-    title: "A catalyst for change",
+    year: "Community Strengthening",
+    title: "Engaged community caregivers",
     description:
-      "A multifaceted organisation advancing inclusive, resilient communities through comprehensive HIV services and protection work.",
+      "Community caregivers mobilise participants and support outreach clinics and community activities.",
+  },
+  {
+    year: "Children",
+    title: "Established Nenyere Early Childhood Development Centre (NECDS)",
+    description:
+      "Provides orphans and vulnerable children with at least two hot meals a day and basic education so parents/guardians can work for livelihoods.",
+  },
+  {
+    year: "Child Protection",
+    title: "Established houses of safety for girls and boys in Mbare",
+    description:
+      "Created safe spaces for children in need, strengthening protection and safeguarding within the community.",
   },
 ] as const;
 
@@ -68,42 +87,90 @@ export default function OurIdentityPage() {
       <Hero
         title="Our Story"
         gradientText="Our identity."
-        subtitle="The legacy of Kushamba Nzou—washing the elephant—and our journey toward AIDS-free, resilient and empowered communities."
         badge="Since 1989"
+        sidePanel={{
+          eyebrow: "About MCT",
+          title: "Faith-based care, rooted in community",
+          body:
+            "Mashambanzou Care Trust (MCT) is a faith based, registered Private Voluntary Organisation (PVO 9/90), based in Harare. It was founded in 1989 by Sister Noreen Nolan of the Little Company of Mary (LCM) Sisters of the Roman Catholic Church, in response to the HIV pandemic amongst poor communities. Work in communities is premised on dissemination of accurate information on HIV and AIDS, offering care and support to people living with HIV (PLWHIV) and raising awareness on prevention of the further spread of HIV. Home Based Care (HBC), Palliative Care and HIV prevention awareness campaigns are among some of the interventions carried out. Mashambanzou has evolved over the years to focus not only on PLWHIV but also on the family and society as a means of mitigating the effects of the disease. Innovatively, MCT established a Family Centred Support (FCS) model which aims to reduce vulnerabilities associated with HIV and AIDS.",
+        }}
       />
 
-      {/* Overview */}
-      <PageSection className="section-padding bg-white">
-        <div className="container-narrow">
-          <p className="text-brand-dark/90 text-lg leading-relaxed">
-            Mashambanzou Care Trust (MCT) is a faith and welfare based, non-governmental organisation that focuses
-            mainly on the dissemination of accurate information, care, support for people living with HIV (PLWHIV) and
-            prevention of the spread of HIV. MCT recognised the effects of the disease and innovatively created a Family
-            Centred Support model.
-          </p>
+      {/* Vision & Mission – two callout cards */}
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
+        <div className="container-wide">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="rounded-2xl border border-white/15 bg-brand-dark/20 backdrop-blur p-8 sm:p-10">
+              <div className="w-12 h-12 rounded-xl bg-brand-sunlight/20 flex items-center justify-center text-2xl mb-6">
+                ☀️
+              </div>
+              <h2 className="font-heading text-xl sm:text-2xl font-semibold text-white mb-4">Our Vision</h2>
+              <p className="text-lg font-medium text-white">
+                AIDS free, resilient and empowered communities.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/15 bg-brand-dark/20 backdrop-blur p-8 sm:p-10">
+              <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center text-2xl mb-6">
+                🌱
+              </div>
+              <h2 className="font-heading text-xl sm:text-2xl font-semibold text-white mb-4">Our Mission</h2>
+              <p className="text-white/85">
+                To realise healthy, socially inclusive communities, free of AIDS through provision of comprehensive HIV
+                services, Orphans Vulnerable Children support services, promotion of Human Rights and community
+                strengthening.
+              </p>
+            </div>
+          </div>
+        </div>
+      </PageSection>
+
+      {/* Our Values – grid of cards */}
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
+        <div className="container-wide">
+          <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white text-center mb-12">Our Values</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {values.map((value) => (
+              <div
+                key={value.name}
+                className="rounded-2xl bg-brand-dark/15 backdrop-blur p-6 sm:p-8 border border-white/10 shadow-sm shadow-brand-dark/15 hover:shadow-md hover:shadow-brand-dark/25 hover:border-white/20 transition-all"
+              >
+                <div
+                  className={`w-10 h-10 rounded-full mb-4 flex items-center justify-center ${
+                    value.color === "brand-sunlight" ? "bg-brand-sunlight/20" : "bg-brand-green/20"
+                  }`}
+                  aria-hidden
+                >
+                  <value.icon
+                    className={value.color === "brand-sunlight" ? "w-5 h-5 text-white" : "w-5 h-5 text-white"}
+                  />
+                </div>
+                <h3 className="font-heading text-lg font-semibold text-white">{value.name}</h3>
+              </div>
+            ))}
+          </div>
         </div>
       </PageSection>
 
       {/* At a glance */}
-      <PageSection className="section-padding bg-slate-50">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-10">
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-brand-dark mb-4">At a glance</h2>
-            <p className="text-brand-dark/80 text-lg leading-relaxed">
-              The essentials partners and communities often want to know first.
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">At a glance</h2>
+            <p className="text-white/80 text-lg leading-relaxed">
+              Key facts partners and communities often want to know first.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {highlights.map((item) => (
               <div
                 key={item.label}
-                className="rounded-2xl bg-white p-6 sm:p-7 border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-green/20 transition-all"
+                className="rounded-2xl bg-brand-dark/15 backdrop-blur p-6 sm:p-7 border border-white/10 shadow-sm shadow-brand-dark/15 hover:shadow-md hover:shadow-brand-dark/25 hover:border-white/20 transition-all"
               >
-                <div className="text-xs font-semibold uppercase tracking-widest text-slate-500">{item.label}</div>
-                <div className="mt-2 font-heading text-xl sm:text-2xl font-semibold text-brand-dark">
+                <div className="text-xs font-semibold uppercase tracking-widest text-white/70">{item.label}</div>
+                <div className="mt-2 font-heading text-xl sm:text-2xl font-semibold text-white">
                   {item.value}
                 </div>
-                <p className="mt-3 text-brand-dark/75 text-sm sm:text-base leading-relaxed">{item.description}</p>
+                <p className="mt-3 text-white/75 text-sm sm:text-base leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -111,9 +178,9 @@ export default function OurIdentityPage() {
       </PageSection>
 
       {/* Kushamba Nzou – name and symbolism */}
-      <PageSection className="section-padding bg-brand-cream/50">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-narrow">
-          <div className="rounded-2xl border-2 border-brand-green/30 bg-white p-8 sm:p-10 shadow-sm">
+          <div className="rounded-2xl border border-white/10 bg-brand-dark/20 backdrop-blur p-8 sm:p-10 shadow-sm shadow-brand-dark/20">
             <div className="flex flex-col sm:flex-row gap-8 items-start">
               <div className="flex-shrink-0">
                 <Image
@@ -125,20 +192,18 @@ export default function OurIdentityPage() {
                 />
               </div>
               <div>
-                <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-brand-dark mb-4">
-                  Kushamba Nzou
-                </h2>
-                <p className="text-brand-dark/90 leading-relaxed">
+                <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white mb-4">Kushamba Nzou</h2>
+                <p className="text-white/85 leading-relaxed">
                   The name Mashambanzou comes from a fusion of two Shona words &ldquo;kushamba&rdquo; (to wash) and
                   &ldquo;nzou&rdquo; (elephant). Together they form a powerful idiom symbolising the dawn of a new day,
                   inspired by the image of elephants going down to the river to wash at first light, a daily act of
                   renewal, strength and cleansing. This symbolism reflects the spirit of Mashambanzou Care Trust (MCT), a
                   beacon of hope and new beginnings for those living with HIV and AIDS.
                 </p>
-                <div className="mt-6 rounded-2xl border border-brand-sunlight/40 bg-brand-sunlight/10 p-5 sm:p-6">
-                  <p className="text-brand-dark/90 leading-relaxed">
-                    <span className="font-semibold text-brand-dark">A daily act of renewal</span> — strength, cleansing
-                    and a new beginning at first light.
+                <div className="mt-6 rounded-2xl border border-white/10 bg-white/10 p-5 sm:p-6">
+                  <p className="text-white/85 leading-relaxed">
+                    <span className="font-semibold text-white">A daily act of renewal</span> — strength, cleansing and a
+                    new beginning at first light.
                   </p>
                 </div>
               </div>
@@ -147,16 +212,16 @@ export default function OurIdentityPage() {
         </div>
       </PageSection>
 
-      {/* Our founding – Sr. Noreen and 1989 */}
-      <PageSection className="section-padding bg-white">
+      {/* Our founder – Sr. Noreen and 1989 */}
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
-          <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-brand-dark text-center mb-12">
-            Our founding
+          <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white text-center mb-12">
+            Our founder
           </h2>
           <div className="grid md:grid-cols-2 gap-10 items-start">
-            <div className="rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 aspect-[3/4] max-w-md mx-auto md:mx-0 relative">
+            <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/10 aspect-[3/4] max-w-md mx-auto md:mx-0 relative">
               <Image
-                src="/founder.jpg"
+                src="/founder-sr-noreen.png"
                 alt="Sr. Noreen (Founder of Mashambanzou Care Trust)"
                 fill
                 className="object-cover"
@@ -164,7 +229,7 @@ export default function OurIdentityPage() {
                 priority={false}
               />
             </div>
-            <div className="space-y-6 text-brand-dark/90">
+            <div className="space-y-6 text-white/85">
               <p className="leading-relaxed">
                 Through the Vision of Sr. Noreen and the cooperation of a group of dedicated Volunteers, Mashambanzou
                 Care Trust was founded in 1989, in Harare. Sr. Noreen and her co-workers were touched by the plight of
@@ -179,103 +244,30 @@ export default function OurIdentityPage() {
       </PageSection>
 
       {/* Timeline */}
-      <PageSection className="section-padding bg-white">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-brand-dark mb-4">Our journey</h2>
-            <p className="text-brand-dark/80 text-lg leading-relaxed">
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">Our journey</h2>
+            <p className="text-white/80 text-lg leading-relaxed">
               Key milestones that shaped Mashambanzou Care Trust.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <ol className="relative border-l border-slate-200 pl-6 space-y-10">
+            <ol className="relative border-l border-white/20 pl-6 space-y-10">
               {timeline.map((item) => (
                 <li key={item.year} className="relative">
-                  <span className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-sunlight border-4 border-white shadow-sm" />
-                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-7">
+                  <span className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-sunlight border-4 border-brand-green shadow-sm" />
+                  <div className="rounded-2xl border border-white/10 bg-brand-dark/15 backdrop-blur p-6 sm:p-7">
                     <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-                      <h3 className="font-heading text-xl font-semibold text-brand-dark">{item.title}</h3>
-                      <span className="text-sm font-semibold text-slate-500">{item.year}</span>
+                      <h3 className="font-heading text-xl font-semibold text-white">{item.title}</h3>
+                      <span className="text-sm font-semibold text-white/70">{item.year}</span>
                     </div>
-                    <p className="mt-3 text-brand-dark/80 leading-relaxed">{item.description}</p>
+                    <p className="mt-3 text-white/80 leading-relaxed">{item.description}</p>
                   </div>
                 </li>
               ))}
             </ol>
-          </div>
-        </div>
-      </PageSection>
-
-      {/* From outreach to catalyst for change */}
-      <PageSection className="section-padding bg-slate-50">
-        <div className="container-narrow space-y-6 text-brand-dark/90">
-          <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-brand-dark">
-            From outreach to catalyst for change
-          </h2>
-          <p className="leading-relaxed">
-            What began as a humble outreach to provide emotional and physical support has grown into a dynamic,
-            multifaceted organisation that continues to walk alongside the most vulnerable. From helping individuals live
-            meaningfully to supporting families and communities in healing and resilience, MCT remains rooted in the
-            same values that inspired its founding.
-          </p>
-          <p className="leading-relaxed">
-            Today, Mashambanzou Care Trust stands not only as a care provider but as a catalyst for change—empowering
-            lives, restoring dignity and championing the rights of those too often left behind.
-          </p>
-        </div>
-      </PageSection>
-
-      {/* Vision & Mission – two callout cards */}
-      <PageSection className="section-padding bg-white">
-        <div className="container-wide">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-2xl border-2 border-brand-sunlight/40 bg-brand-sunlight/5 p-8 sm:p-10">
-              <div className="w-12 h-12 rounded-xl bg-brand-sunlight/20 flex items-center justify-center text-2xl mb-6">
-                ☀️
-              </div>
-              <h2 className="font-heading text-xl sm:text-2xl font-semibold text-brand-dark mb-4">Our Vision</h2>
-              <p className="text-lg font-medium text-brand-dark">
-                AIDS free, resilient and empowered communities.
-              </p>
-            </div>
-            <div className="rounded-2xl border-2 border-brand-green/40 bg-brand-green/5 p-8 sm:p-10">
-              <div className="w-12 h-12 rounded-xl bg-brand-green/20 flex items-center justify-center text-2xl mb-6">
-                🌱
-              </div>
-              <h2 className="font-heading text-xl sm:text-2xl font-semibold text-brand-dark mb-4">Our Mission</h2>
-              <p className="text-brand-dark/90">
-                To realise healthy, socially inclusive communities, free of AIDS through provision of comprehensive HIV
-                services, Orphans Vulnerable Children support services, promotion of Human Rights and community
-                strengthening.
-              </p>
-            </div>
-          </div>
-        </div>
-      </PageSection>
-
-      {/* Our Values – grid of cards */}
-      <PageSection className="section-padding bg-slate-50">
-        <div className="container-wide">
-          <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-brand-dark text-center mb-12">
-            Our Values
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {values.map((value) => (
-              <div
-                key={value.name}
-                className="rounded-2xl bg-white p-6 sm:p-8 border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-green/20 transition-all"
-              >
-                <div
-                  className={`w-10 h-10 rounded-full mb-4 ${
-                    value.color === "brand-sunlight" ? "bg-brand-sunlight/30" : "bg-brand-green/30"
-                  }`}
-                  aria-hidden
-                />
-                <h3 className="font-heading text-lg font-semibold text-brand-dark mb-2">{value.name}</h3>
-                <p className="text-brand-dark/80 text-sm sm:text-base">{value.description}</p>
-              </div>
-            ))}
           </div>
         </div>
       </PageSection>
@@ -288,41 +280,15 @@ export default function OurIdentityPage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
             <div className="rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-8 shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-brand-cream flex items-center justify-center text-2xl" aria-hidden>
-                  📍
-                </div>
-                <div>
-                  <h3 className="font-heading text-xl font-semibold text-brand-dark">Harare Metropolitan</h3>
-                  <p className="mt-2 text-brand-dark/80 leading-relaxed">
-                    Tafara, Mabvuku, Glen Norah, Highfield, Hopley, Mbare, Dzivarasekwa Main and Dzivarasekwa Extension.
-                  </p>
-                </div>
-              </div>
+              <h3 className="font-heading text-xl font-semibold text-brand-dark">Harare Metropolitan</h3>
             </div>
 
             <div className="rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-8 shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-brand-cream flex items-center justify-center text-2xl" aria-hidden>
-                  🌿
-                </div>
-                <div>
-                  <h3 className="font-heading text-xl font-semibold text-brand-dark">Zvimba Rural District</h3>
-                  <p className="mt-2 text-brand-dark/80 leading-relaxed">Wards 24, 25, 26 and 35.</p>
-                </div>
-              </div>
+              <h3 className="font-heading text-xl font-semibold text-brand-dark">Zvimba Rural District</h3>
             </div>
 
             <div className="rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-8 shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-brand-cream flex items-center justify-center text-2xl" aria-hidden>
-                  🧭
-                </div>
-                <div>
-                  <h3 className="font-heading text-xl font-semibold text-brand-dark">Goromonzi Rural District</h3>
-                  <p className="mt-2 text-brand-dark/80 leading-relaxed">Caledonia.</p>
-                </div>
-              </div>
+              <h3 className="font-heading text-xl font-semibold text-brand-dark">Goromonzi Rural District</h3>
             </div>
           </div>
 

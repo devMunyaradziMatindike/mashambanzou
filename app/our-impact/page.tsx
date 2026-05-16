@@ -14,29 +14,48 @@ function ImpactSection({
   title,
   imageSrc,
   imageAlt,
+  images,
   children,
 }: {
   title: string;
   imageSrc: string;
   imageAlt: string;
+  images?: readonly { src: string; alt: string }[];
   children: React.ReactNode;
 }) {
+  const list = Array.isArray(images) && images.length ? images : [{ src: imageSrc, alt: imageAlt }];
   return (
     <div className="grid md:grid-cols-[320px_1fr] gap-8 md:gap-12 items-start">
-      <div className="rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 aspect-[16/10] sm:aspect-[4/3] max-w-[320px] mx-auto md:mx-0 shrink-0 relative">
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          fill
-          sizes="(max-width: 768px) 100vw, 320px"
-          className="object-cover"
-        />
+      <div className="max-w-[320px] mx-auto md:mx-0 shrink-0 w-full">
+        {list.length > 1 ? (
+          <div className="grid grid-cols-2 gap-3">
+            {list.slice(0, 3).map((img, idx) => (
+              <div
+                key={img.src}
+                className={`relative overflow-hidden rounded-2xl border border-white/15 bg-white/10 ${
+                  idx === 0 ? "col-span-2 aspect-[16/9]" : "aspect-square"
+                }`}
+              >
+                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 320px" className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/35 via-brand-dark/5 to-transparent" />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-2xl overflow-hidden border border-white/15 bg-white/10 aspect-[16/10] sm:aspect-[4/3] relative">
+            <Image
+              src={list[0]?.src ?? imageSrc}
+              alt={list[0]?.alt ?? imageAlt}
+              fill
+              sizes="(max-width: 768px) 100vw, 320px"
+              className="object-cover"
+            />
+          </div>
+        )}
       </div>
       <div>
-        <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-brand-dark mb-4">
-          {title}
-        </h2>
-        <div className="text-brand-dark/90 leading-relaxed space-y-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:mt-1">
+        <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white mb-4">{title}</h2>
+        <div className="text-white/85 leading-relaxed space-y-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:mt-1">
           {children}
         </div>
       </div>
@@ -52,12 +71,20 @@ export default function OurImpactPage() {
         subtitle="From the 30-bed MCU to community outreach—we deliver integrated care across Harare Metropolitan, Zvimba and Goromonzi."
       />
 
-      <PageSection className="section-padding bg-white">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide space-y-16">
           <ImpactSection
             title="Mashambanzou Care Unit (MCU)"
             imageSrc="/website/img-4136.jpg"
             imageAlt="Clinical care at Mashambanzou Care Unit"
+            images={[
+              {
+                src: "/review-pics/Mashambanzou Care Trust (blur faces.jpg",
+                alt: "Mashambanzou Care Trust care and support",
+              },
+              { src: "/review-pics/mashambanzou care unit.jpg", alt: "Mashambanzou Care Unit exterior" },
+              { src: "/review-pics/Mashambanzou Care Unit female ward..jpg", alt: "Mashambanzou Care Unit ward" },
+            ]}
           >
             <p>
               MCU is a 30 bedded unit caring for all patients from marginalised communities who are living with HIV. The
@@ -70,7 +97,7 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="HIV Testing and Counselling Services"
-            imageSrc="/website/dsc05294.jpg"
+            imageSrc="/review-pics/hiv testing.jpg"
             imageAlt="HIV testing and counselling support"
           >
             <p>
@@ -83,8 +110,8 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="VIAC Services"
-            imageSrc="/website/img-6376.jpg"
-            imageAlt="Women’s health services and screening support"
+            imageSrc="/review-pics/Recording of  VIAC screening results from Camera.jpg"
+            imageAlt="VIAC screening results being recorded"
           >
             <p>
               Mashambanzou Care Trust is committed to providing comprehensive and integrated healthcare services to
@@ -102,7 +129,7 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="Outreach Clinics for Opportunistic Infections (OIs) Treatments"
-            imageSrc="/website/outreach-programme-1.jpg"
+            imageSrc="/review-pics/outreach.png"
             imageAlt="Outreach clinic providing community health services"
           >
             <p>
@@ -115,7 +142,7 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="Family Centred Support (FCS)"
-            imageSrc="/website/outreach-programme-3.jpg"
+            imageSrc="/review-pics/putting children first.jpg"
             imageAlt="Family centred support in the community"
           >
             <p>
@@ -143,7 +170,7 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="OVC Support"
-            imageSrc="/website/child-knitting.jpg"
+            imageSrc="/review-pics/ovc support.jpg"
             imageAlt="Support for orphans and vulnerable children"
           >
             <p>
@@ -189,8 +216,8 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="Advocacy"
-            imageSrc="/website/world-aids-day.jpg"
-            imageAlt="Advocacy and awareness event"
+            imageSrc="/review-pics/advocacy.jpg"
+            imageAlt="Community advocacy event"
           >
             <p>
               Mashambanzou Care Trust has been at the forefront of advocacy for HIV and AIDS awareness and social
@@ -219,8 +246,8 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="Putting Children First"
-            imageSrc="/website/oak-blind-man-care.webp"
-            imageAlt="Community support and care services"
+            imageSrc="/review-pics/Putting Children First ( blur faces) copy.jpg"
+            imageAlt="Putting Children First programme participants"
           >
             <p>
               Putting Children First was a Caritas Australia Fund CAFOD funded project that was implemented by MCT in the
@@ -235,6 +262,13 @@ export default function OurImpactPage() {
             title="Care to Share"
             imageSrc="/website/worker-washing-clothes.jpg"
             imageAlt="Skills training and practical work supporting livelihoods"
+            images={[
+              {
+                src: "/review-pics/Care to Share beneficiary during graduation.jpg",
+                alt: "Care to Share beneficiary during graduation",
+              },
+              { src: "/review-pics/caretoshare.jpg", alt: "Care to Share vocational training in action" },
+            ]}
           >
             <p>
               Mashambanzou Care Trust, in partnership with Young Africa International, is implementing the Care to
@@ -250,8 +284,8 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="Child Protection"
-            imageSrc="/website/outreach-programme-0.jpg"
-            imageAlt="Community child protection activities"
+            imageSrc="/review-pics/child protection.jpg"
+            imageAlt="Child protection programme support"
           >
             <p>
               Mashambanzou Care Trust is actively promoting child protection and safeguarding of children&apos;s rights
@@ -279,9 +313,9 @@ export default function OurImpactPage() {
         </div>
       </PageSection>
 
-      <PageSection className="section-padding bg-slate-50">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-narrow text-center">
-          <p className="text-brand-dark/80">
+          <p className="text-white/80">
             See also our{" "}
             <Link href="/where-we-work" className="text-brand-sunlight font-medium hover:underline">
               geographic footprint

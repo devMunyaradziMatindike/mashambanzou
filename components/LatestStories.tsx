@@ -47,15 +47,15 @@ export function LatestStories({ limit }: { limit?: number }) {
   }, []);
 
   if (loading) {
-    return <p className="text-brand-dark/70">Loading latest stories…</p>;
+    return <p className="text-white/80">Loading latest stories…</p>;
   }
 
   if (error) {
-    return <p className="text-red-600">Couldn’t load stories. {error}</p>;
+    return <p className="text-white/80">Stories will appear here soon.</p>;
   }
 
   if (!shown.length) {
-    return <p className="text-brand-dark/70">No stories posted yet.</p>;
+    return <p className="text-white/80">No stories posted yet.</p>;
   }
 
   return (
@@ -63,9 +63,9 @@ export function LatestStories({ limit }: { limit?: number }) {
       {shown.map((post) => (
         <article
           key={post.id}
-          className="rounded-[2rem] border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+          className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur overflow-hidden shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow"
         >
-          <div className="relative aspect-[16/10] bg-slate-100">
+          <div className="relative aspect-[16/10] bg-white/10">
             {post.mediaType === "image" ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={post.mediaUrl} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
@@ -77,11 +77,11 @@ export function LatestStories({ limit }: { limit?: number }) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-black/0 pointer-events-none" />
           </div>
           <div className="p-6">
-            <div className="text-xs font-semibold uppercase tracking-widest text-brand-green mb-2">
+            <div className="text-xs font-semibold uppercase tracking-widest text-white/80 mb-2">
               {formatDate(post.createdAt)}
             </div>
-            <h3 className="font-heading text-xl font-semibold text-brand-dark mb-2">{post.title}</h3>
-            <p className="text-brand-dark/80 leading-relaxed">{post.caption}</p>
+            <h3 className="font-heading text-xl font-semibold text-white mb-2">{post.title}</h3>
+            <p className="text-white/80 leading-relaxed">{post.caption}</p>
           </div>
         </article>
       ))}

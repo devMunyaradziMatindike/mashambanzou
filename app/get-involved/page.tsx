@@ -29,19 +29,19 @@ export default function GetInvolvedPage() {
         title="Get Involved"
         subtitle="Donate, volunteer, partner or host an event—your support helps realise AIDS-free, resilient and empowered communities."
       />
-      <PageSection className="section-padding">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="grid md:grid-cols-2 gap-6">
           {actions.map((action) => (
             <Link
               key={action.href}
               href={action.href}
-              className="block p-7 sm:p-8 rounded-[2rem] border border-slate-200 bg-white shadow-sm hover:shadow-lg hover:shadow-slate-200/40 hover:border-brand-warm/30 transition-all"
+              className="block p-7 sm:p-8 rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 hover:border-white/20 transition-all"
             >
-              <h2 className="font-heading text-xl font-semibold text-brand-dark hover:text-brand-warm transition-colors">
+              <h2 className="font-heading text-xl font-semibold text-white hover:text-brand-warm transition-colors">
                 {action.title}
               </h2>
-              <p className="mt-2 text-brand-dark/80">{action.summary}</p>
+              <p className="mt-2 text-white/80">{action.summary}</p>
               <span className="mt-3 inline-flex items-center text-brand-warm font-medium">
                 Learn more
                 <span className="ml-1">→</span>

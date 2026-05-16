@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={outfit.variable}>
-      <body className="min-h-screen flex flex-col font-body text-slate-900 antialiased selection:bg-brand-sunlight/30 selection:text-brand-dark">
+      <body className="min-h-screen flex flex-col font-body antialiased selection:bg-brand-sunlight/40 selection:text-white">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

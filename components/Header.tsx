@@ -7,6 +7,17 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { mainNav } from "@/lib/nav";
 
+type NavChild = {
+  label: string;
+  href: string;
+  imageSrc?: string;
+  imageAlt?: string;
+};
+
+function hasImages(children: readonly NavChild[]) {
+  return children.some((c) => Boolean(c.imageSrc));
+}
+
 export function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -22,8 +33,8 @@ export function Header() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 py-4 sm:py-6 transition-all duration-300">
       <div
-        className={`max-w-7xl mx-auto rounded-full px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center border border-slate-100 transition-all duration-300 ${
-          scrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-white/80 backdrop-blur-md"
+        className={`max-w-7xl mx-auto rounded-full px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center border border-brand-dark/10 transition-all duration-300 ${
+          scrolled ? "bg-white/85 backdrop-blur-md shadow-lg shadow-brand-dark/10" : "bg-white/70 backdrop-blur-md"
         }`}
       >
         <Link
@@ -39,11 +50,11 @@ export function Header() {
           />
           <span className="hidden sm:block leading-tight">
             <span className="block">Mashambanzou</span>
-            <span className="block text-sm font-medium text-brand-dark/80">Care Trust</span>
+            <span className="block text-sm font-medium text-brand-dark/70">Care Trust</span>
           </span>
           <span className="sm:hidden block leading-tight text-base">
             <span className="block">Mashambanzou</span>
-            <span className="block text-xs font-medium text-brand-dark/80">Care Trust</span>
+            <span className="block text-xs font-medium text-brand-dark/70">Care Trust</span>
           </span>
         </Link>
 
@@ -58,7 +69,7 @@ export function Header() {
               {"children" in item && item.children ? (
                 <>
                   <button
-                    className="text-sm font-medium text-slate-700 hover:text-brand-sunlight transition-colors"
+                    className="text-sm font-medium text-brand-dark hover:text-brand-green transition-colors"
                     onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
                   >
                     {item.label}
@@ -70,19 +81,58 @@ export function Header() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -4 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute top-full left-0 mt-2 w-56 py-2 bg-white rounded-2xl shadow-xl border border-slate-100"
+                        className={`absolute top-full left-0 mt-2 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl shadow-brand-dark/15 border border-brand-dark/10 overflow-hidden ${
+                          hasImages(item.children as unknown as readonly NavChild[]) ? "w-[34rem]" : "w-56 py-2"
+                        }`}
                       >
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            className={`block px-4 py-2.5 text-sm hover:bg-slate-50 rounded-lg mx-1 ${
-                              pathname === child.href ? "text-brand-sunlight font-medium" : "text-slate-700"
-                            }`}
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
+                        {hasImages(item.children as unknown as readonly NavChild[]) ? (
+                          <div className="p-3 grid grid-cols-2 gap-3">
+                            {(item.children as unknown as readonly NavChild[]).map((child) => (
+                              <Link
+                                key={child.href}
+                                href={child.href}
+                                className={`group rounded-2xl border border-brand-dark/10 bg-white hover:bg-brand-cream transition-colors overflow-hidden ${
+                                  pathname === child.href ? "ring-2 ring-brand-sunlight/40" : ""
+                                }`}
+                              >
+                                <div className="relative h-24 bg-white/10">
+                                  {child.imageSrc ? (
+                                    <Image
+                                      src={child.imageSrc}
+                                      alt={child.imageAlt ?? child.label}
+                                      fill
+                                      sizes="(max-width: 1280px) 240px, 280px"
+                                      className="object-cover"
+                                    />
+                                  ) : null}
+                                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/25 via-brand-dark/5 to-transparent" />
+                                </div>
+                                <div className="px-4 py-3">
+                                  <div
+                                    className={`text-sm font-semibold leading-tight ${
+                                      pathname === child.href ? "text-brand-green" : "text-brand-dark"
+                                    }`}
+                                  >
+                                    {child.label}
+                                  </div>
+                                  <div className="mt-1 text-xs text-brand-dark/60 group-hover:text-brand-dark/80">Open</div>
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        ) : (
+                          (item.children as unknown as readonly NavChild[]).map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className={`block px-4 py-2.5 text-sm hover:bg-brand-cream rounded-lg mx-1 ${
+                                pathname === child.href ? "text-brand-green font-medium" : "text-brand-dark"
+                              }`}
+                            >
+                              {child.label}
+                            </Link>
+                          ))
+                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -91,7 +141,7 @@ export function Header() {
                 <Link
                   href={item.href}
                   className={`text-sm font-medium transition-colors ${
-                    pathname === item.href ? "text-brand-sunlight" : "text-slate-700 hover:text-brand-sunlight"
+                    pathname === item.href ? "text-brand-green" : "text-brand-dark hover:text-brand-green"
                   }`}
                 >
                   {item.label}
@@ -110,16 +160,16 @@ export function Header() {
             <div className="absolute inset-0 bg-brand-sunlight transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out" />
           </Link>
           <Link
-            href="/get-involved"
-            className="px-6 py-2.5 bg-white border-2 border-brand-green text-brand-dark rounded-full text-sm font-medium hover:bg-brand-green/10 hover:border-brand-green transition-all"
+            href="/contact"
+            className="px-6 py-2.5 bg-white/70 border-2 border-brand-dark/15 text-brand-dark rounded-full text-sm font-medium hover:bg-white hover:border-brand-green/40 transition-all"
           >
-            Get Involved
+            Contact us
           </Link>
         </div>
 
         <button
           type="button"
-          className="lg:hidden p-2 text-slate-900"
+          className="lg:hidden p-2 text-brand-dark"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -139,14 +189,14 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden mt-2 mx-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-100 shadow-xl overflow-hidden"
+            className="lg:hidden mt-2 mx-4 rounded-2xl bg-white/90 backdrop-blur-md border border-brand-dark/10 shadow-xl shadow-brand-dark/15 overflow-hidden"
           >
             <nav className="p-4 space-y-1 max-h-[70vh] overflow-y-auto">
               {mainNav.map((item) => (
                 <div key={item.label}>
                   {"children" in item && item.children ? (
                     <>
-                      <div className="px-3 py-2 text-sm font-medium text-slate-500">{item.label}</div>
+                      <div className="px-3 py-2 text-sm font-medium text-brand-dark/70">{item.label}</div>
                       <div className="pl-4 space-y-0.5">
                         {item.children.map((child) => (
                           <Link
@@ -154,7 +204,9 @@ export function Header() {
                             href={child.href}
                             onClick={() => setMobileOpen(false)}
                             className={`block py-2.5 px-3 rounded-lg text-sm ${
-                              pathname === child.href ? "text-brand-sunlight font-medium bg-brand-cream/50" : "text-slate-700"
+                              pathname === child.href
+                                ? "text-brand-green font-medium bg-brand-cream"
+                                : "text-brand-dark hover:bg-brand-cream"
                             }`}
                           >
                             {child.label}
@@ -167,7 +219,7 @@ export function Header() {
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
                       className={`block px-3 py-2.5 rounded-lg text-sm font-medium ${
-                        pathname === item.href ? "text-brand-sunlight bg-brand-cream/50" : "text-slate-700"
+                        pathname === item.href ? "text-brand-green bg-brand-cream" : "text-brand-dark hover:bg-brand-cream"
                       }`}
                     >
                       {item.label}
@@ -184,11 +236,11 @@ export function Header() {
                   Donate
                 </Link>
                 <Link
-                  href="/get-involved"
+                  href="/contact"
                   onClick={() => setMobileOpen(false)}
-                  className="flex-1 text-center py-3 text-sm font-medium border-2 border-brand-green rounded-full text-brand-dark hover:bg-brand-green/10"
+                  className="flex-1 text-center py-3 text-sm font-medium border-2 border-brand-dark/15 rounded-full text-brand-dark hover:bg-brand-cream"
                 >
-                  Get Involved
+                  Contact us
                 </Link>
               </div>
             </nav>

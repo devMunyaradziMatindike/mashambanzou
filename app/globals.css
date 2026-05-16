@@ -5,7 +5,7 @@
 :root {
   --font-outfit: "Outfit", system-ui, sans-serif;
   --color-brand-sunlight: #f5b700;
-  --color-brand-green: #2d6a4f;
+  --color-brand-green: #0ea5a6;
   --color-brand-dark: #1a1a1a;
   --color-brand-cream: #fdf8e8;
   --color-brand-warm: #f5b700;
@@ -17,7 +17,62 @@ html {
 }
 
 body {
-  @apply font-body text-slate-900 antialiased bg-white;
+  @apply font-body text-brand-dark antialiased bg-brand-cream;
+}
+
+main {
+  background: var(--color-brand-cream);
+  color: var(--color-brand-dark);
+}
+
+/* Theme review: keep page surroundings clear/plain, and reserve turquoise for cards, panels and boxes. */
+main > section.bg-brand-dark\/10,
+main > section.bg-brand-dark,
+main > div.bg-brand-dark\/10 {
+  background-color: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+main > section.bg-brand-dark\/10 .text-white,
+main > section.bg-brand-dark\/10 .text-white\/50,
+main > section.bg-brand-dark\/10 .text-white\/60,
+main > section.bg-brand-dark\/10 .text-white\/70,
+main > section.bg-brand-dark\/10 .text-white\/75,
+main > section.bg-brand-dark\/10 .text-white\/80,
+main > section.bg-brand-dark\/10 .text-white\/85,
+main > section.bg-brand-dark\/10 .text-white\/90,
+main > section.bg-brand-dark\/10 .text-white\/95,
+main > section.bg-brand-dark .text-white,
+main > section.bg-brand-dark .text-white\/75,
+main > section.bg-brand-dark .text-white\/80,
+main > section.bg-brand-dark .text-white\/85,
+main > section.bg-brand-dark .text-white\/90,
+main > section.bg-brand-dark .text-slate-300,
+main > div.bg-brand-dark\/10 .text-white,
+main > div.bg-brand-dark\/10 .text-white\/80 {
+  color: var(--color-brand-dark) !important;
+}
+
+main :is(.bg-brand-dark\/15, .bg-brand-dark\/20, .bg-white\/5, .bg-white\/10) {
+  background-color: rgb(14 165 166 / 0.92) !important;
+  border-color: rgb(14 165 166 / 0.35) !important;
+  box-shadow: 0 18px 45px rgb(14 165 166 / 0.16);
+}
+
+main :is(.bg-brand-dark\/15, .bg-brand-dark\/20, .bg-white\/5, .bg-white\/10) :is(
+    .text-white,
+    .text-white\/50,
+    .text-white\/60,
+    .text-white\/70,
+    .text-white\/75,
+    .text-white\/80,
+    .text-white\/85,
+    .text-white\/90,
+    .text-white\/95,
+    .text-slate-300
+  ) {
+  color: #fff !important;
 }
 
 /* Hover pop - subtle scale + rotate */

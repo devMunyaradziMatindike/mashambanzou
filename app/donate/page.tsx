@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { DonateForm } from "@/components/DonateForm";
 import { Hero } from "@/components/Hero";
 import { PageSection } from "@/components/PageSection";
 import Link from "next/link";
@@ -21,17 +22,17 @@ export default function DonatePage() {
         backgroundImageSrc="/website/discharge-hamper-1.jpg"
         backgroundImageAlt="Patient receiving a farewell hamper upon discharge"
       />
-      <PageSection className="section-padding bg-white">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-start">
-            <div className="rounded-[2.5rem] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
-              <span className="text-brand-green font-semibold tracking-widest uppercase text-xs mb-4 block">
+            <div className="rounded-[2.5rem] border border-white/10 bg-brand-dark/20 backdrop-blur p-6 sm:p-10 shadow-sm shadow-brand-dark/20">
+              <span className="text-brand-sunlight font-semibold tracking-widest uppercase text-xs mb-4 block">
                 Donate online
               </span>
-              <h2 className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-brand-dark mb-4">
+              <h2 className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-4">
                 Make a secure donation via PayNow
               </h2>
-              <p className="text-brand-dark/80 text-lg leading-relaxed mb-8">
+              <p className="text-white/80 text-lg leading-relaxed mb-8">
                 Your gift supports integrated healthcare, outreach, child protection and community strengthening.
               </p>
 
@@ -53,7 +54,7 @@ export default function DonatePage() {
                 </a>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-brand-green text-brand-dark text-base font-medium hover:bg-brand-green/10 transition-colors"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white/20 text-white text-base font-medium hover:bg-white/10 transition-colors"
                 >
                   Need help?
                 </Link>
@@ -65,22 +66,22 @@ export default function DonatePage() {
                   { title: "Fast", desc: "Quick checkout and confirmation" },
                   { title: "Direct", desc: "Funds support our programmes" },
                 ].map((item) => (
-                  <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                    <div className="text-sm font-semibold text-brand-dark">{item.title}</div>
-                    <div className="text-xs text-brand-dark/70 mt-1">{item.desc}</div>
+                  <div key={item.title} className="rounded-2xl border border-white/10 bg-white/10 p-4">
+                    <div className="text-sm font-semibold text-white">{item.title}</div>
+                    <div className="text-xs text-white/75 mt-1">{item.desc}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-[2.5rem] border border-slate-200 bg-slate-100 overflow-hidden shadow-sm">
+            <div className="rounded-[2.5rem] border border-white/10 bg-white/10 overflow-hidden shadow-sm shadow-brand-dark/15">
               <div className="relative aspect-[16/10] sm:aspect-[4/3]">
                 <Image
-                  src="/website/outreach-program-1.jpg"
-                  alt="Community outreach programme"
+                  src="/review-pics/donation page.jpg"
+                  alt="Donation support being handed over to community members"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
+                  className="object-cover blur-sm"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
@@ -93,12 +94,12 @@ export default function DonatePage() {
                   </p>
                 </div>
               </div>
-              <div className="p-6 sm:p-8 bg-white">
+              <div className="p-6 sm:p-8 bg-brand-dark/15 backdrop-blur">
                 <div className="flex flex-wrap gap-2">
                   {["Healthcare", "Outreach", "Children", "Livelihoods"].map((tag) => (
                     <span
                       key={tag}
-                      className="inline-flex items-center px-3 py-1 rounded-full bg-brand-cream/60 border border-slate-200 text-sm text-brand-dark/80"
+                      className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/15 text-sm text-white/80"
                     >
                       {tag}
                     </span>
@@ -110,30 +111,30 @@ export default function DonatePage() {
         </div>
       </PageSection>
 
-      <PageSection className="section-padding bg-slate-50">
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <span className="text-brand-green font-semibold tracking-widest uppercase text-xs mb-4 block">
+            <span className="text-brand-sunlight font-semibold tracking-widest uppercase text-xs mb-4 block">
               Wish List
             </span>
-            <h2 className="font-heading heading-section text-brand-dark mb-4">
+            <h2 className="font-heading heading-section text-white mb-4">
               Wish List
             </h2>
-            <p className="text-brand-dark/90 text-lg leading-relaxed">
+            <p className="text-white/85 text-lg leading-relaxed">
               At Mashambanzou Care Trust, we believe in the power of tangible contributions to make a real difference in
               the lives of those in need.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-8 shadow-sm hover:shadow-lg transition-shadow">
+            <div className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-7 sm:p-8 shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-brand-cream flex items-center justify-center text-2xl">🧰</div>
+                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-2xl">🧰</div>
                 <div>
-                  <h3 className="font-heading text-xl font-semibold text-brand-dark">Equipment</h3>
-                  <p className="text-sm text-brand-dark/70 mt-1">Tools that improve care delivery and coordination.</p>
+                  <h3 className="font-heading text-xl font-semibold text-white">Equipment</h3>
+                  <p className="text-sm text-white/75 mt-1">Tools that improve care delivery and coordination.</p>
                 </div>
               </div>
-              <ul className="space-y-2 text-brand-dark/85">
+              <ul className="space-y-2 text-white/85">
                 <li>Laptops</li>
                 <li>Hospital equipment</li>
                 <li>VIAC equipment</li>
@@ -141,45 +142,45 @@ export default function DonatePage() {
                 <li>Camera and camera equipment</li>
               </ul>
             </div>
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-8 shadow-sm hover:shadow-lg transition-shadow">
+            <div className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-7 sm:p-8 shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-brand-cream flex items-center justify-center text-2xl">🥣</div>
+                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-2xl">🥣</div>
                 <div>
-                  <h3 className="font-heading text-xl font-semibold text-brand-dark">Nutritional Support</h3>
-                  <p className="text-sm text-brand-dark/70 mt-1">Nutrition support for recovery and stability.</p>
+                  <h3 className="font-heading text-xl font-semibold text-white">Nutritional Support</h3>
+                  <p className="text-sm text-white/75 mt-1">Nutrition support for recovery and stability.</p>
                 </div>
               </div>
-              <ul className="space-y-2 text-brand-dark/85">
+              <ul className="space-y-2 text-white/85">
                 <li>MCU patients nutritional support</li>
                 <li>Mlambo and House of Safety nutritional support</li>
                 <li>Nenyere ECD Learning Center nutritional support</li>
-                <li className="text-brand-dark/70 italic">(Starches, proteins, vitamins)</li>
+                <li className="text-white/70 italic">(Starches, proteins, vitamins)</li>
               </ul>
             </div>
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-8 shadow-sm hover:shadow-lg transition-shadow">
+            <div className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-7 sm:p-8 shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-brand-cream flex items-center justify-center text-2xl">🚐</div>
+                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-2xl">🚐</div>
                 <div>
-                  <h3 className="font-heading text-xl font-semibold text-brand-dark">Vehicles</h3>
-                  <p className="text-sm text-brand-dark/70 mt-1">Transport that expands reach and responsiveness.</p>
+                  <h3 className="font-heading text-xl font-semibold text-white">Vehicles</h3>
+                  <p className="text-sm text-white/75 mt-1">Transport that expands reach and responsiveness.</p>
                 </div>
               </div>
-              <ul className="space-y-2 text-brand-dark/85">
+              <ul className="space-y-2 text-white/85">
                 <li>Project vehicles</li>
                 <li>Ambulance vehicle</li>
                 <li>Containers for outreach clinics</li>
                 <li>Containers for District office use</li>
               </ul>
             </div>
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-8 shadow-sm hover:shadow-lg transition-shadow">
+            <div className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-7 sm:p-8 shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-brand-cream flex items-center justify-center text-2xl">🧼</div>
+                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-2xl">🧼</div>
                 <div>
-                  <h3 className="font-heading text-xl font-semibold text-brand-dark">Toiletries & Detergents</h3>
-                  <p className="text-sm text-brand-dark/70 mt-1">Hygiene items for facilities and households.</p>
+                  <h3 className="font-heading text-xl font-semibold text-white">Toiletries & Detergents</h3>
+                  <p className="text-sm text-white/75 mt-1">Hygiene items for facilities and households.</p>
                 </div>
               </div>
-              <ul className="space-y-2 text-brand-dark/85">
+              <ul className="space-y-2 text-white/85">
                 <li>Hospital detergents</li>
                 <li>Laundry detergents</li>
                 <li>Patients toiletries</li>
@@ -189,23 +190,25 @@ export default function DonatePage() {
             </div>
           </div>
           <div className="max-w-5xl mx-auto mt-12">
-            <div className="rounded-[2.5rem] border border-slate-200 bg-white p-6 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-              <div>
-                <h3 className="font-heading text-2xl font-semibold text-brand-dark mb-2">
-                  Want to donate items?
-                </h3>
-                <p className="text-brand-dark/80">
-                  We’ll help you coordinate drop-off or delivery and share the most urgent needs.
-                </p>
+            <div className="rounded-[2.5rem] border border-white/10 bg-brand-dark/20 backdrop-blur p-6 sm:p-10 flex flex-col gap-8">
+              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                <div>
+                  <h3 className="font-heading text-2xl font-semibold text-white mb-2">
+                    Want to donate items?
+                  </h3>
+                  <p className="text-white/80">
+                    Share your details below — we’ll email you a confirmation and help coordinate drop-off or delivery. You
+                    can also{" "}
+                    <Link href="/contact" className="text-brand-sunlight font-semibold hover:underline">
+                      contact us
+                    </Link>{" "}
+                    directly.
+                  </p>
+                </div>
               </div>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-brand-dark text-white font-medium hover:bg-brand-sunlight hover:text-brand-dark transition-colors"
-              >
-                Contact us
-              </Link>
+              <DonateForm />
             </div>
-            <p className="text-center text-brand-dark/70 italic mt-10">
+            <p className="text-center text-white/80 italic mt-10">
               Thank you for visiting our site, God bless you.
             </p>
           </div>

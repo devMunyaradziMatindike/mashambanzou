@@ -118,16 +118,16 @@ export function IntroVideo() {
 
   if (!VIDEO_URL) {
     return (
-      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-slate-50">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-brand-dark/10 backdrop-blur">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-brand-dark mb-2">
+          <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white mb-2">
             Watch our story
           </h2>
-          <p className="text-slate-500 mb-8">
-            Set <code className="text-sm bg-slate-200 px-1 rounded">NEXT_PUBLIC_INTRO_VIDEO_URL</code> (and optionally{" "}
-            <code className="text-sm bg-slate-200 px-1 rounded">NEXT_PUBLIC_INTRO_VIDEO_POSTER</code>) to show the intro video.
+          <p className="text-white/80 mb-8">
+            Set <code className="text-sm bg-white/10 px-1 rounded">NEXT_PUBLIC_INTRO_VIDEO_URL</code> (and optionally{" "}
+            <code className="text-sm bg-white/10 px-1 rounded">NEXT_PUBLIC_INTRO_VIDEO_POSTER</code>) to show the intro video.
           </p>
-          <div className="aspect-video rounded-2xl bg-slate-200 flex items-center justify-center text-slate-400">
+          <div className="aspect-video rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-white/60">
             Video URL not configured
           </div>
         </div>
@@ -140,12 +140,12 @@ export function IntroVideo() {
   const showMutedHint = playing && wasAutoplayed && mutedHintVisible;
 
   return (
-    <section ref={sectionRef} className="py-16 sm:py-24 px-4 sm:px-6 bg-slate-50">
+    <section ref={sectionRef} className="py-16 sm:py-24 px-4 sm:px-6 bg-brand-dark/10 backdrop-blur">
       <div className="max-w-4xl mx-auto">
-        <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-brand-dark mb-2 text-center">
+        <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white mb-2 text-center">
           Watch our story
         </h2>
-        <p className="text-slate-500 text-center mb-10">
+        <p className="text-white/80 text-center mb-10">
           See how Mashambanzou Care Trust is building AIDS-free, resilient communities.
         </p>
         <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-900 shadow-xl">
@@ -167,7 +167,7 @@ export function IntroVideo() {
               <button
                 type="button"
                 onClick={handlePlayClick}
-                className="absolute inset-0 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-sunlight focus:ring-offset-4 focus:ring-offset-slate-50 rounded-2xl"
+                className="absolute inset-0 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-sunlight focus:ring-offset-4 focus:ring-offset-brand-green rounded-2xl"
                 aria-label="Play intro video"
               >
                 <span className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-brand-sunlight flex items-center justify-center text-brand-dark shadow-lg hover:scale-110 transition-transform">
