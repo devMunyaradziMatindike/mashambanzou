@@ -2,23 +2,27 @@ import { Hero } from "@/components/Hero";
 import { PageSection } from "@/components/PageSection";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { getWebsiteMedia, imageFromMedia } from "@/lib/website-media";
 
 export const metadata: Metadata = {
   title: "Board & Governance | Mashambanzou Care Trust",
   description: "Board of Trustees and governance structure of Mashambanzou Care Trust.",
 };
 
+export const dynamic = "force-dynamic";
+
 const trustees = [
-  { name: "Ms Regai Thandiwe Hove", role: "Chairperson (Legal)", photoSrc: "/hove.jpeg" },
-  { name: "Mr John G. Sampson", role: "Vice Chairperson, Trustee (Finance)", photoSrc: "/simson.jpeg" },
+  { name: "Ms Regai Thandiwe Hove", role: "Chairperson (Legal)", photoSrc: "/hove.jpeg", mediaKey: "board.member.regai-hove" },
+  { name: "Mr John G. Sampson", role: "Vice Chairperson, Trustee (Finance)", photoSrc: "/simson.jpeg", mediaKey: "board.member.john-sampson" },
   {
     name: "Sr Silindiwe Shamu",
     role: "LCM Founding member Representative",
     photoSrc: "/board/sister-silindiwe-shamu.png",
+    mediaKey: "board.member.silindiwe-shamu",
   },
-  { name: "Ms Abi Belaye Kebra", role: "Trustee (Programming)", photoSrc: "/belaye.png" },
-  { name: "Dr. Clemence Duri", role: "Trustee (Medical)", photoSrc: "/duri.jpeg" },
-  { name: "Mrs Flavia Muyambo", role: "Trustee (Human Resources)", photoSrc: "/board/mrs-flavia-muyambo.png" },
+  { name: "Ms Abi Belaye Kebra", role: "Trustee (Programming)", photoSrc: "/belaye.png", mediaKey: "board.member.abi-belaye" },
+  { name: "Dr. Clemence Duri", role: "Trustee (Medical)", photoSrc: "/duri.jpeg", mediaKey: "board.member.clemence-duri" },
+  { name: "Mrs Flavia Muyambo", role: "Trustee (Human Resources)", photoSrc: "/board/mrs-flavia-muyambo.png", mediaKey: "board.member.flavia-muyambo" },
 ];
 
 function initials(name: string) {
@@ -34,7 +38,9 @@ function initials(name: string) {
   return letters || "MCT";
 }
 
-export default function BoardAndGovernancePage() {
+export default async function BoardAndGovernancePage() {
+  const media = await getWebsiteMedia();
+
   return (
     <>
       <Hero
@@ -55,6 +61,7 @@ export default function BoardAndGovernancePage() {
             label: "Outreach programme",
           },
         ]}
+        mediaSectionKey="board.hero.slideshow"
       />
 
       {/* Trustees */}
@@ -82,8 +89,8 @@ export default function BoardAndGovernancePage() {
                   <div className="mx-auto w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border border-white/10 bg-white/10 relative shadow-sm">
                     {"photoSrc" in trustee && trustee.photoSrc ? (
                       <Image
-                        src={trustee.photoSrc}
-                        alt={trustee.name}
+                        src={imageFromMedia(media, trustee.mediaKey, { src: trustee.photoSrc, alt: trustee.name }).src}
+                        alt={imageFromMedia(media, trustee.mediaKey, { src: trustee.photoSrc, alt: trustee.name }).alt}
                         fill
                         sizes="112px"
                         className="object-cover"
@@ -159,8 +166,14 @@ export default function BoardAndGovernancePage() {
               <div className="mt-6 rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur overflow-hidden">
                 <div className="relative aspect-[16/10]">
                   <Image
-                    src="/website/img-4136.jpg"
-                    alt="Mashambanzou Care Trust programme activity"
+                    src={imageFromMedia(media, "board.governance.image", {
+                      src: "/review-pics/Mashambanzou Care Trust (blur faces.jpg",
+                      alt: "Mashambanzou Care Trust programme activity",
+                    }).src}
+                    alt={imageFromMedia(media, "board.governance.image", {
+                      src: "/review-pics/Mashambanzou Care Trust (blur faces.jpg",
+                      alt: "Mashambanzou Care Trust programme activity",
+                    }).alt}
                     fill
                     sizes="(max-width: 1024px) 100vw, 520px"
                     className="object-cover"

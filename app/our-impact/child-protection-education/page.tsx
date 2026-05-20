@@ -3,6 +3,7 @@ import { PageSection } from "@/components/PageSection";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { getWebsiteMedia, imageFromMedia, imagesFromMedia } from "@/lib/website-media";
 
 export const metadata: Metadata = {
   title: "Orphans and Vulnerable Children (OVC) Support | Mashambanzou Care Trust",
@@ -10,7 +11,28 @@ export const metadata: Metadata = {
     "Education for Life, Houses of Safety, OVC support and Putting Children First in Harare and beyond.",
 };
 
-export default function ChildProtectionEducationPage() {
+export const dynamic = "force-dynamic";
+
+export default async function ChildProtectionEducationPage() {
+  const media = await getWebsiteMedia();
+  const ndccImages = imagesFromMedia(media, "child-protection.ndcc-gallery", [
+    {
+      src: "/review-pics/putting children first.jpg",
+      alt: "Children supported through Mashambanzou Care Trust programmes",
+      label: "NDCC main image",
+    },
+    {
+      src: "/review-pics/ovc support.jpg",
+      alt: "Orphans and vulnerable children support",
+      label: "OVC support",
+    },
+    {
+      src: "/review-pics/child protection.jpg",
+      alt: "Child protection and learning support",
+      label: "Child protection",
+    },
+  ]);
+
   return (
     <>
       <Hero
@@ -21,8 +43,9 @@ export default function ChildProtectionEducationPage() {
         primaryHref="/donate"
         secondaryCta="Contact"
         secondaryHref="/contact"
-        backgroundImageSrc="/website/teaching-girls.jpg"
+        backgroundImageSrc="/review-pics/putting children first.jpg"
         backgroundImageAlt="Teaching and mentoring girls"
+        mediaKey="child-protection.hero"
       />
 
       {/* Intro + at a glance */}
@@ -79,8 +102,14 @@ export default function ChildProtectionEducationPage() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
             <div className="rounded-[2.5rem] border border-white/10 bg-white/10 overflow-hidden shadow-sm shadow-brand-dark/15 relative aspect-[16/10] sm:aspect-[4/3]">
               <Image
-                src="/website/child-knitting.jpg"
-                alt="A child learning practical skills"
+                src={imageFromMedia(media, "child-protection.education-feature", {
+                  src: "/review-pics/ovc support.jpg",
+                  alt: "A child learning practical skills",
+                }).src}
+                alt={imageFromMedia(media, "child-protection.education-feature", {
+                  src: "/review-pics/ovc support.jpg",
+                  alt: "A child learning practical skills",
+                }).alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -125,8 +154,8 @@ export default function ChildProtectionEducationPage() {
               <div className="grid gap-3">
                 <div className="relative overflow-hidden rounded-[2rem] aspect-[16/10] bg-white/10">
                   <Image
-                    src="/review-pics/putting children first.jpg"
-                    alt="Children supported through Mashambanzou Care Trust programmes"
+                    src={ndccImages[0]?.src ?? "/review-pics/putting children first.jpg"}
+                    alt={ndccImages[0]?.alt ?? "Children supported through Mashambanzou Care Trust programmes"}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
@@ -135,8 +164,8 @@ export default function ChildProtectionEducationPage() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="relative overflow-hidden rounded-[1.5rem] aspect-[4/3] bg-white/10">
                     <Image
-                      src="/review-pics/ovc support.jpg"
-                      alt="Orphans and vulnerable children support"
+                      src={ndccImages[1]?.src ?? "/review-pics/ovc support.jpg"}
+                      alt={ndccImages[1]?.alt ?? "Orphans and vulnerable children support"}
                       fill
                       sizes="(max-width: 1024px) 50vw, 25vw"
                       className="object-cover"
@@ -144,8 +173,8 @@ export default function ChildProtectionEducationPage() {
                   </div>
                   <div className="relative overflow-hidden rounded-[1.5rem] aspect-[4/3] bg-white/10">
                     <Image
-                      src="/review-pics/child protection.jpg"
-                      alt="Child protection and learning support"
+                      src={ndccImages[2]?.src ?? "/review-pics/child protection.jpg"}
+                      alt={ndccImages[2]?.alt ?? "Child protection and learning support"}
                       fill
                       sizes="(max-width: 1024px) 50vw, 25vw"
                       className="object-cover"
@@ -211,8 +240,14 @@ export default function ChildProtectionEducationPage() {
 
             <div className="order-1 lg:order-2 rounded-[2.5rem] border border-white/10 bg-white/10 overflow-hidden shadow-sm shadow-brand-dark/15 relative aspect-[16/10] sm:aspect-[4/3]">
               <Image
-                src="/website/visiting-hour.jpg"
-                alt="A family visiting during care"
+                src={imageFromMedia(media, "child-protection.houses-of-safety", {
+                  src: "/review-pics/House of Safety.jpg",
+                  alt: "A family visiting during care",
+                }).src}
+                alt={imageFromMedia(media, "child-protection.houses-of-safety", {
+                  src: "/review-pics/House of Safety.jpg",
+                  alt: "A family visiting during care",
+                }).alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -253,8 +288,14 @@ export default function ChildProtectionEducationPage() {
               <div className="rounded-[2.5rem] border border-white/10 bg-brand-dark/20 backdrop-blur p-6 sm:p-10 shadow-sm shadow-brand-dark/20">
                 <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/10 aspect-[16/10] mb-7">
                   <Image
-                    src="/review-pics/Putting Children First ( blur faces) copy.jpg"
-                    alt="Putting Children First programme participants"
+                    src={imageFromMedia(media, "child-protection.putting-children-first", {
+                      src: "/review-pics/Putting Children First ( blur faces) copy.jpg",
+                      alt: "Putting Children First programme participants",
+                    }).src}
+                    alt={imageFromMedia(media, "child-protection.putting-children-first", {
+                      src: "/review-pics/Putting Children First ( blur faces) copy.jpg",
+                      alt: "Putting Children First programme participants",
+                    }).alt}
                     fill
                     sizes="(max-width: 1024px) 100vw, 520px"
                     className="object-cover"

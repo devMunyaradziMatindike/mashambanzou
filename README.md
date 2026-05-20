@@ -8,6 +8,7 @@ Website for Mashambanzou Care Trust—HIV services, OVC support, and community s
 - **Tailwind CSS** (styling)
 - **Framer Motion** (animations)
 - **Fonts:** Lora (headings), Source Sans 3 (body), via `next/font/google`
+- **Laravel + MySQL** (`laravel/`) for the success stories CMS and website image manager
 
 ## Structure (Giving Kitchen–inspired)
 
@@ -38,4 +39,10 @@ npm start
 
 ## Environment
 
-No env vars required for static content. Add payment/API keys when integrating PayNow, PayPal, or a CMS.
+For static content, no env vars are required. To show MySQL-backed success stories and admin-managed website images from the Laravel CMS, run the Laravel app and add this to `.env.local`:
+
+```env
+LARAVEL_API_URL=http://127.0.0.1:8000
+```
+
+Laravel setup details are in `laravel/README-MASHAMBANZOU.md`.

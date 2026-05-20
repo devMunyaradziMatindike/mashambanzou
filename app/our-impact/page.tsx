@@ -75,7 +75,7 @@ export default function OurImpactPage() {
         <div className="container-wide space-y-16">
           <ImpactSection
             title="Mashambanzou Care Unit (MCU)"
-            imageSrc="/website/img-4136.jpg"
+            imageSrc="/review-pics/Mashambanzou Care Trust (blur faces.jpg"
             imageAlt="Clinical care at Mashambanzou Care Unit"
             images={[
               {
@@ -156,7 +156,7 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="SRHR, Pregnant Teen Mothers and Adolescent Support"
-            imageSrc="/website/teaching-girls.jpg"
+            imageSrc="/review-pics/putting children first.jpg"
             imageAlt="SRHR education and adolescent support"
           >
             <p>
@@ -183,7 +183,7 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="Houses of Safety"
-            imageSrc="/website/safe-house-1.jpg"
+            imageSrc="/review-pics/House of Safety.jpg"
             imageAlt="A House of Safety supporting vulnerable children"
           >
             <p>
@@ -198,7 +198,7 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="Institutional Income Generating Activities"
-            imageSrc="/website/poultry-project.jpg"
+            imageSrc="/review-pics/Institutional Income Generating project.jpg"
             imageAlt="Income generating activities and livelihoods support"
           >
             <p>
@@ -229,7 +229,7 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="Education for Life"
-            imageSrc="/website/school-pads.jpg"
+            imageSrc="/review-pics/ovc support.jpg"
             imageAlt="Education for Life support in schools"
           >
             <p>
@@ -260,7 +260,7 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="Care to Share"
-            imageSrc="/website/worker-washing-clothes.jpg"
+            imageSrc="/review-pics/Care to Share beneficiary during graduation.jpg"
             imageAlt="Skills training and practical work supporting livelihoods"
             images={[
               {

@@ -13,7 +13,7 @@ const regions = [
   {
     name: "Harare Metropolitan",
     subtitle: "High-density communities and outreach corridors",
-    imageSrc: "/website/outreach-programme-feature.jpg",
+    imageSrc: "/review-pics/outreach.png",
     imageAlt: "Community outreach programme in Harare",
     areas: ["Tafara", "Mabvuku", "Glen Norah", "Highfield", "Hopley", "Mbare", "Dzivarasekwa Main", "Dzivarasekwa Extension"],
     highlights: ["Outreach clinics", "Family Centred Support", "SRHR education"],
@@ -21,7 +21,7 @@ const regions = [
   {
     name: "Zvimba Rural District",
     subtitle: "Peri-urban and rural wards with hard-to-reach outreach",
-    imageSrc: "/website/outreach-programme-2.jpg",
+    imageSrc: "/review-pics/outreach-programme-board-governance.jpeg",
     imageAlt: "Outreach programme in a rural community",
     areas: ["Wards 24", "Wards 25", "Wards 26", "Wards 35"],
     highlights: ["OVC support", "Community mobilisation", "Referrals & follow-up"],
@@ -29,7 +29,7 @@ const regions = [
   {
     name: "Goromonzi Rural District",
     subtitle: "Care to Share youth empowerment and community services",
-    imageSrc: "/website/oak-blind-man-care.webp",
+    imageSrc: "/review-pics/Disability inclusion.jpg",
     imageAlt: "Community support and care services",
     areas: ["Caledonia", "Domboshava"],
     highlights: ["Care to Share (TVET)", "Livelihoods support", "Community advocacy"],
@@ -42,7 +42,7 @@ export default function WhereWeWorkPage() {
       <Hero
         title="Where We Work"
         subtitle="Our operational footprint across Harare Metropolitan, Zvimba and Goromonzi."
-        backgroundImageSrc="/website/outreach-programme-feature.jpg"
+        backgroundImageSrc="/review-pics/outreach.png"
         backgroundImageAlt="Community outreach programme"
       />
 
@@ -88,7 +88,7 @@ export default function WhereWeWorkPage() {
 
             <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/10 aspect-[16/10] sm:aspect-[4/3]">
               <Image
-                src="/website/outreach-programme-feature.jpg"
+                src="/review-pics/outreach.png"
                 alt="Community outreach programme"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -173,7 +173,7 @@ export default function WhereWeWorkPage() {
                 controls
                 preload="metadata"
                 className="w-full h-auto"
-                poster="/website/outreach-programme-feature.jpg"
+                poster="/review-pics/outreach.png"
               >
                 <source src="/website/hiv-video.mp4" type="video/mp4" />
               </video>

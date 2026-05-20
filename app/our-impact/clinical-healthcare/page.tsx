@@ -3,6 +3,7 @@ import { PageSection } from "@/components/PageSection";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { getWebsiteMedia, imageFromMedia } from "@/lib/website-media";
 
 export const metadata: Metadata = {
   title: "Clinical Healthcare (MCU) | Mashambanzou Care Trust",
@@ -10,14 +11,19 @@ export const metadata: Metadata = {
     "30-bed Mashambanzou Care Unit, palliative care, HIV testing, opportunistic infection treatment and VIAC cervical cancer screening in Harare.",
 };
 
-export default function ClinicalHealthcarePage() {
+export const dynamic = "force-dynamic";
+
+export default async function ClinicalHealthcarePage() {
+  const media = await getWebsiteMedia();
+
   return (
     <>
       <Hero
         title="Integrated Health Service Delivery"
         subtitle="The 30-bed Mashambanzou Care Unit and outreach services—palliative care, HIV care and VIAC screening."
-        backgroundImageSrc="/website/img-8219.jpg"
+        backgroundImageSrc="/review-pics/mashambanzou care unit.jpg"
         backgroundImageAlt="Clinical care services at Mashambanzou Care Unit"
+        mediaKey="clinical-healthcare.hero"
       />
 
       {/* Quick stats */}
@@ -75,8 +81,14 @@ export default function ClinicalHealthcarePage() {
 
             <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/10 aspect-[16/10] sm:aspect-[4/3]">
               <Image
-                src="/website/img-8219.jpg"
-                alt="Clinical care services at Mashambanzou Care Unit"
+                src={imageFromMedia(media, "clinical-healthcare.mcu-feature", {
+                  src: "/review-pics/mashambanzou care unit.jpg",
+                  alt: "Clinical care services at Mashambanzou Care Unit",
+                }).src}
+                alt={imageFromMedia(media, "clinical-healthcare.mcu-feature", {
+                  src: "/review-pics/mashambanzou care unit.jpg",
+                  alt: "Clinical care services at Mashambanzou Care Unit",
+                }).alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -165,8 +177,14 @@ export default function ClinicalHealthcarePage() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/10 aspect-[16/10] sm:aspect-[4/3]">
               <Image
-                src="/website/outreach-programme-feature.jpg"
-                alt="Outreach clinic providing health services in the community"
+                src={imageFromMedia(media, "clinical-healthcare.outreach-feature", {
+                  src: "/review-pics/outreach.png",
+                  alt: "Outreach clinic providing health services in the community",
+                }).src}
+                alt={imageFromMedia(media, "clinical-healthcare.outreach-feature", {
+                  src: "/review-pics/outreach.png",
+                  alt: "Outreach clinic providing health services in the community",
+                }).alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"

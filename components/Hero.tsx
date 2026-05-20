@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
+import { imagesFromMedia } from "@/lib/website-media";
+import { useWebsiteMedia } from "@/lib/useWebsiteMedia";
 
 function isExternalHref(href: string) {
   return /^https?:\/\//i.test(href);
@@ -33,6 +35,8 @@ export function Hero({
   backgroundImageSrc,
   backgroundImageAlt,
   backgroundImages,
+  mediaKey,
+  mediaSectionKey,
   backgroundRotateMs = 7000,
   sidePanel,
 }: {
@@ -50,19 +54,26 @@ export function Hero({
   backgroundImageAlt?: string;
   /** Optional rotating background images (preferred when set). */
   backgroundImages?: BackgroundImage[];
+  /** Admin-managed single image key from Laravel Website Images. */
+  mediaKey?: string;
+  /** Admin-managed slideshow/gallery key from Laravel Website Images. */
+  mediaSectionKey?: string;
   /** Rotation interval for backgroundImages. */
   backgroundRotateMs?: number;
   /** Optional turquoise content block displayed to the right when no gallery is present. */
   sidePanel?: SidePanel;
 }) {
   const prefersReducedMotion = useReducedMotion();
+  const media = useWebsiteMedia(mediaSectionKey ?? mediaKey);
 
   const images = useMemo(() => {
     const list = Array.isArray(backgroundImages) ? backgroundImages.filter(Boolean) : [];
-    if (list.length > 0) return list;
-    if (backgroundImageSrc) return [{ src: backgroundImageSrc, alt: backgroundImageAlt ?? "" }];
+    const fallbacks = list.length > 0 ? list : backgroundImageSrc ? [{ src: backgroundImageSrc, alt: backgroundImageAlt ?? "" }] : [];
+    const key = mediaSectionKey ?? mediaKey;
+    if (key) return imagesFromMedia(media, key, fallbacks);
+    if (fallbacks.length > 0) return fallbacks;
     return [];
-  }, [backgroundImages, backgroundImageAlt, backgroundImageSrc]);
+  }, [backgroundImages, backgroundImageAlt, backgroundImageSrc, media, mediaKey, mediaSectionKey]);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);

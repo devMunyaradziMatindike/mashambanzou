@@ -3,6 +3,7 @@ import { PageSection } from "@/components/PageSection";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { getWebsiteMedia, imageFromMedia, imagesFromMedia } from "@/lib/website-media";
 
 export const metadata: Metadata = {
   title: "Promotion of Human Rights | Mashambanzou Care Trust",
@@ -10,7 +11,11 @@ export const metadata: Metadata = {
     "Care to Share vocational training, livelihoods and advocacy for human rights and stigma reduction.",
 };
 
-export default function EmpowermentAdvocacyPage() {
+export const dynamic = "force-dynamic";
+
+export default async function EmpowermentAdvocacyPage() {
+  const media = await getWebsiteMedia();
+
   return (
     <>
       <Hero
@@ -21,8 +26,9 @@ export default function EmpowermentAdvocacyPage() {
         primaryHref="/donate"
         secondaryCta="Contact"
         secondaryHref="/contact"
-        backgroundImageSrc="/website/world-aids-day.jpg"
+        backgroundImageSrc="/review-pics/advocacy.jpg"
         backgroundImageAlt="World AIDS Day advocacy and community engagement"
+        mediaKey="human-rights.hero"
       />
 
       {/* Intro + at a glance */}
@@ -82,8 +88,14 @@ export default function EmpowermentAdvocacyPage() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
             <div className="rounded-[2.5rem] border border-white/10 bg-white/10 overflow-hidden shadow-sm shadow-brand-dark/15 relative aspect-[16/10] sm:aspect-[4/3]">
               <Image
-                src="/website/teaching-girls.jpg"
-                alt="Vocational and life-skills learning"
+                src={imageFromMedia(media, "human-rights.care-to-share", {
+                  src: "/review-pics/Care to Share beneficiary during graduation.jpg",
+                  alt: "Vocational and life-skills learning",
+                }).src}
+                alt={imageFromMedia(media, "human-rights.care-to-share", {
+                  src: "/review-pics/Care to Share beneficiary during graduation.jpg",
+                  alt: "Vocational and life-skills learning",
+                }).alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -143,8 +155,14 @@ export default function EmpowermentAdvocacyPage() {
 
             <div className="order-1 lg:order-2 rounded-[2.5rem] border border-white/10 bg-white/10 overflow-hidden shadow-sm shadow-brand-dark/15 relative aspect-[16/10] sm:aspect-[4/3]">
               <Image
-                src="/website/poultry-project.jpg"
-                alt="Income-generating project supporting livelihoods"
+                src={imageFromMedia(media, "human-rights.income-generating", {
+                  src: "/review-pics/Institutional Income Generating project.jpg",
+                  alt: "Income-generating project supporting livelihoods",
+                }).src}
+                alt={imageFromMedia(media, "human-rights.income-generating", {
+                  src: "/review-pics/Institutional Income Generating project.jpg",
+                  alt: "Income-generating project supporting livelihoods",
+                }).alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -166,23 +184,23 @@ export default function EmpowermentAdvocacyPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {[
+            {imagesFromMedia(media, "human-rights.gallery", [
               {
-                src: "/website/world-aids-day.jpg",
+                src: "/review-pics/advocacy.jpg",
                 alt: "World AIDS Day advocacy",
-                caption: "Community awareness and stigma reduction through public events and outreach.",
+                label: "Community awareness and stigma reduction through public events and outreach.",
               },
               {
-                src: "/website/img-0037.jpg",
+                src: "/review-pics/MCT and faith.jpg",
                 alt: "Community members holding documents",
-                caption: "Linking people to services and documentation through community support.",
+                label: "Linking people to services and documentation through community support.",
               },
               {
-                src: "/website/outreach-programme-feature.jpg",
+                src: "/review-pics/outreach.png",
                 alt: "Community outreach programme",
-                caption: "Advocacy that meets people where they are—listening, informing and responding.",
+                label: "Advocacy that meets people where they are—listening, informing and responding.",
               },
-            ].map((item) => (
+            ]).map((item) => (
               <figure
                 key={item.src}
                 className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur overflow-hidden shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow"
@@ -196,7 +214,7 @@ export default function EmpowermentAdvocacyPage() {
                     className="object-cover"
                   />
                 </div>
-                <figcaption className="p-5 text-sm text-white/75 leading-relaxed">{item.caption}</figcaption>
+                <figcaption className="p-5 text-sm text-white/75 leading-relaxed">{item.label}</figcaption>
               </figure>
             ))}
           </div>

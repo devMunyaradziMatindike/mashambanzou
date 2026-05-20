@@ -3,6 +3,7 @@ import { PageSection } from "@/components/PageSection";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { getWebsiteMedia, imageFromMedia, imagesFromMedia } from "@/lib/website-media";
 
 export const metadata: Metadata = {
   title: "Community Strengthening | Mashambanzou Care Trust",
@@ -10,7 +11,11 @@ export const metadata: Metadata = {
     "Family Centred Support, psychosocial support for SGBV survivors and SRHR outreach for adolescents.",
 };
 
-export default function CommunitySupportPage() {
+export const dynamic = "force-dynamic";
+
+export default async function CommunitySupportPage() {
+  const media = await getWebsiteMedia();
+
   return (
     <>
       <Hero
@@ -21,8 +26,9 @@ export default function CommunitySupportPage() {
         primaryHref="/donate"
         secondaryCta="Contact"
         secondaryHref="/contact"
-        backgroundImageSrc="/website/child-knitting.jpg"
+        backgroundImageSrc="/review-pics/putting children first.jpg"
         backgroundImageAlt="A child learning practical skills"
+        mediaKey="community-support.hero"
       />
 
       {/* Intro + at a glance */}
@@ -82,8 +88,14 @@ export default function CommunitySupportPage() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
             <div className="rounded-[2.5rem] border border-white/10 bg-white/10 overflow-hidden shadow-sm shadow-brand-dark/15 relative aspect-[16/10] sm:aspect-[4/3]">
               <Image
-                src="/website/outreach-programme-3.jpg"
-                alt="Community outreach and family support"
+                src={imageFromMedia(media, "community-support.family-feature", {
+                  src: "/review-pics/outreach.png",
+                  alt: "Community outreach and family support",
+                }).src}
+                alt={imageFromMedia(media, "community-support.family-feature", {
+                  src: "/review-pics/outreach.png",
+                  alt: "Community outreach and family support",
+                }).alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -148,8 +160,14 @@ export default function CommunitySupportPage() {
 
             <div className="order-1 lg:order-2 rounded-[2.5rem] border border-white/10 bg-white/10 overflow-hidden shadow-sm shadow-brand-dark/15 relative aspect-[16/10] sm:aspect-[4/3]">
               <Image
-                src="/website/img-7782.jpg"
-                alt="Youth session and community education"
+                src={imageFromMedia(media, "community-support.srhr-feature", {
+                  src: "/review-pics/ovc support.jpg",
+                  alt: "Youth session and community education",
+                }).src}
+                alt={imageFromMedia(media, "community-support.srhr-feature", {
+                  src: "/review-pics/ovc support.jpg",
+                  alt: "Youth session and community education",
+                }).alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -171,23 +189,23 @@ export default function CommunitySupportPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {[
+            {imagesFromMedia(media, "community-support.gallery", [
               {
-                src: "/website/img-0037.jpg",
-                alt: "Community members holding documents",
-                caption: "Access to services and documentation through community outreach.",
+                src: "/review-pics/MCT and faith.jpg",
+                alt: "Community members at a support activity",
+                label: "Access to services and documentation through community outreach.",
               },
               {
-                src: "/website/opening-male-toilets.jpg",
-                alt: "Opening of male toilets facility",
-                caption: "Improving dignity and safe environments in community spaces.",
+                src: "/review-pics/Disability inclusion.jpg",
+                alt: "Disability inclusion and community support",
+                label: "Improving dignity and safe environments in community spaces.",
               },
               {
-                src: "/website/outreach-tablets.jpg",
+                src: "/review-pics/outreach.png",
                 alt: "Community support and outreach visit",
-                caption: "Integrated outreach that links people to care and follow-up.",
+                label: "Integrated outreach that links people to care and follow-up.",
               },
-            ].map((item) => (
+            ]).map((item) => (
               <figure
                 key={item.src}
                 className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur overflow-hidden shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow"
@@ -201,7 +219,7 @@ export default function CommunitySupportPage() {
                     className="object-cover"
                   />
                 </div>
-                <figcaption className="p-5 text-sm text-white/75 leading-relaxed">{item.caption}</figcaption>
+                <figcaption className="p-5 text-sm text-white/75 leading-relaxed">{item.label}</figcaption>
               </figure>
             ))}
           </div>

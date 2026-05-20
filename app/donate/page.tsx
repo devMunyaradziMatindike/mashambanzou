@@ -19,7 +19,7 @@ export default function DonatePage() {
       <Hero
         title="Donate"
         subtitle="Your contribution helps us provide comprehensive HIV services, OVC support and community strengthening."
-        backgroundImageSrc="/website/discharge-hamper-1.jpg"
+        backgroundImageSrc="/review-pics/donation page.jpg"
         backgroundImageAlt="Patient receiving a farewell hamper upon discharge"
       />
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">

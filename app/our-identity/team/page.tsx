@@ -3,6 +3,7 @@ import { PageSection } from "@/components/PageSection";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getWebsiteMedia, imageFromMedia } from "@/lib/website-media";
 
 export const metadata: Metadata = {
   title: "Our Management | Mashambanzou Care Trust",
@@ -10,28 +11,35 @@ export const metadata: Metadata = {
     "Executive Management of Mashambanzou Care Trust—leadership driving our mission every day.",
 };
 
+export const dynamic = "force-dynamic";
+
 const management = [
   {
     name: "Constance Chigwamba",
     role: "Executive Director",
     bio: "A seasoned Educationist and Trainer Programme Facilitator especially Logframe and IRBM processes. Strategic Planner, Human Resources Practitioner, Public Sector Administrator, Negotiator and Counsellor.",
     photoSrc: "/management/director.jpg",
+    mediaKey: "management.constance-chigwamba",
   },
   {
     name: "Mercy Muirimi",
     role: "Programmes Manager",
     bio: "A Public Health specialist with vast experience in both Public and Private Institutional nursing with exposure in NHS nursing in the UK. Experienced Supervisor and Coordinator in the nursing profession and HIV programming at council clinic and NGO.",
     photoSrc: "/management/programmes-manager.png",
+    mediaKey: "management.mercy-muirimi",
   },
   {
     name: "Mercyline Dzinemarira",
     role: "Accountant",
     bio: "A holder of a Masters in Professional Accounting and Corporate Governance. Graduateship of Institute of Chartered Secretaries & Administrators in Zimbabwe (ICAZ) Bachelor of Accountancy Honours degree. Diploma in Business and Accounting Studies (IBAS).",
     photoSrc: "/management/mercyline-dzinemarira.jpeg",
+    mediaKey: "management.mercyline-dzinemarira",
   },
 ];
 
-export default function TeamPage() {
+export default async function TeamPage() {
+  const media = await getWebsiteMedia();
+
   return (
     <>
       <Hero
@@ -71,8 +79,8 @@ export default function TeamPage() {
                 <div className="p-6 sm:p-7 text-center border-b border-white/10 bg-brand-dark/10">
                   <div className="mx-auto w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border border-white/10 bg-white/10 relative shadow-sm">
                     <Image
-                      src={person.photoSrc}
-                      alt={person.name}
+                      src={imageFromMedia(media, person.mediaKey, { src: person.photoSrc, alt: person.name }).src}
+                      alt={imageFromMedia(media, person.mediaKey, { src: person.photoSrc, alt: person.name }).alt}
                       fill
                       sizes="112px"
                       className="object-cover"

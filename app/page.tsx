@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { Hero } from "@/components/Hero";
 import { IntroVideo } from "@/components/IntroVideo";
 import { LatestStories } from "@/components/LatestStories";
+import { imageFromMedia } from "@/lib/website-media";
+import { useWebsiteMedia } from "@/lib/useWebsiteMedia";
 
 const marqueeItems = [
   "Clinical Healthcare",
@@ -28,8 +30,9 @@ const bentoItems = [
     aspect: "aspect-[16/10] sm:aspect-[4/3]",
     bg: "bg-brand-sunlight/10",
     label: "Healthcare",
-    imageSrc: "/website/img-8219.jpg",
+    imageSrc: "/review-pics/mashambanzou care unit.jpg",
     imageAlt: "Clinical care at Mashambanzou Care Trust",
+    mediaKey: "home.impact.clinical",
   },
   {
     title: "Community Strengthening",
@@ -39,8 +42,9 @@ const bentoItems = [
     aspect: "aspect-[3/4]",
     bg: "bg-brand-green/10",
     label: "Support",
-    imageSrc: "/website/outreach-tablets.jpg",
+    imageSrc: "/review-pics/outreach.png",
     imageAlt: "Community outreach support visit",
+    mediaKey: "home.impact.community",
   },
   {
     title: "Orphans and Vulnerable Children (OVC) Support",
@@ -50,8 +54,9 @@ const bentoItems = [
     aspect: "aspect-square",
     bg: "bg-brand-dark/10",
     label: "Children",
-    imageSrc: "/website/school-pads.jpg",
+    imageSrc: "/review-pics/ovc support.jpg",
     imageAlt: "School support and dignity packs distribution",
+    mediaKey: "home.impact.ovc",
   },
   {
     title: "Promotion of Human Rights",
@@ -61,8 +66,9 @@ const bentoItems = [
     aspect: "aspect-[16/10]",
     bg: "bg-brand-dark",
     label: "Empowerment",
-    imageSrc: "/website/poultry-project.jpg",
+    imageSrc: "/review-pics/Institutional Income Generating project.jpg",
     imageAlt: "Livelihoods and income-generating project",
+    mediaKey: "home.impact.human-rights",
   },
 ];
 
@@ -81,8 +87,9 @@ const serviceCards = [
     icon: "🩺",
     bg: "bg-brand-dark/15 border border-white/10 backdrop-blur",
     accent: "bg-brand-sunlight/25 text-white",
-    imageSrc: "/website/discharge-hamper-1.jpg",
+    imageSrc: "/review-pics/mashambanzou care unit.jpg",
     imageAlt: "Patient receiving a farewell hamper upon discharge",
+    mediaKey: "home.impact.clinical",
   },
   {
     title: "Community Strengthening",
@@ -92,8 +99,9 @@ const serviceCards = [
     bg: "bg-brand-green text-white",
     accent: "bg-white/20 text-brand-sunlight",
     featured: true,
-    imageSrc: "/website/outreach-program-1.jpg",
+    imageSrc: "/review-pics/outreach.png",
     imageAlt: "Outreach programme in the community",
+    mediaKey: "home.impact.community",
   },
   {
     title: "Promotion of Human Rights",
@@ -102,12 +110,15 @@ const serviceCards = [
     icon: "⚡",
     bg: "bg-brand-dark/15 border border-white/10 backdrop-blur",
     accent: "bg-white/15 text-white",
-    imageSrc: "/website/world-aids-day.jpg",
+    imageSrc: "/review-pics/advocacy.jpg",
     imageAlt: "Community advocacy event",
+    mediaKey: "home.impact.human-rights",
   },
 ];
 
 export default function HomePage() {
+  const media = useWebsiteMedia();
+
   return (
     <>
       <Hero
@@ -126,6 +137,7 @@ export default function HomePage() {
           { src: "/review-pics/hiv testing.jpg", alt: "HIV testing and counselling support", label: "HIV testing" },
           { src: "/review-pics/Institutional Income Generating project.jpg", alt: "Income-generating activities project", label: "Livelihoods" },
         ]}
+        mediaSectionKey="home.hero.slideshow"
       />
 
       {/* Vision | Mission | Values strip */}
@@ -165,8 +177,14 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="rounded-2xl overflow-hidden border border-white/15 bg-white/10 aspect-[16/10] sm:aspect-[4/3] max-h-[320px] relative">
               <Image
-                src="/website/discharge-hamper-2.jpg"
-                alt="A discharged patient receiving a farewell hamper"
+                src={imageFromMedia(media, "home.who-we-are.image", {
+                  src: "/review-pics/Mashambanzou Care Trust (blur faces.jpg",
+                  alt: "Mashambanzou Care Trust community care",
+                }).src}
+                alt={imageFromMedia(media, "home.who-we-are.image", {
+                  src: "/review-pics/Mashambanzou Care Trust (blur faces.jpg",
+                  alt: "Mashambanzou Care Trust community care",
+                }).alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 560px"
                 className="object-cover"
@@ -239,8 +257,14 @@ export default function HomePage() {
             </div>
             <div className="rounded-2xl overflow-hidden border border-white/15 bg-white/10 aspect-[16/10] sm:aspect-[4/3] relative">
               <Image
-                src="/website/img-4136.jpg"
-                alt="Mashambanzou Care Trust clinical care"
+                src={imageFromMedia(media, "home.impact.clinical", {
+                  src: "/review-pics/Mashambanzou Care Trust (blur faces.jpg",
+                  alt: "Mashambanzou Care Trust clinical care",
+                }).src}
+                alt={imageFromMedia(media, "home.impact.clinical", {
+                  src: "/review-pics/Mashambanzou Care Trust (blur faces.jpg",
+                  alt: "Mashambanzou Care Trust clinical care",
+                }).alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 560px"
                 className="object-cover"
@@ -278,8 +302,8 @@ export default function HomePage() {
                   className={`relative overflow-hidden rounded-[2.5rem] ${item.bg} ${item.aspect} mb-6 hover-pop border border-white/15`}
                 >
                   <Image
-                    src={item.imageSrc}
-                    alt={item.imageAlt}
+                    src={imageFromMedia(media, item.mediaKey, { src: item.imageSrc, alt: item.imageAlt }).src}
+                    alt={imageFromMedia(media, item.mediaKey, { src: item.imageSrc, alt: item.imageAlt }).alt}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
@@ -331,8 +355,8 @@ export default function HomePage() {
               >
                 <div className="rounded-xl overflow-hidden bg-white/10 aspect-video mb-6 border border-white/10 relative">
                   <Image
-                    src={card.imageSrc}
-                    alt={card.imageAlt}
+                    src={imageFromMedia(media, card.mediaKey, { src: card.imageSrc, alt: card.imageAlt }).src}
+                    alt={imageFromMedia(media, card.mediaKey, { src: card.imageSrc, alt: card.imageAlt }).alt}
                     fill
                     sizes="(max-width: 768px) 100vw, 420px"
                     className="object-cover"
@@ -421,7 +445,7 @@ export default function HomePage() {
             </div>
             <div className="rounded-2xl overflow-hidden border border-white/15 bg-white/10 aspect-video relative">
               <Image
-                src="/website/outreach-programme-2.jpg"
+                src="/review-pics/outreach.png"
                 alt="Community outreach across our service areas"
                 fill
                 sizes="(max-width: 768px) 100vw, 560px"

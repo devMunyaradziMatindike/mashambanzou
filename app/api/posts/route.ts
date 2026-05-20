@@ -19,6 +19,15 @@ type Post = {
 
 const POSTS_KEY = "mct:posts:v1";
 
+type LaravelStory = {
+  id: string | number;
+  title: string;
+  excerpt?: string | null;
+  body?: string | null;
+  published_at?: string | null;
+  image_url?: string | null;
+};
+
 async function readPosts(): Promise<Post[]> {
   const posts = (await kv.get(POSTS_KEY)) as unknown;
   return Array.isArray(posts) ? (posts as Post[]) : [];
@@ -34,7 +43,38 @@ function getMediaType(mime: string): MediaType | null {
   return null;
 }
 
+async function readLaravelStories(): Promise<Post[] | null> {
+  const baseUrl = process.env.LARAVEL_API_URL;
+  if (!baseUrl) return null;
+
+  const res = await fetch(`${baseUrl.replace(/\/$/, "")}/api/success-stories`, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Laravel stories request failed (${res.status})`);
+
+  const json = (await res.json()) as { stories?: LaravelStory[] };
+  if (!Array.isArray(json.stories)) return [];
+
+  return json.stories
+    .filter((story) => story.image_url)
+    .map((story) => ({
+      id: String(story.id),
+      title: story.title,
+      caption: story.excerpt || story.body || "",
+      mediaType: "image",
+      mediaUrl: story.image_url as string,
+      createdAt: story.published_at || new Date().toISOString(),
+    }));
+}
+
 export async function GET() {
+  try {
+    const laravelStories = await readLaravelStories();
+    if (laravelStories) {
+      return NextResponse.json({ posts: laravelStories });
+    }
+  } catch (error) {
+    console.error("Failed to read Laravel success stories", error);
+  }
+
   const posts = await readPosts();
   posts.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
   return NextResponse.json({ posts });

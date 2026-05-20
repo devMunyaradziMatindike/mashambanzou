@@ -83,7 +83,7 @@ export default function PartnerPage() {
         primaryHref="/contact"
         secondaryCta="Governance"
         secondaryHref="/our-identity/board-and-governance"
-        backgroundImageSrc="/website/outreach-programme-feature.jpg"
+        backgroundImageSrc="/review-pics/outreach.png"
         backgroundImageAlt="Community outreach programme"
       />
 
