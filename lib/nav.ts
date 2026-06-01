@@ -16,7 +16,7 @@ export const mainNav = [
       { label: "Orphans and Vulnerable Children (OVC) Support", href: "/our-impact/child-protection-education" },
       { label: "Promotion of Human Rights", href: "/our-impact/empowerment-advocacy" },
       { label: "Community Strengthening", href: "/our-impact/community-support" },
-      { label: "Institutional Development", href: "/our-impact" },
+      { label: "Institutional Development", href: "/our-impact/institutional-development" },
     ],
   },
   {

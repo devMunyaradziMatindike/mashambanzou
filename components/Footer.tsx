@@ -50,14 +50,14 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-sm p-6 sm:p-8 rounded-[2rem] border border-white/10">
+          <div className="bg-white/15 backdrop-blur-sm p-6 sm:p-8 rounded-[2rem] border border-white/20">
             <div className="flex items-start justify-between gap-6">
               <div>
-                <div className="text-xs font-semibold uppercase tracking-widest text-slate-400">Get involved</div>
-                <h3 className="mt-3 font-heading text-2xl sm:text-3xl font-semibold text-white">
+                <div className="text-xs font-semibold uppercase tracking-widest text-brand-dark/70">Get involved</div>
+                <h3 className="mt-3 font-heading text-2xl sm:text-3xl font-semibold text-brand-dark">
                   Choose how you want to help
                 </h3>
-                <p className="mt-3 text-slate-400 leading-relaxed">
+                <p className="mt-3 text-brand-dark/75 leading-relaxed">
                   Donate, partner, or explore our transparency and impact work. We’ll guide you to the right place.
                 </p>
               </div>
@@ -66,31 +66,31 @@ export function Footer() {
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Link
                 href="/donate"
-                className="rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition-colors"
+                className="rounded-2xl border border-brand-dark/10 bg-white/10 p-5 hover:bg-white/20 transition-colors"
               >
-                <div className="text-sm font-semibold text-white">Donate</div>
-                <div className="text-xs text-slate-400 mt-1">Support services and outreach.</div>
+                <div className="text-sm font-semibold text-brand-dark">Donate</div>
+                <div className="text-xs text-brand-dark/70 mt-1">Support services and outreach.</div>
               </Link>
               <Link
                 href="/get-involved/partner"
-                className="rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition-colors"
+                className="rounded-2xl border border-brand-dark/10 bg-white/10 p-5 hover:bg-white/20 transition-colors"
               >
-                <div className="text-sm font-semibold text-white">Partner</div>
-                <div className="text-xs text-slate-400 mt-1">Work with us for lasting impact.</div>
+                <div className="text-sm font-semibold text-brand-dark">Partner</div>
+                <div className="text-xs text-brand-dark/70 mt-1">Work with us for lasting impact.</div>
               </Link>
               <Link
                 href="/our-identity/board-and-governance"
-                className="rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition-colors"
+                className="rounded-2xl border border-brand-dark/10 bg-white/10 p-5 hover:bg-white/20 transition-colors"
               >
-                <div className="text-sm font-semibold text-white">Board & governance</div>
-                <div className="text-xs text-slate-400 mt-1">Leadership and governance information.</div>
+                <div className="text-sm font-semibold text-brand-dark">Board & governance</div>
+                <div className="text-xs text-brand-dark/70 mt-1">Leadership and governance information.</div>
               </Link>
               <Link
                 href="/our-impact"
-                className="rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition-colors"
+                className="rounded-2xl border border-brand-dark/10 bg-white/10 p-5 hover:bg-white/20 transition-colors"
               >
-                <div className="text-sm font-semibold text-white">Our impact</div>
-                <div className="text-xs text-slate-400 mt-1">Programmes and outcomes.</div>
+                <div className="text-sm font-semibold text-brand-dark">Our impact</div>
+                <div className="text-xs text-brand-dark/70 mt-1">Programmes and outcomes.</div>
               </Link>
             </div>
 
@@ -98,7 +98,7 @@ export function Footer() {
               {["Community-led", "Accountability", "Protection & dignity"].map((chip) => (
                 <span
                   key={chip}
-                  className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-slate-300"
+                  className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-brand-dark/10 text-xs text-brand-dark/75"
                 >
                   {chip}
                 </span>
