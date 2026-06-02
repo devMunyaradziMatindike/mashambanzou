@@ -129,7 +129,6 @@ export default function HomePage() {
         secondaryCta="Donate"
         primaryHref="/get-involved"
         secondaryHref="https://paynow.co.zw/mashambanzou"
-        badge="Serving Harare & Beyond"
         backgroundImages={[
           { src: "/review-pics/outreach.png", alt: "Outreach clinic visit in the community", label: "Outreach" },
           { src: "/review-pics/mashambanzou care unit.jpg", alt: "Mashambanzou Care Unit facility", label: "Care Unit (MCU)" },

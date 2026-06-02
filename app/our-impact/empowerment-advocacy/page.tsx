@@ -21,7 +21,6 @@ export default async function EmpowermentAdvocacyPage() {
       <Hero
         title="Promotion of Human Rights"
         subtitle="Care to Share vocational training, income-generating activities and advocacy—building resilience and opportunity."
-        badge="Livelihoods & rights"
         primaryCta="Donate"
         primaryHref="/donate"
         secondaryCta="Contact"

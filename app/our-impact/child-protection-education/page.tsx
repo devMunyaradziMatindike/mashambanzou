@@ -38,7 +38,6 @@ export default async function ChildProtectionEducationPage() {
       <Hero
         title="Orphans and Vulnerable Children (OVC) Support"
         subtitle="Education for Life, Houses of Safety and OVC support—putting children first."
-        badge="Putting children first"
         primaryCta="Donate"
         primaryHref="/donate"
         secondaryCta="Contact"

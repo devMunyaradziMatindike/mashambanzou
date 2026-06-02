@@ -21,7 +21,6 @@ export default async function CommunitySupportPage() {
       <Hero
         title="Community Strengthening"
         subtitle="Family Centred Support, psychosocial support and SRHR outreach—strengthening resilience in our communities."
-        badge="Community-led"
         primaryCta="Donate"
         primaryHref="/donate"
         secondaryCta="Contact"
