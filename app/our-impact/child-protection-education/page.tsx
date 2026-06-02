@@ -48,6 +48,51 @@ export default async function ChildProtectionEducationPage() {
         mediaKey="child-protection.hero"
       />
 
+      {/* Houses of Safety */}
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+            <div className="order-2 lg:order-1">
+              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white">Houses of Safety</h2>
+              <p className="mt-4 text-white/85 leading-relaxed">
+                Mashambanzou Care Trust (MCT) plays a crucial role in providing care and support for vulnerable children
+                in Zimbabwe. One of its key initiatives is the establishment of Houses of Safety, which serve as
+                temporary homes for orphaned and vulnerable children (OVC) who are survivors of abuse whilst the
+                Department of Social Development maps a way forward for their safe keeping.
+              </p>
+              <p className="mt-4 text-white/85 leading-relaxed">
+                In collaboration with the Department of Social Development, family assessments are conducted before
+                placement of these children in houses of safety.
+              </p>
+              <div className="mt-6 rounded-2xl border border-white/10 bg-brand-dark/15 backdrop-blur p-6">
+                <h3 className="font-heading text-lg font-semibold text-white">Care & protection</h3>
+                <ul className="mt-3 space-y-2 text-white/80">
+                  <li>Temporary safe accommodation</li>
+                  <li>Family assessment and placement planning</li>
+                  <li>Coordination with Social Development</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2 rounded-[2.5rem] border border-white/10 bg-white/10 overflow-hidden shadow-sm shadow-brand-dark/15 relative aspect-[16/10] sm:aspect-[4/3]">
+              <Image
+                src={imageFromMedia(media, "child-protection.houses-of-safety", {
+                  src: "/review-pics/House of Safety.jpg",
+                  alt: "A family visiting during care",
+                }).src}
+                alt={imageFromMedia(media, "child-protection.houses-of-safety", {
+                  src: "/review-pics/House of Safety.jpg",
+                  alt: "A family visiting during care",
+                }).alt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </PageSection>
+
       {/* Intro + at a glance */}
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
@@ -207,51 +252,6 @@ export default async function ChildProtectionEducationPage() {
                   </span>
                 ))}
               </div>
-            </div>
-          </div>
-        </div>
-      </PageSection>
-
-      {/* Houses of Safety */}
-      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
-            <div className="order-2 lg:order-1">
-              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white">Houses of Safety</h2>
-              <p className="mt-4 text-white/85 leading-relaxed">
-                Mashambanzou Care Trust (MCT) plays a crucial role in providing care and support for vulnerable children
-                in Zimbabwe. One of its key initiatives is the establishment of Houses of Safety, which serve as
-                temporary homes for orphaned and vulnerable children (OVC) who are survivors of abuse whilst the
-                Department of Social Development maps a way forward for their safe keeping.
-              </p>
-              <p className="mt-4 text-white/85 leading-relaxed">
-                In collaboration with the Department of Social Development, family assessments are conducted before
-                placement of these children in houses of safety.
-              </p>
-              <div className="mt-6 rounded-2xl border border-white/10 bg-brand-dark/15 backdrop-blur p-6">
-                <h3 className="font-heading text-lg font-semibold text-white">Care & protection</h3>
-                <ul className="mt-3 space-y-2 text-white/80">
-                  <li>Temporary safe accommodation</li>
-                  <li>Family assessment and placement planning</li>
-                  <li>Coordination with Social Development</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="order-1 lg:order-2 rounded-[2.5rem] border border-white/10 bg-white/10 overflow-hidden shadow-sm shadow-brand-dark/15 relative aspect-[16/10] sm:aspect-[4/3]">
-              <Image
-                src={imageFromMedia(media, "child-protection.houses-of-safety", {
-                  src: "/review-pics/House of Safety.jpg",
-                  alt: "A family visiting during care",
-                }).src}
-                alt={imageFromMedia(media, "child-protection.houses-of-safety", {
-                  src: "/review-pics/House of Safety.jpg",
-                  alt: "A family visiting during care",
-                }).alt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
             </div>
           </div>
         </div>

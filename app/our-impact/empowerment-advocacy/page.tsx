@@ -125,53 +125,6 @@ export default async function EmpowermentAdvocacyPage() {
         </div>
       </PageSection>
 
-      {/* Income generating activities */}
-      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
-            <div className="order-2 lg:order-1">
-              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white">
-                Institutional income-generating activities
-              </h2>
-              <p className="mt-4 text-white/85 leading-relaxed">
-                In addition to MCT vital healthcare and social services, Mashambanzou Care Trust has successfully
-                implemented a range of income-generating activities that empower the communities we serve. These
-                activities generate income and foster skills development, entrepreneurship and self-reliance among
-                beneficiaries.
-              </p>
-              <div className="mt-6 grid sm:grid-cols-2 gap-4">
-                {[
-                  "Agricultural projects",
-                  "Catering and food services",
-                  "Skills training and entrepreneurship",
-                ].map((item) => (
-                  <div key={item} className="rounded-2xl border border-white/10 bg-brand-dark/15 backdrop-blur p-5">
-                    <div className="text-sm font-semibold text-white">{item}</div>
-                    <div className="text-xs text-white/75 mt-1">Building stability through practical income pathways.</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="order-1 lg:order-2 rounded-[2.5rem] border border-white/10 bg-white/10 overflow-hidden shadow-sm shadow-brand-dark/15 relative aspect-[16/10] sm:aspect-[4/3]">
-              <Image
-                src={imageFromMedia(media, "human-rights.income-generating", {
-                  src: "/review-pics/Institutional Income Generating project.jpg",
-                  alt: "Income-generating project supporting livelihoods",
-                }).src}
-                alt={imageFromMedia(media, "human-rights.income-generating", {
-                  src: "/review-pics/Institutional Income Generating project.jpg",
-                  alt: "Income-generating project supporting livelihoods",
-                }).alt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </PageSection>
-
       {/* Advocacy + gallery */}
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">

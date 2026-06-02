@@ -8,7 +8,7 @@ export const mainNav = [
       { label: "Board & Governance", href: "/our-identity/board-and-governance" },
   ]},
   {
-    label: "Our Impact",
+    label: "Our Focus Areas",
     href: "/our-impact",
     children: [
       { label: "Overview", href: "/our-impact" },
@@ -17,6 +17,7 @@ export const mainNav = [
       { label: "Promotion of Human Rights", href: "/our-impact/empowerment-advocacy" },
       { label: "Community Strengthening", href: "/our-impact/community-support" },
       { label: "Institutional Development", href: "/our-impact/institutional-development" },
+      { label: "Donor Projects", href: "/our-impact/case-studies" },
     ],
   },
   {
@@ -36,7 +37,7 @@ export const mainNav = [
         imageAlt: "Outreach clinic visit in the community",
       },
       {
-        label: "Putting Children First",
+        label: "Houses of Safety",
         href: "/our-impact/child-protection-education",
         imageSrc: "/review-pics/putting children first.jpg",
         imageAlt: "Putting Children First programme support",
@@ -46,12 +47,6 @@ export const mainNav = [
         href: "/our-impact/child-protection-education",
         imageSrc: "/review-pics/ovc support.jpg",
         imageAlt: "Children supported through Nenyere Day Care Centre",
-      },
-      {
-        label: "Income generating activities",
-        href: "/our-impact/empowerment-advocacy",
-        imageSrc: "/review-pics/Institutional Income Generating project.jpg",
-        imageAlt: "Income generating activities project",
       },
     ],
   },

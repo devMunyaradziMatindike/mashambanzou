@@ -59,7 +59,6 @@ export default function InstitutionalDevelopmentPage() {
         title="Institutional"
         gradientText="Development"
         subtitle="Sustainable, visible, effective and efficient MCT providing services and significantly causing impact to vulnerable communities."
-        badge="Sustainability & systems"
         primaryCta="Partner with us"
         primaryHref="/get-involved/partner"
         secondaryCta="Contact"
@@ -67,6 +66,53 @@ export default function InstitutionalDevelopmentPage() {
         backgroundImageSrc="/review-pics/MCTR @ 35 celebrations in 2025.jpg"
         backgroundImageAlt="Mashambanzou Care Trust 35th anniversary celebration"
       />
+
+      <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+            <div className="order-2 lg:order-1">
+              <span className="text-brand-sunlight font-semibold tracking-widest uppercase text-xs mb-4 block">
+                Income Generating Activities
+              </span>
+              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white">
+                Strengthening institutional sustainability
+              </h2>
+              <p className="mt-4 text-white/85 leading-relaxed">
+                In addition to MCT vital healthcare and social services, Mashambanzou Care Trust has successfully
+                implemented a range of income-generating activities that strengthen institutional sustainability and
+                support the communities we serve. These activities generate income, foster skills development,
+                entrepreneurship and self-reliance among beneficiaries.
+              </p>
+              <div className="mt-6 grid sm:grid-cols-2 gap-4">
+                {[
+                  "Agricultural projects",
+                  "Catering and food services",
+                  "Skills training and entrepreneurship",
+                  "Institutional resilience",
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl border border-white/10 bg-brand-dark/15 backdrop-blur p-5">
+                    <div className="text-sm font-semibold text-white">{item}</div>
+                    <div className="text-xs text-white/75 mt-1">
+                      Building stability through practical income pathways.
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2 rounded-[2.5rem] border border-white/10 bg-white/10 overflow-hidden shadow-sm shadow-brand-dark/15 relative aspect-[16/10] sm:aspect-[4/3]">
+              <Image
+                src="/review-pics/Institutional Income Generating project.jpg"
+                alt="Income-generating project supporting institutional sustainability"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/35 via-brand-dark/5 to-transparent" />
+            </div>
+          </div>
+        </div>
+      </PageSection>
 
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
