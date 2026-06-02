@@ -66,6 +66,32 @@
                 &copy; {{ now()->year }} Mashambanzou Care Trust. Care, dignity and hope.
             </div>
         </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        @if (session('status'))
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: @json(session('status')),
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#0ea5a6',
+                });
+            </script>
+        @endif
+
+        @if (session('error') || $errors->any())
+            <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Upload failed',
+                    text: @json(session('error') ?: $errors->first()),
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#dc2626',
+                });
+            </script>
+        @endif
     </body>
 </html>
 
