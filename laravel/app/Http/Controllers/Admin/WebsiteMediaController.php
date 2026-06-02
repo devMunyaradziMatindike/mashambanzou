@@ -115,7 +115,7 @@ class WebsiteMediaController extends Controller
             'label' => ['nullable', 'string', 'max:255'],
             'alt_text' => ['nullable', 'string', 'max:255'],
             'sort_order' => ['nullable', 'integer', 'min:0'],
-            'image' => [$imageRequired ? 'required' : 'nullable', 'image', 'max:8192'],
+            'image' => [$imageRequired ? 'required' : 'nullable', 'image', 'max:16384'],
         ]);
     }
 
