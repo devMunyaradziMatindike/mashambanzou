@@ -30,7 +30,7 @@ const management = [
   },
   {
     name: "Mercyline Dzinemarira",
-    role: "Accountant",
+    role: "Operations and Resource Mobilisation Manager",
     bio: "A holder of a Masters in Professional Accounting and Corporate Governance. Graduateship of Institute of Chartered Secretaries & Administrators in Zimbabwe (ICAZ) Bachelor of Accountancy Honours degree. Diploma in Business and Accounting Studies (IBAS).",
     photoSrc: "/management/mercyline-dzinemarira.jpeg",
     mediaKey: "management.mercyline-dzinemarira",

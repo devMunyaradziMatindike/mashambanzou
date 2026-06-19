@@ -153,7 +153,7 @@ export default function DonatePage() {
               <ul className="space-y-2 text-white/85">
                 <li>MCU patients nutritional support</li>
                 <li>Mlambo and House of Safety nutritional support</li>
-                <li>Nenyere ECD Learning Center nutritional support</li>
+                <li>Nenyere Early Child Development Centre (NECDC) nutritional support</li>
                 <li className="text-white/70 italic">(Starches, proteins, vitamins)</li>
               </ul>
             </div>
@@ -185,7 +185,7 @@ export default function DonatePage() {
                 <li>Laundry detergents</li>
                 <li>Patients toiletries</li>
                 <li>House of Safety toiletries</li>
-                <li>Nenyere ECD Learning Center toiletries</li>
+                <li>Nenyere Early Child Development Centre (NECDC) toiletries</li>
               </ul>
             </div>
           </div>

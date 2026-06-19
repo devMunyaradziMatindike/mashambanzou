@@ -19,7 +19,7 @@ export default async function ChildProtectionEducationPage() {
     {
       src: "/review-pics/putting children first.jpg",
       alt: "Children supported through Mashambanzou Care Trust programmes",
-      label: "NDCC main image",
+      label: "NECDC main image",
     },
     {
       src: "/review-pics/ovc support.jpg",
@@ -116,7 +116,7 @@ export default async function ChildProtectionEducationPage() {
                 desc: "Support for orphans and vulnerable children to reach their potential.",
               },
               {
-                title: "NDCC / NECDS",
+                title: "NECDC",
                 desc: "Early childhood care, meals and basic education for vulnerable children.",
               },
               {
@@ -190,7 +190,7 @@ export default async function ChildProtectionEducationPage() {
         </div>
       </PageSection>
 
-      {/* Nenyere Day Care Centre */}
+      {/* Nenyere Early Child Development Centre */}
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
@@ -230,14 +230,14 @@ export default async function ChildProtectionEducationPage() {
 
             <div className="rounded-[2.5rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-7 sm:p-10 shadow-sm shadow-brand-dark/15">
               <span className="text-brand-sunlight font-semibold tracking-widest uppercase text-xs mb-3 block">
-                Nenyere Day Care Centre (NDCC)
+                Nenyere Early Child Development Centre (NECDC)
               </span>
               <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white">
                 Early childhood care for vulnerable children
               </h2>
               <p className="mt-4 text-white/85 leading-relaxed">
-                Established as the Nenyere Day Care Centre (NDCC), now known as the Nenyere Early Childhood Development
-                Centre (NECDS), the centre is registered under the Ministry of Primary and Secondary Education. It offers
+                Established as the Nenyere Day Care Centre (NDCC), now known as the Nenyere Early Child Development
+                Centre (NECDC), the centre is registered under the Ministry of Primary and Secondary Education. It offers
                 orphans and vulnerable children at least two hot meals a day and basic education while their parents or
                 guardians work for livelihoods.
               </p>
@@ -357,7 +357,7 @@ export default async function ChildProtectionEducationPage() {
 
           <p className="text-center mt-10">
             <Link href="/our-impact" className="text-brand-warm font-medium hover:underline">
-              ← Back to Our Impact
+              ← Back to Our Focus Areas
             </Link>
           </p>
         </div>

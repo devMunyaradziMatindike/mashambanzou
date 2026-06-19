@@ -208,7 +208,7 @@ export default async function EmpowermentAdvocacyPage() {
 
           <p className="text-center mt-10">
             <Link href="/our-impact" className="text-brand-warm font-medium hover:underline">
-              ← Back to Our Impact
+              ← Back to Our Focus Areas
             </Link>
           </p>
         </div>

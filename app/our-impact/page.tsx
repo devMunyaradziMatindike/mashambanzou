@@ -5,7 +5,7 @@ import { PageSection } from "@/components/PageSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Impact | Mashambanzou Care Trust",
+  title: "Our Focus Areas | Mashambanzou Care Trust",
   description:
     "Integrated clinical healthcare, community support, child protection and youth empowerment across Harare, Zvimba and Goromonzi.",
 };
@@ -67,7 +67,7 @@ export default function OurImpactPage() {
   return (
     <>
       <Hero
-        title="Our Impact"
+        title="Our Focus Areas"
         subtitle="From the 30-bed MCU to community outreach—we deliver integrated care across Harare Metropolitan, Zvimba and Goromonzi."
       />
 

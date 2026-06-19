@@ -89,7 +89,7 @@ export function Footer() {
                 href="/our-impact"
                 className="rounded-2xl border border-brand-dark/10 bg-white/10 p-5 hover:bg-white/20 transition-colors"
               >
-                <div className="text-sm font-semibold text-brand-dark">Our impact</div>
+                <div className="text-sm font-semibold text-brand-dark">Our Focus Areas</div>
                 <div className="text-xs text-brand-dark/70 mt-1">Programmes and outcomes.</div>
               </Link>
             </div>

@@ -62,12 +62,12 @@ const pathways = [
 const currentPartners = [
   { src: "/partners/little-company-of-mary.png", alt: "Little Company of Mary" },
   { src: "/partners/young-africa-international.jpeg", alt: "Young Africa International" },
+  { src: "/partners/oak-foundation.png", alt: "OAK Foundation" },
 ] as const;
 
 const pastDonors = [
   { src: "/partners/cafod.png", alt: "CAFOD" },
   { src: "/partners/australian-aid.png", alt: "Australian Aid" },
-  { src: "/partners/oak-foundation.png", alt: "OAK Foundation" },
   { src: "/partners/sida.png", alt: "Sida (Sweden)" },
   { src: "/partners/misean-cara.jpg", alt: "Misean Cara" },
 ] as const;
@@ -285,7 +285,7 @@ export default function PartnerPage() {
                 href="/our-impact"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white/30 text-white font-medium hover:bg-white/10 transition-colors w-full sm:w-auto"
               >
-                Explore our impact
+                Explore our focus areas
               </Link>
             </div>
           </div>

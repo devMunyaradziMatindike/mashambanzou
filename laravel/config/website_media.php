@@ -9,10 +9,10 @@ return [
             'multiple' => true,
             'fallbacks' => [
                 ['src' => '/review-pics/outreach.png', 'alt' => 'Outreach clinic visit in the community', 'label' => 'Outreach'],
-                ['src' => '/review-pics/mashambanzou care unit.jpg', 'alt' => 'Mashambanzou Care Unit facility', 'label' => 'Care Unit (MCU)'],
+                ['src' => '/review-pics/MCTR @ 35 celebrations in 2025.jpg', 'alt' => 'Mashambanzou Care Trust 35th anniversary celebration', 'label' => 'Care Unit (MCU)'],
                 ['src' => '/review-pics/advocacy.jpg', 'alt' => 'Community advocacy and awareness activities', 'label' => 'Advocacy'],
                 ['src' => '/review-pics/hiv testing.jpg', 'alt' => 'HIV testing and counselling support', 'label' => 'HIV testing'],
-                ['src' => '/review-pics/Institutional Income Generating project.jpg', 'alt' => 'Income-generating activities project', 'label' => 'Livelihoods'],
+                ['src' => '/review-pics/caretoshare.jpg', 'alt' => 'Care to Share vocational training and livelihoods', 'label' => 'Livelihoods'],
             ],
         ],
         'home.who-we-are.image' => [
@@ -154,10 +154,10 @@ return [
             'fallbacks' => [['src' => '/review-pics/ovc support.jpg', 'alt' => 'A child learning practical skills']],
         ],
         'child-protection.ndcc-gallery' => [
-            'label' => 'OVC Support - NDCC gallery',
+            'label' => 'OVC Support - NECDC gallery',
             'multiple' => true,
             'fallbacks' => [
-                ['src' => '/review-pics/putting children first.jpg', 'alt' => 'Children supported through Mashambanzou Care Trust programmes', 'label' => 'NDCC main image'],
+                ['src' => '/review-pics/putting children first.jpg', 'alt' => 'Children supported through Mashambanzou Care Trust programmes', 'label' => 'NECDC main image'],
                 ['src' => '/review-pics/ovc support.jpg', 'alt' => 'Orphans and vulnerable children support', 'label' => 'OVC support'],
                 ['src' => '/review-pics/child protection.jpg', 'alt' => 'Child protection and learning support', 'label' => 'Child protection'],
             ],

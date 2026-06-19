@@ -39,14 +39,8 @@ export const mainNav = [
       {
         label: "Houses of Safety",
         href: "/our-impact/child-protection-education",
-        imageSrc: "/review-pics/putting children first.jpg",
-        imageAlt: "Putting Children First programme support",
-      },
-      {
-        label: "Nenyere Day Care Centre (NDCC)",
-        href: "/our-impact/child-protection-education",
-        imageSrc: "/review-pics/ovc support.jpg",
-        imageAlt: "Children supported through Nenyere Day Care Centre",
+        imageSrc: "/review-pics/House of Safety.jpg",
+        imageAlt: "Houses of Safety temporary safe accommodation",
       },
     ],
   },

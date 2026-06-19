@@ -69,7 +69,7 @@ const timeline = [
   },
   {
     year: "Children",
-    title: "Established Nenyere Early Childhood Development Centre (NECDS)",
+    title: "Established Nenyere Early Child Development Centre (NECDC)",
     description:
       "Provides orphans and vulnerable children with at least two hot meals a day and basic education so parents/guardians can work for livelihoods.",
   },
@@ -310,18 +310,18 @@ export default function OurIdentityPage() {
       <PageSection className="section-padding bg-brand-green text-white">
         <div className="container-wide text-center">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold mb-4">
-            Integrated care, rooted in community
+            30-bed care unit and community outreach
           </h2>
           <p className="max-w-2xl mx-auto text-white/90 text-lg mb-8">
-            We combine the 30-bed Mashambanzou Care Unit with deep community outreach across Harare Metropolitan and
-            beyond—differentiating our integrated, person-centred approach in the region.
+            We combine the 30-bed Mashambanzou Care Unit with community outreach across Harare Metropolitan and
+            beyond—differentiating our person-centred approach in the region.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/our-impact"
               className="inline-flex items-center px-6 py-3 bg-white text-brand-dark rounded-full font-medium hover:bg-brand-sunlight transition-colors"
             >
-              Our Impact
+              Our Focus Areas
               <span className="ml-2">→</span>
             </Link>
             <Link

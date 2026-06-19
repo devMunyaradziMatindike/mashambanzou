@@ -131,10 +131,10 @@ export default function HomePage() {
         secondaryHref="https://paynow.co.zw/mashambanzou"
         backgroundImages={[
           { src: "/review-pics/outreach.png", alt: "Outreach clinic visit in the community", label: "Outreach" },
-          { src: "/review-pics/mashambanzou care unit.jpg", alt: "Mashambanzou Care Unit facility", label: "Care Unit (MCU)" },
+          { src: "/review-pics/MCTR @ 35 celebrations in 2025.jpg", alt: "Mashambanzou Care Trust 35th anniversary celebration", label: "Care Unit (MCU)" },
           { src: "/review-pics/advocacy.jpg", alt: "Community advocacy and awareness activities", label: "Advocacy" },
           { src: "/review-pics/hiv testing.jpg", alt: "HIV testing and counselling support", label: "HIV testing" },
-          { src: "/review-pics/Institutional Income Generating project.jpg", alt: "Income-generating activities project", label: "Livelihoods" },
+          { src: "/review-pics/caretoshare.jpg", alt: "Care to Share vocational training and livelihoods", label: "Livelihoods" },
         ]}
         mediaSectionKey="home.hero.slideshow"
       />
@@ -236,11 +236,11 @@ export default function HomePage() {
                 What makes us different
               </span>
               <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-6">
-                Integrated 30-bed care unit + deep community outreach
+                30-bed care unit + community outreach
               </h2>
               <p className="text-white/85 text-lg leading-relaxed mb-4">
-                In the Harare Metropolitan area, MCT stands out through its integrated 30-bed Mashambanzou Care Unit
-                (MCU) combined with deep community outreach. We deliver on-site clinical care—HIV testing and counselling,
+                In the Harare Metropolitan area, MCT stands out through its 30-bed Mashambanzou Care Unit (MCU) combined
+                with community outreach. We deliver on-site clinical care—HIV testing and counselling, treatment of
                 treatment of opportunistic infections, TB testing, palliative care and VIAC cervical cancer screening—plus
                 outreach clinics in Mbare, Hopley, Glen Norah, Highfield, Dzivarasekwa and beyond.
               </p>
@@ -248,7 +248,7 @@ export default function HomePage() {
                 href="/our-impact"
                 className="inline-flex items-center gap-2 text-white font-medium hover:text-brand-sunlight transition-colors"
               >
-                Our impact
+                Our Focus Areas
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -527,6 +527,19 @@ export default function HomePage() {
                     className="max-h-14 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                   />
                 </a>
+                <a
+                  href="/get-involved/partner"
+                  className="group flex items-center justify-center rounded-xl bg-white/10 border border-white/15 p-4 h-24 hover:border-white/25 hover:bg-white/15 hover:shadow-sm transition-all"
+                  aria-label="OAK Foundation"
+                >
+                  <Image
+                    src="/partners/oak-foundation.png"
+                    alt="OAK Foundation"
+                    width={260}
+                    height={120}
+                    className="max-h-14 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                  />
+                </a>
               </div>
             </div>
 
@@ -538,7 +551,6 @@ export default function HomePage() {
                 {[
                   { src: "/partners/cafod.png", alt: "CAFOD" },
                   { src: "/partners/australian-aid.png", alt: "Australian Aid" },
-                  { src: "/partners/oak-foundation.png", alt: "OAK Foundation" },
                   { src: "/partners/sida.png", alt: "Sida (Sweden Sverige)" },
                   { src: "/partners/misean-cara.jpg", alt: "Misean Cara" },
                 ].map((logo) => (

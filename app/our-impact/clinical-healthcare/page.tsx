@@ -266,7 +266,7 @@ export default async function ClinicalHealthcarePage() {
 
           <div className="mt-8">
             <Link href="/our-impact" className="text-slate-300 font-medium hover:text-brand-sunlight transition-colors">
-              ← Back to Our Impact
+              ← Back to Our Focus Areas
             </Link>
           </div>
         </div>

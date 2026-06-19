@@ -13,7 +13,7 @@ Website for Mashambanzou Care Trust—HIV services, OVC support, and community s
 ## Structure (Giving Kitchen–inspired)
 
 - **Our Identity** — Our Story, Team, Board & Governance, News & Press
-- **Our Impact** — Overview, Integrated Health Service Delivery, Community Strengthening, Orphans and Vulnerable Children (OVC) Support, Promotion of Human Rights, Where We Work
+- **Our Focus Areas** — Overview, Integrated Health Service Delivery, Community Strengthening, Orphans and Vulnerable Children (OVC) Support, Promotion of Human Rights, Where We Work
 - **Stories** — Success stories and narratives
 - **Why Mashambanzou** — Vision, mission, differentiation
 - **Get Involved** — Donate, Fundraise, Volunteer, Host an Event, Partner, Patron Society
