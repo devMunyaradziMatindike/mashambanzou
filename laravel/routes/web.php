@@ -2,10 +2,14 @@
 
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\CareerController as AdminCareerController;
 use App\Http\Controllers\Admin\SuccessStoryController as AdminSuccessStoryController;
+use App\Http\Controllers\Admin\TenderController as AdminTenderController;
 use App\Http\Controllers\Admin\WebsiteMediaController as AdminWebsiteMediaController;
 use App\Http\Controllers\SuccessStoryController;
+use App\Models\CareerOpening;
 use App\Models\SuccessStory;
+use App\Models\TenderInvitation;
 use App\Models\WebsiteMedia;
 use Illuminate\Support\Facades\Route;
 
@@ -55,6 +59,47 @@ Route::get('/api/website-media', function () {
     ];
 })->name('api.website-media.index');
 
+Route::get('/api/careers', function () {
+    return [
+        'careers' => CareerOpening::query()
+            ->published()
+            ->orderBy('application_deadline')
+            ->latest()
+            ->get()
+            ->map(fn (CareerOpening $career) => [
+                'id' => $career->id,
+                'title' => $career->title,
+                'slug' => $career->slug,
+                'application_deadline' => $career->application_deadline?->toIso8601String(),
+                'image_url' => $career->displayImageUrl(),
+                'is_expired' => $career->application_deadline?->isPast() ?? false,
+            ]),
+    ];
+})->name('api.careers.index');
+
+Route::get('/api/tenders', function () {
+    return [
+        'tenders' => TenderInvitation::query()
+            ->published()
+            ->orderBy('application_deadline')
+            ->latest()
+            ->get()
+            ->map(fn (TenderInvitation $tender) => [
+                'id' => $tender->id,
+                'title' => $tender->title,
+                'slug' => $tender->slug,
+                'application_deadline' => $tender->application_deadline?->toIso8601String(),
+                'file_url' => $tender->fileUrl(),
+                'original_filename' => $tender->original_filename,
+                'file_size' => $tender->file_size,
+                'file_size_label' => $tender->fileSizeLabel(),
+                'uploaded_at' => $tender->created_at?->toIso8601String(),
+                'uploaded_label' => $tender->uploadedLabel(),
+                'is_expired' => $tender->application_deadline?->isPast() ?? false,
+            ]),
+    ];
+})->name('api.tenders.index');
+
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'authenticate'])->name('admin.authenticate');
 Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
@@ -62,5 +107,7 @@ Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.log
 Route::middleware('mct.admin')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('success-stories', AdminSuccessStoryController::class)->except('show');
     Route::resource('website-media', AdminWebsiteMediaController::class)->except('show');
+    Route::resource('careers', AdminCareerController::class)->except('show');
+    Route::resource('tenders', AdminTenderController::class)->except('show');
     Route::resource('users', AdminUserController::class)->only(['index', 'create', 'store']);
 });

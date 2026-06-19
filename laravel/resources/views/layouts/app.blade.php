@@ -39,6 +39,8 @@
                 <nav class="hidden items-center gap-6 text-sm font-semibold md:flex">
                     <a class="hover:text-brand-green" href="{{ route('success-stories.index') }}">Success Stories</a>
                     <a class="hover:text-brand-green" href="{{ route('admin.success-stories.index') }}">Stories Admin</a>
+                    <a class="hover:text-brand-green" href="{{ route('admin.careers.index') }}">Careers Admin</a>
+                    <a class="hover:text-brand-green" href="{{ route('admin.tenders.index') }}">Tenders Admin</a>
                     <a class="hover:text-brand-green" href="{{ route('admin.website-media.index') }}">Website Images</a>
                     <a class="hover:text-brand-green" href="{{ route('admin.users.index') }}">Admin Users</a>
                 </nav>

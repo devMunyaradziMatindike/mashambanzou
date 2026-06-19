@@ -105,7 +105,7 @@ export function Hero({
   }
 
   return (
-    <header className="relative pt-28 sm:pt-36 pb-14 sm:pb-20 px-4 sm:px-6 overflow-hidden bg-brand-cream">
+    <header className="relative pt-32 sm:pt-44 pb-14 sm:pb-20 px-4 sm:px-6 overflow-hidden bg-brand-cream">
       {hasGallery && (
         <div className="absolute inset-0">
           {/* Soft-focus cinematic backdrop */}

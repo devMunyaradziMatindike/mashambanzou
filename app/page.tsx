@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Hero } from "@/components/Hero";
 import { IntroVideo } from "@/components/IntroVideo";
+import { CareersTeaser } from "@/components/CareersTeaser";
 import { LatestStories } from "@/components/LatestStories";
 import { imageFromMedia } from "@/lib/website-media";
 import { useWebsiteMedia } from "@/lib/useWebsiteMedia";
@@ -545,6 +546,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <CareersTeaser />
 
       {/* Governance / Donors teaser */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-brand-cream/50">

@@ -48,9 +48,16 @@ export const mainNav = [
   { label: "Contact us", href: "/contact" },
 ] as const;
 
+export const secondaryNav = [
+  { label: "Careers", href: "/careers" },
+  { label: "Invitation to Tenders", href: "/invitation-to-tenders" },
+] as const;
+
 export const footerNav = [
   { label: "Our Story", href: "/our-identity" },
   { label: "Our Services", href: "/our-impact" },
+  { label: "Careers", href: "/careers" },
+  { label: "Invitation to Tenders", href: "/invitation-to-tenders" },
   { label: "Donate", href: "https://paynow.co.zw/mashambanzou" },
   { label: "Contact", href: "/contact" },
 ];
