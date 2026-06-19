@@ -3,6 +3,7 @@ import { PageSection } from "@/components/PageSection";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { currentPartners, pastDonors } from "@/lib/partners";
 
 export const metadata: Metadata = {
   title: "Partner With Us | Mashambanzou Care Trust",
@@ -57,19 +58,6 @@ const pathways = [
     bullets: ["Volunteer days", "Skills-based support", "Awareness & advocacy"],
     icon: "🧑‍🤝‍🧑",
   },
-] as const;
-
-const currentPartners = [
-  { src: "/partners/little-company-of-mary.png", alt: "Little Company of Mary" },
-  { src: "/partners/young-africa-international.jpeg", alt: "Young Africa International" },
-  { src: "/partners/oak-foundation.png", alt: "OAK Foundation" },
-] as const;
-
-const pastDonors = [
-  { src: "/partners/cafod.png", alt: "CAFOD" },
-  { src: "/partners/australian-aid.png", alt: "Australian Aid" },
-  { src: "/partners/sida.png", alt: "Sida (Sweden)" },
-  { src: "/partners/misean-cara.jpg", alt: "Misean Cara" },
 ] as const;
 
 export default function PartnerPage() {

@@ -8,6 +8,7 @@ import { IntroVideo } from "@/components/IntroVideo";
 import { LatestStories } from "@/components/LatestStories";
 import { imageFromMedia } from "@/lib/website-media";
 import { useWebsiteMedia } from "@/lib/useWebsiteMedia";
+import { currentPartners, pastDonors } from "@/lib/partners";
 
 const marqueeItems = [
   "Clinical Healthcare",
@@ -501,45 +502,22 @@ export default function HomePage() {
                 Current partners
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 items-center">
-                <a
-                  href="/get-involved/partner"
-                  className="group flex items-center justify-center rounded-xl bg-white/10 border border-white/15 p-4 h-24 hover:border-white/25 hover:bg-white/15 hover:shadow-sm transition-all"
-                  aria-label="Little Company of Mary"
-                >
-                  <Image
-                    src="/partners/little-company-of-mary.png"
-                    alt="Little Company of Mary"
-                    width={320}
-                    height={120}
-                    className="max-h-14 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
-                  />
-                </a>
-                <a
-                  href="/get-involved/partner"
-                  className="group flex items-center justify-center rounded-xl bg-white/10 border border-white/15 p-4 h-24 hover:border-white/25 hover:bg-white/15 hover:shadow-sm transition-all"
-                  aria-label="Young Africa International"
-                >
-                  <Image
-                    src="/partners/young-africa-international.jpeg"
-                    alt="Young Africa International"
-                    width={220}
-                    height={220}
-                    className="max-h-14 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
-                  />
-                </a>
-                <a
-                  href="/get-involved/partner"
-                  className="group flex items-center justify-center rounded-xl bg-white/10 border border-white/15 p-4 h-24 hover:border-white/25 hover:bg-white/15 hover:shadow-sm transition-all"
-                  aria-label="OAK Foundation"
-                >
-                  <Image
-                    src="/partners/oak-foundation.png"
-                    alt="OAK Foundation"
-                    width={260}
-                    height={120}
-                    className="max-h-14 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
-                  />
-                </a>
+                {currentPartners.map((logo) => (
+                  <a
+                    key={logo.src}
+                    href="/get-involved/partner"
+                    className="group flex items-center justify-center rounded-xl bg-white/10 border border-white/15 p-4 h-24 hover:border-white/25 hover:bg-white/15 hover:shadow-sm transition-all"
+                    aria-label={logo.alt}
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={320}
+                      height={120}
+                      className="max-h-14 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                    />
+                  </a>
+                ))}
               </div>
             </div>
 
@@ -548,12 +526,7 @@ export default function HomePage() {
                 Past donors
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 items-center">
-                {[
-                  { src: "/partners/cafod.png", alt: "CAFOD" },
-                  { src: "/partners/australian-aid.png", alt: "Australian Aid" },
-                  { src: "/partners/sida.png", alt: "Sida (Sweden Sverige)" },
-                  { src: "/partners/misean-cara.jpg", alt: "Misean Cara" },
-                ].map((logo) => (
+                {pastDonors.map((logo) => (
                   <div
                     key={logo.src}
                     className="flex items-center justify-center rounded-xl bg-white/10 border border-white/15 p-4 h-24 hover:border-white/25 hover:bg-white/15 hover:shadow-sm transition-all"
