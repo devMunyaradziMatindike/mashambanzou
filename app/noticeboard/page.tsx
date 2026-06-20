@@ -23,8 +23,8 @@ export default async function NoticeboardPage() {
         subtitle="Official notices, announcements and updates from Mashambanzou Care Trust."
         primaryCta="Contact us"
         primaryHref="/contact"
-        backgroundImageSrc="/review-pics/advocacy.jpg"
-        backgroundImageAlt="Community announcements and outreach"
+        backgroundImageSrc="/review-pics/noticeboard-education.jpg"
+        backgroundImageAlt="Children at an Education For All community event"
       />
 
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">

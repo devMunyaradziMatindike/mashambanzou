@@ -24,8 +24,8 @@ export default async function CareersPage() {
         primaryHref="/contact"
         secondaryCta="Partner with us"
         secondaryHref="/get-involved/partner"
-        backgroundImageSrc="/review-pics/programmes manager.png"
-        backgroundImageAlt="Mashambanzou Care Trust team"
+        backgroundImageSrc="/review-pics/caretoshare.jpg"
+        backgroundImageAlt="Care to Share vocational training and livelihoods"
       />
 
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
