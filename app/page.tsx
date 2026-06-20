@@ -44,8 +44,8 @@ const bentoItems = [
     aspect: "aspect-[3/4]",
     bg: "bg-brand-green/10",
     label: "Support",
-    imageSrc: "/review-pics/outreach.png",
-    imageAlt: "Community outreach support visit",
+    imageSrc: "/review-pics/community-strengthening.png",
+    imageAlt: "Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach",
     mediaKey: "home.impact.community",
   },
   {
@@ -56,8 +56,8 @@ const bentoItems = [
     aspect: "aspect-square",
     bg: "bg-brand-dark/10",
     label: "Children",
-    imageSrc: "/review-pics/ovc support.jpg",
-    imageAlt: "School support and dignity packs distribution",
+    imageSrc: "/review-pics/ovc-support-home.png",
+    imageAlt: "Young people and children receiving teddy bear gifts at a Mashambanzou Care Trust support activity",
     mediaKey: "home.impact.ovc",
   },
   {
@@ -101,8 +101,8 @@ const serviceCards = [
     bg: "bg-brand-green text-white",
     accent: "bg-white/20 text-brand-sunlight",
     featured: true,
-    imageSrc: "/review-pics/outreach.png",
-    imageAlt: "Outreach programme in the community",
+    imageSrc: "/review-pics/community-strengthening.png",
+    imageAlt: "Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach",
     mediaKey: "home.impact.community",
   },
   {
@@ -446,8 +446,8 @@ export default function HomePage() {
             </div>
             <div className="rounded-2xl overflow-hidden border border-white/15 bg-white/10 aspect-video relative">
               <Image
-                src="/review-pics/outreach.png"
-                alt="Community outreach across our service areas"
+                src="/review-pics/where-we-work-community.png"
+                alt="Community members at a Mashambanzou Care Trust outreach programme"
                 fill
                 sizes="(max-width: 768px) 100vw, 560px"
                 className="object-cover"

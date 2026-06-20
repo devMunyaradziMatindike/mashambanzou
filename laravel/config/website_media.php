@@ -28,12 +28,12 @@ return [
         'home.impact.community' => [
             'label' => 'Homepage impact card - Community Strengthening',
             'multiple' => false,
-            'fallbacks' => [['src' => '/review-pics/outreach.png', 'alt' => 'Community outreach support visit']],
+            'fallbacks' => [['src' => '/review-pics/community-strengthening.png', 'alt' => 'Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach']],
         ],
         'home.impact.ovc' => [
             'label' => 'Homepage impact card - OVC Support',
             'multiple' => false,
-            'fallbacks' => [['src' => '/review-pics/ovc support.jpg', 'alt' => 'School support and dignity packs distribution']],
+            'fallbacks' => [['src' => '/review-pics/ovc-support-home.png', 'alt' => 'Young people and children receiving teddy bear gifts at a Mashambanzou Care Trust support activity']],
         ],
         'home.impact.human-rights' => [
             'label' => 'Homepage impact card - Human Rights',
@@ -121,12 +121,12 @@ return [
         'community-support.hero' => [
             'label' => 'Community Strengthening hero image',
             'multiple' => false,
-            'fallbacks' => [['src' => '/review-pics/putting children first.jpg', 'alt' => 'A child learning practical skills']],
+            'fallbacks' => [['src' => '/review-pics/community-strengthening.png', 'alt' => 'Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach']],
         ],
         'community-support.family-feature' => [
             'label' => 'Community Strengthening - Family Centred Support image',
             'multiple' => false,
-            'fallbacks' => [['src' => '/review-pics/outreach.png', 'alt' => 'Community outreach and family support']],
+            'fallbacks' => [['src' => '/review-pics/community-strengthening.png', 'alt' => 'Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach']],
         ],
         'community-support.srhr-feature' => [
             'label' => 'Community Strengthening - SRHR image',
@@ -138,7 +138,7 @@ return [
             'multiple' => true,
             'fallbacks' => [
                 ['src' => '/review-pics/MCT and faith.jpg', 'alt' => 'Community members at a support activity', 'label' => 'Access to services and documentation through community outreach.'],
-                ['src' => '/review-pics/Disability inclusion.jpg', 'alt' => 'Disability inclusion and community support', 'label' => 'Improving dignity and safe environments in community spaces.'],
+                ['src' => '/review-pics/community-strengthening.png', 'alt' => 'Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach', 'label' => 'Improving dignity and safe environments in community spaces.'],
                 ['src' => '/review-pics/outreach.png', 'alt' => 'Community support and outreach visit', 'label' => 'Integrated outreach that links people to care and follow-up.'],
             ],
         ],

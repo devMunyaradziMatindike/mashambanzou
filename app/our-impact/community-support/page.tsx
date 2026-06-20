@@ -25,8 +25,8 @@ export default async function CommunitySupportPage() {
         primaryHref="/donate"
         secondaryCta="Contact"
         secondaryHref="/contact"
-        backgroundImageSrc="/review-pics/putting children first.jpg"
-        backgroundImageAlt="A child learning practical skills"
+        backgroundImageSrc="/review-pics/community-strengthening.png"
+        backgroundImageAlt="Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach"
         mediaKey="community-support.hero"
       />
 
@@ -88,12 +88,12 @@ export default async function CommunitySupportPage() {
             <div className="rounded-[2.5rem] border border-white/10 bg-white/10 overflow-hidden shadow-sm shadow-brand-dark/15 relative aspect-[16/10] sm:aspect-[4/3]">
               <Image
                 src={imageFromMedia(media, "community-support.family-feature", {
-                  src: "/review-pics/outreach.png",
-                  alt: "Community outreach and family support",
+                  src: "/review-pics/community-strengthening.png",
+                  alt: "Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach",
                 }).src}
                 alt={imageFromMedia(media, "community-support.family-feature", {
-                  src: "/review-pics/outreach.png",
-                  alt: "Community outreach and family support",
+                  src: "/review-pics/community-strengthening.png",
+                  alt: "Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach",
                 }).alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -195,8 +195,8 @@ export default async function CommunitySupportPage() {
                 label: "Access to services and documentation through community outreach.",
               },
               {
-                src: "/review-pics/Disability inclusion.jpg",
-                alt: "Disability inclusion and community support",
+                src: "/review-pics/community-strengthening.png",
+                alt: "Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach",
                 label: "Improving dignity and safe environments in community spaces.",
               },
               {

@@ -3,11 +3,13 @@
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CareerController as AdminCareerController;
+use App\Http\Controllers\Admin\NoticeController as AdminNoticeController;
 use App\Http\Controllers\Admin\SuccessStoryController as AdminSuccessStoryController;
 use App\Http\Controllers\Admin\TenderController as AdminTenderController;
 use App\Http\Controllers\Admin\WebsiteMediaController as AdminWebsiteMediaController;
 use App\Http\Controllers\SuccessStoryController;
 use App\Models\CareerOpening;
+use App\Models\Notice;
 use App\Models\SuccessStory;
 use App\Models\TenderInvitation;
 use App\Models\WebsiteMedia;
@@ -100,6 +102,25 @@ Route::get('/api/tenders', function () {
     ];
 })->name('api.tenders.index');
 
+Route::get('/api/notices', function () {
+    return [
+        'notices' => Notice::query()
+            ->published()
+            ->latest('published_at')
+            ->latest()
+            ->get()
+            ->map(fn (Notice $notice) => [
+                'id' => $notice->id,
+                'title' => $notice->title,
+                'slug' => $notice->slug,
+                'published_at' => $notice->published_at?->toIso8601String(),
+                'excerpt' => $notice->excerpt,
+                'body' => $notice->body,
+                'image_url' => $notice->imageUrl(),
+            ]),
+    ];
+})->name('api.notices.index');
+
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'authenticate'])->name('admin.authenticate');
 Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
@@ -109,5 +130,6 @@ Route::middleware('mct.admin')->prefix('admin')->name('admin.')->group(function 
     Route::resource('website-media', AdminWebsiteMediaController::class)->except('show');
     Route::resource('careers', AdminCareerController::class)->except('show');
     Route::resource('tenders', AdminTenderController::class)->except('show');
+    Route::resource('notices', AdminNoticeController::class)->except('show');
     Route::resource('users', AdminUserController::class)->only(['index', 'create', 'store']);
 });

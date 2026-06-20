@@ -39,7 +39,6 @@ class CareerController extends Controller
 
         if ($request->hasFile('image')) {
             $data['image_path'] = $request->file('image')->store('careers', 'public');
-            $data['image_url'] = null;
         }
 
         CareerOpening::create($data);
@@ -66,7 +65,6 @@ class CareerController extends Controller
             }
 
             $data['image_path'] = $request->file('image')->store('careers', 'public');
-            $data['image_url'] = null;
         }
 
         $career->update($data);
@@ -94,7 +92,6 @@ class CareerController extends Controller
         return $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'image' => ['nullable', 'image', 'max:16384'],
-            'image_url' => ['nullable', 'url', 'max:2048'],
             'application_deadline' => ['required', 'date'],
         ]);
     }

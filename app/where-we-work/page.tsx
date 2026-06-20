@@ -42,8 +42,8 @@ export default function WhereWeWorkPage() {
       <Hero
         title="Where We Work"
         subtitle="Our operational footprint across Harare Metropolitan, Zvimba and Goromonzi."
-        backgroundImageSrc="/review-pics/outreach.png"
-        backgroundImageAlt="Community outreach programme"
+        backgroundImageSrc="/review-pics/where-we-work-community.png"
+        backgroundImageAlt="Community members at a Mashambanzou Care Trust outreach programme"
       />
 
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
@@ -88,8 +88,8 @@ export default function WhereWeWorkPage() {
 
             <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/10 aspect-[16/10] sm:aspect-[4/3]">
               <Image
-                src="/review-pics/outreach.png"
-                alt="Community outreach programme"
+                src="/review-pics/where-we-work-community.png"
+                alt="Community members at a Mashambanzou Care Trust outreach programme"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"

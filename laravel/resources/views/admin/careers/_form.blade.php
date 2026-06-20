@@ -17,7 +17,7 @@
     </div>
 
     <div>
-        <label for="image" class="text-sm font-semibold text-brand-dark">Picture upload</label>
+        <label for="image" class="text-sm font-semibold text-brand-dark">Picture upload (optional)</label>
         <input
             id="image"
             name="image"
@@ -29,22 +29,6 @@
             <img src="{{ asset('storage/'.$career->image_path) }}" alt="{{ $career->title }}" class="mt-4 h-40 w-full rounded-2xl object-cover">
         @endif
         @error('image')
-            <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-        @enderror
-    </div>
-
-    <div>
-        <label for="image_url" class="text-sm font-semibold text-brand-dark">Picture URL (optional)</label>
-        <input
-            id="image_url"
-            name="image_url"
-            type="url"
-            value="{{ old('image_url', $career->image_url) }}"
-            class="mt-2 w-full rounded-2xl border border-brand-dark/15 bg-white px-4 py-3 outline-none focus:ring-4 focus:ring-brand-green/20"
-            placeholder="https://example.com/job-image.jpg"
-        >
-        <p class="mt-2 text-sm text-brand-dark/60">Use this if you already have an image hosted elsewhere. Upload takes priority over URL.</p>
-        @error('image_url')
             <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
         @enderror
     </div>
