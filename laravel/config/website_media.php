@@ -8,7 +8,6 @@ return [
             'label' => 'Homepage hero slideshow',
             'multiple' => true,
             'fallbacks' => [
-                ['src' => '/review-pics/outreach.png', 'alt' => 'Outreach clinic visit in the community', 'label' => 'Outreach'],
                 ['src' => '/review-pics/MCTR @ 35 celebrations in 2025.jpg', 'alt' => 'Mashambanzou Care Trust 35th anniversary celebration', 'label' => 'Care Unit (MCU)'],
                 ['src' => '/review-pics/advocacy.jpg', 'alt' => 'Community advocacy and awareness activities', 'label' => 'Advocacy'],
                 ['src' => '/review-pics/hiv testing.jpg', 'alt' => 'HIV testing and counselling support', 'label' => 'HIV testing'],
