@@ -28,7 +28,7 @@ return [
         'home.impact.community' => [
             'label' => 'Homepage impact card - Community Strengthening',
             'multiple' => false,
-            'fallbacks' => [['src' => '/review-pics/community-strengthening.png', 'alt' => 'Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach']],
+            'fallbacks' => [['src' => '/review-pics/community-strengthening-home.png', 'alt' => 'Community outreach workers meeting with women during a field consultation']],
         ],
         'home.impact.ovc' => [
             'label' => 'Homepage impact card - OVC Support',

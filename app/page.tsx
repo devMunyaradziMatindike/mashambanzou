@@ -44,8 +44,8 @@ const bentoItems = [
     aspect: "aspect-[3/4]",
     bg: "bg-brand-green/10",
     label: "Support",
-    imageSrc: "/review-pics/community-strengthening.png",
-    imageAlt: "Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach",
+    imageSrc: "/review-pics/community-strengthening-home.png",
+    imageAlt: "Community outreach workers meeting with women during a field consultation",
     mediaKey: "home.impact.community",
   },
   {
@@ -101,8 +101,8 @@ const serviceCards = [
     bg: "bg-brand-green text-white",
     accent: "bg-white/20 text-brand-sunlight",
     featured: true,
-    imageSrc: "/review-pics/community-strengthening.png",
-    imageAlt: "Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach",
+    imageSrc: "/review-pics/community-strengthening-home.png",
+    imageAlt: "Community outreach workers meeting with women during a field consultation",
     mediaKey: "home.impact.community",
   },
   {
