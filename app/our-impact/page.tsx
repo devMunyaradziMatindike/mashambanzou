@@ -129,8 +129,18 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="Outreach Clinics for Opportunistic Infections (OIs) Treatments"
-            imageSrc="/review-pics/outreach.png"
-            imageAlt="Outreach clinic providing community health services"
+            imageSrc="/review-pics/outreach-tablets-handover.jpeg"
+            imageAlt="Outreach worker providing medication to a mother and child"
+            images={[
+              {
+                src: "/review-pics/outreach-tablets-handover.jpeg",
+                alt: "Outreach worker providing medication to a mother and child",
+              },
+              {
+                src: "/review-pics/outreach-clinic-consultation.jpeg",
+                alt: "Outreach clinic consultation and medication distribution",
+              },
+            ]}
           >
             <p>
               Mashambanzou Care Trust operates outreach clinics as part of its FCS project to provide comprehensive care
@@ -142,8 +152,8 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="Family Centred Support (FCS)"
-            imageSrc="/review-pics/putting children first.jpg"
-            imageAlt="Family centred support in the community"
+            imageSrc="/review-pics/family-centred-support-teaching.jpeg"
+            imageAlt="Community educator teaching schoolgirls during a Family Centred Support outreach"
           >
             <p>
               The Family Centered Support (FCS) Project focuses on improving the lives of PLWHIV, supporting Orphans and
@@ -156,8 +166,8 @@ export default function OurImpactPage() {
 
           <ImpactSection
             title="SRHR, Pregnant Teen Mothers and Adolescent Support"
-            imageSrc="/review-pics/putting children first.jpg"
-            imageAlt="SRHR education and adolescent support"
+            imageSrc="/review-pics/srhr-adolescent-support.jpg"
+            imageAlt="Young mothers and adolescents receiving support at a community outreach"
           >
             <p>
               Teen pregnancies have been prevalent in Zimbabwe due to poverty, cultural and religious beliefs which
