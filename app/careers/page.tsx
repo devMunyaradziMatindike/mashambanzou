@@ -24,7 +24,7 @@ export default async function CareersPage() {
         primaryHref="/contact"
         secondaryCta="Partner with us"
         secondaryHref="/get-involved/partner"
-        backgroundImageSrc="/review-pics/caretoshare.jpg"
+        backgroundImageSrc="/review-pics/careers-hero.jpg"
         backgroundImageAlt="Care to Share vocational training and livelihoods"
       />
 
