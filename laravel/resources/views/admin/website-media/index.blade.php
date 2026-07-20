@@ -27,8 +27,11 @@
                     @php($items = $media->get($key, collect()))
                     @php($activeItems = $items->where('is_active', true)->values())
                     @php($fallbacks = collect($section['fallbacks'] ?? []))
-                    @php($liveImages = $activeItems->isNotEmpty() ? $activeItems : $fallbacks)
-                    @php($usingFallbacks = $activeItems->isEmpty() && $fallbacks->isNotEmpty())
+                    @php($isMultiple = $section['multiple'] ?? true)
+                    @php($liveImages = $isMultiple ? $fallbacks->concat($activeItems) : ($activeItems->isNotEmpty() ? $activeItems : $fallbacks))
+                    @php($hasAdminUploads = $activeItems->isNotEmpty())
+                    @php($usingFallbacks = ! $hasAdminUploads && $fallbacks->isNotEmpty())
+                    @php($hasMixed = $isMultiple && $hasAdminUploads && $fallbacks->isNotEmpty())
                     <section class="overflow-hidden rounded-[2rem] border border-brand-dark/10 bg-white/80 shadow-sm">
                         <div class="flex flex-col gap-4 border-b border-brand-dark/10 p-5 sm:flex-row sm:items-center sm:justify-between">
                             <div>
@@ -51,12 +54,24 @@
                             <div class="border-b border-brand-dark/10 px-5 pt-5">
                                 <div class="flex flex-wrap items-center gap-3">
                                     <h3 class="font-heading text-xl font-semibold">Currently showing on the website</h3>
-                                    <span class="rounded-full px-3 py-1 text-xs font-bold {{ $usingFallbacks ? 'bg-brand-dark/10 text-brand-dark/60' : 'bg-brand-green/10 text-brand-green' }}">
-                                        {{ $usingFallbacks ? 'Built-in site image' : 'Admin replacement' }}
+                                    <span class="rounded-full px-3 py-1 text-xs font-bold {{ $hasMixed ? 'bg-brand-sunlight/20 text-brand-dark' : ($usingFallbacks ? 'bg-brand-dark/10 text-brand-dark/60' : 'bg-brand-green/10 text-brand-green') }}">
+                                        @if ($hasMixed)
+                                            Built-in + added images
+                                        @elseif ($usingFallbacks)
+                                            {{ $isMultiple ? 'Built-in site images' : 'Built-in site image' }}
+                                        @else
+                                            {{ $isMultiple ? 'Admin uploads' : 'Admin replacement' }}
+                                        @endif
                                     </span>
                                 </div>
                                 <p class="mt-2 text-sm text-brand-dark/60">
-                                    {{ $usingFallbacks ? 'Upload a replacement to override this image automatically on the Next.js website.' : 'These active admin uploads are being served to the Next.js website.' }}
+                                    @if ($isMultiple && $hasAdminUploads)
+                                        Built-in images stay in the slideshow. New uploads are added after them on the Next.js website.
+                                    @elseif ($usingFallbacks)
+                                        {{ $isMultiple ? 'Upload images to add them to this slideshow on the Next.js website.' : 'Upload a replacement to override this image automatically on the Next.js website.' }}
+                                    @else
+                                        These active admin uploads are being served to the Next.js website.
+                                    @endif
                                 </p>
                             </div>
                             <div class="grid gap-4 p-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -82,13 +97,13 @@
                                             <div class="mt-4 flex gap-2">
                                                 @if ($isFallback)
                                                     <a href="{{ route('admin.website-media.create', ['section' => $key]) }}" class="rounded-xl bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-green/90">
-                                                        Replace image
+                                                        {{ $isMultiple ? 'Add to slideshow' : 'Replace image' }}
                                                     </a>
                                                 @else
                                                     <a href="{{ route('admin.website-media.edit', $item) }}" class="rounded-xl border border-brand-dark/15 px-4 py-2 text-sm font-semibold hover:bg-white">
                                                         Edit replacement
                                                     </a>
-                                                    <form method="POST" action="{{ route('admin.website-media.destroy', $item) }}" onsubmit="return confirm('Delete this website image? The site will fall back to its built-in image.')">
+                                                    <form method="POST" action="{{ route('admin.website-media.destroy', $item) }}" onsubmit="return confirm('Delete this website image?{{ $isMultiple ? ' It will be removed from the slideshow.' : ' The site will fall back to its built-in image.' }}')">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button class="rounded-xl border border-red-200 px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-50">

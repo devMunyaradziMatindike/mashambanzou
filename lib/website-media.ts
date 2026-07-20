@@ -41,13 +41,18 @@ export function imageFromMedia(media: WebsiteMediaMap, key: string, fallback: Ma
 }
 
 export function imagesFromMedia(media: WebsiteMediaMap, key: string, fallbacks: ManagedImage[]): ManagedImage[] {
-  const items = media[key]?.filter((item) => item.image_url) ?? [];
+  const items = (media[key] ?? [])
+    .filter((item) => item.image_url)
+    .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0) || Number(a.id) - Number(b.id));
+
   if (!items.length) return fallbacks;
 
-  return items.map((item, index) => ({
+  const uploaded = items.map((item, index) => ({
     src: item.image_url,
     alt: item.alt_text || fallbacks[index]?.alt || item.label || "",
     label: item.label || fallbacks[index]?.label,
   }));
+
+  return [...fallbacks, ...uploaded];
 }
 

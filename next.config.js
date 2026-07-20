@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "img.youtube.com", pathname: "/vi/**" },
+      { protocol: "https", hostname: "admin.mashambanzoucaretrust.com", pathname: "/storage/**" },
       { protocol: "http", hostname: "127.0.0.1", port: "8000", pathname: "/storage/**" },
       { protocol: "http", hostname: "localhost", port: "8000", pathname: "/storage/**" },
     ],
