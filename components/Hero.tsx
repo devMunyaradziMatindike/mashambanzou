@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
+import { RichText } from "@/components/ContentText";
 import { imagesFromMedia } from "@/lib/website-media";
 import { useWebsiteMedia } from "@/lib/useWebsiteMedia";
 
@@ -174,14 +175,14 @@ export function Hero({
               </motion.h1>
 
               {subtitle && (
-                <motion.p
-                  className="mt-5 text-base sm:text-lg text-white/85 leading-relaxed max-w-prose"
+                <motion.div
+                  className="mt-5 text-base sm:text-lg text-white/85 leading-relaxed max-w-prose [&_p]:m-0"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.15, duration: 0.5 }}
                 >
-                  {subtitle}
-                </motion.p>
+                  <RichText html={subtitle} />
+                </motion.div>
               )}
 
               <motion.div
@@ -385,7 +386,10 @@ export function Hero({
                     {sidePanel.title}
                   </h2>
                 ) : null}
-                <p className="text-white/90 leading-relaxed text-sm sm:text-base">{sidePanel.body}</p>
+                <RichText
+                  html={sidePanel.body}
+                  className="text-white/90 leading-relaxed text-sm sm:text-base [&_p]:m-0"
+                />
               </motion.aside>
             ) : null}
           </div>
