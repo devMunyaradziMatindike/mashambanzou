@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { PageSection } from "@/components/PageSection";
+import { ContentText } from "@/components/ContentText";
+import { getWebsiteContent, createContentTranslator } from "@/lib/website-content";
 import { formatDeadline, getTenders } from "@/lib/careers-tenders";
 
 export const metadata: Metadata = {
@@ -12,15 +14,16 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function InvitationToTendersPage() {
-  const tenders = await getTenders();
+  const [content, tenders] = await Promise.all([getWebsiteContent(), getTenders()]);
+  const t = createContentTranslator(content);
 
   return (
     <>
       <Hero
-        title="Invitation to"
-        gradientText="Tenders"
-        subtitle="Download tender documents and review submission deadlines for current procurement opportunities."
-        primaryCta="Contact us"
+        title={t("tenders.hero.title")}
+        gradientText={t("tenders.hero.gradient_text")}
+        subtitle={t("tenders.hero.subtitle")}
+        primaryCta={t("tenders.hero.primary_cta")}
         primaryHref="/contact"
         backgroundImageSrc="/review-pics/operational-plan-review-2026.png"
         backgroundImageAlt="Mashambanzou Care Trust planning and procurement"
@@ -29,10 +32,15 @@ export default async function InvitationToTendersPage() {
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide max-w-4xl">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">Tender documents</h2>
-            <p className="text-white/80 text-lg leading-relaxed">
-              Download the documents below before the stated deadline.
-            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">
+              {t("tenders.documents.title")}
+            </h2>
+            <ContentText
+              contentKey="tenders.documents.subtitle"
+              value={t("tenders.documents.subtitle")}
+              as="p"
+              className="text-white/80 text-lg leading-relaxed"
+            />
           </div>
 
           {tenders.length ? (
@@ -46,14 +54,14 @@ export default async function InvitationToTendersPage() {
                     <div>
                       <div className="flex flex-wrap items-center gap-2 mb-2">
                         <span className="inline-flex rounded-full bg-brand-sunlight px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-dark">
-                          {tender.is_expired ? "Closed" : "Open"}
+                          {tender.is_expired ? t("tenders.status.closed") : t("tenders.status.open")}
                         </span>
                       </div>
                       <h3 className="font-heading text-xl sm:text-2xl font-semibold text-white">{tender.title}</h3>
                       <p className="mt-2 text-sm text-white/75">{tender.file_size_label}</p>
                       <p className="mt-1 text-sm text-white/75">{tender.uploaded_label}</p>
                       <p className="mt-3 text-sm text-white/85">
-                        Deadline: {formatDeadline(tender.application_deadline)}
+                        {t("tenders.deadline_prefix")} {formatDeadline(tender.application_deadline)}
                       </p>
                     </div>
                     {tender.file_url ? (
@@ -62,7 +70,7 @@ export default async function InvitationToTendersPage() {
                         download={tender.original_filename ?? true}
                         className="inline-flex items-center justify-center rounded-full bg-brand-green px-6 py-3 text-sm font-semibold text-white hover:bg-brand-green/90 transition-colors shrink-0"
                       >
-                        Download
+                        {t("tenders.download")}
                       </a>
                     ) : null}
                   </div>
@@ -70,15 +78,18 @@ export default async function InvitationToTendersPage() {
               ))}
             </div>
           ) : (
-            <div className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-8 text-center text-white/85">
-              No tender invitations are published yet.
-            </div>
+            <ContentText
+              contentKey="tenders.empty"
+              value={t("tenders.empty")}
+              as="p"
+              className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-8 text-center text-white/85"
+            />
           )}
 
           <p className="mt-10 text-center text-white/70 text-sm">
-            Questions about a tender?{" "}
+            {t("tenders.footer.question")}{" "}
             <Link href="/contact" className="text-brand-sunlight font-medium hover:underline">
-              Contact us
+              {t("tenders.footer.contact")}
             </Link>
             .
           </p>

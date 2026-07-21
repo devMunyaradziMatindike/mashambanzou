@@ -1,0 +1,4858 @@
+{
+  "fields": {
+    "nav.main.our_identity": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Main nav: Our Identity",
+      "default": "Our Identity"
+    },
+    "nav.main.our_identity.story": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Our Identity: Our Story",
+      "default": "Our Story"
+    },
+    "nav.main.our_identity.management": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Our Identity: Our Management",
+      "default": "Our Management"
+    },
+    "nav.main.our_identity.governance": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Our Identity: Board & Governance",
+      "default": "Board & Governance"
+    },
+    "nav.main.focus_areas": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Main nav: Our Focus Areas",
+      "default": "Our Focus Areas"
+    },
+    "nav.main.focus_areas.overview": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Focus Areas: Overview",
+      "default": "Overview"
+    },
+    "nav.main.focus_areas.clinical": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Focus Areas: Clinical",
+      "default": "Integrated Health Service Delivery"
+    },
+    "nav.main.focus_areas.ovc": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Focus Areas: OVC",
+      "default": "Orphans and Vulnerable Children (OVC) Support"
+    },
+    "nav.main.focus_areas.human_rights": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Focus Areas: Human Rights",
+      "default": "Promotion of Human Rights"
+    },
+    "nav.main.focus_areas.community": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Focus Areas: Community",
+      "default": "Community Strengthening"
+    },
+    "nav.main.focus_areas.institutional": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Focus Areas: Institutional",
+      "default": "Institutional Development"
+    },
+    "nav.main.focus_areas.donor_projects": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Focus Areas: Donor Projects",
+      "default": "Donor Projects"
+    },
+    "nav.main.services": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Main nav: Our Services",
+      "default": "Our Services"
+    },
+    "nav.main.services.mcu": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Services: MCU",
+      "default": "Mashambanzou Care Unit (MCU)"
+    },
+    "nav.main.services.outreach": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Services: Outreach",
+      "default": "Outreach clinics"
+    },
+    "nav.main.services.houses": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Services: Houses of Safety",
+      "default": "Houses of Safety"
+    },
+    "nav.main.success_stories": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Main nav: Success Stories",
+      "default": "Success Stories"
+    },
+    "nav.main.contact": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Main nav: Contact us",
+      "default": "Contact us"
+    },
+    "nav.secondary.careers": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Secondary nav: Careers",
+      "default": "Careers"
+    },
+    "nav.secondary.tenders": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Secondary nav: Tenders",
+      "default": "Invitation to Tenders"
+    },
+    "nav.secondary.noticeboard": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Secondary nav: Noticeboard",
+      "default": "Noticeboard"
+    },
+    "nav.footer.story": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Footer: Our Story",
+      "default": "Our Story"
+    },
+    "nav.footer.services": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Footer: Our Services",
+      "default": "Our Services"
+    },
+    "nav.footer.careers": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Footer: Careers",
+      "default": "Careers"
+    },
+    "nav.footer.tenders": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Footer: Tenders",
+      "default": "Invitation to Tenders"
+    },
+    "nav.footer.noticeboard": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Footer: Noticeboard",
+      "default": "Noticeboard"
+    },
+    "nav.footer.donate": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Footer: Donate",
+      "default": "Donate"
+    },
+    "nav.footer.contact": {
+      "page": "Navigation",
+      "type": "nav",
+      "label": "Footer: Contact",
+      "default": "Contact"
+    },
+    "home.hero.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Hero main heading",
+      "default": "We Help Build AIDS-Free, Resilient"
+    },
+    "home.hero.gradient_text": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Hero gradient text",
+      "default": "Communities."
+    },
+    "home.hero.subtitle": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Mashambanzou Care Trust realises healthy, socially inclusive communities, free of AIDS through comprehensive HIV services, OVC support, and community strengthening."
+    },
+    "home.hero.primary_cta": {
+      "page": "Homepage",
+      "type": "cta",
+      "label": "Hero primary CTA",
+      "default": "Ask For Help"
+    },
+    "home.hero.secondary_cta": {
+      "page": "Homepage",
+      "type": "cta",
+      "label": "Hero secondary CTA",
+      "default": "Donate"
+    },
+    "home.vision.label": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Vision label",
+      "default": "Vision"
+    },
+    "home.vision.text": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Vision text",
+      "default": "AIDS free, resilient and empowered communities."
+    },
+    "home.mission.label": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Mission label",
+      "default": "Mission"
+    },
+    "home.mission.text": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Mission text",
+      "default": "Healthy, socially inclusive communities, free of AIDS through comprehensive HIV services, OVC support and community strengthening."
+    },
+    "home.values.label": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Values label",
+      "default": "Values"
+    },
+    "home.values.text": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Values text",
+      "default": "Participation • Compassion • Transparency and Accountability • Human Dignity • Empowerment"
+    },
+    "home.who_we_are.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Who we are title",
+      "default": "Who we are"
+    },
+    "home.who_we_are.body": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Who we are body",
+      "default": "Mashambanzou Care Trust (MCT) is a faith and welfare based, non-governmental organisation focused on disseminating accurate information, care and support for people living with HIV (PLWHIV), and prevention of the spread of HIV. MCT recognised the effects of the disease and innovatively created a Family Centred Support model."
+    },
+    "home.who_we_are.cta": {
+      "page": "Homepage",
+      "type": "cta",
+      "label": "Who we are CTA",
+      "default": "Our story"
+    },
+    "home.different.eyebrow": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Different eyebrow",
+      "default": "What makes us different"
+    },
+    "home.different.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Different title",
+      "default": "30-bed care unit + community outreach"
+    },
+    "home.different.body": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Different body",
+      "default": "In the Harare Metropolitan area, MCT stands out through its 30-bed Mashambanzou Care Unit (MCU) combined with community outreach. We deliver on-site clinical care—HIV testing and counselling, treatment of opportunistic infections, TB testing, palliative care and VIAC cervical cancer screening—plus outreach clinics in Mbare, Hopley, Glen Norah, Highfield, Dzivarasekwa and beyond."
+    },
+    "home.different.cta": {
+      "page": "Homepage",
+      "type": "cta",
+      "label": "Different CTA",
+      "default": "Our Focus Areas"
+    },
+    "home.how_we_help.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "How we help title",
+      "default": "How We Help"
+    },
+    "home.how_we_help.subtitle": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "How we help subtitle",
+      "default": "Integrated care across Harare and beyond."
+    },
+    "home.how_we_help.cta": {
+      "page": "Homepage",
+      "type": "cta",
+      "label": "How we help CTA",
+      "default": "View All"
+    },
+    "home.expertise.eyebrow": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Expertise eyebrow",
+      "default": "Our Expertise"
+    },
+    "home.expertise.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Expertise title",
+      "default": "We don't just provide care. We build resilience."
+    },
+    "home.expertise.subtitle": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Expertise subtitle",
+      "default": "Combining clinical excellence with community-centred support and advocacy."
+    },
+    "home.where_we_work.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Where we work title",
+      "default": "Where we work"
+    },
+    "home.where_we_work.regions": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Where we work regions",
+      "default": "Harare Metropolitan • Zvimba Rural District • Goromonzi Rural District"
+    },
+    "home.where_we_work.areas": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Where we work areas",
+      "default": "Tafara, Mabvuku, Glen Norah, Highfield, Hopley, Mbare, Dzivarasekwa Main and Extension; Wards 24, 25, 26, 35 in Zvimba; Caledonia in Goromonzi."
+    },
+    "home.where_we_work.cta": {
+      "page": "Homepage",
+      "type": "cta",
+      "label": "Where we work CTA",
+      "default": "See our geographic footprint"
+    },
+    "home.latest_stories.eyebrow": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Latest stories eyebrow",
+      "default": "Latest stories"
+    },
+    "home.latest_stories.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Latest stories title",
+      "default": "Photos, videos and updates from the field"
+    },
+    "home.latest_stories.body": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Latest stories body",
+      "default": "The newest posts appear here automatically once they're published from the admin portal."
+    },
+    "home.latest_stories.cta": {
+      "page": "Homepage",
+      "type": "cta",
+      "label": "Latest stories CTA",
+      "default": "View all"
+    },
+    "home.partners.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Partners title",
+      "default": "Partners & Funders"
+    },
+    "home.partners.body": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Partners body",
+      "default": "We're grateful for the partners and donors who strengthen our work across Harare, Zvimba and Goromonzi."
+    },
+    "home.partners.current.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Current partners title",
+      "default": "Current partners"
+    },
+    "home.partners.past.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Past donors title",
+      "default": "Past donors"
+    },
+    "home.governance.body": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Governance body",
+      "default": "For institutional donors: governance information, leadership profiles and due diligence materials are available on our Board & Governance page."
+    },
+    "home.governance.cta": {
+      "page": "Homepage",
+      "type": "cta",
+      "label": "Governance CTA",
+      "default": "View governance"
+    },
+    "home.get_involved.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Get involved title",
+      "default": "Get Involved"
+    },
+    "home.get_involved.body": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Get involved body",
+      "default": "Donate, volunteer, partner or host an event. Your support helps realise AIDS-free, resilient and empowered communities."
+    },
+    "home.get_involved.cta_donate": {
+      "page": "Homepage",
+      "type": "cta",
+      "label": "Get involved donate CTA",
+      "default": "Donate"
+    },
+    "home.get_involved.cta_partner": {
+      "page": "Homepage",
+      "type": "cta",
+      "label": "Get involved partner CTA",
+      "default": "Partner"
+    },
+    "home.get_involved.cta_partner_with_us": {
+      "page": "Homepage",
+      "type": "cta",
+      "label": "Get involved partner with us CTA",
+      "default": "Partner With Us"
+    },
+    "home.get_involved.cta_contact": {
+      "page": "Homepage",
+      "type": "cta",
+      "label": "Get involved contact CTA",
+      "default": "Contact"
+    },
+    "home.marquee.0": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Marquee item 1",
+      "default": "Clinical Healthcare"
+    },
+    "home.marquee.1": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Marquee item 2",
+      "default": "VIAC Screening"
+    },
+    "home.marquee.2": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Marquee item 3",
+      "default": "Community Strengthening"
+    },
+    "home.marquee.3": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Marquee item 4",
+      "default": "OVC Support"
+    },
+    "home.marquee.4": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Marquee item 5",
+      "default": "Houses of Safety"
+    },
+    "home.marquee.5": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Marquee item 6",
+      "default": "Education for Life"
+    },
+    "home.marquee.6": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Marquee item 7",
+      "default": "Care to Share"
+    },
+    "home.marquee.7": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Marquee item 8",
+      "default": "Human Rights"
+    },
+    "home.marquee.8": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Marquee item 9",
+      "default": "Advocacy"
+    },
+    "home.bento.clinical.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Clinical Healthcare card title",
+      "default": "Clinical Healthcare"
+    },
+    "home.bento.clinical.subtitle": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Clinical Healthcare card subtitle",
+      "default": "MCU, VIAC & Palliative Care"
+    },
+    "home.bento.clinical.label": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Clinical Healthcare card label",
+      "default": "Healthcare"
+    },
+    "home.bento.community.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Community Strengthening card title",
+      "default": "Community Strengthening"
+    },
+    "home.bento.community.subtitle": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Community Strengthening card subtitle",
+      "default": "FCS & Psychosocial Support"
+    },
+    "home.bento.community.label": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Community Strengthening card label",
+      "default": "Support"
+    },
+    "home.bento.ovc.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Orphans and Vulnerable Children (OVC) Support card title",
+      "default": "Orphans and Vulnerable Children (OVC) Support"
+    },
+    "home.bento.ovc.subtitle": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Orphans and Vulnerable Children (OVC) Support card subtitle",
+      "default": "OVC, Houses of Safety"
+    },
+    "home.bento.ovc.label": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Orphans and Vulnerable Children (OVC) Support card label",
+      "default": "Children"
+    },
+    "home.bento.human_rights.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Promotion of Human Rights card title",
+      "default": "Promotion of Human Rights"
+    },
+    "home.bento.human_rights.subtitle": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Promotion of Human Rights card subtitle",
+      "default": "Care to Share, Livelihoods"
+    },
+    "home.bento.human_rights.label": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Promotion of Human Rights card label",
+      "default": "Empowerment"
+    },
+    "home.services.integrated.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Integrated Healthcare service title",
+      "default": "Integrated Healthcare"
+    },
+    "home.services.integrated.description": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Integrated Healthcare service description",
+      "default": "30-bed MCU, VIAC cervical cancer screening (since April 2023), palliative care, treatment of opportunistic infections, TB testing. On-site and outreach clinics."
+    },
+    "home.services.integrated.item.0": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Integrated Healthcare item 1",
+      "default": "MCU Inpatient Care"
+    },
+    "home.services.integrated.item.1": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Integrated Healthcare item 2",
+      "default": "VIAC Screening"
+    },
+    "home.services.integrated.item.2": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Integrated Healthcare item 3",
+      "default": "Palliative Care"
+    },
+    "home.services.community.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Community Strengthening service title",
+      "default": "Community Strengthening"
+    },
+    "home.services.community.description": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Community Strengthening service description",
+      "default": "Family Centred Support (FCS), psychosocial support for SGBV survivors, Houses of Safety with Department of Social Development, and Education for Life in Nyabira and Mt Hampden."
+    },
+    "home.services.community.item.0": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Community Strengthening item 1",
+      "default": "FCS & PSS"
+    },
+    "home.services.community.item.1": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Community Strengthening item 2",
+      "default": "Houses of Safety"
+    },
+    "home.services.community.item.2": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Community Strengthening item 3",
+      "default": "OVC Support"
+    },
+    "home.services.human_rights.title": {
+      "page": "Homepage",
+      "type": "heading",
+      "label": "Promotion of Human Rights service title",
+      "default": "Promotion of Human Rights"
+    },
+    "home.services.human_rights.description": {
+      "page": "Homepage",
+      "type": "paragraph",
+      "label": "Promotion of Human Rights service description",
+      "default": "Care to Share TVET partnership with Young Africa in Caledonia, livelihoods, SRHR advocacy and stigma reduction across Harare, Zvimba and Goromonzi."
+    },
+    "home.services.human_rights.item.0": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Promotion of Human Rights item 1",
+      "default": "Vocational Training"
+    },
+    "home.services.human_rights.item.1": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Promotion of Human Rights item 2",
+      "default": "Livelihoods"
+    },
+    "home.services.human_rights.item.2": {
+      "page": "Homepage",
+      "type": "subheading",
+      "label": "Promotion of Human Rights item 3",
+      "default": "SRHR Advocacy"
+    },
+    "home.stats.0.value": {
+      "page": "Homepage",
+      "type": "stat",
+      "label": "Stat 1 value",
+      "default": "30+"
+    },
+    "home.stats.0.label": {
+      "page": "Homepage",
+      "type": "stat",
+      "label": "Stat 1 label",
+      "default": "Years of service"
+    },
+    "home.stats.1.value": {
+      "page": "Homepage",
+      "type": "stat",
+      "label": "Stat 2 value",
+      "default": "30"
+    },
+    "home.stats.1.label": {
+      "page": "Homepage",
+      "type": "stat",
+      "label": "Stat 2 label",
+      "default": "Bed Mashambanzou Care Unit"
+    },
+    "home.stats.2.value": {
+      "page": "Homepage",
+      "type": "stat",
+      "label": "Stat 3 value",
+      "default": "Multi-ward"
+    },
+    "home.stats.2.label": {
+      "page": "Homepage",
+      "type": "stat",
+      "label": "Stat 3 label",
+      "default": "Harare, Zvimba & Goromonzi"
+    },
+    "home.stats.3.value": {
+      "page": "Homepage",
+      "type": "stat",
+      "label": "Stat 4 value",
+      "default": "100%"
+    },
+    "home.stats.3.label": {
+      "page": "Homepage",
+      "type": "stat",
+      "label": "Stat 4 label",
+      "default": "Compassion-led"
+    },
+    "our_identity.hero.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Our Story"
+    },
+    "our_identity.hero.gradient_text": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Hero gradient text",
+      "default": "Our identity."
+    },
+    "our_identity.hero.badge": {
+      "page": "Our Identity",
+      "type": "subheading",
+      "label": "Hero badge",
+      "default": "Since 1989"
+    },
+    "our_identity.hero.side_panel.eyebrow": {
+      "page": "Our Identity",
+      "type": "subheading",
+      "label": "Side panel eyebrow",
+      "default": "About MCT"
+    },
+    "our_identity.hero.side_panel.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Side panel title",
+      "default": "Faith-based care, rooted in community"
+    },
+    "our_identity.hero.side_panel.body": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Side panel body",
+      "default": "Mashambanzou Care Trust (MCT) is a faith based, registered Private Voluntary Organisation (PVO 9/90), based in Harare. It was founded in 1989 by Sister Noreen Nolan of the Little Company of Mary (LCM) Sisters of the Roman Catholic Church, in response to the HIV pandemic amongst poor communities. Work in communities is premised on dissemination of accurate information on HIV and AIDS, offering care and support to people living with HIV (PLWHIV) and raising awareness on prevention of the further spread of HIV. Home Based Care (HBC), Palliative Care and HIV prevention awareness campaigns are among some of the interventions carried out. Mashambanzou has evolved over the years to focus not only on PLWHIV but also on the family and society as a means of mitigating the effects of the disease. Innovatively, MCT established a Family Centred Support (FCS) model which aims to reduce vulnerabilities associated with HIV and AIDS."
+    },
+    "our_identity.vision.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Vision title",
+      "default": "Our Vision"
+    },
+    "our_identity.vision.text": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Vision text",
+      "default": "AIDS free, resilient and empowered communities."
+    },
+    "our_identity.mission.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Mission title",
+      "default": "Our Mission"
+    },
+    "our_identity.mission.text": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Mission text",
+      "default": "To realise healthy, socially inclusive communities, free of AIDS through provision of comprehensive HIV services, Orphans Vulnerable Children support services, promotion of Human Rights and community strengthening."
+    },
+    "our_identity.values.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Values section title",
+      "default": "Our Values"
+    },
+    "our_identity.values.0.name": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Value 1 name",
+      "default": "Participation"
+    },
+    "our_identity.values.0.description": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Value 1 description",
+      "default": "Communities at the centre of what we do"
+    },
+    "our_identity.values.1.name": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Value 2 name",
+      "default": "Compassion"
+    },
+    "our_identity.values.1.description": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Value 2 description",
+      "default": "Dignity and care in every interaction"
+    },
+    "our_identity.values.2.name": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Value 3 name",
+      "default": "Transparency and Accountability"
+    },
+    "our_identity.values.2.description": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Value 3 description",
+      "default": "To beneficiaries, donors and partners"
+    },
+    "our_identity.values.3.name": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Value 4 name",
+      "default": "Human Dignity"
+    },
+    "our_identity.values.3.description": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Value 4 description",
+      "default": "Every person valued and respected"
+    },
+    "our_identity.values.4.name": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Value 5 name",
+      "default": "Empowerment"
+    },
+    "our_identity.values.4.description": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Value 5 description",
+      "default": "Enabling people and communities to thrive"
+    },
+    "our_identity.glance.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "At a glance title",
+      "default": "At a glance"
+    },
+    "our_identity.glance.subtitle": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "At a glance subtitle",
+      "default": "Key facts partners and communities often want to know first."
+    },
+    "our_identity.glance.0.label": {
+      "page": "Our Identity",
+      "type": "subheading",
+      "label": "Glance item 1 label",
+      "default": "Founded"
+    },
+    "our_identity.glance.0.value": {
+      "page": "Our Identity",
+      "type": "stat",
+      "label": "Glance item 1 value",
+      "default": "1989"
+    },
+    "our_identity.glance.0.description": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Glance item 1 description",
+      "default": "Built on compassion, dignity, and community care."
+    },
+    "our_identity.glance.1.label": {
+      "page": "Our Identity",
+      "type": "subheading",
+      "label": "Glance item 2 label",
+      "default": "Approach"
+    },
+    "our_identity.glance.1.value": {
+      "page": "Our Identity",
+      "type": "stat",
+      "label": "Glance item 2 value",
+      "default": "Family‑centred support"
+    },
+    "our_identity.glance.1.description": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Glance item 2 description",
+      "default": "Holistic care for people living with HIV and their families."
+    },
+    "our_identity.glance.2.label": {
+      "page": "Our Identity",
+      "type": "subheading",
+      "label": "Glance item 3 label",
+      "default": "Where we work"
+    },
+    "our_identity.glance.2.value": {
+      "page": "Our Identity",
+      "type": "stat",
+      "label": "Glance item 3 value",
+      "default": "Harare & beyond"
+    },
+    "our_identity.glance.2.description": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Glance item 3 description",
+      "default": "Urban and rural communities across our operational areas."
+    },
+    "our_identity.glance.3.label": {
+      "page": "Our Identity",
+      "type": "subheading",
+      "label": "Glance item 4 label",
+      "default": "Focus"
+    },
+    "our_identity.glance.3.value": {
+      "page": "Our Identity",
+      "type": "stat",
+      "label": "Glance item 4 value",
+      "default": "Health • Protection • Rights"
+    },
+    "our_identity.glance.3.description": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Glance item 4 description",
+      "default": "Comprehensive services that strengthen resilience."
+    },
+    "our_identity.kushamba.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Kushamba Nzou title",
+      "default": "Kushamba Nzou"
+    },
+    "our_identity.kushamba.body": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Kushamba Nzou body",
+      "default": "The name Mashambanzou comes from a fusion of two Shona words \"kushamba\" (to wash) and \"nzou\" (elephant). Together they form a powerful idiom symbolising the dawn of a new day, inspired by the image of elephants going down to the river to wash at first light, a daily act of renewal, strength and cleansing. This symbolism reflects the spirit of Mashambanzou Care Trust (MCT), a beacon of hope and new beginnings for those living with HIV and AIDS."
+    },
+    "our_identity.kushamba.callout": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Kushamba Nzou callout",
+      "default": "A daily act of renewal — strength, cleansing and a new beginning at first light."
+    },
+    "our_identity.founder.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Founder section title",
+      "default": "Our founder"
+    },
+    "our_identity.founder.body": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Founder body",
+      "default": "Through the Vision of Sr. Noreen and the cooperation of a group of dedicated Volunteers, Mashambanzou Care Trust was founded in 1989, in Harare. Sr. Noreen and her co-workers were touched by the plight of people living with HIV, subjected as they were, to stigmatisation, rejection and discrimination. Their aim was to offer comfort and reassurance to people Living with HIV and their family members, thereby enhancing the quality of their lives and when the time would come, enable them to die with dignity and the knowledge that they were loved."
+    },
+    "our_identity.journey.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Journey title",
+      "default": "Our journey"
+    },
+    "our_identity.journey.subtitle": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Journey subtitle",
+      "default": "Key milestones that shaped Mashambanzou Care Trust."
+    },
+    "our_identity.timeline.0.year": {
+      "page": "Our Identity",
+      "type": "subheading",
+      "label": "Timeline 1 year",
+      "default": "1989"
+    },
+    "our_identity.timeline.0.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Timeline 1 title",
+      "default": "Founded Mashambanzou Care Unit in Waterfalls, Harare"
+    },
+    "our_identity.timeline.0.description": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Timeline 1 description",
+      "default": "Established in 1989 to respond to the HIV pandemic and provide compassionate care to marginalised communities."
+    },
+    "our_identity.timeline.1.year": {
+      "page": "Our Identity",
+      "type": "subheading",
+      "label": "Timeline 2 year",
+      "default": "Community Growth"
+    },
+    "our_identity.timeline.1.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Timeline 2 title",
+      "default": "Expanded from the Care Unit to outreach clinics for integrated support"
+    },
+    "our_identity.timeline.1.description": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Timeline 2 description",
+      "default": "Extended services beyond the Care Unit to reach communities with comprehensive, integrated care and support."
+    },
+    "our_identity.timeline.2.year": {
+      "page": "Our Identity",
+      "type": "subheading",
+      "label": "Timeline 3 year",
+      "default": "Community Strengthening"
+    },
+    "our_identity.timeline.2.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Timeline 3 title",
+      "default": "Engaged community caregivers"
+    },
+    "our_identity.timeline.2.description": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Timeline 3 description",
+      "default": "Community caregivers mobilise participants and support outreach clinics and community activities."
+    },
+    "our_identity.timeline.3.year": {
+      "page": "Our Identity",
+      "type": "subheading",
+      "label": "Timeline 4 year",
+      "default": "Children"
+    },
+    "our_identity.timeline.3.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Timeline 4 title",
+      "default": "Established Nenyere Early Child Development Centre (NECDC)"
+    },
+    "our_identity.timeline.3.description": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Timeline 4 description",
+      "default": "Provides orphans and vulnerable children with at least two hot meals a day and basic education so parents/guardians can work for livelihoods."
+    },
+    "our_identity.timeline.4.year": {
+      "page": "Our Identity",
+      "type": "subheading",
+      "label": "Timeline 5 year",
+      "default": "Child Protection"
+    },
+    "our_identity.timeline.4.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Timeline 5 title",
+      "default": "Established houses of safety for girls and boys in Mbare"
+    },
+    "our_identity.timeline.4.description": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Timeline 5 description",
+      "default": "Created safe spaces for children in need, strengthening protection and safeguarding within the community."
+    },
+    "our_identity.operational_areas.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Operational areas title",
+      "default": "Operational Areas"
+    },
+    "our_identity.operational_areas.0": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Operational area 1",
+      "default": "Harare Metropolitan"
+    },
+    "our_identity.operational_areas.1": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Operational area 2",
+      "default": "Zvimba Rural District"
+    },
+    "our_identity.operational_areas.2": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Operational area 3",
+      "default": "Goromonzi Rural District"
+    },
+    "our_identity.operational_areas.cta": {
+      "page": "Our Identity",
+      "type": "cta",
+      "label": "Operational areas CTA",
+      "default": "See where we work"
+    },
+    "our_identity.closing.title": {
+      "page": "Our Identity",
+      "type": "heading",
+      "label": "Closing strip title",
+      "default": "30-bed care unit and community outreach"
+    },
+    "our_identity.closing.body": {
+      "page": "Our Identity",
+      "type": "paragraph",
+      "label": "Closing strip body",
+      "default": "We combine the 30-bed Mashambanzou Care Unit with community outreach across Harare Metropolitan and beyond—differentiating our person-centred approach in the region."
+    },
+    "our_identity.closing.cta_focus_areas": {
+      "page": "Our Identity",
+      "type": "cta",
+      "label": "Closing CTA focus areas",
+      "default": "Our Focus Areas"
+    },
+    "our_identity.closing.cta_team": {
+      "page": "Our Identity",
+      "type": "cta",
+      "label": "Closing CTA team",
+      "default": "Meet the team"
+    },
+    "team.hero.title": {
+      "page": "Team",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Our Management"
+    },
+    "team.hero.subtitle": {
+      "page": "Team",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Executive leadership driving our mission every day."
+    },
+    "team.hero.badge": {
+      "page": "Team",
+      "type": "subheading",
+      "label": "Hero badge",
+      "default": "Leadership"
+    },
+    "team.hero.primary_cta": {
+      "page": "Team",
+      "type": "cta",
+      "label": "Hero primary CTA",
+      "default": "Contact us"
+    },
+    "team.hero.secondary_cta": {
+      "page": "Team",
+      "type": "cta",
+      "label": "Hero secondary CTA",
+      "default": "Board & Governance"
+    },
+    "team.leadership.title": {
+      "page": "Team",
+      "type": "heading",
+      "label": "Leadership section title",
+      "default": "Leadership team"
+    },
+    "team.leadership.body": {
+      "page": "Team",
+      "type": "paragraph",
+      "label": "Leadership section body",
+      "default": "Our management team provides strategic leadership, operational oversight and accountability across programmes, finance and service delivery."
+    },
+    "team.leadership.governance_note": {
+      "page": "Team",
+      "type": "paragraph",
+      "label": "Governance note",
+      "default": "Looking for governance information? Visit Board & Governance."
+    },
+    "team.members.0.name": {
+      "page": "Team",
+      "type": "heading",
+      "label": "Member 1 name",
+      "default": "Constance Chigwamba"
+    },
+    "team.members.0.role": {
+      "page": "Team",
+      "type": "subheading",
+      "label": "Member 1 role",
+      "default": "Executive Director"
+    },
+    "team.members.0.bio": {
+      "page": "Team",
+      "type": "paragraph",
+      "label": "Member 1 bio",
+      "default": "A seasoned Educationist and Trainer Programme Facilitator especially Logframe and IRBM processes. Strategic Planner, Human Resources Practitioner, Public Sector Administrator, Negotiator and Counsellor."
+    },
+    "team.members.1.name": {
+      "page": "Team",
+      "type": "heading",
+      "label": "Member 2 name",
+      "default": "Mercy Muirimi"
+    },
+    "team.members.1.role": {
+      "page": "Team",
+      "type": "subheading",
+      "label": "Member 2 role",
+      "default": "Programmes Manager"
+    },
+    "team.members.1.bio": {
+      "page": "Team",
+      "type": "paragraph",
+      "label": "Member 2 bio",
+      "default": "A Public Health specialist with vast experience in both Public and Private Institutional nursing with exposure in NHS nursing in the UK. Experienced Supervisor and Coordinator in the nursing profession and HIV programming at council clinic and NGO."
+    },
+    "team.members.2.name": {
+      "page": "Team",
+      "type": "heading",
+      "label": "Member 3 name",
+      "default": "Mercyline Dzinemarira"
+    },
+    "team.members.2.role": {
+      "page": "Team",
+      "type": "subheading",
+      "label": "Member 3 role",
+      "default": "Operations and Resource Mobilisation Manager"
+    },
+    "team.members.2.bio": {
+      "page": "Team",
+      "type": "paragraph",
+      "label": "Member 3 bio",
+      "default": "A holder of a Masters in Professional Accounting and Corporate Governance. Graduateship of Institute of Chartered Secretaries & Administrators in Zimbabwe (ICAZ) Bachelor of Accountancy Honours degree. Diploma in Business and Accounting Studies (IBAS)."
+    },
+    "team.card.contact": {
+      "page": "Team",
+      "type": "cta",
+      "label": "Member card contact CTA",
+      "default": "Contact"
+    },
+    "team.card.governance": {
+      "page": "Team",
+      "type": "cta",
+      "label": "Member card governance CTA",
+      "default": "Governance"
+    },
+    "board.hero.title": {
+      "page": "Board",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Board & Governance"
+    },
+    "board.hero.gradient_text": {
+      "page": "Board",
+      "type": "heading",
+      "label": "Hero gradient text",
+      "default": "Accountability"
+    },
+    "board.hero.badge": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Hero badge",
+      "default": "Transparency & Oversight"
+    },
+    "board.hero.subtitle": {
+      "page": "Board",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Independent oversight, responsible stewardship and clear decision-making that guide our strategy, compliance and safeguarding."
+    },
+    "board.hero.primary_cta": {
+      "page": "Board",
+      "type": "cta",
+      "label": "Hero primary CTA",
+      "default": "Donate"
+    },
+    "board.hero.secondary_cta": {
+      "page": "Board",
+      "type": "cta",
+      "label": "Hero secondary CTA",
+      "default": "Latest stories"
+    },
+    "board.hero.slideshow.0.label": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Hero slideshow label 1",
+      "default": "House of Safety"
+    },
+    "board.hero.slideshow.1.label": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Hero slideshow label 2",
+      "default": "Disability inclusion"
+    },
+    "board.hero.slideshow.2.label": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Hero slideshow label 3",
+      "default": "Outreach programme"
+    },
+    "board.trustees.eyebrow": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Trustees eyebrow",
+      "default": "Board of Trustees"
+    },
+    "board.trustees.title": {
+      "page": "Board",
+      "type": "heading",
+      "label": "Trustees title",
+      "default": "Meet the board"
+    },
+    "board.trustees.body": {
+      "page": "Board",
+      "type": "paragraph",
+      "label": "Trustees body",
+      "default": "Trustees bring oversight across legal, finance, medical, programming and organisational leadership."
+    },
+    "board.trustees.0.name": {
+      "page": "Board",
+      "type": "heading",
+      "label": "Trustee 1 name",
+      "default": "Ms Regai Thandiwe Hove"
+    },
+    "board.trustees.0.role": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Trustee 1 role",
+      "default": "Chairperson (Legal)"
+    },
+    "board.trustees.1.name": {
+      "page": "Board",
+      "type": "heading",
+      "label": "Trustee 2 name",
+      "default": "Mr John G. Sampson"
+    },
+    "board.trustees.1.role": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Trustee 2 role",
+      "default": "Vice Chairperson, Trustee (Finance)"
+    },
+    "board.trustees.2.name": {
+      "page": "Board",
+      "type": "heading",
+      "label": "Trustee 3 name",
+      "default": "Sr Silindiwe Shamu"
+    },
+    "board.trustees.2.role": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Trustee 3 role",
+      "default": "LCM Founding member Representative"
+    },
+    "board.trustees.3.name": {
+      "page": "Board",
+      "type": "heading",
+      "label": "Trustee 4 name",
+      "default": "Ms Abi Belaye Kebra"
+    },
+    "board.trustees.3.role": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Trustee 4 role",
+      "default": "Trustee (Programming)"
+    },
+    "board.trustees.4.name": {
+      "page": "Board",
+      "type": "heading",
+      "label": "Trustee 5 name",
+      "default": "Dr. Clemence Duri"
+    },
+    "board.trustees.4.role": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Trustee 5 role",
+      "default": "Trustee (Medical)"
+    },
+    "board.trustees.5.name": {
+      "page": "Board",
+      "type": "heading",
+      "label": "Trustee 6 name",
+      "default": "Mrs Flavia Muyambo"
+    },
+    "board.trustees.5.role": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Trustee 6 role",
+      "default": "Trustee (Human Resources)"
+    },
+    "board.governance.eyebrow": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Governance eyebrow",
+      "default": "How we govern"
+    },
+    "board.governance.title": {
+      "page": "Board",
+      "type": "heading",
+      "label": "Governance title",
+      "default": "Clear oversight. Strong safeguards. Responsible stewardship."
+    },
+    "board.governance.body": {
+      "page": "Board",
+      "type": "paragraph",
+      "label": "Governance body",
+      "default": "Our Board of Trustees provides strategic direction and governance, ensuring accountability, compliance and safeguarding across our programmes and partnerships."
+    },
+    "board.governance.pillars.0.title": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Governance pillar 1 title",
+      "default": "Strategy & oversight"
+    },
+    "board.governance.pillars.0.body": {
+      "page": "Board",
+      "type": "paragraph",
+      "label": "Governance pillar 1 body",
+      "default": "Guides long-term direction and monitors performance against mission."
+    },
+    "board.governance.pillars.1.title": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Governance pillar 2 title",
+      "default": "Financial governance"
+    },
+    "board.governance.pillars.1.body": {
+      "page": "Board",
+      "type": "paragraph",
+      "label": "Governance pillar 2 body",
+      "default": "Ensures responsible stewardship and oversight of resources."
+    },
+    "board.governance.pillars.2.title": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Governance pillar 3 title",
+      "default": "Safeguarding & ethics"
+    },
+    "board.governance.pillars.2.body": {
+      "page": "Board",
+      "type": "paragraph",
+      "label": "Governance pillar 3 body",
+      "default": "Promotes safe, respectful services and ethical decision-making."
+    },
+    "board.governance.pillars.3.title": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Governance pillar 4 title",
+      "default": "Compliance & risk"
+    },
+    "board.governance.pillars.3.body": {
+      "page": "Board",
+      "type": "paragraph",
+      "label": "Governance pillar 4 body",
+      "default": "Strengthens controls, policies and risk management practices."
+    },
+    "board.highlights.eyebrow": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Highlights eyebrow",
+      "default": "Governance highlights"
+    },
+    "board.highlights.title": {
+      "page": "Board",
+      "type": "heading",
+      "label": "Highlights title",
+      "default": "At a glance"
+    },
+    "board.highlights.0.label": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Highlight 1 label",
+      "default": "Trustees"
+    },
+    "board.highlights.0.value": {
+      "page": "Board",
+      "type": "stat",
+      "label": "Highlight 1 value",
+      "default": "6"
+    },
+    "board.highlights.1.label": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Highlight 2 label",
+      "default": "Focus"
+    },
+    "board.highlights.1.value": {
+      "page": "Board",
+      "type": "stat",
+      "label": "Highlight 2 value",
+      "default": "Accountability"
+    },
+    "board.highlights.2.label": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Highlight 3 label",
+      "default": "Coverage"
+    },
+    "board.highlights.2.value": {
+      "page": "Board",
+      "type": "stat",
+      "label": "Highlight 3 value",
+      "default": "Programs & Finance"
+    },
+    "board.highlights.3.label": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Highlight 4 label",
+      "default": "Commitment"
+    },
+    "board.highlights.3.value": {
+      "page": "Board",
+      "type": "stat",
+      "label": "Highlight 4 value",
+      "default": "Safeguarding"
+    },
+    "board.image.title": {
+      "page": "Board",
+      "type": "subheading",
+      "label": "Governance image title",
+      "default": "Leadership that supports the mission"
+    },
+    "board.image.body": {
+      "page": "Board",
+      "type": "paragraph",
+      "label": "Governance image body",
+      "default": "We uphold transparent, people-first governance—grounded in human dignity, compassion and community impact."
+    },
+    "our_impact.hero.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Our Focus Areas"
+    },
+    "our_impact.hero.subtitle": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "From the 30-bed MCU to community outreach—we deliver integrated care across Harare Metropolitan, Zvimba and Goromonzi."
+    },
+    "our_impact.sections.mcu.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "Mashambanzou Care Unit (MCU) title",
+      "default": "Mashambanzou Care Unit (MCU)"
+    },
+    "our_impact.sections.mcu.paragraph.0": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Mashambanzou Care Unit (MCU) paragraph 1",
+      "default": "MCU is a 30 bedded unit caring for all patients from marginalised communities who are living with HIV. The Care Unit provides a safe haven for patients who are not able to afford health care services at the public health institutions, as they receive the health care services courtesy of MCT funding partners. The Care Unit offers comprehensive and integrated healthcare to People Living with HIV which include but not limited to treatment of opportunistic infections, blood tests for TB and VIAC screening."
+    },
+    "our_impact.sections.hiv_testing.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "HIV Testing and Counselling Services title",
+      "default": "HIV Testing and Counselling Services"
+    },
+    "our_impact.sections.hiv_testing.paragraph.0": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "HIV Testing and Counselling Services paragraph 1",
+      "default": "In the fight against HIV early diagnosis and access to treatment are vital. Mashambanzou Care Trust is playing a crucial role in providing HIV testing and counselling services, ensuring that individuals have the knowledge, care, treatment and support needed to protect their health and the well-being of their partners."
+    },
+    "our_impact.sections.viac.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "VIAC Services title",
+      "default": "VIAC Services"
+    },
+    "our_impact.sections.viac.paragraph.0": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "VIAC Services paragraph 1",
+      "default": "Mashambanzou Care Trust is committed to providing comprehensive and integrated healthcare services to women living with HIV. Since April 26, 2023, we have included VIAC (Visual Inspection with Acetic Acid and Cervicography) as part of our diagnostic and treatment offerings. This vital service is provided free of charge and is available both at our Mashambanzou Care Unit and through outreach programs in hard-to-reach communities."
+    },
+    "our_impact.sections.viac.paragraph.1": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "VIAC Services paragraph 2",
+      "default": "In addition to serving HIV-positive women, the VIAC program is also open to all sexually active women, regardless of their HIV status. This initiative ensures early detection and timely treatment, supporting the overall well-being and health of women across Zimbabwe."
+    },
+    "our_impact.sections.outreach_ois.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "Outreach Clinics for Opportunistic Infections (OIs) Treatments title",
+      "default": "Outreach Clinics for Opportunistic Infections (OIs) Treatments"
+    },
+    "our_impact.sections.outreach_ois.paragraph.0": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Outreach Clinics for Opportunistic Infections (OIs) Treatments paragraph 1",
+      "default": "Mashambanzou Care Trust operates outreach clinics as part of its FCS project to provide comprehensive care and support services to individuals and communities affected by HIV and AIDS in Mbare, Glen Norah, Highfield, Dzivarasekwa, Dzivarasekwa Extension, Hopley, Mabvuku, Tafara in Harare; hard-to-reach areas of Wards 24, 25, 26 and 35 in Zvimba District; and Caledonia in Goromonzi District."
+    },
+    "our_impact.sections.fcs.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "Family Centred Support (FCS) title",
+      "default": "Family Centred Support (FCS)"
+    },
+    "our_impact.sections.fcs.paragraph.0": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Family Centred Support (FCS) paragraph 1",
+      "default": "The Family Centered Support (FCS) Project focuses on improving the lives of PLWHIV, supporting Orphans and Vulnerable Children (OVC) to reach their full potential and building the capacity of communities to effectively deal with Sexual and Reproductive Health Rights (SRHR) issues. MCT offers Psychosocial Support (PSS) to survivors of Sexual Gender Based Violence (SGBV) and other forms of abuse using the multi-sectoral approach in the management of these cases."
+    },
+    "our_impact.sections.srhr.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "SRHR, Pregnant Teen Mothers and Adolescent Support title",
+      "default": "SRHR, Pregnant Teen Mothers and Adolescent Support"
+    },
+    "our_impact.sections.srhr.paragraph.0": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "SRHR, Pregnant Teen Mothers and Adolescent Support paragraph 1",
+      "default": "Teen pregnancies have been prevalent in Zimbabwe due to poverty, cultural and religious beliefs which hindered educational advancement of women and girls, leaving them vulnerable to economic hardships and abuse. As a result, MCT came up with a project, supported by LCM USA to reduce the vulnerability of young women and girls offering SRHR education during outreaches to help these young women and girls make informed choices about their sexuality."
+    },
+    "our_impact.sections.ovc_support.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "OVC Support title",
+      "default": "OVC Support"
+    },
+    "our_impact.sections.ovc_support.paragraph.0": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "OVC Support paragraph 1",
+      "default": "MCT's areas of implementation are characterised by extreme poverty where parents/guardians cannot afford to pay school fees for their children. To address this challenge, MCT initiated various projects to offer support ranging from school fees payments, provision of school uniforms and amongst other learning materials, registration of birth certificates and national identity cards."
+    },
+    "our_impact.sections.houses_of_safety.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "Houses of Safety title",
+      "default": "Houses of Safety"
+    },
+    "our_impact.sections.houses_of_safety.paragraph.0": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Houses of Safety paragraph 1",
+      "default": "Mashambanzou Care Trust (MCT) plays a crucial role in providing care and support for vulnerable children in Zimbabwe. One of its key initiatives is the establishment of Houses of Safety, which serve as temporary homes for orphaned and vulnerable children (OVC) who are survivors of abuse whilst the Department of Social Development maps a way forward for their safe keeping. In collaboration with the Department of Social Development family assessments are conducted before placement of these children in houses of safety."
+    },
+    "our_impact.sections.income_generating.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "Institutional Income Generating Activities title",
+      "default": "Institutional Income Generating Activities"
+    },
+    "our_impact.sections.income_generating.paragraph.0": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Institutional Income Generating Activities paragraph 1",
+      "default": "In addition to MCT vital healthcare and social services, Mashambanzou Care Trust has successfully implemented a range of income-generating activities that empowered the communities we serve. These activities not only generated income but also foster skills development, entrepreneurship and self-reliance among beneficiaries. Some of the impactful income-generating initiatives supported by MCT include:"
+    },
+    "our_impact.sections.advocacy.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "Advocacy title",
+      "default": "Advocacy"
+    },
+    "our_impact.sections.advocacy.paragraph.0": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Advocacy paragraph 1",
+      "default": "Mashambanzou Care Trust has been at the forefront of advocacy for HIV and AIDS awareness and social justice. Guided by its mission to improve the lives of individuals and families affected by HIV and AIDS, Mashambanzou engages in impactful advocacy initiatives that aim to challenge stigma, promote human rights and drive positive change."
+    },
+    "our_impact.sections.education_for_life.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "Education for Life title",
+      "default": "Education for Life"
+    },
+    "our_impact.sections.education_for_life.paragraph.0": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Education for Life paragraph 1",
+      "default": "The government of Zimbabwe encourages access to basic quality education for every child through payment of fees for vulnerable children under the BEAM (Basic Education Assistance Module) programme. However, the funding under this programme is not adequate to assist every orphan and vulnerable child in Zimbabwe so, to complement government's efforts, MCT initiated the Education for Life project. This is a Misean Cara funded project which is implemented in selected high-density suburbs of Harare and the peri-urban settlements of Zvimba Rural District namely Mbare, Hopley, Dzivarasekwa Extension, Nyabira, Mt Hampden, Stapleford. The project seeks to address the challenges faced by orphans and vulnerable children in accessing basic education."
+    },
+    "our_impact.sections.putting_children_first.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "Putting Children First title",
+      "default": "Putting Children First"
+    },
+    "our_impact.sections.putting_children_first.paragraph.0": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Putting Children First paragraph 1",
+      "default": "Putting Children First was a Caritas Australia Fund CAFOD funded project that was implemented by MCT in the Southern District of Harare namely Mbare, Hopley and Glen Norah. The project was aimed at addressing the specific needs and rights of children in impoverished communities. It sought to improve the well-being and opportunities available to children, support children's development and ensure their rights were upheld by focusing on various aspects such as education, healthcare and child protection."
+    },
+    "our_impact.sections.care_to_share.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "Care to Share title",
+      "default": "Care to Share"
+    },
+    "our_impact.sections.care_to_share.paragraph.0": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Care to Share paragraph 1",
+      "default": "Mashambanzou Care Trust, in partnership with Young Africa International, is implementing the Care to Share – Youth Empowerment for All project, in Caledonia, Goromonzi District. It aims to empower 30 disadvantaged youth through a market-driven, TVET-based economic empowerment program. Beneficiaries will engage in a six-month vocational training program, which includes theoretical instruction delivered by qualified trainers from Ruwa Vocational Training Centre. They will also get hands-on training through internships with experienced Mastercraft persons within their own communities. Upon successful completion, beneficiaries will be awarded a Certificate of Competency, recognising their skills and enhancing their employability or capacity for self-employment."
+    },
+    "our_impact.sections.child_protection.title": {
+      "page": "Our Impact",
+      "type": "heading",
+      "label": "Child Protection title",
+      "default": "Child Protection"
+    },
+    "our_impact.sections.child_protection.paragraph.0": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Child Protection paragraph 1",
+      "default": "Mashambanzou Care Trust is actively promoting child protection and safeguarding of children's rights through a comprehensive, community-based approach. The initiative aims to create safer environments for children by strengthening awareness, advocacy and local accountability structures."
+    },
+    "our_impact.sections.child_protection.paragraph.1": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Child Protection paragraph 2",
+      "default": "Key activities include:"
+    },
+    "our_impact.sections.child_protection.paragraph.2": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Child Protection paragraph 3",
+      "default": "Establishment and training of School-Based Child Protection Committees comprising of learners. Empowering the committee, educators and school staff to identify, prevent, and respond to child protection concerns. These include but not limited to:"
+    },
+    "our_impact.sections.child_protection.paragraph.3": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Child Protection paragraph 4",
+      "default": "Through these coordinated efforts, Mashambanzou Care Trust is working to build a culture of child protection and ensure that every child has the opportunity to grow up in a safe, supportive and rights-respecting environment."
+    },
+    "our_impact.sections.income_generating.list.0": {
+      "page": "Our Impact",
+      "type": "subheading",
+      "label": "Income generating item 1",
+      "default": "Agricultural Projects"
+    },
+    "our_impact.sections.income_generating.list.1": {
+      "page": "Our Impact",
+      "type": "subheading",
+      "label": "Income generating item 2",
+      "default": "Catering and Food Services"
+    },
+    "our_impact.sections.income_generating.list.2": {
+      "page": "Our Impact",
+      "type": "subheading",
+      "label": "Income generating item 3",
+      "default": "Skills Training and Entrepreneurship Development"
+    },
+    "our_impact.sections.child_protection.list.0": {
+      "page": "Our Impact",
+      "type": "subheading",
+      "label": "Child protection activity 1",
+      "default": "Community Dialogue Sessions"
+    },
+    "our_impact.sections.child_protection.list.1": {
+      "page": "Our Impact",
+      "type": "subheading",
+      "label": "Child protection activity 2",
+      "default": "Mobile Roadshows"
+    },
+    "our_impact.sections.child_protection.list.2": {
+      "page": "Our Impact",
+      "type": "subheading",
+      "label": "Child protection activity 3",
+      "default": "Radio Programs"
+    },
+    "our_impact.sections.child_protection.list.3": {
+      "page": "Our Impact",
+      "type": "subheading",
+      "label": "Child protection activity 4",
+      "default": "Policy Engagement"
+    },
+    "our_impact.footer.body": {
+      "page": "Our Impact",
+      "type": "paragraph",
+      "label": "Footer body",
+      "default": "See also our geographic footprint and why Mashambanzou."
+    },
+    "our_impact.footer.link_geographic": {
+      "page": "Our Impact",
+      "type": "cta",
+      "label": "Footer link geographic",
+      "default": "geographic footprint"
+    },
+    "our_impact.footer.link_why": {
+      "page": "Our Impact",
+      "type": "cta",
+      "label": "Footer link why",
+      "default": "why Mashambanzou"
+    },
+    "clinical.hero.title": {
+      "page": "Clinical Healthcare",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Integrated Health Service Delivery"
+    },
+    "clinical.hero.subtitle": {
+      "page": "Clinical Healthcare",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "The 30-bed Mashambanzou Care Unit and outreach services—palliative care, HIV care and VIAC screening."
+    },
+    "clinical.stats.0.value": {
+      "page": "Clinical Healthcare",
+      "type": "stat",
+      "label": "Stat 1 value",
+      "default": "30"
+    },
+    "clinical.stats.0.label": {
+      "page": "Clinical Healthcare",
+      "type": "stat",
+      "label": "Stat 1 label",
+      "default": "Bed Care Unit (MCU)"
+    },
+    "clinical.stats.1.value": {
+      "page": "Clinical Healthcare",
+      "type": "stat",
+      "label": "Stat 2 value",
+      "default": "2023"
+    },
+    "clinical.stats.1.label": {
+      "page": "Clinical Healthcare",
+      "type": "stat",
+      "label": "Stat 2 label",
+      "default": "VIAC service added"
+    },
+    "clinical.stats.2.value": {
+      "page": "Clinical Healthcare",
+      "type": "stat",
+      "label": "Stat 3 value",
+      "default": "Integrated"
+    },
+    "clinical.stats.2.label": {
+      "page": "Clinical Healthcare",
+      "type": "stat",
+      "label": "Stat 3 label",
+      "default": "Clinical + outreach model"
+    },
+    "clinical.stats.3.value": {
+      "page": "Clinical Healthcare",
+      "type": "stat",
+      "label": "Stat 4 value",
+      "default": "Multi-site"
+    },
+    "clinical.stats.3.label": {
+      "page": "Clinical Healthcare",
+      "type": "stat",
+      "label": "Stat 4 label",
+      "default": "Harare, Zvimba & Goromonzi"
+    },
+    "clinical.mcu.eyebrow": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "MCU eyebrow",
+      "default": "Mashambanzou Care Unit (MCU)"
+    },
+    "clinical.mcu.title": {
+      "page": "Clinical Healthcare",
+      "type": "heading",
+      "label": "MCU title",
+      "default": "A safe haven for comprehensive HIV care"
+    },
+    "clinical.mcu.body": {
+      "page": "Clinical Healthcare",
+      "type": "paragraph",
+      "label": "MCU body",
+      "default": "MCU is a 30 bedded unit caring for patients from marginalised communities who are living with HIV. The Care Unit provides a safe haven for those who are not able to afford health care services at public health institutions, as they receive services courtesy of MCT funding partners."
+    },
+    "clinical.mcu.services.title": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "MCU services title",
+      "default": "Core clinical services"
+    },
+    "clinical.mcu.services.0": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "MCU service 1",
+      "default": "Treatment of opportunistic infections"
+    },
+    "clinical.mcu.services.1": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "MCU service 2",
+      "default": "Palliative care and supportive care"
+    },
+    "clinical.mcu.services.2": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "MCU service 3",
+      "default": "TB blood tests and diagnostics support"
+    },
+    "clinical.mcu.services.3": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "MCU service 4",
+      "default": "VIAC cervical cancer screening"
+    },
+    "clinical.mcu.image.title": {
+      "page": "Clinical Healthcare",
+      "type": "heading",
+      "label": "MCU image title",
+      "default": "Compassion-led inpatient and outpatient care"
+    },
+    "clinical.mcu.image.subtitle": {
+      "page": "Clinical Healthcare",
+      "type": "paragraph",
+      "label": "MCU image subtitle",
+      "default": "Clinical excellence supported by follow-up, counselling and referrals."
+    },
+    "clinical.services.title": {
+      "page": "Clinical Healthcare",
+      "type": "heading",
+      "label": "Services section title",
+      "default": "Services we deliver"
+    },
+    "clinical.services.subtitle": {
+      "page": "Clinical Healthcare",
+      "type": "paragraph",
+      "label": "Services section subtitle",
+      "default": "A continuum of care—from prevention and early diagnosis to treatment, screening and community follow-up."
+    },
+    "clinical.services.cards.0.title": {
+      "page": "Clinical Healthcare",
+      "type": "heading",
+      "label": "Service card 1 title",
+      "default": "HIV Testing & Counselling"
+    },
+    "clinical.services.cards.0.copy": {
+      "page": "Clinical Healthcare",
+      "type": "paragraph",
+      "label": "Service card 1 copy",
+      "default": "Early diagnosis and linkage to care are vital. We provide testing and counselling to help individuals protect their health and their partners."
+    },
+    "clinical.services.cards.0.bullets.0": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Service card 1 bullet 1",
+      "default": "Testing & counselling"
+    },
+    "clinical.services.cards.0.bullets.1": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Service card 1 bullet 2",
+      "default": "Linkage to treatment"
+    },
+    "clinical.services.cards.0.bullets.2": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Service card 1 bullet 3",
+      "default": "Supportive follow-up"
+    },
+    "clinical.services.cards.1.title": {
+      "page": "Clinical Healthcare",
+      "type": "heading",
+      "label": "Service card 2 title",
+      "default": "VIAC Screening"
+    },
+    "clinical.services.cards.1.copy": {
+      "page": "Clinical Healthcare",
+      "type": "paragraph",
+      "label": "Service card 2 copy",
+      "default": "Since April 26, 2023, we offer VIAC (Visual Inspection with Acetic Acid and Cervicography) free of charge at MCU and through outreach programmes."
+    },
+    "clinical.services.cards.1.bullets.0": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Service card 2 bullet 1",
+      "default": "Free screening"
+    },
+    "clinical.services.cards.1.bullets.1": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Service card 2 bullet 2",
+      "default": "Available at MCU"
+    },
+    "clinical.services.cards.1.bullets.2": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Service card 2 bullet 3",
+      "default": "Outreach delivery"
+    },
+    "clinical.services.cards.2.title": {
+      "page": "Clinical Healthcare",
+      "type": "heading",
+      "label": "Service card 3 title",
+      "default": "AHF Pop-up Clinics"
+    },
+    "clinical.services.cards.2.copy": {
+      "page": "Clinical Healthcare",
+      "type": "paragraph",
+      "label": "Service card 3 copy",
+      "default": "With AHF funding, we increase demand and uptake of HIV, TB and Hep C services through pop-up clinics and hotspot outreaches."
+    },
+    "clinical.services.cards.2.bullets.0": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Service card 3 bullet 1",
+      "default": "Hotspot pop-ups"
+    },
+    "clinical.services.cards.2.bullets.1": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Service card 3 bullet 2",
+      "default": "Screening & treatment"
+    },
+    "clinical.services.cards.2.bullets.2": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Service card 3 bullet 3",
+      "default": "STI & OI care"
+    },
+    "clinical.outreach.eyebrow": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Outreach eyebrow",
+      "default": "Outreach clinics"
+    },
+    "clinical.outreach.title": {
+      "page": "Clinical Healthcare",
+      "type": "heading",
+      "label": "Outreach title",
+      "default": "Bringing services closer to communities"
+    },
+    "clinical.outreach.body": {
+      "page": "Clinical Healthcare",
+      "type": "paragraph",
+      "label": "Outreach body",
+      "default": "We operate outreach clinics as part of our Family Centred Support project to deliver comprehensive care and support services to individuals and communities affected by HIV and AIDS."
+    },
+    "clinical.outreach.places.0": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Outreach place 1",
+      "default": "Mbare"
+    },
+    "clinical.outreach.places.1": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Outreach place 2",
+      "default": "Glen Norah"
+    },
+    "clinical.outreach.places.2": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Outreach place 3",
+      "default": "Highfield"
+    },
+    "clinical.outreach.places.3": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Outreach place 4",
+      "default": "Dzivarasekwa"
+    },
+    "clinical.outreach.places.4": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Outreach place 5",
+      "default": "Dzivarasekwa Extension"
+    },
+    "clinical.outreach.places.5": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Outreach place 6",
+      "default": "Hopley"
+    },
+    "clinical.outreach.places.6": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Outreach place 7",
+      "default": "Mabvuku"
+    },
+    "clinical.outreach.places.7": {
+      "page": "Clinical Healthcare",
+      "type": "subheading",
+      "label": "Outreach place 8",
+      "default": "Tafara"
+    },
+    "clinical.outreach.note": {
+      "page": "Clinical Healthcare",
+      "type": "paragraph",
+      "label": "Outreach note",
+      "default": "Also serving hard-to-reach wards in Zvimba (24, 25, 26, 35) and parts of Goromonzi (Caledonia and Domboshava)."
+    },
+    "clinical.cta.title": {
+      "page": "Clinical Healthcare",
+      "type": "heading",
+      "label": "CTA title",
+      "default": "Need support or referral?"
+    },
+    "clinical.cta.body": {
+      "page": "Clinical Healthcare",
+      "type": "paragraph",
+      "label": "CTA body",
+      "default": "Contact our Projects team or the Mashambanzou Care Unit for help and guidance."
+    },
+    "clinical.cta.call_projects": {
+      "page": "Clinical Healthcare",
+      "type": "cta",
+      "label": "CTA call projects",
+      "default": "Call Projects"
+    },
+    "clinical.cta.call_care_unit": {
+      "page": "Clinical Healthcare",
+      "type": "cta",
+      "label": "CTA call care unit",
+      "default": "Call Care Unit"
+    },
+    "clinical.cta.contact": {
+      "page": "Clinical Healthcare",
+      "type": "cta",
+      "label": "CTA contact",
+      "default": "Contact details"
+    },
+    "clinical.cta.back": {
+      "page": "Clinical Healthcare",
+      "type": "cta",
+      "label": "CTA back link",
+      "default": "← Back to Our Focus Areas"
+    },
+    "community.hero.title": {
+      "page": "Community Support",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Community Strengthening"
+    },
+    "community.hero.subtitle": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Family Centred Support, psychosocial support and SRHR outreach—strengthening resilience in our communities."
+    },
+    "community.hero.primary_cta": {
+      "page": "Community Support",
+      "type": "cta",
+      "label": "Hero primary CTA",
+      "default": "Donate"
+    },
+    "community.hero.secondary_cta": {
+      "page": "Community Support",
+      "type": "cta",
+      "label": "Hero secondary CTA",
+      "default": "Contact"
+    },
+    "community.intro.title": {
+      "page": "Community Support",
+      "type": "heading",
+      "label": "Intro title",
+      "default": "Practical support, rooted in dignity"
+    },
+    "community.intro.body": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "Intro body",
+      "default": "Our Community Strengthening work strengthens household resilience, protects children and adolescents, and supports survivors through community-based psychosocial care and referrals."
+    },
+    "community.cards.0.title": {
+      "page": "Community Support",
+      "type": "heading",
+      "label": "Intro card 1 title",
+      "default": "Family Centred Support"
+    },
+    "community.cards.0.desc": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "Intro card 1 description",
+      "default": "Household strengthening and integrated community support for PLWHIV and families."
+    },
+    "community.cards.1.title": {
+      "page": "Community Support",
+      "type": "heading",
+      "label": "Intro card 2 title",
+      "default": "Psychosocial Support"
+    },
+    "community.cards.1.desc": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "Intro card 2 description",
+      "default": "Support for survivors of SGBV and other forms of abuse using a multi-sectoral approach."
+    },
+    "community.cards.2.title": {
+      "page": "Community Support",
+      "type": "heading",
+      "label": "Intro card 3 title",
+      "default": "SRHR Education"
+    },
+    "community.cards.2.desc": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "Intro card 3 description",
+      "default": "Outreach with adolescents to improve knowledge, agency and safer choices."
+    },
+    "community.cards.3.title": {
+      "page": "Community Support",
+      "type": "heading",
+      "label": "Intro card 4 title",
+      "default": "Advocacy"
+    },
+    "community.cards.3.desc": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "Intro card 4 description",
+      "default": "Challenging stigma, promoting rights and strengthening community accountability."
+    },
+    "community.fcs.title": {
+      "page": "Community Support",
+      "type": "heading",
+      "label": "FCS section title",
+      "default": "Family Centred Support (FCS) & Psychosocial Support (PSS)"
+    },
+    "community.fcs.paragraph.0": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "FCS paragraph 1",
+      "default": "The Family Centered Support (FCS) Project focuses on improving the lives of PLWHIV, supporting Orphans and Vulnerable Children (OVC) to reach their full potential and building the capacity of communities to effectively deal with Sexual and Reproductive Health Rights (SRHR) issues."
+    },
+    "community.fcs.paragraph.1": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "FCS paragraph 2",
+      "default": "MCT offers Psychosocial Support (PSS) to survivors of Sexual Gender Based Violence (SGBV) and other forms of abuse using the multi-sectoral approach in the management of these cases."
+    },
+    "community.fcs.includes.title": {
+      "page": "Community Support",
+      "type": "heading",
+      "label": "FCS includes title",
+      "default": "What this includes"
+    },
+    "community.fcs.includes.0": {
+      "page": "Community Support",
+      "type": "subheading",
+      "label": "FCS includes item 1",
+      "default": "Case management and referrals with partners"
+    },
+    "community.fcs.includes.1": {
+      "page": "Community Support",
+      "type": "subheading",
+      "label": "FCS includes item 2",
+      "default": "Household-level support and follow-up"
+    },
+    "community.fcs.includes.2": {
+      "page": "Community Support",
+      "type": "subheading",
+      "label": "FCS includes item 3",
+      "default": "Protection pathways for survivors"
+    },
+    "community.fcs.includes.3": {
+      "page": "Community Support",
+      "type": "subheading",
+      "label": "FCS includes item 4",
+      "default": "Community sessions and coordinated outreach"
+    },
+    "community.srhr.title": {
+      "page": "Community Support",
+      "type": "heading",
+      "label": "SRHR title",
+      "default": "SRHR education for adolescents"
+    },
+    "community.srhr.paragraph.0": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "SRHR paragraph 1",
+      "default": "Teen pregnancies have been prevalent in Zimbabwe due to poverty, cultural and religious beliefs which hinder educational advancement of women and girls, leaving them vulnerable to economic hardships and abuse."
+    },
+    "community.srhr.paragraph.1": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "SRHR paragraph 2",
+      "default": "MCT came up with a project, supported by LCM USA to reduce the vulnerability of young women and girls, offering SRHR education during outreaches to help them make informed choices about their sexuality."
+    },
+    "community.srhr.tags.0": {
+      "page": "Community Support",
+      "type": "subheading",
+      "label": "SRHR tag 1",
+      "default": "Knowledge"
+    },
+    "community.srhr.tags.1": {
+      "page": "Community Support",
+      "type": "subheading",
+      "label": "SRHR tag 2",
+      "default": "Safety"
+    },
+    "community.srhr.tags.2": {
+      "page": "Community Support",
+      "type": "subheading",
+      "label": "SRHR tag 3",
+      "default": "Agency"
+    },
+    "community.srhr.tags.3": {
+      "page": "Community Support",
+      "type": "subheading",
+      "label": "SRHR tag 4",
+      "default": "Referrals"
+    },
+    "community.advocacy.title": {
+      "page": "Community Support",
+      "type": "heading",
+      "label": "Advocacy title",
+      "default": "Advocacy & dignity"
+    },
+    "community.advocacy.body": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "Advocacy body",
+      "default": "We advocate for HIV and AIDS awareness, social justice and human rights—reducing stigma and strengthening community accountability."
+    },
+    "community.gallery.0.caption": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "Gallery caption 1",
+      "default": "Access to services and documentation through community outreach."
+    },
+    "community.gallery.1.caption": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "Gallery caption 2",
+      "default": "Improving dignity and safe environments in community spaces."
+    },
+    "community.gallery.2.caption": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "Gallery caption 3",
+      "default": "Integrated outreach that links people to care and follow-up."
+    },
+    "community.get_involved.eyebrow": {
+      "page": "Community Support",
+      "type": "subheading",
+      "label": "Get involved eyebrow",
+      "default": "Get involved"
+    },
+    "community.get_involved.title": {
+      "page": "Community Support",
+      "type": "heading",
+      "label": "Get involved title",
+      "default": "Support families and strengthen resilience"
+    },
+    "community.get_involved.body": {
+      "page": "Community Support",
+      "type": "paragraph",
+      "label": "Get involved body",
+      "default": "Your support helps us deliver community-based services, protection pathways and practical outreach in hard-to-reach communities."
+    },
+    "community.get_involved.donate": {
+      "page": "Community Support",
+      "type": "cta",
+      "label": "Get involved donate CTA",
+      "default": "Donate"
+    },
+    "community.get_involved.contact": {
+      "page": "Community Support",
+      "type": "cta",
+      "label": "Get involved contact CTA",
+      "default": "Contact us"
+    },
+    "community.back": {
+      "page": "Community Support",
+      "type": "cta",
+      "label": "Back link",
+      "default": "← Back to Our Focus Areas"
+    },
+    "ovc.hero.title": {
+      "page": "OVC",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Orphans and Vulnerable Children (OVC) Support"
+    },
+    "ovc.hero.subtitle": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Education for Life, Houses of Safety and OVC support—putting children first."
+    },
+    "ovc.hero.primary_cta": {
+      "page": "OVC",
+      "type": "cta",
+      "label": "Hero primary CTA",
+      "default": "Donate"
+    },
+    "ovc.hero.secondary_cta": {
+      "page": "OVC",
+      "type": "cta",
+      "label": "Hero secondary CTA",
+      "default": "Contact"
+    },
+    "ovc.houses.title": {
+      "page": "OVC",
+      "type": "heading",
+      "label": "Houses of Safety title",
+      "default": "Houses of Safety"
+    },
+    "ovc.houses.paragraph.0": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Houses paragraph 1",
+      "default": "Mashambanzou Care Trust (MCT) plays a crucial role in providing care and support for vulnerable children in Zimbabwe. One of its key initiatives is the establishment of Houses of Safety, which serve as temporary homes for orphaned and vulnerable children (OVC) who are survivors of abuse whilst the Department of Social Development maps a way forward for their safe keeping."
+    },
+    "ovc.houses.paragraph.1": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Houses paragraph 2",
+      "default": "In collaboration with the Department of Social Development, family assessments are conducted before placement of these children in houses of safety."
+    },
+    "ovc.houses.includes.title": {
+      "page": "OVC",
+      "type": "heading",
+      "label": "Houses includes title",
+      "default": "Care & protection"
+    },
+    "ovc.houses.includes.0": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Houses includes item 1",
+      "default": "Temporary safe accommodation"
+    },
+    "ovc.houses.includes.1": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Houses includes item 2",
+      "default": "Family assessment and placement planning"
+    },
+    "ovc.houses.includes.2": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Houses includes item 3",
+      "default": "Coordination with Social Development"
+    },
+    "ovc.intro.title": {
+      "page": "OVC",
+      "type": "heading",
+      "label": "Intro title",
+      "default": "Safety, learning and opportunity"
+    },
+    "ovc.intro.body": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Intro body",
+      "default": "We protect children, strengthen households and expand access to education—supporting vulnerable children and survivors of abuse through practical services and community accountability."
+    },
+    "ovc.cards.0.title": {
+      "page": "OVC",
+      "type": "heading",
+      "label": "Intro card 1 title",
+      "default": "Education for Life"
+    },
+    "ovc.cards.0.desc": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Intro card 1 description",
+      "default": "Support that helps children remain in school and thrive."
+    },
+    "ovc.cards.1.title": {
+      "page": "OVC",
+      "type": "heading",
+      "label": "Intro card 2 title",
+      "default": "OVC support"
+    },
+    "ovc.cards.1.desc": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Intro card 2 description",
+      "default": "Support for orphans and vulnerable children to reach their potential."
+    },
+    "ovc.cards.2.title": {
+      "page": "OVC",
+      "type": "heading",
+      "label": "Intro card 3 title",
+      "default": "NECDC"
+    },
+    "ovc.cards.2.desc": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Intro card 3 description",
+      "default": "Early childhood care, meals and basic education for vulnerable children."
+    },
+    "ovc.cards.3.title": {
+      "page": "OVC",
+      "type": "heading",
+      "label": "Intro card 4 title",
+      "default": "Houses of Safety"
+    },
+    "ovc.cards.3.desc": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Intro card 4 description",
+      "default": "Temporary safe homes for children at risk while plans are made."
+    },
+    "ovc.cards.4.title": {
+      "page": "OVC",
+      "type": "heading",
+      "label": "Intro card 5 title",
+      "default": "Child protection"
+    },
+    "ovc.cards.4.desc": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Intro card 5 description",
+      "default": "Community safeguarding, awareness and accountability mechanisms."
+    },
+    "ovc.education.title": {
+      "page": "OVC",
+      "type": "heading",
+      "label": "Education section title",
+      "default": "Education for Life & OVC support"
+    },
+    "ovc.education.paragraph.0": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Education paragraph 1",
+      "default": "MCT's areas of implementation are characterised by extreme poverty where parents/guardians cannot afford to pay school fees for their children. To address this challenge, MCT initiated various projects to offer support ranging from school fees payments, provision of school uniforms and other learning materials, and registration of birth certificates and national identity cards."
+    },
+    "ovc.education.paragraph.1": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Education paragraph 2",
+      "default": "The government of Zimbabwe encourages access to basic quality education for every child through BEAM (Basic Education Assistance Module). However, BEAM funding is not adequate to assist every orphan and vulnerable child—so, to complement government efforts, MCT initiated the Education for Life project."
+    },
+    "ovc.education.tags.0": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Education tag 1",
+      "default": "School fees"
+    },
+    "ovc.education.tags.1": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Education tag 2",
+      "default": "Uniforms"
+    },
+    "ovc.education.tags.2": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Education tag 3",
+      "default": "Learning materials"
+    },
+    "ovc.education.tags.3": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Education tag 4",
+      "default": "Civil registration"
+    },
+    "ovc.necdc.eyebrow": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "NECDC eyebrow",
+      "default": "Nenyere Early Child Development Centre (NECDC)"
+    },
+    "ovc.necdc.title": {
+      "page": "OVC",
+      "type": "heading",
+      "label": "NECDC title",
+      "default": "Early childhood care for vulnerable children"
+    },
+    "ovc.necdc.body": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "NECDC body",
+      "default": "Established as the Nenyere Day Care Centre (NDCC), now known as the Nenyere Early Child Development Centre (NECDC), the centre is registered under the Ministry of Primary and Secondary Education. It offers orphans and vulnerable children at least two hot meals a day and basic education while their parents or guardians work for livelihoods."
+    },
+    "ovc.necdc.tags.0": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "NECDC tag 1",
+      "default": "Two hot meals a day"
+    },
+    "ovc.necdc.tags.1": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "NECDC tag 2",
+      "default": "Basic education"
+    },
+    "ovc.necdc.tags.2": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "NECDC tag 3",
+      "default": "OVC support"
+    },
+    "ovc.necdc.tags.3": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "NECDC tag 4",
+      "default": "Registered ECD centre"
+    },
+    "ovc.protection.title": {
+      "page": "OVC",
+      "type": "heading",
+      "label": "Child protection title",
+      "default": "Child protection"
+    },
+    "ovc.protection.body": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Child protection body",
+      "default": "Mashambanzou Care Trust is actively promoting child protection and safeguarding of children's rights through a comprehensive, community-based approach. Key activities include establishment and training of School-Based Child Protection Committees comprising of learners, and empowering educators and school staff to identify, prevent, and respond to child protection concerns."
+    },
+    "ovc.protection.activities.0.title": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Protection activity 1 title",
+      "default": "Community Dialogue Sessions"
+    },
+    "ovc.protection.activities.0.desc": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Protection activity 1 description",
+      "default": "Awareness, prevention and response pathways."
+    },
+    "ovc.protection.activities.1.title": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Protection activity 2 title",
+      "default": "Mobile Roadshows"
+    },
+    "ovc.protection.activities.1.desc": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Protection activity 2 description",
+      "default": "Awareness, prevention and response pathways."
+    },
+    "ovc.protection.activities.2.title": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Protection activity 3 title",
+      "default": "Radio Programs"
+    },
+    "ovc.protection.activities.2.desc": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Protection activity 3 description",
+      "default": "Awareness, prevention and response pathways."
+    },
+    "ovc.protection.activities.3.title": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Protection activity 4 title",
+      "default": "Policy Engagement"
+    },
+    "ovc.protection.activities.3.desc": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Protection activity 4 description",
+      "default": "Awareness, prevention and response pathways."
+    },
+    "ovc.putting_children_first.eyebrow": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Putting Children First eyebrow",
+      "default": "Putting Children First"
+    },
+    "ovc.putting_children_first.title": {
+      "page": "OVC",
+      "type": "heading",
+      "label": "Putting Children First title",
+      "default": "Protecting children in marginalised communities"
+    },
+    "ovc.putting_children_first.body": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Putting Children First body",
+      "default": "This Caritas Australia/CAFOD-funded initiative operates in Southern Harare (Mbare, Hopley, Glen Norah), focusing on healthcare, child protection and the rights of children in severely marginalised communities."
+    },
+    "ovc.putting_children_first.tags.0": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Putting Children First tag 1",
+      "default": "Healthcare"
+    },
+    "ovc.putting_children_first.tags.1": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Putting Children First tag 2",
+      "default": "Child protection"
+    },
+    "ovc.putting_children_first.tags.2": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Putting Children First tag 3",
+      "default": "Rights"
+    },
+    "ovc.putting_children_first.tags.3": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Putting Children First tag 4",
+      "default": "Community support"
+    },
+    "ovc.get_involved.eyebrow": {
+      "page": "OVC",
+      "type": "subheading",
+      "label": "Get involved eyebrow",
+      "default": "Get involved"
+    },
+    "ovc.get_involved.title": {
+      "page": "OVC",
+      "type": "heading",
+      "label": "Get involved title",
+      "default": "Help keep children safe and learning"
+    },
+    "ovc.get_involved.body": {
+      "page": "OVC",
+      "type": "paragraph",
+      "label": "Get involved body",
+      "default": "Your support helps us provide protection pathways, safe placements, education support and community-based safeguarding."
+    },
+    "ovc.get_involved.donate": {
+      "page": "OVC",
+      "type": "cta",
+      "label": "Get involved donate CTA",
+      "default": "Donate"
+    },
+    "ovc.get_involved.contact": {
+      "page": "OVC",
+      "type": "cta",
+      "label": "Get involved contact CTA",
+      "default": "Contact us"
+    },
+    "ovc.back": {
+      "page": "OVC",
+      "type": "cta",
+      "label": "Back link",
+      "default": "← Back to Our Focus Areas"
+    },
+    "human_rights.hero.title": {
+      "page": "Human Rights",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Promotion of Human Rights"
+    },
+    "human_rights.hero.subtitle": {
+      "page": "Human Rights",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Care to Share vocational training, income-generating activities and advocacy—building resilience and opportunity."
+    },
+    "human_rights.hero.primary_cta": {
+      "page": "Human Rights",
+      "type": "cta",
+      "label": "Hero primary CTA",
+      "default": "Donate"
+    },
+    "human_rights.hero.secondary_cta": {
+      "page": "Human Rights",
+      "type": "cta",
+      "label": "Hero secondary CTA",
+      "default": "Contact"
+    },
+    "human_rights.intro.title": {
+      "page": "Human Rights",
+      "type": "heading",
+      "label": "Intro title",
+      "default": "Skills, income and a stronger voice"
+    },
+    "human_rights.intro.body": {
+      "page": "Human Rights",
+      "type": "paragraph",
+      "label": "Intro body",
+      "default": "We invest in vocational skills, livelihoods and advocacy—so individuals and families can build stability, dignity and opportunity while communities strengthen their protection and rights systems."
+    },
+    "human_rights.cards.0.title": {
+      "page": "Human Rights",
+      "type": "heading",
+      "label": "Intro card 1 title",
+      "default": "Care to Share (TVET)"
+    },
+    "human_rights.cards.0.desc": {
+      "page": "Human Rights",
+      "type": "paragraph",
+      "label": "Intro card 1 description",
+      "default": "Six-month vocational training and community internships for youth."
+    },
+    "human_rights.cards.1.title": {
+      "page": "Human Rights",
+      "type": "heading",
+      "label": "Intro card 2 title",
+      "default": "Livelihoods"
+    },
+    "human_rights.cards.1.desc": {
+      "page": "Human Rights",
+      "type": "paragraph",
+      "label": "Intro card 2 description",
+      "default": "Income-generating activities that support sustainability and self-reliance."
+    },
+    "human_rights.cards.2.title": {
+      "page": "Human Rights",
+      "type": "heading",
+      "label": "Intro card 3 title",
+      "default": "Advocacy"
+    },
+    "human_rights.cards.2.desc": {
+      "page": "Human Rights",
+      "type": "paragraph",
+      "label": "Intro card 3 description",
+      "default": "Stigma reduction, human rights promotion and community accountability."
+    },
+    "human_rights.cards.3.title": {
+      "page": "Human Rights",
+      "type": "heading",
+      "label": "Intro card 4 title",
+      "default": "SRHR"
+    },
+    "human_rights.cards.3.desc": {
+      "page": "Human Rights",
+      "type": "paragraph",
+      "label": "Intro card 4 description",
+      "default": "Outreach and education that helps communities make informed choices."
+    },
+    "human_rights.care_to_share.title": {
+      "page": "Human Rights",
+      "type": "heading",
+      "label": "Care to Share title",
+      "default": "Care to Share (youth empowerment)"
+    },
+    "human_rights.care_to_share.body": {
+      "page": "Human Rights",
+      "type": "paragraph",
+      "label": "Care to Share body",
+      "default": "In partnership with Young Africa International in Caledonia, we deliver 6-month TVET-based vocational training and community mastercrafter internships. Graduates receive Certificates of Competency in trades such as carpentry, tailoring and agriculture, supporting sustainable livelihoods."
+    },
+    "human_rights.care_to_share.highlights.title": {
+      "page": "Human Rights",
+      "type": "heading",
+      "label": "Care to Share highlights title",
+      "default": "Programme highlights"
+    },
+    "human_rights.care_to_share.highlights.0": {
+      "page": "Human Rights",
+      "type": "subheading",
+      "label": "Care to Share highlight 1",
+      "default": "Six-month market-driven vocational training"
+    },
+    "human_rights.care_to_share.highlights.1": {
+      "page": "Human Rights",
+      "type": "subheading",
+      "label": "Care to Share highlight 2",
+      "default": "Hands-on placements with community mastercraft persons"
+    },
+    "human_rights.care_to_share.highlights.2": {
+      "page": "Human Rights",
+      "type": "subheading",
+      "label": "Care to Share highlight 3",
+      "default": "Certificate of Competency upon completion"
+    },
+    "human_rights.care_to_share.highlights.3": {
+      "page": "Human Rights",
+      "type": "subheading",
+      "label": "Care to Share highlight 4",
+      "default": "Pathways to employability and self-employment"
+    },
+    "human_rights.advocacy.title": {
+      "page": "Human Rights",
+      "type": "heading",
+      "label": "Advocacy title",
+      "default": "Advocacy & SRHR"
+    },
+    "human_rights.advocacy.body": {
+      "page": "Human Rights",
+      "type": "paragraph",
+      "label": "Advocacy body",
+      "default": "We advocate for human rights, challenge stigma and promote SRHR through community outreach, media and policy engagement—ensuring the voices of those we serve inform our work."
+    },
+    "human_rights.gallery.0.caption": {
+      "page": "Human Rights",
+      "type": "paragraph",
+      "label": "Gallery caption 1",
+      "default": "Community awareness and stigma reduction through public events and outreach."
+    },
+    "human_rights.gallery.1.caption": {
+      "page": "Human Rights",
+      "type": "paragraph",
+      "label": "Gallery caption 2",
+      "default": "Linking people to services and documentation through community support."
+    },
+    "human_rights.gallery.2.caption": {
+      "page": "Human Rights",
+      "type": "paragraph",
+      "label": "Gallery caption 3",
+      "default": "Advocacy that meets people where they are—listening, informing and responding."
+    },
+    "human_rights.get_involved.eyebrow": {
+      "page": "Human Rights",
+      "type": "subheading",
+      "label": "Get involved eyebrow",
+      "default": "Get involved"
+    },
+    "human_rights.get_involved.title": {
+      "page": "Human Rights",
+      "type": "heading",
+      "label": "Get involved title",
+      "default": "Support empowerment and rights"
+    },
+    "human_rights.get_involved.body": {
+      "page": "Human Rights",
+      "type": "paragraph",
+      "label": "Get involved body",
+      "default": "Your support helps expand skills training, livelihoods and community advocacy—so people can build stable futures and live with dignity."
+    },
+    "human_rights.get_involved.donate": {
+      "page": "Human Rights",
+      "type": "cta",
+      "label": "Get involved donate CTA",
+      "default": "Donate"
+    },
+    "human_rights.get_involved.governance": {
+      "page": "Human Rights",
+      "type": "cta",
+      "label": "Get involved governance CTA",
+      "default": "Governance"
+    },
+    "human_rights.get_involved.contact": {
+      "page": "Human Rights",
+      "type": "cta",
+      "label": "Get involved contact CTA",
+      "default": "Contact"
+    },
+    "human_rights.back": {
+      "page": "Human Rights",
+      "type": "cta",
+      "label": "Back link",
+      "default": "← Back to Our Focus Areas"
+    },
+    "institutional.hero.title": {
+      "page": "Institutional Development",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Institutional"
+    },
+    "institutional.hero.gradient_text": {
+      "page": "Institutional Development",
+      "type": "heading",
+      "label": "Hero gradient text",
+      "default": "Development"
+    },
+    "institutional.hero.subtitle": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Sustainable, visible, effective and efficient MCT providing services and significantly causing impact to vulnerable communities."
+    },
+    "institutional.hero.primary_cta": {
+      "page": "Institutional Development",
+      "type": "cta",
+      "label": "Hero primary CTA",
+      "default": "Partner with us"
+    },
+    "institutional.hero.secondary_cta": {
+      "page": "Institutional Development",
+      "type": "cta",
+      "label": "Hero secondary CTA",
+      "default": "Contact"
+    },
+    "institutional.income.eyebrow": {
+      "page": "Institutional Development",
+      "type": "subheading",
+      "label": "Income generating eyebrow",
+      "default": "Income Generating Activities"
+    },
+    "institutional.income.title": {
+      "page": "Institutional Development",
+      "type": "heading",
+      "label": "Income generating title",
+      "default": "Strengthening institutional sustainability"
+    },
+    "institutional.income.body": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Income generating body",
+      "default": "In addition to MCT vital healthcare and social services, Mashambanzou Care Trust has successfully implemented a range of income-generating activities that strengthen institutional sustainability and support the communities we serve. These activities generate income, foster skills development, entrepreneurship and self-reliance among beneficiaries."
+    },
+    "institutional.income.items.0.title": {
+      "page": "Institutional Development",
+      "type": "subheading",
+      "label": "Income item 1 title",
+      "default": "Agricultural projects"
+    },
+    "institutional.income.items.0.desc": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Income item 1 description",
+      "default": "Building stability through practical income pathways."
+    },
+    "institutional.income.items.1.title": {
+      "page": "Institutional Development",
+      "type": "subheading",
+      "label": "Income item 2 title",
+      "default": "Catering and food services"
+    },
+    "institutional.income.items.1.desc": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Income item 2 description",
+      "default": "Building stability through practical income pathways."
+    },
+    "institutional.income.items.2.title": {
+      "page": "Institutional Development",
+      "type": "subheading",
+      "label": "Income item 3 title",
+      "default": "Skills training and entrepreneurship"
+    },
+    "institutional.income.items.2.desc": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Income item 3 description",
+      "default": "Building stability through practical income pathways."
+    },
+    "institutional.income.items.3.title": {
+      "page": "Institutional Development",
+      "type": "subheading",
+      "label": "Income item 4 title",
+      "default": "Institutional resilience"
+    },
+    "institutional.income.items.3.desc": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Income item 4 description",
+      "default": "Building stability through practical income pathways."
+    },
+    "institutional.development.eyebrow": {
+      "page": "Institutional Development",
+      "type": "subheading",
+      "label": "Development eyebrow",
+      "default": "Institutional Development"
+    },
+    "institutional.development.title": {
+      "page": "Institutional Development",
+      "type": "heading",
+      "label": "Development title",
+      "default": "Building the organisation behind lasting community impact"
+    },
+    "institutional.development.body.0": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Development body 1",
+      "default": "Institutional development strengthens Mashambanzou Care Trust's ability to serve vulnerable communities with continuity, accountability and impact. It supports the systems, leadership, visibility and sustainability needed for programmes to reach people consistently and effectively."
+    },
+    "institutional.development.body.1": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Development body 2",
+      "default": "Our focus is a sustainable, visible, effective and efficient MCT, providing services and significantly causing impact to vulnerable communities."
+    },
+    "institutional.priorities.0.title": {
+      "page": "Institutional Development",
+      "type": "heading",
+      "label": "Priority 1 title",
+      "default": "Sustainable"
+    },
+    "institutional.priorities.0.body": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Priority 1 body",
+      "default": "Strengthening income-generating capacity, partnerships and internal systems that keep services running for the long term."
+    },
+    "institutional.priorities.1.title": {
+      "page": "Institutional Development",
+      "type": "heading",
+      "label": "Priority 2 title",
+      "default": "Visible"
+    },
+    "institutional.priorities.1.body": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Priority 2 body",
+      "default": "Maintaining a clear presence in communities, with leadership, staff and partners working alongside the people we serve."
+    },
+    "institutional.priorities.2.title": {
+      "page": "Institutional Development",
+      "type": "heading",
+      "label": "Priority 3 title",
+      "default": "Effective"
+    },
+    "institutional.priorities.2.body": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Priority 3 body",
+      "default": "Aligning programmes, planning and accountability so services respond to real needs and deliver measurable change."
+    },
+    "institutional.priorities.3.title": {
+      "page": "Institutional Development",
+      "type": "heading",
+      "label": "Priority 4 title",
+      "default": "Efficient"
+    },
+    "institutional.priorities.3.body": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Priority 4 body",
+      "default": "Using resources responsibly while improving coordination, governance and delivery across all programme areas."
+    },
+    "institutional.visibility.title": {
+      "page": "Institutional Development",
+      "type": "heading",
+      "label": "Visibility section title",
+      "default": "Strengthening visibility, sustainability and service delivery"
+    },
+    "institutional.visibility.body": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Visibility section body",
+      "default": "Institutional development links governance, planning, financial resilience, staff capacity and community presence so MCT can continue delivering meaningful support."
+    },
+    "institutional.gallery.0.caption": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Gallery caption 1",
+      "default": "A visible and enduring institutional presence built through decades of service."
+    },
+    "institutional.gallery.1.caption": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Gallery caption 2",
+      "default": "Leadership and programme teams staying connected to care, visibility and community impact."
+    },
+    "institutional.gallery.2.caption": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Gallery caption 3",
+      "default": "Sustainability strengthened through institutional income-generating initiatives."
+    },
+    "institutional.gallery.3.caption": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "Gallery caption 4",
+      "default": "Mission-driven service grounded in faith, compassion and accountability."
+    },
+    "institutional.cta.eyebrow": {
+      "page": "Institutional Development",
+      "type": "subheading",
+      "label": "CTA eyebrow",
+      "default": "Work with us"
+    },
+    "institutional.cta.title": {
+      "page": "Institutional Development",
+      "type": "heading",
+      "label": "CTA title",
+      "default": "Help strengthen the institution that supports vulnerable communities"
+    },
+    "institutional.cta.body": {
+      "page": "Institutional Development",
+      "type": "paragraph",
+      "label": "CTA body",
+      "default": "Partnerships, technical support and institutional investment help MCT remain resilient, accountable and ready to serve."
+    },
+    "institutional.cta.partner": {
+      "page": "Institutional Development",
+      "type": "cta",
+      "label": "CTA partner",
+      "default": "Partner with us"
+    },
+    "institutional.cta.contact": {
+      "page": "Institutional Development",
+      "type": "cta",
+      "label": "CTA contact",
+      "default": "Contact us"
+    },
+    "donor_projects.hero.title": {
+      "page": "Donor Projects",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Donor"
+    },
+    "donor_projects.hero.gradient_text": {
+      "page": "Donor Projects",
+      "type": "heading",
+      "label": "Hero gradient text",
+      "default": "Projects"
+    },
+    "donor_projects.hero.subtitle": {
+      "page": "Donor Projects",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Partner-supported work strengthening health, livelihoods and dignity in vulnerable communities."
+    },
+    "donor_projects.hero.primary_cta": {
+      "page": "Donor Projects",
+      "type": "cta",
+      "label": "Hero primary CTA",
+      "default": "Donate"
+    },
+    "donor_projects.hero.secondary_cta": {
+      "page": "Donor Projects",
+      "type": "cta",
+      "label": "Hero secondary CTA",
+      "default": "Partner with us"
+    },
+    "donor_projects.intro.eyebrow": {
+      "page": "Donor Projects",
+      "type": "subheading",
+      "label": "Intro eyebrow",
+      "default": "Donor Projects"
+    },
+    "donor_projects.intro.title": {
+      "page": "Donor Projects",
+      "type": "heading",
+      "label": "Intro title",
+      "default": "Partnerships that make services possible"
+    },
+    "donor_projects.intro.body": {
+      "page": "Donor Projects",
+      "type": "paragraph",
+      "label": "Intro body",
+      "default": "These projects show how donor support helps Mashambanzou Care Trust expand practical care, skills, opportunity and health access for vulnerable communities."
+    },
+    "donor_projects.care_to_share.title": {
+      "page": "Donor Projects",
+      "type": "heading",
+      "label": "Care to Share title",
+      "default": "Care to Share"
+    },
+    "donor_projects.care_to_share.donor": {
+      "page": "Donor Projects",
+      "type": "subheading",
+      "label": "Care to Share donor",
+      "default": "Donor: Oak Foundation"
+    },
+    "donor_projects.care_to_share.summary": {
+      "page": "Donor Projects",
+      "type": "paragraph",
+      "label": "Care to Share summary",
+      "default": "A youth empowerment and livelihoods project supporting vulnerable young people with vocational training, life skills and pathways to work."
+    },
+    "donor_projects.care_to_share.details": {
+      "page": "Donor Projects",
+      "type": "paragraph",
+      "label": "Care to Share details",
+      "default": "Care to Share, supported by Oak Foundation, helps vulnerable youth move from survival strategies into skills development, internships and income pathways. The project connects practical training, psychosocial support and community-based mentorship so beneficiaries can build dignity and self-reliance."
+    },
+    "donor_projects.care_to_share.focus.0": {
+      "page": "Donor Projects",
+      "type": "subheading",
+      "label": "Care to Share focus 1",
+      "default": "Vocational training"
+    },
+    "donor_projects.care_to_share.focus.1": {
+      "page": "Donor Projects",
+      "type": "subheading",
+      "label": "Care to Share focus 2",
+      "default": "Youth empowerment"
+    },
+    "donor_projects.care_to_share.focus.2": {
+      "page": "Donor Projects",
+      "type": "subheading",
+      "label": "Care to Share focus 3",
+      "default": "Livelihoods"
+    },
+    "donor_projects.care_to_share.focus.3": {
+      "page": "Donor Projects",
+      "type": "subheading",
+      "label": "Care to Share focus 4",
+      "default": "Industry exposure"
+    },
+    "donor_projects.detail.0.donor": {
+      "page": "Donor Projects",
+      "type": "subheading",
+      "label": "Care to Share detail donor label",
+      "default": "Oak Foundation"
+    },
+    "donor_projects.care_for_health.title": {
+      "page": "Donor Projects",
+      "type": "heading",
+      "label": "Care for Health Project title",
+      "default": "Care for Health Project"
+    },
+    "donor_projects.care_for_health.donor": {
+      "page": "Donor Projects",
+      "type": "subheading",
+      "label": "Care for Health Project donor",
+      "default": "Donor: AIDS Healthcare Foundation"
+    },
+    "donor_projects.care_for_health.summary": {
+      "page": "Donor Projects",
+      "type": "paragraph",
+      "label": "Care for Health Project summary",
+      "default": "A health access project expanding demand and uptake of HIV, TB, Hepatitis C and STI services through training, counselling and pop-up clinics."
+    },
+    "donor_projects.care_for_health.details": {
+      "page": "Donor Projects",
+      "type": "paragraph",
+      "label": "Care for Health Project details",
+      "default": "The Care for Health Project, funded by AIDS Healthcare Foundation, strengthens community access to integrated health services. It supports training for health workers and community care givers, pop-up clinics in hotspot areas, counselling, testing and health information that reduces stigma and encourages early care seeking."
+    },
+    "donor_projects.care_for_health.focus.0": {
+      "page": "Donor Projects",
+      "type": "subheading",
+      "label": "Care for Health Project focus 1",
+      "default": "HIV testing"
+    },
+    "donor_projects.care_for_health.focus.1": {
+      "page": "Donor Projects",
+      "type": "subheading",
+      "label": "Care for Health Project focus 2",
+      "default": "TB and Hepatitis C services"
+    },
+    "donor_projects.care_for_health.focus.2": {
+      "page": "Donor Projects",
+      "type": "subheading",
+      "label": "Care for Health Project focus 3",
+      "default": "Pop-up clinics"
+    },
+    "donor_projects.care_for_health.focus.3": {
+      "page": "Donor Projects",
+      "type": "subheading",
+      "label": "Care for Health Project focus 4",
+      "default": "Stigma reduction"
+    },
+    "donor_projects.detail.1.donor": {
+      "page": "Donor Projects",
+      "type": "subheading",
+      "label": "Care for Health Project detail donor label",
+      "default": "AIDS Healthcare Foundation"
+    },
+    "donor_projects.closing.title": {
+      "page": "Donor Projects",
+      "type": "heading",
+      "label": "Closing title",
+      "default": "Partner support strengthens impact"
+    },
+    "donor_projects.closing.body": {
+      "page": "Donor Projects",
+      "type": "paragraph",
+      "label": "Closing body",
+      "default": "Donor partnerships help MCT deliver focused projects that expand access to services, restore dignity and build long-term resilience for vulnerable communities."
+    },
+    "contact.hero.title": {
+      "page": "Contact",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Contact Us"
+    },
+    "contact.hero.subtitle": {
+      "page": "Contact",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Get in touch for enquiries, support or partnership."
+    },
+    "contact.quick_help.title": {
+      "page": "Contact",
+      "type": "heading",
+      "label": "Quick help title",
+      "default": "Get help fast"
+    },
+    "contact.quick_help.hours": {
+      "page": "Contact",
+      "type": "paragraph",
+      "label": "Quick help hours",
+      "default": "Projects: 8am – 5pm (weekdays only) • Mashambanzou Care Unit: Opens everyday"
+    },
+    "contact.quick_help.call_projects": {
+      "page": "Contact",
+      "type": "cta",
+      "label": "Call projects CTA",
+      "default": "Call Projects: +263 711 492 343"
+    },
+    "contact.quick_help.call_care_unit": {
+      "page": "Contact",
+      "type": "cta",
+      "label": "Call care unit CTA",
+      "default": "Call Care Unit: +263 777 681 186"
+    },
+    "contact.quick_help.maps": {
+      "page": "Contact",
+      "type": "cta",
+      "label": "Open maps CTA",
+      "default": "Open in Google Maps"
+    },
+    "contact.intro": {
+      "page": "Contact",
+      "type": "paragraph",
+      "label": "Contact intro",
+      "default": "For general enquiries, donation details, volunteer opportunities, partnership discussions or media requests, please use the contact details below."
+    },
+    "contact.info.title": {
+      "page": "Contact",
+      "type": "heading",
+      "label": "Contact info title",
+      "default": "Contact information"
+    },
+    "contact.info.phone.label": {
+      "page": "Contact",
+      "type": "subheading",
+      "label": "Phone label",
+      "default": "Phone"
+    },
+    "contact.info.phone.projects_label": {
+      "page": "Contact",
+      "type": "subheading",
+      "label": "Projects phone label",
+      "default": "Projects:"
+    },
+    "contact.info.phone.projects": {
+      "page": "Contact",
+      "type": "paragraph",
+      "label": "Projects phone",
+      "default": "+263 711 492 343"
+    },
+    "contact.info.phone.care_unit_label": {
+      "page": "Contact",
+      "type": "subheading",
+      "label": "Care unit phone label",
+      "default": "Care Unit:"
+    },
+    "contact.info.phone.care_unit": {
+      "page": "Contact",
+      "type": "paragraph",
+      "label": "Care unit phone",
+      "default": "+263 777 681 186"
+    },
+    "contact.info.email.label": {
+      "page": "Contact",
+      "type": "subheading",
+      "label": "Email label",
+      "default": "Email"
+    },
+    "contact.info.email": {
+      "page": "Contact",
+      "type": "paragraph",
+      "label": "Email address",
+      "default": "info@mashambanzou.co.zw"
+    },
+    "contact.info.address.label": {
+      "page": "Contact",
+      "type": "subheading",
+      "label": "Address label",
+      "default": "Address"
+    },
+    "contact.info.address": {
+      "page": "Contact",
+      "type": "paragraph",
+      "label": "Address",
+      "default": "40 Sandowns Rd, Waterfalls, Harare"
+    },
+    "contact.info.hours.label": {
+      "page": "Contact",
+      "type": "subheading",
+      "label": "Working hours label",
+      "default": "Working hours"
+    },
+    "contact.info.hours.projects_label": {
+      "page": "Contact",
+      "type": "subheading",
+      "label": "Projects hours label",
+      "default": "Projects:"
+    },
+    "contact.info.hours.projects": {
+      "page": "Contact",
+      "type": "paragraph",
+      "label": "Projects hours",
+      "default": "8am – 5pm (weekdays only)"
+    },
+    "contact.info.hours.care_unit_label": {
+      "page": "Contact",
+      "type": "subheading",
+      "label": "Care unit hours label",
+      "default": "Mashambanzou Care Unit:"
+    },
+    "contact.info.hours.care_unit": {
+      "page": "Contact",
+      "type": "paragraph",
+      "label": "Care unit hours",
+      "default": "Opens everyday"
+    },
+    "contact.maps_link": {
+      "page": "Contact",
+      "type": "cta",
+      "label": "Maps link CTA",
+      "default": "Open in Google Maps"
+    },
+    "donate.hero.title": {
+      "page": "Donate",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Donate"
+    },
+    "donate.hero.subtitle": {
+      "page": "Donate",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Your contribution helps us provide comprehensive HIV services, OVC support and community strengthening."
+    },
+    "donate.online.eyebrow": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Online donate eyebrow",
+      "default": "Donate online"
+    },
+    "donate.online.title": {
+      "page": "Donate",
+      "type": "heading",
+      "label": "Online donate title",
+      "default": "Make a secure donation via PayNow"
+    },
+    "donate.online.body": {
+      "page": "Donate",
+      "type": "paragraph",
+      "label": "Online donate body",
+      "default": "Your gift supports integrated healthcare, outreach, child protection and community strengthening."
+    },
+    "donate.online.paynow": {
+      "page": "Donate",
+      "type": "cta",
+      "label": "PayNow CTA label",
+      "default": "Donate via PayNow"
+    },
+    "donate.online.help": {
+      "page": "Donate",
+      "type": "cta",
+      "label": "Need help CTA",
+      "default": "Need help?"
+    },
+    "donate.online.features.0.title": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Online feature 1 title",
+      "default": "Secure"
+    },
+    "donate.online.features.0.desc": {
+      "page": "Donate",
+      "type": "paragraph",
+      "label": "Online feature 1 description",
+      "default": "Opens PayNow in a new tab"
+    },
+    "donate.online.features.1.title": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Online feature 2 title",
+      "default": "Fast"
+    },
+    "donate.online.features.1.desc": {
+      "page": "Donate",
+      "type": "paragraph",
+      "label": "Online feature 2 description",
+      "default": "Quick checkout and confirmation"
+    },
+    "donate.online.features.2.title": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Online feature 3 title",
+      "default": "Direct"
+    },
+    "donate.online.features.2.desc": {
+      "page": "Donate",
+      "type": "paragraph",
+      "label": "Online feature 3 description",
+      "default": "Funds support our programmes"
+    },
+    "donate.side.image.title": {
+      "page": "Donate",
+      "type": "heading",
+      "label": "Side image title",
+      "default": "Your donation meets urgent needs"
+    },
+    "donate.side.image.subtitle": {
+      "page": "Donate",
+      "type": "paragraph",
+      "label": "Side image subtitle",
+      "default": "From clinical care to outreach support—your gift helps communities thrive."
+    },
+    "donate.side.tags.0": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Side tag 1",
+      "default": "Healthcare"
+    },
+    "donate.side.tags.1": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Side tag 2",
+      "default": "Outreach"
+    },
+    "donate.side.tags.2": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Side tag 3",
+      "default": "Children"
+    },
+    "donate.side.tags.3": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Side tag 4",
+      "default": "Livelihoods"
+    },
+    "donate.wishlist.eyebrow": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list eyebrow",
+      "default": "Wish List"
+    },
+    "donate.wishlist.title": {
+      "page": "Donate",
+      "type": "heading",
+      "label": "Wish list title",
+      "default": "Wish List"
+    },
+    "donate.wishlist.body": {
+      "page": "Donate",
+      "type": "paragraph",
+      "label": "Wish list body",
+      "default": "At Mashambanzou Care Trust, we believe in the power of tangible contributions to make a real difference in the lives of those in need."
+    },
+    "donate.wishlist.0.title": {
+      "page": "Donate",
+      "type": "heading",
+      "label": "Wish list category 1 title",
+      "default": "Equipment"
+    },
+    "donate.wishlist.0.desc": {
+      "page": "Donate",
+      "type": "paragraph",
+      "label": "Wish list category 1 description",
+      "default": "Tools that improve care delivery and coordination."
+    },
+    "donate.wishlist.0.items.0": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 1 item 1",
+      "default": "Laptops"
+    },
+    "donate.wishlist.0.items.1": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 1 item 2",
+      "default": "Hospital equipment"
+    },
+    "donate.wishlist.0.items.2": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 1 item 3",
+      "default": "VIAC equipment"
+    },
+    "donate.wishlist.0.items.3": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 1 item 4",
+      "default": "Office equipment"
+    },
+    "donate.wishlist.0.items.4": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 1 item 5",
+      "default": "Camera and camera equipment"
+    },
+    "donate.wishlist.1.title": {
+      "page": "Donate",
+      "type": "heading",
+      "label": "Wish list category 2 title",
+      "default": "Nutritional Support"
+    },
+    "donate.wishlist.1.desc": {
+      "page": "Donate",
+      "type": "paragraph",
+      "label": "Wish list category 2 description",
+      "default": "Nutrition support for recovery and stability."
+    },
+    "donate.wishlist.1.items.0": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 2 item 1",
+      "default": "MCU patients nutritional support"
+    },
+    "donate.wishlist.1.items.1": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 2 item 2",
+      "default": "Mlambo and House of Safety nutritional support"
+    },
+    "donate.wishlist.1.items.2": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 2 item 3",
+      "default": "Nenyere Early Child Development Centre (NECDC) nutritional support"
+    },
+    "donate.wishlist.1.items.3": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 2 item 4",
+      "default": "(Starches, proteins, vitamins)"
+    },
+    "donate.wishlist.2.title": {
+      "page": "Donate",
+      "type": "heading",
+      "label": "Wish list category 3 title",
+      "default": "Vehicles"
+    },
+    "donate.wishlist.2.desc": {
+      "page": "Donate",
+      "type": "paragraph",
+      "label": "Wish list category 3 description",
+      "default": "Transport that expands reach and responsiveness."
+    },
+    "donate.wishlist.2.items.0": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 3 item 1",
+      "default": "Project vehicles"
+    },
+    "donate.wishlist.2.items.1": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 3 item 2",
+      "default": "Ambulance vehicle"
+    },
+    "donate.wishlist.2.items.2": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 3 item 3",
+      "default": "Containers for outreach clinics"
+    },
+    "donate.wishlist.2.items.3": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 3 item 4",
+      "default": "Containers for District office use"
+    },
+    "donate.wishlist.3.title": {
+      "page": "Donate",
+      "type": "heading",
+      "label": "Wish list category 4 title",
+      "default": "Toiletries & Detergents"
+    },
+    "donate.wishlist.3.desc": {
+      "page": "Donate",
+      "type": "paragraph",
+      "label": "Wish list category 4 description",
+      "default": "Hygiene items for facilities and households."
+    },
+    "donate.wishlist.3.items.0": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 4 item 1",
+      "default": "Hospital detergents"
+    },
+    "donate.wishlist.3.items.1": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 4 item 2",
+      "default": "Laundry detergents"
+    },
+    "donate.wishlist.3.items.2": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 4 item 3",
+      "default": "Patients toiletries"
+    },
+    "donate.wishlist.3.items.3": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 4 item 4",
+      "default": "House of Safety toiletries"
+    },
+    "donate.wishlist.3.items.4": {
+      "page": "Donate",
+      "type": "subheading",
+      "label": "Wish list category 4 item 5",
+      "default": "Nenyere Early Child Development Centre (NECDC) toiletries"
+    },
+    "donate.inkind.title": {
+      "page": "Donate",
+      "type": "heading",
+      "label": "In-kind title",
+      "default": "Want to donate items?"
+    },
+    "donate.inkind.body": {
+      "page": "Donate",
+      "type": "paragraph",
+      "label": "In-kind body",
+      "default": "Share your details below — we'll email you a confirmation and help coordinate drop-off or delivery. You can also contact us directly."
+    },
+    "donate.inkind.contact": {
+      "page": "Donate",
+      "type": "cta",
+      "label": "In-kind contact link",
+      "default": "contact us"
+    },
+    "donate.thank_you": {
+      "page": "Donate",
+      "type": "paragraph",
+      "label": "Thank you message",
+      "default": "Thank you for visiting our site, God bless you."
+    },
+    "get_involved.hero.title": {
+      "page": "Get Involved",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Get Involved"
+    },
+    "get_involved.hero.subtitle": {
+      "page": "Get Involved",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Donate, volunteer, partner or host an event—your support helps realise AIDS-free, resilient and empowered communities."
+    },
+    "get_involved.actions.0.title": {
+      "page": "Get Involved",
+      "type": "heading",
+      "label": "Action 1 title",
+      "default": "Donate"
+    },
+    "get_involved.actions.0.summary": {
+      "page": "Get Involved",
+      "type": "paragraph",
+      "label": "Action 1 summary",
+      "default": "Give once or monthly. PayNow, PayPal and international options available."
+    },
+    "get_involved.actions.0.link": {
+      "page": "Get Involved",
+      "type": "cta",
+      "label": "Action 1 link",
+      "default": "Learn more"
+    },
+    "get_involved.actions.1.title": {
+      "page": "Get Involved",
+      "type": "heading",
+      "label": "Action 2 title",
+      "default": "Partner With Us"
+    },
+    "get_involved.actions.1.summary": {
+      "page": "Get Involved",
+      "type": "paragraph",
+      "label": "Action 2 summary",
+      "default": "Corporate and institutional partnerships for lasting impact."
+    },
+    "get_involved.actions.1.link": {
+      "page": "Get Involved",
+      "type": "cta",
+      "label": "Action 2 link",
+      "default": "Learn more"
+    },
+    "partner.hero.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Partner With Us"
+    },
+    "partner.hero.subtitle": {
+      "page": "Partner",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Corporate and institutional partnerships for lasting impact—funding, in-kind support, employee engagement and advocacy."
+    },
+    "partner.hero.badge": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Hero badge",
+      "default": "Partnerships"
+    },
+    "partner.hero.primary_cta": {
+      "page": "Partner",
+      "type": "cta",
+      "label": "Hero primary CTA",
+      "default": "Discuss a partnership"
+    },
+    "partner.hero.secondary_cta": {
+      "page": "Partner",
+      "type": "cta",
+      "label": "Hero secondary CTA",
+      "default": "Governance"
+    },
+    "partner.intro.eyebrow": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Intro eyebrow",
+      "default": "Why partner with MCT"
+    },
+    "partner.intro.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "Intro title",
+      "default": "Build lasting impact with a trusted implementation partner"
+    },
+    "partner.intro.body": {
+      "page": "Partner",
+      "type": "paragraph",
+      "label": "Intro body",
+      "default": "We work with institutional donors, government departments and corporate partners to deliver integrated healthcare, community outreach, child protection and empowerment programmes. Partnerships are designed for clarity, credibility and real-world results."
+    },
+    "partner.intro.start": {
+      "page": "Partner",
+      "type": "cta",
+      "label": "Start conversation CTA",
+      "default": "Start a conversation"
+    },
+    "partner.intro.brochure": {
+      "page": "Partner",
+      "type": "cta",
+      "label": "Download brochure CTA",
+      "default": "Download brochure"
+    },
+    "partner.intro.email_note": {
+      "page": "Partner",
+      "type": "paragraph",
+      "label": "Email note",
+      "default": "Prefer email? Use the contact page and we'll route you to the right team."
+    },
+    "partner.proof_points.0.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "Proof point 1 title",
+      "default": "Due diligence ready"
+    },
+    "partner.proof_points.0.desc": {
+      "page": "Partner",
+      "type": "paragraph",
+      "label": "Proof point 1 description",
+      "default": "Clear governance, safeguarding, and reporting expectations for institutional partners."
+    },
+    "partner.proof_points.1.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "Proof point 2 title",
+      "default": "Flexible partnership models"
+    },
+    "partner.proof_points.1.desc": {
+      "page": "Partner",
+      "type": "paragraph",
+      "label": "Proof point 2 description",
+      "default": "Funding, in-kind support, technical expertise, and employee engagement opportunities."
+    },
+    "partner.proof_points.2.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "Proof point 3 title",
+      "default": "Community-led impact"
+    },
+    "partner.proof_points.2.desc": {
+      "page": "Partner",
+      "type": "paragraph",
+      "label": "Proof point 3 description",
+      "default": "Programmes designed with local needs—delivered across Harare, Zvimba and Goromonzi."
+    },
+    "partner.proof_points.3.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "Proof point 4 title",
+      "default": "Accountability & learning"
+    },
+    "partner.proof_points.3.desc": {
+      "page": "Partner",
+      "type": "paragraph",
+      "label": "Proof point 4 description",
+      "default": "We track outcomes and share progress so partners can learn and improve with us."
+    },
+    "partner.pathways.eyebrow": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Pathways eyebrow",
+      "default": "Partnership options"
+    },
+    "partner.pathways.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "Pathways title",
+      "default": "Choose the best way to collaborate"
+    },
+    "partner.pathways.body": {
+      "page": "Partner",
+      "type": "paragraph",
+      "label": "Pathways body",
+      "default": "Whether you're funding a programme, offering in-kind support, or mobilising teams—our model is designed to be practical, accountable and impact-focused."
+    },
+    "partner.pathways.0.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "Pathway 1 title",
+      "default": "Institutional funding"
+    },
+    "partner.pathways.0.desc": {
+      "page": "Partner",
+      "type": "paragraph",
+      "label": "Pathway 1 description",
+      "default": "Support healthcare, outreach, child protection and livelihoods through programme grants."
+    },
+    "partner.pathways.0.bullets.0": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Pathway 1 bullet 1",
+      "default": "Restricted or flexible funding"
+    },
+    "partner.pathways.0.bullets.1": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Pathway 1 bullet 2",
+      "default": "Reporting cadence agreed"
+    },
+    "partner.pathways.0.bullets.2": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Pathway 1 bullet 3",
+      "default": "Site visits welcomed"
+    },
+    "partner.pathways.0.link": {
+      "page": "Partner",
+      "type": "cta",
+      "label": "Pathway 1 link",
+      "default": "Discuss this option →"
+    },
+    "partner.pathways.1.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "Pathway 2 title",
+      "default": "Corporate CSR partnership"
+    },
+    "partner.pathways.1.desc": {
+      "page": "Partner",
+      "type": "paragraph",
+      "label": "Pathway 2 description",
+      "default": "Create a partnership that aligns your CSR goals with practical community needs."
+    },
+    "partner.pathways.1.bullets.0": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Pathway 2 bullet 1",
+      "default": "Multi-year CSR plans"
+    },
+    "partner.pathways.1.bullets.1": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Pathway 2 bullet 2",
+      "default": "Campaign partnerships"
+    },
+    "partner.pathways.1.bullets.2": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Pathway 2 bullet 3",
+      "default": "Matched giving options"
+    },
+    "partner.pathways.1.link": {
+      "page": "Partner",
+      "type": "cta",
+      "label": "Pathway 2 link",
+      "default": "Discuss this option →"
+    },
+    "partner.pathways.2.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "Pathway 3 title",
+      "default": "In-kind support"
+    },
+    "partner.pathways.2.desc": {
+      "page": "Partner",
+      "type": "paragraph",
+      "label": "Pathway 3 description",
+      "default": "Contribute equipment, supplies, or services that strengthen day-to-day delivery."
+    },
+    "partner.pathways.2.bullets.0": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Pathway 3 bullet 1",
+      "default": "Medical & office equipment"
+    },
+    "partner.pathways.2.bullets.1": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Pathway 3 bullet 2",
+      "default": "Transport and logistics"
+    },
+    "partner.pathways.2.bullets.2": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Pathway 3 bullet 3",
+      "default": "Pro-bono services"
+    },
+    "partner.pathways.2.link": {
+      "page": "Partner",
+      "type": "cta",
+      "label": "Pathway 3 link",
+      "default": "Discuss this option →"
+    },
+    "partner.pathways.3.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "Pathway 4 title",
+      "default": "Employee engagement"
+    },
+    "partner.pathways.3.desc": {
+      "page": "Partner",
+      "type": "paragraph",
+      "label": "Pathway 4 description",
+      "default": "Mobilise teams for volunteering, events, skills transfer and awareness initiatives."
+    },
+    "partner.pathways.3.bullets.0": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Pathway 4 bullet 1",
+      "default": "Volunteer days"
+    },
+    "partner.pathways.3.bullets.1": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Pathway 4 bullet 2",
+      "default": "Skills-based support"
+    },
+    "partner.pathways.3.bullets.2": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Pathway 4 bullet 3",
+      "default": "Awareness & advocacy"
+    },
+    "partner.pathways.3.link": {
+      "page": "Partner",
+      "type": "cta",
+      "label": "Pathway 4 link",
+      "default": "Discuss this option →"
+    },
+    "partner.partners.eyebrow": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "Partners eyebrow",
+      "default": "Partners & donors"
+    },
+    "partner.partners.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "Partners title",
+      "default": "Trusted by mission-aligned organisations"
+    },
+    "partner.partners.body": {
+      "page": "Partner",
+      "type": "paragraph",
+      "label": "Partners body",
+      "default": "We're grateful to partners who strengthen our work across Harare, Zvimba and Goromonzi."
+    },
+    "partner.partners.current.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "Current partners title",
+      "default": "Current partners"
+    },
+    "partner.partners.past.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "Past donors title",
+      "default": "Past donors"
+    },
+    "partner.cta.eyebrow": {
+      "page": "Partner",
+      "type": "subheading",
+      "label": "CTA eyebrow",
+      "default": "Next step"
+    },
+    "partner.cta.title": {
+      "page": "Partner",
+      "type": "heading",
+      "label": "CTA title",
+      "default": "Let's design a partnership that works"
+    },
+    "partner.cta.body": {
+      "page": "Partner",
+      "type": "paragraph",
+      "label": "CTA body",
+      "default": "Tell us your goals and timeline—we'll suggest the best fit (funding, in-kind, CSR, or employee engagement) and share what due diligence information you need."
+    },
+    "partner.cta.contact": {
+      "page": "Partner",
+      "type": "cta",
+      "label": "CTA contact",
+      "default": "Contact us"
+    },
+    "partner.cta.focus_areas": {
+      "page": "Partner",
+      "type": "cta",
+      "label": "CTA focus areas",
+      "default": "Explore our focus areas"
+    },
+    "where_we_work.hero.title": {
+      "page": "Where We Work",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Where We Work"
+    },
+    "where_we_work.hero.subtitle": {
+      "page": "Where We Work",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Our operational footprint across Harare Metropolitan, Zvimba and Goromonzi."
+    },
+    "where_we_work.footprint.eyebrow": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Footprint eyebrow",
+      "default": "Geographic footprint"
+    },
+    "where_we_work.footprint.title": {
+      "page": "Where We Work",
+      "type": "heading",
+      "label": "Footprint title",
+      "default": "Services that meet people where they are"
+    },
+    "where_we_work.footprint.body": {
+      "page": "Where We Work",
+      "type": "paragraph",
+      "label": "Footprint body",
+      "default": "We operate across Harare Metropolitan, Zvimba and Goromonzi—delivering clinical services, family support, child protection and livelihoods programmes through a mix of facility-based care and outreach."
+    },
+    "where_we_work.regions.0.name": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Region chip 1",
+      "default": "Harare Metropolitan"
+    },
+    "where_we_work.regions.1.name": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Region chip 2",
+      "default": "Zvimba Rural District"
+    },
+    "where_we_work.regions.2.name": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Region chip 3",
+      "default": "Goromonzi Rural District"
+    },
+    "where_we_work.stats.0.value": {
+      "page": "Where We Work",
+      "type": "stat",
+      "label": "Stat 1 value",
+      "default": "3"
+    },
+    "where_we_work.stats.0.label": {
+      "page": "Where We Work",
+      "type": "stat",
+      "label": "Stat 1 label",
+      "default": "District focus areas"
+    },
+    "where_we_work.stats.1.value": {
+      "page": "Where We Work",
+      "type": "stat",
+      "label": "Stat 2 value",
+      "default": "Multi-ward"
+    },
+    "where_we_work.stats.1.label": {
+      "page": "Where We Work",
+      "type": "stat",
+      "label": "Stat 2 label",
+      "default": "Hard-to-reach outreach"
+    },
+    "where_we_work.stats.2.value": {
+      "page": "Where We Work",
+      "type": "stat",
+      "label": "Stat 3 value",
+      "default": "Integrated"
+    },
+    "where_we_work.stats.2.label": {
+      "page": "Where We Work",
+      "type": "stat",
+      "label": "Stat 3 label",
+      "default": "Health + social support"
+    },
+    "where_we_work.image.title": {
+      "page": "Where We Work",
+      "type": "heading",
+      "label": "Image overlay title",
+      "default": "Outreach and follow-up across communities"
+    },
+    "where_we_work.image.subtitle": {
+      "page": "Where We Work",
+      "type": "paragraph",
+      "label": "Image overlay subtitle",
+      "default": "Clinics, counselling, referrals and family-centred support in the places that need it most."
+    },
+    "where_we_work.operational.title": {
+      "page": "Where We Work",
+      "type": "heading",
+      "label": "Operational areas title",
+      "default": "Operational areas"
+    },
+    "where_we_work.operational.subtitle": {
+      "page": "Where We Work",
+      "type": "paragraph",
+      "label": "Operational areas subtitle",
+      "default": "Our programmes are tailored to each district's needs while staying connected through an integrated model of care."
+    },
+    "where_we_work.regions.harare.name": {
+      "page": "Where We Work",
+      "type": "heading",
+      "label": "Harare Metropolitan name",
+      "default": "Harare Metropolitan"
+    },
+    "where_we_work.regions.harare.subtitle": {
+      "page": "Where We Work",
+      "type": "paragraph",
+      "label": "Harare Metropolitan subtitle",
+      "default": "High-density communities and outreach corridors"
+    },
+    "where_we_work.regions.harare.areas_label": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Harare Metropolitan areas label",
+      "default": "Areas"
+    },
+    "where_we_work.regions.harare.areas.0": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Harare Metropolitan area 1",
+      "default": "Tafara"
+    },
+    "where_we_work.regions.harare.areas.1": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Harare Metropolitan area 2",
+      "default": "Mabvuku"
+    },
+    "where_we_work.regions.harare.areas.2": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Harare Metropolitan area 3",
+      "default": "Glen Norah"
+    },
+    "where_we_work.regions.harare.areas.3": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Harare Metropolitan area 4",
+      "default": "Highfield"
+    },
+    "where_we_work.regions.harare.areas.4": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Harare Metropolitan area 5",
+      "default": "Hopley"
+    },
+    "where_we_work.regions.harare.areas.5": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Harare Metropolitan area 6",
+      "default": "Mbare"
+    },
+    "where_we_work.regions.harare.areas.6": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Harare Metropolitan area 7",
+      "default": "Dzivarasekwa Main"
+    },
+    "where_we_work.regions.harare.areas.7": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Harare Metropolitan area 8",
+      "default": "Dzivarasekwa Extension"
+    },
+    "where_we_work.regions.harare.focus_label": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Harare Metropolitan focus label",
+      "default": "Focus"
+    },
+    "where_we_work.regions.harare.highlights.0": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Harare Metropolitan highlight 1",
+      "default": "Outreach clinics"
+    },
+    "where_we_work.regions.harare.highlights.1": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Harare Metropolitan highlight 2",
+      "default": "Family Centred Support"
+    },
+    "where_we_work.regions.harare.highlights.2": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Harare Metropolitan highlight 3",
+      "default": "SRHR education"
+    },
+    "where_we_work.regions.zvimba.name": {
+      "page": "Where We Work",
+      "type": "heading",
+      "label": "Zvimba Rural District name",
+      "default": "Zvimba Rural District"
+    },
+    "where_we_work.regions.zvimba.subtitle": {
+      "page": "Where We Work",
+      "type": "paragraph",
+      "label": "Zvimba Rural District subtitle",
+      "default": "Peri-urban and rural wards with hard-to-reach outreach"
+    },
+    "where_we_work.regions.zvimba.areas_label": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Zvimba Rural District areas label",
+      "default": "Areas"
+    },
+    "where_we_work.regions.zvimba.areas.0": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Zvimba Rural District area 1",
+      "default": "Wards 24"
+    },
+    "where_we_work.regions.zvimba.areas.1": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Zvimba Rural District area 2",
+      "default": "Wards 25"
+    },
+    "where_we_work.regions.zvimba.areas.2": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Zvimba Rural District area 3",
+      "default": "Wards 26"
+    },
+    "where_we_work.regions.zvimba.areas.3": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Zvimba Rural District area 4",
+      "default": "Wards 35"
+    },
+    "where_we_work.regions.zvimba.focus_label": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Zvimba Rural District focus label",
+      "default": "Focus"
+    },
+    "where_we_work.regions.zvimba.highlights.0": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Zvimba Rural District highlight 1",
+      "default": "OVC support"
+    },
+    "where_we_work.regions.zvimba.highlights.1": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Zvimba Rural District highlight 2",
+      "default": "Community mobilisation"
+    },
+    "where_we_work.regions.zvimba.highlights.2": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Zvimba Rural District highlight 3",
+      "default": "Referrals & follow-up"
+    },
+    "where_we_work.regions.goromonzi.name": {
+      "page": "Where We Work",
+      "type": "heading",
+      "label": "Goromonzi Rural District name",
+      "default": "Goromonzi Rural District"
+    },
+    "where_we_work.regions.goromonzi.subtitle": {
+      "page": "Where We Work",
+      "type": "paragraph",
+      "label": "Goromonzi Rural District subtitle",
+      "default": "Care to Share youth empowerment and community services"
+    },
+    "where_we_work.regions.goromonzi.areas_label": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Goromonzi Rural District areas label",
+      "default": "Areas"
+    },
+    "where_we_work.regions.goromonzi.areas.0": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Goromonzi Rural District area 1",
+      "default": "Caledonia"
+    },
+    "where_we_work.regions.goromonzi.areas.1": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Goromonzi Rural District area 2",
+      "default": "Domboshava"
+    },
+    "where_we_work.regions.goromonzi.focus_label": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Goromonzi Rural District focus label",
+      "default": "Focus"
+    },
+    "where_we_work.regions.goromonzi.highlights.0": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Goromonzi Rural District highlight 1",
+      "default": "Care to Share (TVET)"
+    },
+    "where_we_work.regions.goromonzi.highlights.1": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Goromonzi Rural District highlight 2",
+      "default": "Livelihoods support"
+    },
+    "where_we_work.regions.goromonzi.highlights.2": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Goromonzi Rural District highlight 3",
+      "default": "Community advocacy"
+    },
+    "where_we_work.field.eyebrow": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "In the field eyebrow",
+      "default": "In the field"
+    },
+    "where_we_work.field.title": {
+      "page": "Where We Work",
+      "type": "heading",
+      "label": "Field section title",
+      "default": "What outreach looks like"
+    },
+    "where_we_work.field.body": {
+      "page": "Where We Work",
+      "type": "paragraph",
+      "label": "Field section body",
+      "default": "Outreach is where care becomes accessible—bringing HIV services, counselling, referrals and follow-up closer to families and individuals in the communities we serve."
+    },
+    "where_we_work.field.why.title": {
+      "page": "Where We Work",
+      "type": "subheading",
+      "label": "Why this matters title",
+      "default": "Why this matters"
+    },
+    "where_we_work.field.why.body": {
+      "page": "Where We Work",
+      "type": "paragraph",
+      "label": "Why this matters body",
+      "default": "It reduces barriers to treatment, strengthens trust, and helps ensure continuity of care—especially for people who face cost, distance or stigma challenges."
+    },
+    "careers.hero.title": {
+      "page": "Careers",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Careers"
+    },
+    "careers.hero.subtitle": {
+      "page": "Careers",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Join our team and help deliver compassionate care, community support and lasting impact."
+    },
+    "careers.hero.primary_cta": {
+      "page": "Careers",
+      "type": "cta",
+      "label": "Hero primary CTA",
+      "default": "Contact us"
+    },
+    "careers.hero.secondary_cta": {
+      "page": "Careers",
+      "type": "cta",
+      "label": "Hero secondary CTA",
+      "default": "Partner with us"
+    },
+    "careers.openings.title": {
+      "page": "Careers",
+      "type": "heading",
+      "label": "Openings title",
+      "default": "Current openings"
+    },
+    "careers.openings.subtitle": {
+      "page": "Careers",
+      "type": "paragraph",
+      "label": "Openings subtitle",
+      "default": "Explore available roles below. Application deadlines are shown for each position."
+    },
+    "careers.status.open": {
+      "page": "Careers",
+      "type": "subheading",
+      "label": "Open status badge",
+      "default": "Open"
+    },
+    "careers.status.closed": {
+      "page": "Careers",
+      "type": "subheading",
+      "label": "Closed status badge",
+      "default": "Closed"
+    },
+    "careers.deadline_prefix": {
+      "page": "Careers",
+      "type": "paragraph",
+      "label": "Deadline prefix",
+      "default": "Application deadline:"
+    },
+    "careers.apply": {
+      "page": "Careers",
+      "type": "cta",
+      "label": "Apply CTA",
+      "default": "Apply / enquire"
+    },
+    "careers.empty": {
+      "page": "Careers",
+      "type": "paragraph",
+      "label": "Empty state",
+      "default": "No career openings are published yet. Check back soon or contact us to express interest."
+    },
+    "tenders.hero.title": {
+      "page": "Tenders",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Invitation to"
+    },
+    "tenders.hero.gradient_text": {
+      "page": "Tenders",
+      "type": "heading",
+      "label": "Hero gradient text",
+      "default": "Tenders"
+    },
+    "tenders.hero.subtitle": {
+      "page": "Tenders",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Download tender documents and review submission deadlines for current procurement opportunities."
+    },
+    "tenders.hero.primary_cta": {
+      "page": "Tenders",
+      "type": "cta",
+      "label": "Hero primary CTA",
+      "default": "Contact us"
+    },
+    "tenders.documents.title": {
+      "page": "Tenders",
+      "type": "heading",
+      "label": "Documents title",
+      "default": "Tender documents"
+    },
+    "tenders.documents.subtitle": {
+      "page": "Tenders",
+      "type": "paragraph",
+      "label": "Documents subtitle",
+      "default": "Download the documents below before the stated deadline."
+    },
+    "tenders.status.open": {
+      "page": "Tenders",
+      "type": "subheading",
+      "label": "Open status badge",
+      "default": "Open"
+    },
+    "tenders.status.closed": {
+      "page": "Tenders",
+      "type": "subheading",
+      "label": "Closed status badge",
+      "default": "Closed"
+    },
+    "tenders.deadline_prefix": {
+      "page": "Tenders",
+      "type": "paragraph",
+      "label": "Deadline prefix",
+      "default": "Deadline:"
+    },
+    "tenders.download": {
+      "page": "Tenders",
+      "type": "cta",
+      "label": "Download CTA",
+      "default": "Download"
+    },
+    "tenders.empty": {
+      "page": "Tenders",
+      "type": "paragraph",
+      "label": "Empty state",
+      "default": "No tender invitations are published yet."
+    },
+    "tenders.footer.question": {
+      "page": "Tenders",
+      "type": "paragraph",
+      "label": "Footer question",
+      "default": "Questions about a tender?"
+    },
+    "tenders.footer.contact": {
+      "page": "Tenders",
+      "type": "cta",
+      "label": "Footer contact CTA",
+      "default": "Contact us"
+    },
+    "noticeboard.hero.title": {
+      "page": "Noticeboard",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Notice"
+    },
+    "noticeboard.hero.gradient_text": {
+      "page": "Noticeboard",
+      "type": "heading",
+      "label": "Hero gradient text",
+      "default": "board"
+    },
+    "noticeboard.hero.subtitle": {
+      "page": "Noticeboard",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Official notices, announcements and updates from Mashambanzou Care Trust."
+    },
+    "noticeboard.hero.primary_cta": {
+      "page": "Noticeboard",
+      "type": "cta",
+      "label": "Hero primary CTA",
+      "default": "Contact us"
+    },
+    "noticeboard.latest.title": {
+      "page": "Noticeboard",
+      "type": "heading",
+      "label": "Latest notices title",
+      "default": "Latest notices"
+    },
+    "noticeboard.latest.subtitle": {
+      "page": "Noticeboard",
+      "type": "paragraph",
+      "label": "Latest notices subtitle",
+      "default": "Official announcements published by Mashambanzou Care Trust."
+    },
+    "noticeboard.empty": {
+      "page": "Noticeboard",
+      "type": "paragraph",
+      "label": "Empty state",
+      "default": "No notices are published yet. Check back soon or contact us for urgent enquiries."
+    },
+    "noticeboard.footer.intro": {
+      "page": "Noticeboard",
+      "type": "paragraph",
+      "label": "Footer intro",
+      "default": "For careers and tenders, visit"
+    },
+    "noticeboard.footer.careers": {
+      "page": "Noticeboard",
+      "type": "cta",
+      "label": "Footer careers link",
+      "default": "Careers"
+    },
+    "noticeboard.footer.tenders": {
+      "page": "Noticeboard",
+      "type": "cta",
+      "label": "Footer tenders link",
+      "default": "Invitation to Tenders"
+    },
+    "privacy.hero.title": {
+      "page": "Privacy",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Privacy Policy"
+    },
+    "privacy.hero.subtitle": {
+      "page": "Privacy",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "How we collect, use and protect your information."
+    },
+    "privacy.body.0": {
+      "page": "Privacy",
+      "type": "paragraph",
+      "label": "Privacy paragraph 1",
+      "default": "Mashambanzou Care Trust is committed to protecting your privacy. Given the sensitivity of medical and survivor data (including HIV status and SGBV), we apply robust data protection protocols. Contact form submissions and donation data are handled in line with our internal policies and applicable law."
+    },
+    "privacy.body.1": {
+      "page": "Privacy",
+      "type": "paragraph",
+      "label": "Privacy paragraph 2",
+      "default": "A full Privacy Policy document—compliant with international data protection standards—will be published here once approved. The site uses SSL encryption and secure, role-based access for any backend administration."
+    },
+    "success_stories.hero.title": {
+      "page": "Success Stories",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Success"
+    },
+    "success_stories.hero.gradient_text": {
+      "page": "Success Stories",
+      "type": "heading",
+      "label": "Hero gradient text",
+      "default": "stories"
+    },
+    "success_stories.hero.subtitle": {
+      "page": "Success Stories",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Stories, photos and videos that highlight the change happening across our communities."
+    },
+    "success_stories.hero.primary_cta": {
+      "page": "Success Stories",
+      "type": "cta",
+      "label": "Hero primary CTA",
+      "default": "Donate"
+    },
+    "success_stories.section.title": {
+      "page": "Success Stories",
+      "type": "heading",
+      "label": "Section title",
+      "default": "Success stories"
+    },
+    "success_stories.section.subtitle": {
+      "page": "Success Stories",
+      "type": "paragraph",
+      "label": "Section subtitle",
+      "default": "These stories are managed from the admin panel, so updates and deletions appear on the website automatically."
+    },
+    "success_stories.date_fallback": {
+      "page": "Success Stories",
+      "type": "subheading",
+      "label": "Date fallback label",
+      "default": "Success story"
+    },
+    "success_stories.empty": {
+      "page": "Success Stories",
+      "type": "paragraph",
+      "label": "Empty state",
+      "default": "No success stories are published yet. Add stories in the Laravel admin panel to show them here."
+    },
+    "latest_stories.hero.title": {
+      "page": "Latest Stories",
+      "type": "heading",
+      "label": "Hero title",
+      "default": "Latest"
+    },
+    "latest_stories.hero.gradient_text": {
+      "page": "Latest Stories",
+      "type": "heading",
+      "label": "Hero gradient text",
+      "default": "stories"
+    },
+    "latest_stories.hero.subtitle": {
+      "page": "Latest Stories",
+      "type": "paragraph",
+      "label": "Hero subtitle",
+      "default": "Photos, videos and short updates posted by the team."
+    },
+    "latest_stories.hero.primary_cta": {
+      "page": "Latest Stories",
+      "type": "cta",
+      "label": "Hero primary CTA",
+      "default": "Donate"
+    },
+    "latest_stories.section.title": {
+      "page": "Latest Stories",
+      "type": "heading",
+      "label": "Section title",
+      "default": "Latest posts"
+    },
+    "latest_stories.section.subtitle": {
+      "page": "Latest Stories",
+      "type": "paragraph",
+      "label": "Section subtitle",
+      "default": "New posts appear here as soon as they're published from the admin portal."
+    },
+    "intro_video.title": {
+      "page": "Intro Video",
+      "type": "heading",
+      "label": "Section title",
+      "default": "Watch our story"
+    },
+    "intro_video.subtitle": {
+      "page": "Intro Video",
+      "type": "paragraph",
+      "label": "Section subtitle",
+      "default": "See how Mashambanzou Care Trust is building AIDS-free, resilient communities."
+    },
+    "intro_video.unconfigured.body": {
+      "page": "Intro Video",
+      "type": "paragraph",
+      "label": "Unconfigured body",
+      "default": "Set NEXT_PUBLIC_INTRO_VIDEO_URL (and optionally NEXT_PUBLIC_INTRO_VIDEO_POSTER) to show the intro video."
+    },
+    "intro_video.unconfigured.placeholder": {
+      "page": "Intro Video",
+      "type": "subheading",
+      "label": "Unconfigured placeholder",
+      "default": "Video URL not configured"
+    },
+    "intro_video.muted_hint": {
+      "page": "Intro Video",
+      "type": "subheading",
+      "label": "Muted hint",
+      "default": "Sound off — click video to unmute"
+    },
+    "intro_video.play_label": {
+      "page": "Intro Video",
+      "type": "cta",
+      "label": "Play button label",
+      "default": "Play intro video"
+    },
+    "careers_teaser.eyebrow": {
+      "page": "Careers Teaser",
+      "type": "subheading",
+      "label": "Eyebrow",
+      "default": "Careers"
+    },
+    "careers_teaser.title": {
+      "page": "Careers Teaser",
+      "type": "heading",
+      "label": "Section title",
+      "default": "Join our team"
+    },
+    "careers_teaser.subtitle": {
+      "page": "Careers Teaser",
+      "type": "paragraph",
+      "label": "Section subtitle",
+      "default": "Explore current openings and apply before the listed deadline."
+    },
+    "careers_teaser.view_all": {
+      "page": "Careers Teaser",
+      "type": "cta",
+      "label": "View all CTA",
+      "default": "View all careers"
+    },
+    "careers_teaser.deadline_prefix": {
+      "page": "Careers Teaser",
+      "type": "paragraph",
+      "label": "Deadline prefix",
+      "default": "Apply by"
+    },
+    "careers_teaser.empty": {
+      "page": "Careers Teaser",
+      "type": "paragraph",
+      "label": "Empty state",
+      "default": "No career openings are published yet. Visit our careers page for future opportunities."
+    }
+  }
+}

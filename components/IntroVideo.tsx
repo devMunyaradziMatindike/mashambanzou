@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
+import { useSiteContent } from "@/components/ContentProvider";
+import { ContentText } from "@/components/ContentText";
 
 const VIDEO_URL =
   process.env.NEXT_PUBLIC_INTRO_VIDEO_URL || "https://www.youtube.com/watch?v=mhkWCOrjKlE";
@@ -66,6 +68,7 @@ function getEmbedUrl(
 }
 
 export function IntroVideo() {
+  const { t } = useSiteContent();
   const [playing, setPlaying] = useState(false);
   const [inView, setInView] = useState(false);
   const [mutedHintVisible, setMutedHintVisible] = useState(true);
@@ -104,8 +107,8 @@ export function IntroVideo() {
 
   useEffect(() => {
     if (playing) {
-      const t = setTimeout(() => setMutedHintVisible(false), 4000);
-      return () => clearTimeout(t);
+      const timer = setTimeout(() => setMutedHintVisible(false), 4000);
+      return () => clearTimeout(timer);
     } else {
       setMutedHintVisible(true);
     }
@@ -121,14 +124,16 @@ export function IntroVideo() {
       <section className="py-16 sm:py-24 px-4 sm:px-6 bg-brand-dark/10 backdrop-blur">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white mb-2">
-            Watch our story
+            {t("intro_video.title")}
           </h2>
-          <p className="text-white/80 mb-8">
-            Set <code className="text-sm bg-white/10 px-1 rounded">NEXT_PUBLIC_INTRO_VIDEO_URL</code> (and optionally{" "}
-            <code className="text-sm bg-white/10 px-1 rounded">NEXT_PUBLIC_INTRO_VIDEO_POSTER</code>) to show the intro video.
-          </p>
+          <ContentText
+            contentKey="intro_video.unconfigured.body"
+            value={t("intro_video.unconfigured.body")}
+            as="p"
+            className="text-white/80 mb-8"
+          />
           <div className="aspect-video rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-white/60">
-            Video URL not configured
+            {t("intro_video.unconfigured.placeholder")}
           </div>
         </div>
       </section>
@@ -143,18 +148,21 @@ export function IntroVideo() {
     <section ref={sectionRef} className="py-16 sm:py-24 px-4 sm:px-6 bg-brand-dark/10 backdrop-blur">
       <div className="max-w-4xl mx-auto">
         <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white mb-2 text-center">
-          Watch our story
+          {t("intro_video.title")}
         </h2>
-        <p className="text-white/80 text-center mb-10">
-          See how Mashambanzou Care Trust is building AIDS-free, resilient communities.
-        </p>
+        <ContentText
+          contentKey="intro_video.subtitle"
+          value={t("intro_video.subtitle")}
+          as="p"
+          className="text-white/80 text-center mb-10"
+        />
         <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-900 shadow-xl">
           {!playing ? (
             <>
               {posterUrl ? (
                 <Image
                   src={posterUrl}
-                  alt="Play intro video"
+                  alt={t("intro_video.play_label")}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 896px"
@@ -168,7 +176,7 @@ export function IntroVideo() {
                 type="button"
                 onClick={handlePlayClick}
                 className="absolute inset-0 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-sunlight focus:ring-offset-4 focus:ring-offset-brand-green rounded-2xl"
-                aria-label="Play intro video"
+                aria-label={t("intro_video.play_label")}
               >
                 <span className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-brand-sunlight flex items-center justify-center text-brand-dark shadow-lg hover:scale-110 transition-transform">
                   <svg className="w-8 h-8 sm:w-10 sm:h-10 ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -201,7 +209,7 @@ export function IntroVideo() {
                   className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-black/60 text-white text-sm font-medium backdrop-blur-sm transition-opacity duration-500"
                   aria-hidden
                 >
-                  Sound off — click video to unmute
+                  {t("intro_video.muted_hint")}
                 </div>
               )}
             </>

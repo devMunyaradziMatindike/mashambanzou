@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { PageSection } from "@/components/PageSection";
+import { ContentText } from "@/components/ContentText";
+import { getWebsiteContent, createContentTranslator } from "@/lib/website-content";
 import type { Metadata } from "next";
 import type { LucideIcon } from "lucide-react";
 import { HandHeart, HeartHandshake, ShieldCheck, Users, Zap } from "lucide-react";
@@ -12,87 +14,34 @@ export const metadata: Metadata = {
     "The story of Sister Noreen's founding in 1989 and the Kushamba Nzou narrative—washing the elephant—symbolising renewal and strength for AIDS-free, resilient communities.",
 };
 
-const values: { name: string; description: string; color: "brand-sunlight" | "brand-green"; icon: LucideIcon }[] = [
-  { name: "Participation", description: "Communities at the centre of what we do", color: "brand-sunlight", icon: Users },
-  { name: "Compassion", description: "Dignity and care in every interaction", color: "brand-green", icon: HeartHandshake },
-  {
-    name: "Transparency and Accountability",
-    description: "To beneficiaries, donors and partners",
-    color: "brand-sunlight",
-    icon: ShieldCheck,
-  },
-  { name: "Human Dignity", description: "Every person valued and respected", color: "brand-green", icon: HandHeart },
-  { name: "Empowerment", description: "Enabling people and communities to thrive", color: "brand-sunlight", icon: Zap },
+export const dynamic = "force-dynamic";
+
+const valueIcons: { color: "brand-sunlight" | "brand-green"; icon: LucideIcon }[] = [
+  { color: "brand-sunlight", icon: Users },
+  { color: "brand-green", icon: HeartHandshake },
+  { color: "brand-sunlight", icon: ShieldCheck },
+  { color: "brand-green", icon: HandHeart },
+  { color: "brand-sunlight", icon: Zap },
 ];
 
-const highlights = [
-  {
-    label: "Founded",
-    value: "1989",
-    description: "Built on compassion, dignity, and community care.",
-  },
-  {
-    label: "Approach",
-    value: "Family‑centred support",
-    description: "Holistic care for people living with HIV and their families.",
-  },
-  {
-    label: "Where we work",
-    value: "Harare & beyond",
-    description: "Urban and rural communities across our operational areas.",
-  },
-  {
-    label: "Focus",
-    value: "Health • Protection • Rights",
-    description: "Comprehensive services that strengthen resilience.",
-  },
-] as const;
+const timelineIndices = [0, 1, 2, 3, 4] as const;
+const glanceIndices = [0, 1, 2, 3] as const;
+const operationalAreaIndices = [0, 1, 2] as const;
 
-const timeline = [
-  {
-    year: "1989",
-    title: "Founded Mashambanzou Care Unit in Waterfalls, Harare",
-    description:
-      "Established in 1989 to respond to the HIV pandemic and provide compassionate care to marginalised communities.",
-  },
-  {
-    year: "Community Growth",
-    title: "Expanded from the Care Unit to outreach clinics for integrated support",
-    description:
-      "Extended services beyond the Care Unit to reach communities with comprehensive, integrated care and support.",
-  },
-  {
-    year: "Community Strengthening",
-    title: "Engaged community caregivers",
-    description:
-      "Community caregivers mobilise participants and support outreach clinics and community activities.",
-  },
-  {
-    year: "Children",
-    title: "Established Nenyere Early Child Development Centre (NECDC)",
-    description:
-      "Provides orphans and vulnerable children with at least two hot meals a day and basic education so parents/guardians can work for livelihoods.",
-  },
-  {
-    year: "Child Protection",
-    title: "Established houses of safety for girls and boys in Mbare",
-    description:
-      "Created safe spaces for children in need, strengthening protection and safeguarding within the community.",
-  },
-] as const;
+export default async function OurIdentityPage() {
+  const content = await getWebsiteContent();
+  const t = createContentTranslator(content);
 
-export default function OurIdentityPage() {
   return (
     <>
       <Hero
-        title="Our Story"
-        gradientText="Our identity."
-        badge="Since 1989"
+        title={t("our_identity.hero.title")}
+        gradientText={t("our_identity.hero.gradient_text")}
+        badge={t("our_identity.hero.badge")}
         sidePanel={{
-          eyebrow: "About MCT",
-          title: "Faith-based care, rooted in community",
-          body:
-            "Mashambanzou Care Trust (MCT) is a faith based, registered Private Voluntary Organisation (PVO 9/90), based in Harare. It was founded in 1989 by Sister Noreen Nolan of the Little Company of Mary (LCM) Sisters of the Roman Catholic Church, in response to the HIV pandemic amongst poor communities. Work in communities is premised on dissemination of accurate information on HIV and AIDS, offering care and support to people living with HIV (PLWHIV) and raising awareness on prevention of the further spread of HIV. Home Based Care (HBC), Palliative Care and HIV prevention awareness campaigns are among some of the interventions carried out. Mashambanzou has evolved over the years to focus not only on PLWHIV but also on the family and society as a means of mitigating the effects of the disease. Innovatively, MCT established a Family Centred Support (FCS) model which aims to reduce vulnerabilities associated with HIV and AIDS.",
+          eyebrow: t("our_identity.hero.side_panel.eyebrow"),
+          title: t("our_identity.hero.side_panel.title"),
+          body: t("our_identity.hero.side_panel.body"),
         }}
       />
 
@@ -104,21 +53,29 @@ export default function OurIdentityPage() {
               <div className="w-12 h-12 rounded-xl bg-brand-sunlight/20 flex items-center justify-center text-2xl mb-6">
                 ☀️
               </div>
-              <h2 className="font-heading text-xl sm:text-2xl font-semibold text-white mb-4">Our Vision</h2>
-              <p className="text-lg font-medium text-white">
-                AIDS free, resilient and empowered communities.
-              </p>
+              <h2 className="font-heading text-xl sm:text-2xl font-semibold text-white mb-4">
+                {t("our_identity.vision.title")}
+              </h2>
+              <ContentText
+                contentKey="our_identity.vision.text"
+                value={t("our_identity.vision.text")}
+                as="p"
+                className="text-lg font-medium text-white"
+              />
             </div>
             <div className="rounded-2xl border border-white/15 bg-brand-dark/20 backdrop-blur p-8 sm:p-10">
               <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center text-2xl mb-6">
                 🌱
               </div>
-              <h2 className="font-heading text-xl sm:text-2xl font-semibold text-white mb-4">Our Mission</h2>
-              <p className="text-white/85">
-                To realise healthy, socially inclusive communities, free of AIDS through provision of comprehensive HIV
-                services, Orphans Vulnerable Children support services, promotion of Human Rights and community
-                strengthening.
-              </p>
+              <h2 className="font-heading text-xl sm:text-2xl font-semibold text-white mb-4">
+                {t("our_identity.mission.title")}
+              </h2>
+              <ContentText
+                contentKey="our_identity.mission.text"
+                value={t("our_identity.mission.text")}
+                as="p"
+                className="text-white/85"
+              />
             </div>
           </div>
         </div>
@@ -127,11 +84,13 @@ export default function OurIdentityPage() {
       {/* Our Values – grid of cards */}
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
-          <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white text-center mb-12">Our Values</h2>
+          <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white text-center mb-12">
+            {t("our_identity.values.title")}
+          </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {values.map((value) => (
+            {valueIcons.map((value, index) => (
               <div
-                key={value.name}
+                key={index}
                 className="rounded-2xl bg-brand-dark/15 backdrop-blur p-6 sm:p-8 border border-white/10 shadow-sm shadow-brand-dark/15 hover:shadow-md hover:shadow-brand-dark/25 hover:border-white/20 transition-all"
               >
                 <div
@@ -144,7 +103,9 @@ export default function OurIdentityPage() {
                     className={value.color === "brand-sunlight" ? "w-5 h-5 text-white" : "w-5 h-5 text-white"}
                   />
                 </div>
-                <h3 className="font-heading text-lg font-semibold text-white">{value.name}</h3>
+                <h3 className="font-heading text-lg font-semibold text-white">
+                  {t(`our_identity.values.${index}.name`)}
+                </h3>
               </div>
             ))}
           </div>
@@ -155,22 +116,34 @@ export default function OurIdentityPage() {
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-10">
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">At a glance</h2>
-            <p className="text-white/80 text-lg leading-relaxed">
-              Key facts partners and communities often want to know first.
-            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">
+              {t("our_identity.glance.title")}
+            </h2>
+            <ContentText
+              contentKey="our_identity.glance.subtitle"
+              value={t("our_identity.glance.subtitle")}
+              as="p"
+              className="text-white/80 text-lg leading-relaxed"
+            />
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {highlights.map((item) => (
+            {glanceIndices.map((index) => (
               <div
-                key={item.label}
+                key={index}
                 className="rounded-2xl bg-brand-dark/15 backdrop-blur p-6 sm:p-7 border border-white/10 shadow-sm shadow-brand-dark/15 hover:shadow-md hover:shadow-brand-dark/25 hover:border-white/20 transition-all"
               >
-                <div className="text-xs font-semibold uppercase tracking-widest text-white/70">{item.label}</div>
-                <div className="mt-2 font-heading text-xl sm:text-2xl font-semibold text-white">
-                  {item.value}
+                <div className="text-xs font-semibold uppercase tracking-widest text-white/70">
+                  {t(`our_identity.glance.${index}.label`)}
                 </div>
-                <p className="mt-3 text-white/75 text-sm sm:text-base leading-relaxed">{item.description}</p>
+                <div className="mt-2 font-heading text-xl sm:text-2xl font-semibold text-white">
+                  {t(`our_identity.glance.${index}.value`)}
+                </div>
+                <ContentText
+                  contentKey={`our_identity.glance.${index}.description`}
+                  value={t(`our_identity.glance.${index}.description`)}
+                  as="p"
+                  className="mt-3 text-white/75 text-sm sm:text-base leading-relaxed"
+                />
               </div>
             ))}
           </div>
@@ -192,19 +165,22 @@ export default function OurIdentityPage() {
                 />
               </div>
               <div>
-                <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white mb-4">Kushamba Nzou</h2>
-                <p className="text-white/85 leading-relaxed">
-                  The name Mashambanzou comes from a fusion of two Shona words &ldquo;kushamba&rdquo; (to wash) and
-                  &ldquo;nzou&rdquo; (elephant). Together they form a powerful idiom symbolising the dawn of a new day,
-                  inspired by the image of elephants going down to the river to wash at first light, a daily act of
-                  renewal, strength and cleansing. This symbolism reflects the spirit of Mashambanzou Care Trust (MCT), a
-                  beacon of hope and new beginnings for those living with HIV and AIDS.
-                </p>
+                <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white mb-4">
+                  {t("our_identity.kushamba.title")}
+                </h2>
+                <ContentText
+                  contentKey="our_identity.kushamba.body"
+                  value={t("our_identity.kushamba.body")}
+                  as="p"
+                  className="text-white/85 leading-relaxed"
+                />
                 <div className="mt-6 rounded-2xl border border-white/10 bg-white/10 p-5 sm:p-6">
-                  <p className="text-white/85 leading-relaxed">
-                    <span className="font-semibold text-white">A daily act of renewal</span> — strength, cleansing and a
-                    new beginning at first light.
-                  </p>
+                  <ContentText
+                    contentKey="our_identity.kushamba.callout"
+                    value={t("our_identity.kushamba.callout")}
+                    as="p"
+                    className="text-white/85 leading-relaxed"
+                  />
                 </div>
               </div>
             </div>
@@ -216,7 +192,7 @@ export default function OurIdentityPage() {
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white text-center mb-12">
-            Our founder
+            {t("our_identity.founder.title")}
           </h2>
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/10 aspect-[3/4] max-w-md mx-auto md:mx-0 relative">
@@ -230,14 +206,12 @@ export default function OurIdentityPage() {
               />
             </div>
             <div className="space-y-6 text-white/85">
-              <p className="leading-relaxed">
-                Through the Vision of Sr. Noreen and the cooperation of a group of dedicated Volunteers, Mashambanzou
-                Care Trust was founded in 1989, in Harare. Sr. Noreen and her co-workers were touched by the plight of
-                people living with HIV, subjected as they were, to stigmatisation, rejection and discrimination. Their
-                aim was to offer comfort and reassurance to people Living with HIV and their family members, thereby
-                enhancing the quality of their lives and when the time would come, enable them to die with dignity and
-                the knowledge that they were loved.
-              </p>
+              <ContentText
+                contentKey="our_identity.founder.body"
+                value={t("our_identity.founder.body")}
+                as="p"
+                className="leading-relaxed"
+              />
             </div>
           </div>
         </div>
@@ -247,23 +221,37 @@ export default function OurIdentityPage() {
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">Our journey</h2>
-            <p className="text-white/80 text-lg leading-relaxed">
-              Key milestones that shaped Mashambanzou Care Trust.
-            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">
+              {t("our_identity.journey.title")}
+            </h2>
+            <ContentText
+              contentKey="our_identity.journey.subtitle"
+              value={t("our_identity.journey.subtitle")}
+              as="p"
+              className="text-white/80 text-lg leading-relaxed"
+            />
           </div>
 
           <div className="max-w-4xl mx-auto">
             <ol className="relative border-l border-white/20 pl-6 space-y-10">
-              {timeline.map((item) => (
-                <li key={item.year} className="relative">
+              {timelineIndices.map((index) => (
+                <li key={index} className="relative">
                   <span className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-sunlight border-4 border-brand-green shadow-sm" />
                   <div className="rounded-2xl border border-white/10 bg-brand-dark/15 backdrop-blur p-6 sm:p-7">
                     <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-                      <h3 className="font-heading text-xl font-semibold text-white">{item.title}</h3>
-                      <span className="text-sm font-semibold text-white/70">{item.year}</span>
+                      <h3 className="font-heading text-xl font-semibold text-white">
+                        {t(`our_identity.timeline.${index}.title`)}
+                      </h3>
+                      <span className="text-sm font-semibold text-white/70">
+                        {t(`our_identity.timeline.${index}.year`)}
+                      </span>
                     </div>
-                    <p className="mt-3 text-white/80 leading-relaxed">{item.description}</p>
+                    <ContentText
+                      contentKey={`our_identity.timeline.${index}.description`}
+                      value={t(`our_identity.timeline.${index}.description`)}
+                      as="p"
+                      className="mt-3 text-white/80 leading-relaxed"
+                    />
                   </div>
                 </li>
               ))}
@@ -276,20 +264,19 @@ export default function OurIdentityPage() {
       <PageSection className="section-padding bg-white">
         <div className="container-wide">
           <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-brand-dark text-center mb-10">
-            Operational Areas
+            {t("our_identity.operational_areas.title")}
           </h2>
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-8 shadow-sm hover:shadow-lg transition-shadow">
-              <h3 className="font-heading text-xl font-semibold text-brand-dark">Harare Metropolitan</h3>
-            </div>
-
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-8 shadow-sm hover:shadow-lg transition-shadow">
-              <h3 className="font-heading text-xl font-semibold text-brand-dark">Zvimba Rural District</h3>
-            </div>
-
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-8 shadow-sm hover:shadow-lg transition-shadow">
-              <h3 className="font-heading text-xl font-semibold text-brand-dark">Goromonzi Rural District</h3>
-            </div>
+            {operationalAreaIndices.map((index) => (
+              <div
+                key={index}
+                className="rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-8 shadow-sm hover:shadow-lg transition-shadow"
+              >
+                <h3 className="font-heading text-xl font-semibold text-brand-dark">
+                  {t(`our_identity.operational_areas.${index}`)}
+                </h3>
+              </div>
+            ))}
           </div>
 
           <div className="text-center mt-10">
@@ -297,7 +284,7 @@ export default function OurIdentityPage() {
               href="/where-we-work"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-brand-dark text-white font-medium hover:bg-brand-sunlight hover:text-brand-dark transition-colors"
             >
-              See where we work
+              {t("our_identity.operational_areas.cta")}
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -310,25 +297,27 @@ export default function OurIdentityPage() {
       <PageSection className="section-padding bg-brand-green text-white">
         <div className="container-wide text-center">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold mb-4">
-            30-bed care unit and community outreach
+            {t("our_identity.closing.title")}
           </h2>
-          <p className="max-w-2xl mx-auto text-white/90 text-lg mb-8">
-            We combine the 30-bed Mashambanzou Care Unit with community outreach across Harare Metropolitan and
-            beyond—differentiating our person-centred approach in the region.
-          </p>
+          <ContentText
+            contentKey="our_identity.closing.body"
+            value={t("our_identity.closing.body")}
+            as="p"
+            className="max-w-2xl mx-auto text-white/90 text-lg mb-8"
+          />
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/our-impact"
               className="inline-flex items-center px-6 py-3 bg-white text-brand-dark rounded-full font-medium hover:bg-brand-sunlight transition-colors"
             >
-              Our Focus Areas
+              {t("our_identity.closing.cta_focus_areas")}
               <span className="ml-2">→</span>
             </Link>
             <Link
               href="/our-identity/team"
               className="inline-flex items-center px-6 py-3 border-2 border-white text-white rounded-full font-medium hover:bg-white/10 transition-colors"
             >
-              Meet the team
+              {t("our_identity.closing.cta_team")}
             </Link>
           </div>
         </div>

@@ -2,9 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { footerNav } from "@/lib/nav";
+import { buildFooterNav } from "@/lib/nav";
+import { useSiteContent } from "@/components/ContentProvider";
 
 export function Footer() {
+  const { t } = useSiteContent();
+  const footerNav = buildFooterNav(t);
   return (
     <footer className="bg-brand-green text-white py-20 sm:py-24 px-4 sm:px-6 rounded-[3rem] mt-12 relative overflow-hidden">
       {/* Footer blob - sunlight & renewal */}

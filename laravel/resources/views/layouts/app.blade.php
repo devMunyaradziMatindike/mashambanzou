@@ -43,6 +43,7 @@
                     <a class="hover:text-brand-green" href="{{ route('admin.tenders.index') }}">Tenders Admin</a>
                     <a class="hover:text-brand-green" href="{{ route('admin.notices.index') }}">Noticeboard Admin</a>
                     <a class="hover:text-brand-green" href="{{ route('admin.website-media.index') }}">Website Images</a>
+                    <a class="hover:text-brand-green" href="{{ route('admin.website-content.index') }}">Website Content</a>
                     <a class="hover:text-brand-green" href="{{ route('admin.users.index') }}">Admin Users</a>
                 </nav>
                 @if (session('mct_admin'))

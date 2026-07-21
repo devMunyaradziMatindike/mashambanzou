@@ -5,8 +5,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { CareerOpening } from "@/lib/careers-tenders";
 import { formatDeadline } from "@/lib/careers-tenders";
+import { useSiteContent } from "@/components/ContentProvider";
+import { ContentText } from "@/components/ContentText";
 
 export function CareersTeaser() {
+  const { t } = useSiteContent();
   const [careers, setCareers] = useState<CareerOpening[]>([]);
 
   useEffect(() => {
@@ -33,18 +36,21 @@ export function CareersTeaser() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
             <span className="text-brand-sunlight font-semibold tracking-widest uppercase text-xs mb-3 block">
-              Careers
+              {t("careers_teaser.eyebrow")}
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white">Join our team</h2>
-            <p className="mt-3 text-white/80 max-w-2xl">
-              Explore current openings and apply before the listed deadline.
-            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white">{t("careers_teaser.title")}</h2>
+            <ContentText
+              contentKey="careers_teaser.subtitle"
+              value={t("careers_teaser.subtitle")}
+              as="p"
+              className="mt-3 text-white/80 max-w-2xl"
+            />
           </div>
           <Link
             href="/careers"
             className="inline-flex items-center justify-center rounded-full border-2 border-white/20 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
           >
-            View all careers
+            {t("careers_teaser.view_all")}
           </Link>
         </div>
 
@@ -68,15 +74,20 @@ export function CareersTeaser() {
                 ) : null}
                 <div className="p-6">
                   <h3 className="font-heading text-lg font-semibold text-white">{career.title}</h3>
-                  <p className="mt-2 text-sm text-white/75">Apply by {formatDeadline(career.application_deadline)}</p>
+                  <p className="mt-2 text-sm text-white/75">
+                    {t("careers_teaser.deadline_prefix")} {formatDeadline(career.application_deadline)}
+                  </p>
                 </div>
               </article>
             ))}
           </div>
         ) : (
-          <div className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-8 text-white/80">
-            No career openings are published yet. Visit our careers page for future opportunities.
-          </div>
+          <ContentText
+            contentKey="careers_teaser.empty"
+            value={t("careers_teaser.empty")}
+            as="div"
+            className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-8 text-white/80"
+          />
         )}
       </div>
     </section>

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { PageSection } from "@/components/PageSection";
+import { ContentText } from "@/components/ContentText";
+import { getWebsiteContent, createContentTranslator } from "@/lib/website-content";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,15 +11,18 @@ export const metadata: Metadata = {
     "Contact Mashambanzou Care Trust. Phone, email, address and map. 40 Sandowns Rd, Waterfalls, Harare. Enquiries, donations and partnerships.",
 };
 
-const ADDRESS = "40 Sandowns Rd, Waterfalls, Harare";
-const GOOGLE_MAPS_QUERY = encodeURIComponent(ADDRESS);
-const MAPS_EMBED_URL = `https://www.google.com/maps?q=${GOOGLE_MAPS_QUERY}&output=embed`;
-const MAPS_LINK_URL = `https://www.google.com/maps/search/?api=1&query=${GOOGLE_MAPS_QUERY}`;
+export const dynamic = "force-dynamic";
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const content = await getWebsiteContent();
+  const t = createContentTranslator(content);
+  const address = t("contact.info.address");
+  const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;
+  const mapsLinkUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+
   return (
     <>
-      <Hero title="Contact Us" subtitle="Get in touch for enquiries, support or partnership." />
+      <Hero title={t("contact.hero.title")} subtitle={t("contact.hero.subtitle")} />
 
       <section className="py-10 sm:py-12 px-4 sm:px-6 bg-brand-dark/10 backdrop-blur border-b border-white/10">
         <div className="max-w-7xl mx-auto">
@@ -25,32 +30,35 @@ export default function ContactPage() {
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
               <div>
                 <h2 className="font-heading text-xl sm:text-2xl font-semibold text-white mb-2">
-                  Get help fast
+                  {t("contact.quick_help.title")}
                 </h2>
-                <p className="text-white/80">
-                  Projects: 8am – 5pm (weekdays only) • Mashambanzou Care Unit: Opens everyday
-                </p>
+                <ContentText
+                  contentKey="contact.quick_help.hours"
+                  value={t("contact.quick_help.hours")}
+                  as="p"
+                  className="text-white/80"
+                />
               </div>
               <div className="flex flex-wrap gap-3">
                 <a
                   href="tel:+263711492343"
                   className="inline-flex items-center px-5 py-3 rounded-full bg-white/10 border-2 border-white/20 text-white font-medium hover:bg-white/15 hover:border-white/30 transition-colors"
                 >
-                  Call Projects: +263 711 492 343
+                  {t("contact.quick_help.call_projects")}
                 </a>
                 <a
                   href="tel:+263777681186"
                   className="inline-flex items-center px-5 py-3 rounded-full bg-brand-dark text-white font-medium hover:bg-brand-sunlight hover:text-brand-dark transition-colors"
                 >
-                  Call Care Unit: +263 777 681 186
+                  {t("contact.quick_help.call_care_unit")}
                 </a>
                 <Link
-                  href={MAPS_LINK_URL}
+                  href={mapsLinkUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-5 py-3 rounded-full border-2 border-white/20 text-white font-medium hover:bg-white/15 hover:border-white/30 transition-colors"
                 >
-                  Open in Google Maps
+                  {t("contact.quick_help.maps")}
                 </Link>
               </div>
             </div>
@@ -60,60 +68,70 @@ export default function ContactPage() {
 
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide max-w-5xl">
-          <p className="text-white/80 text-lg mb-12 text-center">
-            For general enquiries, donation details, volunteer opportunities, partnership discussions or media
-            requests, please use the contact details below.
-          </p>
+          <ContentText
+            contentKey="contact.intro"
+            value={t("contact.intro")}
+            as="p"
+            className="text-white/80 text-lg mb-12 text-center"
+          />
 
           <div className="grid md:grid-cols-2 gap-10 lg:gap-16 mb-16">
             <div className="rounded-2xl border border-white/15 bg-brand-dark/15 backdrop-blur p-8 sm:p-10">
-              <h2 className="font-heading text-xl font-semibold text-white mb-6">Contact information</h2>
+              <h2 className="font-heading text-xl font-semibold text-white mb-6">{t("contact.info.title")}</h2>
               <dl className="space-y-5">
                 <div>
-                  <dt className="text-sm font-medium text-white/70 uppercase tracking-wide mb-1">Phone</dt>
+                  <dt className="text-sm font-medium text-white/70 uppercase tracking-wide mb-1">
+                    {t("contact.info.phone.label")}
+                  </dt>
                   <dd className="text-white">
                     <div className="space-y-1">
                       <div>
-                        <span className="text-white/70 text-sm">Projects:</span>{" "}
+                        <span className="text-white/70 text-sm">{t("contact.info.phone.projects_label")}</span>{" "}
                         <a href="tel:+263711492343" className="hover:text-brand-sunlight transition-colors">
-                          +263 711 492 343
+                          {t("contact.info.phone.projects")}
                         </a>
                       </div>
                       <div>
-                        <span className="text-white/70 text-sm">Care Unit:</span>{" "}
+                        <span className="text-white/70 text-sm">{t("contact.info.phone.care_unit_label")}</span>{" "}
                         <a href="tel:+263777681186" className="hover:text-brand-sunlight transition-colors">
-                          +263 777 681 186
+                          {t("contact.info.phone.care_unit")}
                         </a>
                       </div>
                     </div>
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-sm font-medium text-white/70 uppercase tracking-wide mb-1">Email</dt>
+                  <dt className="text-sm font-medium text-white/70 uppercase tracking-wide mb-1">
+                    {t("contact.info.email.label")}
+                  </dt>
                   <dd>
                     <a
-                      href="mailto:info@mashambanzou.co.zw"
+                      href={`mailto:${t("contact.info.email")}`}
                       className="text-white hover:text-brand-sunlight transition-colors"
                     >
-                      info@mashambanzou.co.zw
+                      {t("contact.info.email")}
                     </a>
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-sm font-medium text-white/70 uppercase tracking-wide mb-1">Address</dt>
-                  <dd className="text-white">{ADDRESS}</dd>
+                  <dt className="text-sm font-medium text-white/70 uppercase tracking-wide mb-1">
+                    {t("contact.info.address.label")}
+                  </dt>
+                  <dd className="text-white">{address}</dd>
                 </div>
                 <div>
                   <dt className="text-sm font-medium text-white/70 uppercase tracking-wide mb-1">
-                    Working hours
+                    {t("contact.info.hours.label")}
                   </dt>
                   <dd className="text-white">
                     <div className="space-y-1">
                       <div>
-                        <span className="text-white/70 text-sm">Projects:</span> 8am – 5pm (weekdays only)
+                        <span className="text-white/70 text-sm">{t("contact.info.hours.projects_label")}</span>{" "}
+                        {t("contact.info.hours.projects")}
                       </div>
                       <div>
-                        <span className="text-white/70 text-sm">Mashambanzou Care Unit:</span> Opens everyday
+                        <span className="text-white/70 text-sm">{t("contact.info.hours.care_unit_label")}</span>{" "}
+                        {t("contact.info.hours.care_unit")}
                       </div>
                     </div>
                   </dd>
@@ -124,7 +142,7 @@ export default function ContactPage() {
             <div className="rounded-2xl border border-white/15 overflow-hidden bg-white/10 min-h-[280px] sm:min-h-[320px]">
               <iframe
                 title="Mashambanzou Care Trust location map"
-                src={MAPS_EMBED_URL}
+                src={mapsEmbedUrl}
                 width="100%"
                 height="100%"
                 className="w-full h-full min-h-[280px] sm:min-h-[320px] border-0"
@@ -137,12 +155,12 @@ export default function ContactPage() {
 
           <p className="text-center">
             <Link
-              href={MAPS_LINK_URL}
+              href={mapsLinkUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-white font-medium hover:text-brand-sunlight transition-colors"
             >
-              Open in Google Maps
+              {t("contact.maps_link")}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>

@@ -6,8 +6,10 @@ use App\Http\Controllers\Admin\CareerController as AdminCareerController;
 use App\Http\Controllers\Admin\NoticeController as AdminNoticeController;
 use App\Http\Controllers\Admin\SuccessStoryController as AdminSuccessStoryController;
 use App\Http\Controllers\Admin\TenderController as AdminTenderController;
+use App\Http\Controllers\Admin\WebsiteContentController as AdminWebsiteContentController;
 use App\Http\Controllers\Admin\WebsiteMediaController as AdminWebsiteMediaController;
 use App\Http\Controllers\SuccessStoryController;
+use App\Services\WebsiteContentRegistry;
 use App\Models\CareerOpening;
 use App\Models\Notice;
 use App\Models\SuccessStory;
@@ -60,6 +62,12 @@ Route::get('/api/website-media', function () {
             ])->values()),
     ];
 })->name('api.website-media.index');
+
+Route::get('/api/website-content', function () {
+    return [
+        'content' => WebsiteContentRegistry::mergedContent(),
+    ];
+})->name('api.website-content.index');
 
 Route::get('/api/careers', function () {
     return [
@@ -128,6 +136,10 @@ Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.log
 Route::middleware('mct.admin')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('success-stories', AdminSuccessStoryController::class)->except('show');
     Route::resource('website-media', AdminWebsiteMediaController::class)->except('show');
+    Route::get('website-content', [AdminWebsiteContentController::class, 'index'])->name('website-content.index');
+    Route::get('website-content/edit', [AdminWebsiteContentController::class, 'edit'])->name('website-content.edit');
+    Route::put('website-content', [AdminWebsiteContentController::class, 'update'])->name('website-content.update');
+    Route::post('website-content/reset', [AdminWebsiteContentController::class, 'reset'])->name('website-content.reset');
     Route::resource('careers', AdminCareerController::class)->except('show');
     Route::resource('tenders', AdminTenderController::class)->except('show');
     Route::resource('notices', AdminNoticeController::class)->except('show');

@@ -1,20 +1,27 @@
 import { Hero } from "@/components/Hero";
 import { PageSection } from "@/components/PageSection";
 import { LatestStories } from "@/components/LatestStories";
+import { ContentText } from "@/components/ContentText";
+import { getWebsiteContent, createContentTranslator } from "@/lib/website-content";
 
 export const metadata = {
   title: "Latest stories | Mashambanzou Care Trust",
   description: "Latest photos, videos and updates from Mashambanzou Care Trust.",
 };
 
-export default function LatestStoriesPage() {
+export const dynamic = "force-dynamic";
+
+export default async function LatestStoriesPage() {
+  const content = await getWebsiteContent();
+  const t = createContentTranslator(content);
+
   return (
     <>
       <Hero
-        title="Latest"
-        gradientText="stories"
-        subtitle="Photos, videos and short updates posted by the team."
-        primaryCta="Donate"
+        title={t("latest_stories.hero.title")}
+        gradientText={t("latest_stories.hero.gradient_text")}
+        subtitle={t("latest_stories.hero.subtitle")}
+        primaryCta={t("latest_stories.hero.primary_cta")}
         primaryHref="https://paynow.co.zw/mashambanzou"
       />
 
@@ -22,10 +29,15 @@ export default function LatestStoriesPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-end justify-between gap-6 flex-wrap mb-8">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-heading font-semibold text-white">Latest posts</h2>
-              <p className="text-white/80 mt-2">
-                New posts appear here as soon as they’re published from the admin portal.
-              </p>
+              <h2 className="text-3xl sm:text-4xl font-heading font-semibold text-white">
+                {t("latest_stories.section.title")}
+              </h2>
+              <ContentText
+                contentKey="latest_stories.section.subtitle"
+                value={t("latest_stories.section.subtitle")}
+                as="p"
+                className="text-white/80 mt-2"
+              />
             </div>
           </div>
           <LatestStories />
@@ -34,4 +46,3 @@ export default function LatestStoriesPage() {
     </>
   );
 }
-

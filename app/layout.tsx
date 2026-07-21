@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import { ContentProvider } from "@/components/ContentProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
@@ -30,9 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={outfit.variable}>
       <body className="min-h-screen flex flex-col font-body antialiased selection:bg-brand-sunlight/40 selection:text-white">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ContentProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ContentProvider>
       </body>
     </html>
   );

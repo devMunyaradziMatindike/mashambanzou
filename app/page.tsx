@@ -10,64 +10,66 @@ import { LatestStories } from "@/components/LatestStories";
 import { imageFromMedia } from "@/lib/website-media";
 import { useWebsiteMedia } from "@/lib/useWebsiteMedia";
 import { currentPartners, pastDonors } from "@/lib/partners";
+import { useSiteContent } from "@/components/ContentProvider";
+import { ContentText } from "@/components/ContentText";
 
-const marqueeItems = [
-  "Clinical Healthcare",
-  "VIAC Screening",
-  "Community Strengthening",
-  "OVC Support",
-  "Houses of Safety",
-  "Education for Life",
-  "Care to Share",
-  "Human Rights",
-  "Advocacy",
-];
+const marqueeKeys = [
+  "home.marquee.0",
+  "home.marquee.1",
+  "home.marquee.2",
+  "home.marquee.3",
+  "home.marquee.4",
+  "home.marquee.5",
+  "home.marquee.6",
+  "home.marquee.7",
+  "home.marquee.8",
+] as const;
 
 const bentoItems = [
   {
-    title: "Clinical Healthcare",
-    subtitle: "MCU, VIAC & Palliative Care",
+    titleKey: "home.bento.clinical.title",
+    subtitleKey: "home.bento.clinical.subtitle",
+    labelKey: "home.bento.clinical.label",
     href: "/our-impact/clinical-healthcare",
     className: "lg:col-span-8",
     aspect: "aspect-[16/10] sm:aspect-[4/3]",
     bg: "bg-brand-sunlight/10",
-    label: "Healthcare",
     imageSrc: "/review-pics/mashambanzou care unit.jpg",
     imageAlt: "Clinical care at Mashambanzou Care Trust",
     mediaKey: "home.impact.clinical",
   },
   {
-    title: "Community Strengthening",
-    subtitle: "FCS & Psychosocial Support",
+    titleKey: "home.bento.community.title",
+    subtitleKey: "home.bento.community.subtitle",
+    labelKey: "home.bento.community.label",
     href: "/our-impact/community-support",
     className: "lg:col-span-4 mt-8 md:mt-0",
     aspect: "aspect-[3/4]",
     bg: "bg-brand-green/10",
-    label: "Support",
     imageSrc: "/review-pics/community-strengthening-home.png",
     imageAlt: "Community outreach workers meeting with women during a field consultation",
     mediaKey: "home.impact.community",
   },
   {
-    title: "Orphans and Vulnerable Children (OVC) Support",
-    subtitle: "OVC, Houses of Safety",
+    titleKey: "home.bento.ovc.title",
+    subtitleKey: "home.bento.ovc.subtitle",
+    labelKey: "home.bento.ovc.label",
     href: "/our-impact/child-protection-education",
     className: "lg:col-span-5",
     aspect: "aspect-square",
     bg: "bg-brand-dark/10",
-    label: "Children",
     imageSrc: "/review-pics/ovc-support-home.png",
     imageAlt: "Young people and children receiving teddy bear gifts at a Mashambanzou Care Trust support activity",
     mediaKey: "home.impact.ovc",
   },
   {
-    title: "Promotion of Human Rights",
-    subtitle: "Care to Share, Livelihoods",
+    titleKey: "home.bento.human_rights.title",
+    subtitleKey: "home.bento.human_rights.subtitle",
+    labelKey: "home.bento.human_rights.label",
     href: "/our-impact/empowerment-advocacy",
     className: "lg:col-span-7",
     aspect: "aspect-[16/10]",
     bg: "bg-brand-dark",
-    label: "Empowerment",
     imageSrc: "/review-pics/Institutional Income Generating project.jpg",
     imageAlt: "Livelihoods and income-generating project",
     mediaKey: "home.impact.human-rights",
@@ -75,17 +77,17 @@ const bentoItems = [
 ];
 
 const stats = [
-  { value: "30+", label: "Years of service", gradient: "from-brand-sunlight to-brand-green" },
-  { value: "30", label: "Bed Mashambanzou Care Unit", gradient: "from-brand-green to-brand-sunlight" },
-  { value: "Multi-ward", label: "Harare, Zvimba & Goromonzi", gradient: "from-brand-sunlight to-brand-earth" },
-  { value: "100%", label: "Compassion-led", gradient: "from-brand-green to-brand-earth" },
+  { valueKey: "home.stats.0.value", labelKey: "home.stats.0.label", gradient: "from-brand-sunlight to-brand-green" },
+  { valueKey: "home.stats.1.value", labelKey: "home.stats.1.label", gradient: "from-brand-green to-brand-sunlight" },
+  { valueKey: "home.stats.2.value", labelKey: "home.stats.2.label", gradient: "from-brand-sunlight to-brand-earth" },
+  { valueKey: "home.stats.3.value", labelKey: "home.stats.3.label", gradient: "from-brand-green to-brand-earth" },
 ];
 
 const serviceCards = [
   {
-    title: "Integrated Healthcare",
-    description: "30-bed MCU, VIAC cervical cancer screening (since April 2023), palliative care, treatment of opportunistic infections, TB testing. On-site and outreach clinics.",
-    items: ["MCU Inpatient Care", "VIAC Screening", "Palliative Care"],
+    titleKey: "home.services.integrated.title",
+    descriptionKey: "home.services.integrated.description",
+    itemKeys: ["home.services.integrated.item.0", "home.services.integrated.item.1", "home.services.integrated.item.2"],
     icon: "🩺",
     bg: "bg-brand-dark/15 border border-white/10 backdrop-blur",
     accent: "bg-brand-sunlight/25 text-white",
@@ -94,9 +96,9 @@ const serviceCards = [
     mediaKey: "home.impact.clinical",
   },
   {
-    title: "Community Strengthening",
-    description: "Family Centred Support (FCS), psychosocial support for SGBV survivors, Houses of Safety with Department of Social Development, and Education for Life in Nyabira and Mt Hampden.",
-    items: ["FCS & PSS", "Houses of Safety", "OVC Support"],
+    titleKey: "home.services.community.title",
+    descriptionKey: "home.services.community.description",
+    itemKeys: ["home.services.community.item.0", "home.services.community.item.1", "home.services.community.item.2"],
     icon: "🤝",
     bg: "bg-brand-green text-white",
     accent: "bg-white/20 text-brand-sunlight",
@@ -106,9 +108,9 @@ const serviceCards = [
     mediaKey: "home.impact.community",
   },
   {
-    title: "Promotion of Human Rights",
-    description: "Care to Share TVET partnership with Young Africa in Caledonia, livelihoods, SRHR advocacy and stigma reduction across Harare, Zvimba and Goromonzi.",
-    items: ["Vocational Training", "Livelihoods", "SRHR Advocacy"],
+    titleKey: "home.services.human_rights.title",
+    descriptionKey: "home.services.human_rights.description",
+    itemKeys: ["home.services.human_rights.item.0", "home.services.human_rights.item.1", "home.services.human_rights.item.2"],
     icon: "⚡",
     bg: "bg-brand-dark/15 border border-white/10 backdrop-blur",
     accent: "bg-white/15 text-white",
@@ -120,15 +122,16 @@ const serviceCards = [
 
 export default function HomePage() {
   const media = useWebsiteMedia();
+  const { t } = useSiteContent();
 
   return (
     <>
       <Hero
-        title="We Help Build AIDS-Free, Resilient"
-        gradientText="Communities."
-        subtitle="Mashambanzou Care Trust realises healthy, socially inclusive communities, free of AIDS through comprehensive HIV services, OVC support, and community strengthening."
-        primaryCta="Ask For Help"
-        secondaryCta="Donate"
+        title={t("home.hero.title")}
+        gradientText={t("home.hero.gradient_text")}
+        subtitle={t("home.hero.subtitle")}
+        primaryCta={t("home.hero.primary_cta")}
+        secondaryCta={t("home.hero.secondary_cta")}
         primaryHref="/get-involved"
         secondaryHref="https://paynow.co.zw/mashambanzou"
         backgroundImages={[
@@ -146,26 +149,36 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-brand-sunlight mb-2">
-                Vision
+                {t("home.vision.label")}
               </h3>
-              <p className="text-white font-medium">AIDS free, resilient and empowered communities.</p>
+              <ContentText
+                contentKey="home.vision.text"
+                value={t("home.vision.text")}
+                as="p"
+                className="text-white font-medium"
+              />
             </div>
             <div>
               <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-white/90 mb-2">
-                Mission
+                {t("home.mission.label")}
               </h3>
-              <p className="text-white/85 text-sm leading-relaxed">
-                Healthy, socially inclusive communities, free of AIDS through comprehensive HIV services, OVC support and
-                community strengthening.
-              </p>
+              <ContentText
+                contentKey="home.mission.text"
+                value={t("home.mission.text")}
+                as="p"
+                className="text-white/85 text-sm leading-relaxed"
+              />
             </div>
             <div>
               <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-brand-sunlight mb-2">
-                Values
+                {t("home.values.label")}
               </h3>
-              <p className="text-white/85 text-sm">
-                Participation • Compassion • Transparency and Accountability • Human Dignity • Empowerment
-              </p>
+              <ContentText
+                contentKey="home.values.text"
+                value={t("home.values.text")}
+                as="p"
+                className="text-white/85 text-sm"
+              />
             </div>
           </div>
         </div>
@@ -192,19 +205,19 @@ export default function HomePage() {
             </div>
             <div>
               <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white mb-4">
-                Who we are
+                {t("home.who_we_are.title")}
               </h2>
-              <p className="text-white/85 text-lg leading-relaxed mb-4">
-                Mashambanzou Care Trust (MCT) is a faith and welfare based, non-governmental organisation focused on
-                disseminating accurate information, care and support for people living with HIV (PLWHIV), and prevention
-                of the spread of HIV. MCT recognised the effects of the disease and innovatively created a Family
-                Centred Support model.
-              </p>
+              <ContentText
+                contentKey="home.who_we_are.body"
+                value={t("home.who_we_are.body")}
+                as="p"
+                className="text-white/85 text-lg leading-relaxed mb-4"
+              />
               <Link
                 href="/our-identity"
                 className="inline-flex items-center gap-2 text-white font-medium hover:text-brand-sunlight transition-colors"
               >
-                Our story
+                {t("home.who_we_are.cta")}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -219,9 +232,9 @@ export default function HomePage() {
       {/* Marquee - renewal, nature (green) */}
       <div className="py-8 sm:py-12 bg-brand-green -rotate-1 overflow-hidden border-y-2 border-brand-dark/20">
         <div className="whitespace-nowrap flex gap-10 animate-marquee no-scrollbar">
-          {[...marqueeItems, ...marqueeItems].map((item, i) => (
+          {[...marqueeKeys, ...marqueeKeys].map((key, i) => (
             <span key={i} className="text-2xl sm:text-4xl font-bold uppercase tracking-tight text-white flex items-center gap-6 font-heading">
-              {item}
+              {t(key)}
               <span className="w-3 h-3 rounded-full bg-brand-sunlight flex-shrink-0" />
             </span>
           ))}
@@ -234,22 +247,22 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <span className="text-white/85 font-semibold tracking-widest uppercase text-xs mb-4 block">
-                What makes us different
+                {t("home.different.eyebrow")}
               </span>
               <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-6">
-                30-bed care unit + community outreach
+                {t("home.different.title")}
               </h2>
-              <p className="text-white/85 text-lg leading-relaxed mb-4">
-                In the Harare Metropolitan area, MCT stands out through its 30-bed Mashambanzou Care Unit (MCU) combined
-                with community outreach. We deliver on-site clinical care—HIV testing and counselling, treatment of
-                treatment of opportunistic infections, TB testing, palliative care and VIAC cervical cancer screening—plus
-                outreach clinics in Mbare, Hopley, Glen Norah, Highfield, Dzivarasekwa and beyond.
-              </p>
+              <ContentText
+                contentKey="home.different.body"
+                value={t("home.different.body")}
+                as="p"
+                className="text-white/85 text-lg leading-relaxed mb-4"
+              />
               <Link
                 href="/our-impact"
                 className="inline-flex items-center gap-2 text-white font-medium hover:text-brand-sunlight transition-colors"
               >
-                Our Focus Areas
+                {t("home.different.cta")}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -280,15 +293,15 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-12 sm:mb-16">
             <div>
               <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-2 text-white">
-                How We Help
+                {t("home.how_we_help.title")}
               </h2>
-              <p className="text-white/80 text-lg">Integrated care across Harare and beyond.</p>
+              <p className="text-white/80 text-lg">{t("home.how_we_help.subtitle")}</p>
             </div>
             <Link
               href="/our-impact"
               className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide border-b-2 border-white/40 pb-1 hover:text-brand-sunlight hover:border-brand-sunlight transition-colors"
             >
-              View All
+              {t("home.how_we_help.cta")}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7h-10v10" />
               </svg>
@@ -310,13 +323,13 @@ export default function HomePage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-black/0" />
                   <div className="absolute top-6 left-6 bg-brand-dark/25 backdrop-blur px-4 py-2 rounded-full text-xs font-semibold text-white border border-white/10">
-                    {item.label}
+                    {t(item.labelKey)}
                   </div>
                 </div>
                 <div className="flex justify-between items-start">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-semibold mb-1 text-white font-heading">{item.title}</h3>
-                    <p className="text-white/80 text-sm">{item.subtitle}</p>
+                    <h3 className="text-xl sm:text-2xl font-semibold mb-1 text-white font-heading">{t(item.titleKey)}</h3>
+                    <p className="text-white/80 text-sm">{t(item.subtitleKey)}</p>
                   </div>
                   <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-dark/40 group-hover:text-white group-hover:border-white/30 transition-colors">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -335,20 +348,20 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-20">
             <span className="text-brand-sunlight font-semibold tracking-widest uppercase text-xs mb-4 block">
-              Our Expertise
+              {t("home.expertise.eyebrow")}
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-6 text-white">
-              We don&apos;t just provide care. We build resilience.
+              {t("home.expertise.title")}
             </h2>
             <p className="text-white/80 text-lg md:text-xl">
-              Combining clinical excellence with community-centred support and advocacy.
+              {t("home.expertise.subtitle")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {serviceCards.map((card) => (
               <div
-                key={card.title}
+                key={card.titleKey}
                 className={`p-6 sm:p-10 rounded-[2rem] shadow-sm transition-all duration-300 group ${
                   card.featured ? "bg-brand-green text-white md:-translate-y-4 shadow-xl" : card.bg
                 } hover:shadow-xl overflow-hidden`}
@@ -367,24 +380,25 @@ export default function HomePage() {
                 >
                   {card.icon}
                 </div>
-                <h3 className="font-heading text-xl sm:text-2xl font-semibold mb-4">{card.title}</h3>
-                <p
+                <h3 className="font-heading text-xl sm:text-2xl font-semibold mb-4">{t(card.titleKey)}</h3>
+                <ContentText
+                  contentKey={card.descriptionKey}
+                  value={t(card.descriptionKey)}
+                  as="p"
                   className={`leading-relaxed mb-6 ${
                     card.featured ? "text-white/85" : "text-white/80"
                   }`}
-                >
-                  {card.description}
-                </p>
+                />
                 <ul className="space-y-3">
-                  {card.items.map((item) => (
+                  {card.itemKeys.map((itemKey) => (
                     <li
-                      key={item}
+                      key={itemKey}
                       className={`flex items-center gap-3 text-sm font-medium ${
                         card.featured ? "text-white/90" : "text-white/90"
                       }`}
                     >
                       <span className={`w-4 h-4 rounded-full flex-shrink-0 ${card.featured ? "bg-brand-sunlight/50" : "bg-brand-sunlight/30"}`} />
-                      {item}
+                      {t(itemKey)}
                     </li>
                   ))}
                 </ul>
@@ -399,7 +413,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
           {stats.map((stat, i) => (
             <motion.div
-              key={stat.label}
+              key={stat.labelKey}
               className="p-6"
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -409,10 +423,10 @@ export default function HomePage() {
               <div
                 className={`font-heading text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br ${stat.gradient} mb-2`}
               >
-                {stat.value}
+                {t(stat.valueKey)}
               </div>
               <div className="text-xs sm:text-sm font-medium text-slate-500 uppercase tracking-wide">
-                {stat.label}
+                {t(stat.labelKey)}
               </div>
             </motion.div>
           ))}
@@ -425,19 +439,25 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white mb-4">
-                Where we work
+                {t("home.where_we_work.title")}
               </h2>
-              <p className="text-white/85 mb-6">
-                Harare Metropolitan • Zvimba Rural District • Goromonzi Rural District
-              </p>
-              <p className="text-white/80 text-sm mb-6">
-                Tafara, Mabvuku, Glen Norah, Highfield, Hopley, Mbare, Dzivarasekwa Main and Extension; Wards 24, 25, 26, 35 in Zvimba; Caledonia in Goromonzi.
-              </p>
+              <ContentText
+                contentKey="home.where_we_work.regions"
+                value={t("home.where_we_work.regions")}
+                as="p"
+                className="text-white/85 mb-6"
+              />
+              <ContentText
+                contentKey="home.where_we_work.areas"
+                value={t("home.where_we_work.areas")}
+                as="p"
+                className="text-white/80 text-sm mb-6"
+              />
               <Link
                 href="/where-we-work"
                 className="inline-flex items-center gap-2 text-white font-medium hover:text-brand-sunlight transition-colors"
               >
-                See our geographic footprint
+                {t("home.where_we_work.cta")}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -463,20 +483,23 @@ export default function HomePage() {
           <div className="flex items-end justify-between gap-6 flex-wrap mb-10">
             <div className="max-w-2xl">
               <span className="text-white/85 font-semibold tracking-widest uppercase text-xs mb-3 block">
-                Latest stories
+                {t("home.latest_stories.eyebrow")}
               </span>
               <h2 className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-white">
-                Photos, videos and updates from the field
+                {t("home.latest_stories.title")}
               </h2>
-              <p className="text-white/80 mt-3">
-                The newest posts appear here automatically once they’re published from the admin portal.
-              </p>
+              <ContentText
+                contentKey="home.latest_stories.body"
+                value={t("home.latest_stories.body")}
+                as="p"
+                className="text-white/80 mt-3"
+              />
             </div>
             <Link
               href="/latest-stories"
               className="inline-flex items-center px-6 py-3 bg-white/10 border-2 border-white/20 text-white rounded-full text-sm font-semibold hover:bg-white/15 hover:border-white/30 transition-all"
             >
-              View all
+              {t("home.latest_stories.cta")}
             </Link>
           </div>
 
@@ -489,17 +512,20 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-4">
-              Partners &amp; Funders
+              {t("home.partners.title")}
             </h2>
-            <p className="text-white/80">
-              We’re grateful for the partners and donors who strengthen our work across Harare, Zvimba and Goromonzi.
-            </p>
+            <ContentText
+              contentKey="home.partners.body"
+              value={t("home.partners.body")}
+              as="p"
+              className="text-white/80"
+            />
           </div>
 
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14">
             <div className="rounded-2xl border border-white/10 bg-brand-dark/15 backdrop-blur p-6 sm:p-10">
               <h3 className="font-heading text-lg font-semibold text-white mb-6">
-                Current partners
+                {t("home.partners.current.title")}
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 items-center">
                 {currentPartners.map((logo) => (
@@ -523,7 +549,7 @@ export default function HomePage() {
 
             <div className="rounded-2xl border border-white/10 bg-brand-dark/15 backdrop-blur p-6 sm:p-10">
               <h3 className="font-heading text-lg font-semibold text-white mb-6">
-                Past donors
+                {t("home.partners.past.title")}
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 items-center">
                 {pastDonors.map((logo) => (
@@ -551,15 +577,17 @@ export default function HomePage() {
       {/* Governance / Donors teaser */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-brand-cream/50">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-brand-dark/90 text-lg mb-4">
-            For institutional donors: governance information, leadership profiles and due diligence materials are
-            available on our Board &amp; Governance page.
-          </p>
+          <ContentText
+            contentKey="home.governance.body"
+            value={t("home.governance.body")}
+            as="p"
+            className="text-brand-dark/90 text-lg mb-4"
+          />
           <Link
             href="/our-identity/board-and-governance"
             className="inline-flex items-center gap-2 text-brand-green font-medium hover:text-brand-sunlight transition-colors"
           >
-            View governance
+            {t("home.governance.cta")}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -572,12 +600,14 @@ export default function HomePage() {
         <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-brand-sunlight/20 rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10 text-center">
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4">
-            Get Involved
+            {t("home.get_involved.title")}
           </h2>
-          <p className="text-white/85 max-w-xl mx-auto mb-10">
-            Donate, volunteer, partner or host an event. Your support helps realise AIDS-free, resilient and
-            empowered communities.
-          </p>
+          <ContentText
+            contentKey="home.get_involved.body"
+            value={t("home.get_involved.body")}
+            as="p"
+            className="text-white/85 max-w-xl mx-auto mb-10"
+          />
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="https://paynow.co.zw/mashambanzou"
@@ -585,25 +615,25 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 bg-white text-brand-dark rounded-full text-base font-medium hover:bg-brand-sunlight hover:text-brand-dark hover:scale-105 transition-all duration-300"
             >
-              Donate
+              {t("home.get_involved.cta_donate")}
             </a>
             <Link
               href="/get-involved/partner"
               className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-full text-base font-medium hover:bg-white/10 transition-all"
             >
-              Partner
+              {t("home.get_involved.cta_partner")}
             </Link>
             <Link
               href="/get-involved/partner"
               className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-full text-base font-medium hover:bg-white/10 transition-all"
             >
-              Partner With Us
+              {t("home.get_involved.cta_partner_with_us")}
             </Link>
             <Link
               href="/contact"
               className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-full text-base font-medium hover:bg-white/10 transition-all"
             >
-              Contact
+              {t("home.get_involved.cta_contact")}
             </Link>
           </div>
         </div>

@@ -5,7 +5,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { mainNav, secondaryNav } from "@/lib/nav";
+import { buildFooterNav, buildMainNav, buildSecondaryNav } from "@/lib/nav";
+import { useSiteContent } from "@/components/ContentProvider";
 
 type NavChild = {
   label: string;
@@ -20,6 +21,9 @@ function hasImages(children: readonly NavChild[]) {
 
 export function Header() {
   const pathname = usePathname();
+  const { t } = useSiteContent();
+  const mainNav = buildMainNav(t);
+  const secondaryNav = buildSecondaryNav(t);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);

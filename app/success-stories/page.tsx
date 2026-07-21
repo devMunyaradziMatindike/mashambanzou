@@ -2,6 +2,8 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { PageSection } from "@/components/PageSection";
+import { ContentText } from "@/components/ContentText";
+import { getWebsiteContent, createContentTranslator } from "@/lib/website-content";
 
 export const metadata: Metadata = {
   title: "Success stories | Mashambanzou Care Trust",
@@ -33,23 +35,24 @@ async function getStories(): Promise<SuccessStory[]> {
   }
 }
 
-function formatDate(value?: string | null) {
-  if (!value) return "Success story";
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return value;
-  return date.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
-}
-
 export default async function SuccessStoriesPage() {
-  const stories = await getStories();
+  const [content, stories] = await Promise.all([getWebsiteContent(), getStories()]);
+  const t = createContentTranslator(content);
+
+  function formatDate(value?: string | null) {
+    if (!value) return t("success_stories.date_fallback");
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return value;
+    return date.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  }
 
   return (
     <>
       <Hero
-        title="Success"
-        gradientText="stories"
-        subtitle="Stories, photos and videos that highlight the change happening across our communities."
-        primaryCta="Donate"
+        title={t("success_stories.hero.title")}
+        gradientText={t("success_stories.hero.gradient_text")}
+        subtitle={t("success_stories.hero.subtitle")}
+        primaryCta={t("success_stories.hero.primary_cta")}
         primaryHref="https://paynow.co.zw/mashambanzou"
       />
 
@@ -57,10 +60,15 @@ export default async function SuccessStoriesPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-end justify-between gap-6 flex-wrap mb-8">
             <div className="max-w-2xl">
-              <h2 className="text-3xl sm:text-4xl font-heading font-semibold text-white">Success stories</h2>
-              <p className="text-white/80 mt-2">
-                These stories are managed from the admin panel, so updates and deletions appear on the website automatically.
-              </p>
+              <h2 className="text-3xl sm:text-4xl font-heading font-semibold text-white">
+                {t("success_stories.section.title")}
+              </h2>
+              <ContentText
+                contentKey="success_stories.section.subtitle"
+                value={t("success_stories.section.subtitle")}
+                as="p"
+                className="text-white/80 mt-2"
+              />
             </div>
           </div>
 
@@ -108,13 +116,15 @@ export default async function SuccessStoriesPage() {
               ))}
             </div>
           ) : (
-            <div className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-8 text-white/85">
-              No success stories are published yet. Add stories in the Laravel admin panel to show them here.
-            </div>
+            <ContentText
+              contentKey="success_stories.empty"
+              value={t("success_stories.empty")}
+              as="div"
+              className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-8 text-white/85"
+            />
           )}
         </div>
       </PageSection>
     </>
   );
 }
-

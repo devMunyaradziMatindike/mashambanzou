@@ -2,6 +2,8 @@ import Image from "next/image";
 import { DonateForm } from "@/components/DonateForm";
 import { Hero } from "@/components/Hero";
 import { PageSection } from "@/components/PageSection";
+import { ContentText } from "@/components/ContentText";
+import { getWebsiteContent, createContentTranslator } from "@/lib/website-content";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -11,14 +13,24 @@ export const metadata: Metadata = {
     "Support Mashambanzou Care Trust. Donate online and support our work, or give in-kind donations (wish list). Equipment, nutritional support, vehicles, toiletries.",
 };
 
-const paynowDonateUrl = "https://paynow.co.zw/mashambanzou";
+export const dynamic = "force-dynamic";
 
-export default function DonatePage() {
+const paynowDonateUrl = "https://paynow.co.zw/mashambanzou";
+const featureIndices = [0, 1, 2] as const;
+const wishlistIndices = [0, 1, 2, 3] as const;
+const wishlistItemCounts = [5, 4, 4, 5] as const;
+const wishlistIcons = ["🧰", "🥣", "🚐", "🧼"] as const;
+const tagIndices = [0, 1, 2, 3] as const;
+
+export default async function DonatePage() {
+  const content = await getWebsiteContent();
+  const t = createContentTranslator(content);
+
   return (
     <>
       <Hero
-        title="Donate"
-        subtitle="Your contribution helps us provide comprehensive HIV services, OVC support and community strengthening."
+        title={t("donate.hero.title")}
+        subtitle={t("donate.hero.subtitle")}
         backgroundImageSrc="/review-pics/donation page.jpg"
         backgroundImageAlt="Patient receiving a farewell hamper upon discharge"
       />
@@ -27,14 +39,17 @@ export default function DonatePage() {
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-start">
             <div className="rounded-[2.5rem] border border-white/10 bg-brand-dark/20 backdrop-blur p-6 sm:p-10 shadow-sm shadow-brand-dark/20">
               <span className="text-brand-sunlight font-semibold tracking-widest uppercase text-xs mb-4 block">
-                Donate online
+                {t("donate.online.eyebrow")}
               </span>
               <h2 className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-4">
-                Make a secure donation via PayNow
+                {t("donate.online.title")}
               </h2>
-              <p className="text-white/80 text-lg leading-relaxed mb-8">
-                Your gift supports integrated healthcare, outreach, child protection and community strengthening.
-              </p>
+              <ContentText
+                contentKey="donate.online.body"
+                value={t("donate.online.body")}
+                as="p"
+                className="text-white/80 text-lg leading-relaxed mb-8"
+              />
 
               <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
                 <a
@@ -42,11 +57,11 @@ export default function DonatePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block focus:outline-none focus:ring-2 focus:ring-brand-sunlight focus:ring-offset-2 rounded-lg transition opacity-95 hover:opacity-100"
-                  aria-label="Donate via PayNow"
+                  aria-label={t("donate.online.paynow")}
                 >
                   <Image
                     src="/button_donate_large.svg"
-                    alt="Donate via PayNow"
+                    alt={t("donate.online.paynow")}
                     width={320}
                     height={130}
                     className="h-auto w-[280px] sm:w-[320px]"
@@ -56,19 +71,22 @@ export default function DonatePage() {
                   href="/contact"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white/20 text-white text-base font-medium hover:bg-white/10 transition-colors"
                 >
-                  Need help?
+                  {t("donate.online.help")}
                 </Link>
               </div>
 
               <div className="mt-8 grid sm:grid-cols-3 gap-3">
-                {[
-                  { title: "Secure", desc: "Opens PayNow in a new tab" },
-                  { title: "Fast", desc: "Quick checkout and confirmation" },
-                  { title: "Direct", desc: "Funds support our programmes" },
-                ].map((item) => (
-                  <div key={item.title} className="rounded-2xl border border-white/10 bg-white/10 p-4">
-                    <div className="text-sm font-semibold text-white">{item.title}</div>
-                    <div className="text-xs text-white/75 mt-1">{item.desc}</div>
+                {featureIndices.map((index) => (
+                  <div key={index} className="rounded-2xl border border-white/10 bg-white/10 p-4">
+                    <div className="text-sm font-semibold text-white">
+                      {t(`donate.online.features.${index}.title`)}
+                    </div>
+                    <ContentText
+                      contentKey={`donate.online.features.${index}.desc`}
+                      value={t(`donate.online.features.${index}.desc`)}
+                      as="div"
+                      className="text-xs text-white/75 mt-1"
+                    />
                   </div>
                 ))}
               </div>
@@ -87,21 +105,24 @@ export default function DonatePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="text-white font-heading text-xl sm:text-2xl font-semibold leading-tight">
-                    Your donation meets urgent needs
+                    {t("donate.side.image.title")}
                   </p>
-                  <p className="text-white/80 text-sm mt-2">
-                    From clinical care to outreach support—your gift helps communities thrive.
-                  </p>
+                  <ContentText
+                    contentKey="donate.side.image.subtitle"
+                    value={t("donate.side.image.subtitle")}
+                    as="p"
+                    className="text-white/80 text-sm mt-2"
+                  />
                 </div>
               </div>
               <div className="p-6 sm:p-8 bg-brand-dark/15 backdrop-blur">
                 <div className="flex flex-wrap gap-2">
-                  {["Healthcare", "Outreach", "Children", "Livelihoods"].map((tag) => (
+                  {tagIndices.map((index) => (
                     <span
-                      key={tag}
+                      key={index}
                       className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/15 text-sm text-white/80"
                     >
-                      {tag}
+                      {t(`donate.side.tags.${index}`)}
                     </span>
                   ))}
                 </div>
@@ -115,102 +136,69 @@ export default function DonatePage() {
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-14">
             <span className="text-brand-sunlight font-semibold tracking-widest uppercase text-xs mb-4 block">
-              Wish List
+              {t("donate.wishlist.eyebrow")}
             </span>
-            <h2 className="font-heading heading-section text-white mb-4">
-              Wish List
-            </h2>
-            <p className="text-white/85 text-lg leading-relaxed">
-              At Mashambanzou Care Trust, we believe in the power of tangible contributions to make a real difference in
-              the lives of those in need.
-            </p>
+            <h2 className="font-heading heading-section text-white mb-4">{t("donate.wishlist.title")}</h2>
+            <ContentText
+              contentKey="donate.wishlist.body"
+              value={t("donate.wishlist.body")}
+              as="p"
+              className="text-white/85 text-lg leading-relaxed"
+            />
           </div>
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-            <div className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-7 sm:p-8 shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-2xl">🧰</div>
-                <div>
-                  <h3 className="font-heading text-xl font-semibold text-white">Equipment</h3>
-                  <p className="text-sm text-white/75 mt-1">Tools that improve care delivery and coordination.</p>
+            {wishlistIndices.map((index) => (
+              <div
+                key={index}
+                className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-7 sm:p-8 shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-2xl">
+                    {wishlistIcons[index]}
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-xl font-semibold text-white">
+                      {t(`donate.wishlist.${index}.title`)}
+                    </h3>
+                    <ContentText
+                      contentKey={`donate.wishlist.${index}.desc`}
+                      value={t(`donate.wishlist.${index}.desc`)}
+                      as="p"
+                      className="text-sm text-white/75 mt-1"
+                    />
+                  </div>
                 </div>
+                <ul className="space-y-2 text-white/85">
+                  {Array.from({ length: wishlistItemCounts[index] }, (_, itemIndex) => (
+                    <li key={itemIndex}>{t(`donate.wishlist.${index}.items.${itemIndex}`)}</li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-2 text-white/85">
-                <li>Laptops</li>
-                <li>Hospital equipment</li>
-                <li>VIAC equipment</li>
-                <li>Office equipment</li>
-                <li>Camera and camera equipment</li>
-              </ul>
-            </div>
-            <div className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-7 sm:p-8 shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-2xl">🥣</div>
-                <div>
-                  <h3 className="font-heading text-xl font-semibold text-white">Nutritional Support</h3>
-                  <p className="text-sm text-white/75 mt-1">Nutrition support for recovery and stability.</p>
-                </div>
-              </div>
-              <ul className="space-y-2 text-white/85">
-                <li>MCU patients nutritional support</li>
-                <li>Mlambo and House of Safety nutritional support</li>
-                <li>Nenyere Early Child Development Centre (NECDC) nutritional support</li>
-                <li className="text-white/70 italic">(Starches, proteins, vitamins)</li>
-              </ul>
-            </div>
-            <div className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-7 sm:p-8 shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-2xl">🚐</div>
-                <div>
-                  <h3 className="font-heading text-xl font-semibold text-white">Vehicles</h3>
-                  <p className="text-sm text-white/75 mt-1">Transport that expands reach and responsiveness.</p>
-                </div>
-              </div>
-              <ul className="space-y-2 text-white/85">
-                <li>Project vehicles</li>
-                <li>Ambulance vehicle</li>
-                <li>Containers for outreach clinics</li>
-                <li>Containers for District office use</li>
-              </ul>
-            </div>
-            <div className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-7 sm:p-8 shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-2xl">🧼</div>
-                <div>
-                  <h3 className="font-heading text-xl font-semibold text-white">Toiletries & Detergents</h3>
-                  <p className="text-sm text-white/75 mt-1">Hygiene items for facilities and households.</p>
-                </div>
-              </div>
-              <ul className="space-y-2 text-white/85">
-                <li>Hospital detergents</li>
-                <li>Laundry detergents</li>
-                <li>Patients toiletries</li>
-                <li>House of Safety toiletries</li>
-                <li>Nenyere Early Child Development Centre (NECDC) toiletries</li>
-              </ul>
-            </div>
+            ))}
           </div>
           <div className="max-w-5xl mx-auto mt-12">
             <div className="rounded-[2.5rem] border border-white/10 bg-brand-dark/20 backdrop-blur p-6 sm:p-10 flex flex-col gap-8">
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                 <div>
                   <h3 className="font-heading text-2xl font-semibold text-white mb-2">
-                    Want to donate items?
+                    {t("donate.inkind.title")}
                   </h3>
-                  <p className="text-white/80">
-                    Share your details below — we’ll email you a confirmation and help coordinate drop-off or delivery. You
-                    can also{" "}
-                    <Link href="/contact" className="text-brand-sunlight font-semibold hover:underline">
-                      contact us
-                    </Link>{" "}
-                    directly.
-                  </p>
+                  <ContentText
+                    contentKey="donate.inkind.body"
+                    value={t("donate.inkind.body")}
+                    as="p"
+                    className="text-white/80"
+                  />
                 </div>
               </div>
               <DonateForm />
             </div>
-            <p className="text-center text-white/80 italic mt-10">
-              Thank you for visiting our site, God bless you.
-            </p>
+            <ContentText
+              contentKey="donate.thank_you"
+              value={t("donate.thank_you")}
+              as="p"
+              className="text-center text-white/80 italic mt-10"
+            />
           </div>
         </div>
       </PageSection>

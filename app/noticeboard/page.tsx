@@ -3,6 +3,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { PageSection } from "@/components/PageSection";
+import { ContentText } from "@/components/ContentText";
+import { getWebsiteContent, createContentTranslator } from "@/lib/website-content";
 import { formatNoticeDate, getNotices } from "@/lib/notices";
 
 export const metadata: Metadata = {
@@ -13,15 +15,16 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function NoticeboardPage() {
-  const notices = await getNotices();
+  const [content, notices] = await Promise.all([getWebsiteContent(), getNotices()]);
+  const t = createContentTranslator(content);
 
   return (
     <>
       <Hero
-        title="Notice"
-        gradientText="board"
-        subtitle="Official notices, announcements and updates from Mashambanzou Care Trust."
-        primaryCta="Contact us"
+        title={t("noticeboard.hero.title")}
+        gradientText={t("noticeboard.hero.gradient_text")}
+        subtitle={t("noticeboard.hero.subtitle")}
+        primaryCta={t("noticeboard.hero.primary_cta")}
         primaryHref="/contact"
         backgroundImageSrc="/review-pics/noticeboard-hero.jpg"
         backgroundImageAlt="Children at an Education For All community event"
@@ -30,10 +33,15 @@ export default async function NoticeboardPage() {
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide max-w-4xl">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">Latest notices</h2>
-            <p className="text-white/80 text-lg leading-relaxed">
-              Official announcements published by Mashambanzou Care Trust.
-            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">
+              {t("noticeboard.latest.title")}
+            </h2>
+            <ContentText
+              contentKey="noticeboard.latest.subtitle"
+              value={t("noticeboard.latest.subtitle")}
+              as="p"
+              className="text-white/80 text-lg leading-relaxed"
+            />
           </div>
 
           {notices.length ? (
@@ -81,19 +89,22 @@ export default async function NoticeboardPage() {
               ))}
             </div>
           ) : (
-            <div className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-8 text-center text-white/85">
-              No notices are published yet. Check back soon or contact us for urgent enquiries.
-            </div>
+            <ContentText
+              contentKey="noticeboard.empty"
+              value={t("noticeboard.empty")}
+              as="div"
+              className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-8 text-center text-white/85"
+            />
           )}
 
           <p className="mt-10 text-center text-white/70 text-sm">
-            For careers and tenders, visit{" "}
+            {t("noticeboard.footer.intro")}{" "}
             <Link href="/careers" className="text-brand-sunlight font-medium hover:underline">
-              Careers
+              {t("noticeboard.footer.careers")}
             </Link>{" "}
             or{" "}
             <Link href="/invitation-to-tenders" className="text-brand-sunlight font-medium hover:underline">
-              Invitation to Tenders
+              {t("noticeboard.footer.tenders")}
             </Link>
             .
           </p>

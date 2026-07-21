@@ -1,5 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { PageSection } from "@/components/PageSection";
+import { ContentText } from "@/components/ContentText";
+import { getWebsiteContent, createContentTranslator } from "@/lib/website-content";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -13,75 +15,85 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
+const cardIndices = [0, 1, 2, 3] as const;
+const fcsIncludeIndices = [0, 1, 2, 3] as const;
+const srhrTagIndices = [0, 1, 2, 3] as const;
+const galleryIndices = [0, 1, 2] as const;
+
 export default async function CommunitySupportPage() {
-  const media = await getWebsiteMedia();
+  const [media, content] = await Promise.all([getWebsiteMedia(), getWebsiteContent()]);
+  const t = createContentTranslator(content);
+
+  const galleryImages = imagesFromMedia(media, "community-support.gallery", [
+    {
+      src: "/review-pics/MCT and faith.jpg",
+      alt: "Community members at a support activity",
+      label: t("community.gallery.0.caption"),
+    },
+    {
+      src: "/review-pics/community-strengthening.png",
+      alt: "Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach",
+      label: t("community.gallery.1.caption"),
+    },
+    {
+      src: "/review-pics/outreach.png",
+      alt: "Community support and outreach visit",
+      label: t("community.gallery.2.caption"),
+    },
+  ]);
 
   return (
     <>
       <Hero
-        title="Community Strengthening"
-        subtitle="Family Centred Support, psychosocial support and SRHR outreach—strengthening resilience in our communities."
-        primaryCta="Donate"
+        title={t("community.hero.title")}
+        subtitle={t("community.hero.subtitle")}
+        primaryCta={t("community.hero.primary_cta")}
         primaryHref="/donate"
-        secondaryCta="Contact"
+        secondaryCta={t("community.hero.secondary_cta")}
         secondaryHref="/contact"
         backgroundImageSrc="/review-pics/community-strengthening.png"
         backgroundImageAlt="Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach"
         mediaKey="community-support.hero"
       />
 
-      {/* Intro + at a glance */}
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">
-              Practical support, rooted in dignity
+              {t("community.intro.title")}
             </h2>
-            <p className="text-white/80 text-lg leading-relaxed">
-              Our Community Strengthening work strengthens household resilience, protects children and adolescents,
-              and supports survivors through community-based psychosocial care and referrals.
-            </p>
+            <ContentText
+              contentKey="community.intro.body"
+              value={t("community.intro.body")}
+              as="p"
+              className="text-white/80 text-lg leading-relaxed"
+            />
           </div>
 
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                title: "Family Centred Support",
-                desc: "Household strengthening and integrated community support for PLWHIV and families.",
-                icon: "🏠",
-              },
-              {
-                title: "Psychosocial Support",
-                desc: "Support for survivors of SGBV and other forms of abuse using a multi-sectoral approach.",
-                icon: "🤝",
-              },
-              {
-                title: "SRHR Education",
-                desc: "Outreach with adolescents to improve knowledge, agency and safer choices.",
-                icon: "🧠",
-              },
-              {
-                title: "Advocacy",
-                desc: "Challenging stigma, promoting rights and strengthening community accountability.",
-                icon: "📣",
-              },
-            ].map((item) => (
+            {cardIndices.map((index) => (
               <div
-                key={item.title}
+                key={index}
                 className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur p-6 sm:p-7 shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow"
               >
                 <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-2xl" aria-hidden>
-                  {item.icon}
+                  {index === 0 ? "🏠" : index === 1 ? "🤝" : index === 2 ? "🧠" : "📣"}
                 </div>
-                <h3 className="mt-4 font-heading text-xl font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-white/75 leading-relaxed">{item.desc}</p>
+                <h3 className="mt-4 font-heading text-xl font-semibold text-white">
+                  {t(`community.cards.${index}.title`)}
+                </h3>
+                <ContentText
+                  contentKey={`community.cards.${index}.desc`}
+                  value={t(`community.cards.${index}.desc`)}
+                  as="p"
+                  className="mt-2 text-white/75 leading-relaxed"
+                />
               </div>
             ))}
           </div>
         </div>
       </PageSection>
 
-      {/* Family Centred Support + PSS */}
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
@@ -102,25 +114,25 @@ export default async function CommunitySupportPage() {
               />
             </div>
             <div>
-              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white">
-                Family Centred Support (FCS) & Psychosocial Support (PSS)
-              </h2>
-              <p className="mt-4 text-white/85 leading-relaxed">
-                The Family Centered Support (FCS) Project focuses on improving the lives of PLWHIV, supporting Orphans and
-                Vulnerable Children (OVC) to reach their full potential and building the capacity of communities to
-                effectively deal with Sexual and Reproductive Health Rights (SRHR) issues.
-              </p>
-              <p className="mt-4 text-white/85 leading-relaxed">
-                MCT offers Psychosocial Support (PSS) to survivors of Sexual Gender Based Violence (SGBV) and other forms
-                of abuse using the multi-sectoral approach in the management of these cases.
-              </p>
+              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white">{t("community.fcs.title")}</h2>
+              <ContentText
+                contentKey="community.fcs.paragraph.0"
+                value={t("community.fcs.paragraph.0")}
+                as="p"
+                className="mt-4 text-white/85 leading-relaxed"
+              />
+              <ContentText
+                contentKey="community.fcs.paragraph.1"
+                value={t("community.fcs.paragraph.1")}
+                as="p"
+                className="mt-4 text-white/85 leading-relaxed"
+              />
               <div className="mt-6 rounded-2xl border border-white/10 bg-brand-dark/15 backdrop-blur p-6">
-                <h3 className="font-heading text-lg font-semibold text-white">What this includes</h3>
+                <h3 className="font-heading text-lg font-semibold text-white">{t("community.fcs.includes.title")}</h3>
                 <ul className="mt-3 space-y-2 text-white/80">
-                  <li>Case management and referrals with partners</li>
-                  <li>Household-level support and follow-up</li>
-                  <li>Protection pathways for survivors</li>
-                  <li>Community sessions and coordinated outreach</li>
+                  {fcsIncludeIndices.map((index) => (
+                    <li key={index}>{t(`community.fcs.includes.${index}`)}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -128,30 +140,30 @@ export default async function CommunitySupportPage() {
         </div>
       </PageSection>
 
-      {/* SRHR */}
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
             <div className="order-2 lg:order-1">
-              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white">
-                SRHR education for adolescents
-              </h2>
-              <p className="mt-4 text-white/85 leading-relaxed">
-                Teen pregnancies have been prevalent in Zimbabwe due to poverty, cultural and religious beliefs which
-                hinder educational advancement of women and girls, leaving them vulnerable to economic hardships and
-                abuse.
-              </p>
-              <p className="mt-4 text-white/85 leading-relaxed">
-                MCT came up with a project, supported by LCM USA to reduce the vulnerability of young women and girls,
-                offering SRHR education during outreaches to help them make informed choices about their sexuality.
-              </p>
+              <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white">{t("community.srhr.title")}</h2>
+              <ContentText
+                contentKey="community.srhr.paragraph.0"
+                value={t("community.srhr.paragraph.0")}
+                as="p"
+                className="mt-4 text-white/85 leading-relaxed"
+              />
+              <ContentText
+                contentKey="community.srhr.paragraph.1"
+                value={t("community.srhr.paragraph.1")}
+                as="p"
+                className="mt-4 text-white/85 leading-relaxed"
+              />
               <div className="mt-6 flex flex-wrap gap-3">
-                {["Knowledge", "Safety", "Agency", "Referrals"].map((tag) => (
+                {srhrTagIndices.map((index) => (
                   <span
-                    key={tag}
+                    key={index}
                     className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/15 text-sm text-white/80"
                   >
-                    {tag}
+                    {t(`community.srhr.tags.${index}`)}
                   </span>
                 ))}
               </div>
@@ -176,35 +188,22 @@ export default async function CommunitySupportPage() {
         </div>
       </PageSection>
 
-      {/* Advocacy + gallery */}
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">Advocacy & dignity</h2>
-            <p className="text-white/80 text-lg leading-relaxed">
-              We advocate for HIV and AIDS awareness, social justice and human rights—reducing stigma and strengthening
-              community accountability.
-            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">
+              {t("community.advocacy.title")}
+            </h2>
+            <ContentText
+              contentKey="community.advocacy.body"
+              value={t("community.advocacy.body")}
+              as="p"
+              className="text-white/80 text-lg leading-relaxed"
+            />
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {imagesFromMedia(media, "community-support.gallery", [
-              {
-                src: "/review-pics/MCT and faith.jpg",
-                alt: "Community members at a support activity",
-                label: "Access to services and documentation through community outreach.",
-              },
-              {
-                src: "/review-pics/community-strengthening.png",
-                alt: "Community members supporting a person in a wheelchair at a Mashambanzou Care Trust outreach",
-                label: "Improving dignity and safe environments in community spaces.",
-              },
-              {
-                src: "/review-pics/outreach.png",
-                alt: "Community support and outreach visit",
-                label: "Integrated outreach that links people to care and follow-up.",
-              },
-            ]).map((item) => (
+            {galleryImages.map((item, index) => (
               <figure
                 key={item.src}
                 className="rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur overflow-hidden shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow"
@@ -218,7 +217,12 @@ export default async function CommunitySupportPage() {
                     className="object-cover"
                   />
                 </div>
-                <figcaption className="p-5 text-sm text-white/75 leading-relaxed">{item.label}</figcaption>
+                <figcaption className="p-5 text-sm text-white/75 leading-relaxed">
+                  <ContentText
+                    contentKey={`community.gallery.${galleryIndices[index]}.caption`}
+                    value={t(`community.gallery.${galleryIndices[index]}.caption`)}
+                  />
+                </figcaption>
               </figure>
             ))}
           </div>
@@ -226,35 +230,37 @@ export default async function CommunitySupportPage() {
           <div className="mt-12 rounded-[2.5rem] border border-white/10 bg-brand-dark/20 backdrop-blur p-6 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div>
               <span className="text-brand-sunlight font-semibold tracking-widest uppercase text-xs mb-3 block">
-                Get involved
+                {t("community.get_involved.eyebrow")}
               </span>
               <h3 className="font-heading text-2xl sm:text-3xl font-semibold text-white mb-3">
-                Support families and strengthen resilience
+                {t("community.get_involved.title")}
               </h3>
-              <p className="text-white/80 text-lg leading-relaxed max-w-2xl">
-                Your support helps us deliver community-based services, protection pathways and practical outreach in
-                hard-to-reach communities.
-              </p>
+              <ContentText
+                contentKey="community.get_involved.body"
+                value={t("community.get_involved.body")}
+                as="p"
+                className="text-white/80 text-lg leading-relaxed max-w-2xl"
+              />
             </div>
             <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
               <Link
                 href="/donate"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-brand-dark text-white font-medium hover:bg-brand-sunlight hover:text-brand-dark transition-colors w-full sm:w-auto"
               >
-                Donate
+                {t("community.get_involved.donate")}
               </Link>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white/20 text-white font-medium hover:bg-white/10 transition-colors w-full sm:w-auto"
               >
-                Contact us
+                {t("community.get_involved.contact")}
               </Link>
             </div>
           </div>
 
           <p className="text-center mt-10">
             <Link href="/our-impact" className="text-brand-warm font-medium hover:underline">
-              ← Back to Our Focus Areas
+              {t("community.back")}
             </Link>
           </p>
         </div>

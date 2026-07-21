@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "content:generate": "node scripts/generate-website-content.mjs"
   },
   "dependencies": {
     "@vercel/blob": "^2.3.3",

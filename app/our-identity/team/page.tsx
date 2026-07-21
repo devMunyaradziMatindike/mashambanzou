@@ -1,8 +1,10 @@
 import { Hero } from "@/components/Hero";
 import { PageSection } from "@/components/PageSection";
+import { ContentText } from "@/components/ContentText";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getWebsiteContent, createContentTranslator } from "@/lib/website-content";
 import { getWebsiteMedia, imageFromMedia } from "@/lib/website-media";
 
 export const metadata: Metadata = {
@@ -38,33 +40,35 @@ const management = [
 ];
 
 export default async function TeamPage() {
-  const media = await getWebsiteMedia();
+  const [content, media] = await Promise.all([getWebsiteContent(), getWebsiteMedia()]);
+  const t = createContentTranslator(content);
 
   return (
     <>
       <Hero
-        title="Our Management"
-        subtitle="Executive leadership driving our mission every day."
-        badge="Leadership"
-        primaryCta="Contact us"
+        title={t("team.hero.title")}
+        subtitle={t("team.hero.subtitle")}
+        badge={t("team.hero.badge")}
+        primaryCta={t("team.hero.primary_cta")}
         primaryHref="/contact"
-        secondaryCta="Board & Governance"
+        secondaryCta={t("team.hero.secondary_cta")}
         secondaryHref="/our-identity/board-and-governance"
       />
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-narrow">
-          <h2 className="heading-section text-white text-center">Leadership team</h2>
-          <p className="mt-5 text-white/80 text-lg leading-relaxed text-center">
-            Our management team provides strategic leadership, operational oversight and accountability across programmes,
-            finance and service delivery.
-          </p>
-          <p className="mt-4 text-white/80 leading-relaxed text-center">
-            Looking for governance information? Visit{" "}
-            <Link href="/our-identity/board-and-governance" className="link-underline text-white font-medium">
-              Board & Governance
-            </Link>
-            .
-          </p>
+          <h2 className="heading-section text-white text-center">{t("team.leadership.title")}</h2>
+          <ContentText
+            contentKey="team.leadership.body"
+            value={t("team.leadership.body")}
+            as="p"
+            className="mt-5 text-white/80 text-lg leading-relaxed text-center"
+          />
+          <ContentText
+            contentKey="team.leadership.governance_note"
+            value={t("team.leadership.governance_note")}
+            as="p"
+            className="mt-4 text-white/80 leading-relaxed text-center"
+          />
         </div>
       </PageSection>
 
@@ -96,21 +100,19 @@ export default async function TeamPage() {
                 </div>
 
                 <div className="p-6 sm:p-7">
-                  <p className="text-white/85 leading-relaxed">
-                    {person.bio}
-                  </p>
+                  <p className="text-white/85 leading-relaxed">{person.bio}</p>
                   <div className="mt-6 flex flex-wrap gap-3">
                     <Link
                       href="/contact"
                       className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-brand-dark text-white text-sm font-medium hover:bg-brand-sunlight hover:text-brand-dark transition-colors"
                     >
-                      Contact
+                      {t("team.card.contact")}
                     </Link>
                     <Link
                       href="/our-identity/board-and-governance"
                       className="inline-flex items-center justify-center px-5 py-2.5 rounded-full border-2 border-white/20 text-white text-sm font-medium hover:bg-white/10 transition-colors"
                     >
-                      Governance
+                      {t("team.card.governance")}
                     </Link>
                   </div>
                 </div>
