@@ -123,4 +123,6 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'coming_soon' => env('SITE_COMING_SOON', false),
+
 ];

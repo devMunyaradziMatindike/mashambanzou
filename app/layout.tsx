@@ -11,15 +11,21 @@ const outfit = Outfit({
   display: "swap",
 });
 
+const comingSoon = process.env.COMING_SOON === "true";
+
 export const metadata: Metadata = {
-  title: "Mashambanzou Care Trust | HIV Services, OVC Support & Community Strengthening",
-  description:
-    "Realising healthy, socially inclusive communities free of AIDS through comprehensive HIV services, Orphans and Vulnerable Children support, human rights promotion and community strengthening in Harare and beyond.",
-  keywords:
-    "Mashambanzou Care Trust, HIV NGOs Zimbabwe, charities in Harare, palliative care Harare, OVC support, Houses of safety, donate to HIV charity",
+  title: comingSoon
+    ? "Coming Soon | Mashambanzou Care Trust"
+    : "Mashambanzou Care Trust | HIV Services, OVC Support & Community Strengthening",
+  description: comingSoon
+    ? "Mashambanzou Care Trust website launching soon."
+    : "Realising healthy, socially inclusive communities free of AIDS through comprehensive HIV services, Orphans and Vulnerable Children support, human rights promotion and community strengthening in Harare and beyond.",
+  keywords: comingSoon
+    ? undefined
+    : "Mashambanzou Care Trust, HIV NGOs Zimbabwe, charities in Harare, palliative care Harare, OVC support, Houses of safety, donate to HIV charity",
   openGraph: {
-    title: "Mashambanzou Care Trust",
-    description: "AIDS free, resilient and empowered communities.",
+    title: comingSoon ? "Coming Soon | Mashambanzou Care Trust" : "Mashambanzou Care Trust",
+    description: comingSoon ? "Website launching soon." : "AIDS free, resilient and empowered communities.",
   },
 };
 
@@ -31,11 +37,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={outfit.variable}>
       <body className="min-h-screen flex flex-col font-body antialiased selection:bg-brand-sunlight/40 selection:text-white">
-        <ContentProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </ContentProvider>
+        {comingSoon ? (
+          children
+        ) : (
+          <ContentProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </ContentProvider>
+        )}
       </body>
     </html>
   );
