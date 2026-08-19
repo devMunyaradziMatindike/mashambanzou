@@ -15,33 +15,21 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-const management = [
-  {
-    name: "Constance Chigwamba",
-    role: "Executive Director",
-    bio: "A seasoned Educationist and Trainer Programme Facilitator especially Logframe and IRBM processes. Strategic Planner, Human Resources Practitioner, Public Sector Administrator, Negotiator and Counsellor.",
-    photoSrc: "/management/director.jpg",
-    mediaKey: "management.constance-chigwamba",
-  },
-  {
-    name: "Mercy Muirimi",
-    role: "Programmes Manager",
-    bio: "A Public Health specialist with vast experience in both Public and Private Institutional nursing with exposure in NHS nursing in the UK. Experienced Supervisor and Coordinator in the nursing profession and HIV programming at council clinic and NGO.",
-    photoSrc: "/management/programmes-manager.png",
-    mediaKey: "management.mercy-muirimi",
-  },
-  {
-    name: "Mercyline Dzinemarira",
-    role: "Operations and Resource Mobilisation Manager",
-    bio: "A holder of a Masters in Professional Accounting and Corporate Governance. Graduateship of Institute of Chartered Secretaries & Administrators in Zimbabwe (ICAZ) Bachelor of Accountancy Honours degree. Diploma in Business and Accounting Studies (IBAS).",
-    photoSrc: "/management/mercyline-dzinemarira.jpeg",
-    mediaKey: "management.mercyline-dzinemarira",
-  },
+const managementMedia = [
+  { photoSrc: "/management/director.jpg", mediaKey: "management.constance-chigwamba" },
+  { photoSrc: "/management/programmes-manager.png", mediaKey: "management.mercy-muirimi" },
+  { photoSrc: "/management/mercyline-dzinemarira.jpeg", mediaKey: "management.mercyline-dzinemarira" },
 ];
 
 export default async function TeamPage() {
   const [content, media] = await Promise.all([getWebsiteContent(), getWebsiteMedia()]);
   const t = createContentTranslator(content);
+  const management = managementMedia.map((m, idx) => ({
+    ...m,
+    name: t(`team.members.${idx}.name`),
+    role: t(`team.members.${idx}.role`),
+    bio: t(`team.members.${idx}.bio`),
+  }));
 
   return (
     <>
@@ -75,9 +63,9 @@ export default async function TeamPage() {
       <PageSection className="section-padding bg-brand-dark/10 backdrop-blur">
         <div className="container-wide">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {management.map((person) => (
+            {management.map((person, idx) => (
               <article
-                key={person.name}
+                key={person.mediaKey}
                 className="group rounded-[2rem] border border-white/10 bg-brand-dark/15 backdrop-blur overflow-hidden shadow-sm shadow-brand-dark/15 hover:shadow-lg hover:shadow-brand-dark/25 transition-shadow"
               >
                 <div className="p-6 sm:p-7 text-center border-b border-white/10 bg-brand-dark/10">
@@ -100,7 +88,12 @@ export default async function TeamPage() {
                 </div>
 
                 <div className="p-6 sm:p-7">
-                  <p className="text-white/85 leading-relaxed">{person.bio}</p>
+                  <ContentText
+                    contentKey={`team.members.${idx}.bio`}
+                    value={person.bio}
+                    as="div"
+                    className="text-white/85 leading-relaxed [&_p]:m-0"
+                  />
                   <div className="mt-6 flex flex-wrap gap-3">
                     <Link
                       href="/contact"
