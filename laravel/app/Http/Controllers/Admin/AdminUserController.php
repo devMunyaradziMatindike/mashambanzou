@@ -45,4 +45,19 @@ class AdminUserController extends Controller
             ->route('admin.users.index')
             ->with('status', 'Admin user created.');
     }
+
+    public function destroy(User $user): RedirectResponse
+    {
+        if ($user->id === session('mct_admin_user_id')) {
+            return redirect()
+                ->route('admin.users.index')
+                ->with('error', 'You cannot delete your own account.');
+        }
+
+        $user->delete();
+
+        return redirect()
+            ->route('admin.users.index')
+            ->with('status', 'Admin user deleted.');
+    }
 }

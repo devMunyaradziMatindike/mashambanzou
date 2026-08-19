@@ -143,5 +143,5 @@ Route::middleware('mct.admin')->prefix('admin')->name('admin.')->group(function 
     Route::resource('careers', AdminCareerController::class)->except('show');
     Route::resource('tenders', AdminTenderController::class)->except('show');
     Route::resource('notices', AdminNoticeController::class)->except('show');
-    Route::resource('users', AdminUserController::class)->only(['index', 'create', 'store']);
+    Route::resource('users', AdminUserController::class)->only(['index', 'create', 'store', 'destroy']);
 });

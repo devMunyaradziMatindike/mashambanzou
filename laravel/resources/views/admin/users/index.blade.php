@@ -35,8 +35,17 @@
                                     <p class="mt-1 text-brand-dark/70">{{ $user->email }}</p>
                                     <p class="mt-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-green">{{ $user->role }}</p>
                                 </div>
-                                <div class="text-sm text-brand-dark/60">
-                                    Added {{ $user->created_at?->format('M d, Y') }}
+                                <div class="flex items-center gap-4">
+                                    <span class="text-sm text-brand-dark/60">
+                                        Added {{ $user->created_at?->format('M d, Y') }}
+                                    </span>
+                                    <form method="POST" action="{{ route('admin.users.destroy', $user) }}" onsubmit="return confirm('Delete admin user {{ $user->name }}? This cannot be undone.')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="rounded-xl border border-red-200 px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-50">
+                                            Delete
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         @endforeach

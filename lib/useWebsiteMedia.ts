@@ -12,7 +12,8 @@ export function useWebsiteMedia(section?: string) {
 
     async function load() {
       try {
-        const res = await fetch(`/api/website-media${query}`, { cache: "no-store" });
+        const sep = query ? "&" : "?";
+        const res = await fetch(`/api/website-media${query}${sep}_t=${Date.now()}`, { cache: "no-store" });
         if (!res.ok) return;
         const json = (await res.json()) as { media?: WebsiteMediaMap };
         if (!cancelled) setMedia(json.media && typeof json.media === "object" ? json.media : {});

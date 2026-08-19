@@ -2,11 +2,14 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export async function GET(req: Request) {
   const baseUrl = process.env.LARAVEL_API_URL;
+  const headers = { "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0" };
+
   if (!baseUrl) {
-    return NextResponse.json({ media: {} });
+    return NextResponse.json({ media: {} }, { headers });
   }
 
   try {
@@ -22,13 +25,12 @@ export async function GET(req: Request) {
     const media = json.media && typeof json.media === "object" ? json.media : {};
 
     if (section) {
-      return NextResponse.json({ media: { [section]: media[section] ?? [] } });
+      return NextResponse.json({ media: { [section]: media[section] ?? [] } }, { headers });
     }
 
-    return NextResponse.json({ media });
+    return NextResponse.json({ media }, { headers });
   } catch (error) {
     console.error("Failed to read Laravel website media", error);
-    return NextResponse.json({ media: {} });
+    return NextResponse.json({ media: {} }, { headers });
   }
 }
-
